@@ -164,7 +164,7 @@ function MoneyBagGraphic() {
         <path d="M15 85 L15 95 C15 99 85 99 85 95 L85 85 Z" fill="#94a3b8" />
 
         {/* Money Bag Body */}
-        <path d="M50 25 C30 25 22 45 22 65 C22 80 35 84 50 84 C65 84 78 80 78 65 C78 45 70 25 50 25 Z" fill="#2563EB" />
+        <path d="M50 25 C30 25 22 45 22 65 C22 80 35 84 50 84 C65 84 78 80 78 65 C78 45 70 25 50 25 Z" fill="#5733be" />
         {/* Top ruffle */}
         <path d="M50 25 C42 18 35 20 38 12 C45 15 50 22 50 25 Z" fill="#1D4ED8" />
         {/* Tie */}

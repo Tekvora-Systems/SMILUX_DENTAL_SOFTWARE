@@ -67,7 +67,7 @@ export function MaleAvatar({ className = "w-full h-full" }) {
       
       {/* Collar & Tie */}
       <path d="M44 70 L50 82 L56 70" fill="#ffffff" />
-      <path d="M49 73 L51 73 L52 82 L50 85 L48 82 Z" fill="#2563eb" />
+      <path d="M49 73 L51 73 L52 82 L50 85 L48 82 Z" fill="#5733be" />
       
       {/* Stethoscope */}
       <path d="M37 77 Q41 89 50 89 Q59 89 63 77" stroke="#94a3b8" strokeWidth="2" strokeLinecap="round" fill="none" />

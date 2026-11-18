@@ -5,7 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 const I = {
   calendar:  <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5" /></svg>,
   tooth:     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M15.182 15.182a4.5 4.5 0 01-6.364 0M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>,
-  mpesa:     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75" /></svg>,
+  mpesa:     <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24"><title>cash</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect width="18.5" height="11.5" x="2.75" y="4.75" stroke-width="1.5" rx="2.5"/><circle cx="12" cy="10.5" r="2.5" stroke-width="1.5"/><path stroke-width="2" d="M5.75 10.5h.01m12.49 0h.01"/><path stroke-width="1.5" d="M5.25 19.25h13.5"/></g></svg>,
   shield:    <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>,
   users:     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19.128a9.38 9.38 0 002.625.372 9.337 9.337 0 004.121-.952 4.125 4.125 0 00-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z" /></svg>,
   chart:     <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" /></svg>,
@@ -130,7 +130,7 @@ export default function WebNavbar() {
   return (
     <header
       ref={navbarRef}
-      className={`w-full bg-white border-b border-[#E7E7E7] transition-all duration-150 ${scrolled ? 'shadow-[0px_1px_3px_rgba(0,0,0,0.08)]' : ''}`}
+      className={`w-full relative bg-white border-b border-[#E7E7E7] transition-all duration-150 ${scrolled ? 'shadow-[0px_1px_3px_rgba(0,0,0,0.08)]' : ''}`}
     >
       {/* ── Top bar ── */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -221,12 +221,12 @@ export default function WebNavbar() {
 
             {/* ── FEATURES panel ── */}
             {openMenu === 'features' && (
-              <div className="bg-white border border-[#E7E7E7] rounded-[10px] overflow-hidden" style={CARD_STYLE}>
+              <div className="bg-white border border-[#E7E7E7] rounded overflow-hidden" style={CARD_STYLE}>
                 <div className="grid grid-cols-3 divide-x divide-[#E7E7E7]">
                   {FEATURES_COLS.map((col) => (
                     <div key={col.heading} className="p-5">
                       <p className={`text-[10px] font-bold uppercase tracking-widest mb-3 flex items-center gap-1.5 ${col.color}`}>
-                        <span className={`h-1.5 w-1.5 rounded-full inline-block ${col.dot}`} />
+                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 14 14"><title>end-point-diamond</title><g fill="none"><path fill="#d7e0ff" d="M9 6.373c-.291.36-.291.885-.001 1.247c.215.27.44.54.693.794c.254.254.525.479.794.694c.362.29.887.29 1.248-.002c.266-.215.535-.44.787-.692s.477-.52.692-.787c.29-.36.29-.885.001-1.247a10 10 0 0 0-.693-.794a10 10 0 0 0-.794-.694a1 1 0 0 0-1.248.002a10 10 0 0 0-.787.692c-.252.252-.477.52-.692.787"/><path stroke="#4147d5" stroke-linecap="round" d="M.5 7h8"/><path stroke="#4147d5" stroke-linecap="round" stroke-linejoin="round" d="M9 6.373c-.291.36-.291.885-.001 1.247c.215.27.44.54.693.794c.254.254.525.479.794.694c.362.29.887.29 1.248-.002c.266-.215.535-.44.787-.692s.477-.52.692-.787c.29-.36.29-.885.001-1.247a10 10 0 0 0-.693-.794a10 10 0 0 0-.794-.694a1 1 0 0 0-1.248.002a10 10 0 0 0-.787.692c-.252.252-.477.52-.692.787"/></g></svg>
                         {col.heading}
                       </p>
                       <div className="space-y-0.5">
@@ -239,9 +239,9 @@ export default function WebNavbar() {
                 </div>
 
                 {/* New feature highlight */}
-                <div className="border-t border-[#E7E7E7] bg-[linear-gradient(90deg,#F6F3FF,#EDE6FF)] px-6 py-3 flex items-center justify-between gap-4">
-                  <div className="flex items-center gap-3">
-                    <div className="flex h-8 w-8 items-center justify-center rounded bg-[#7B4DFF] text-white shrink-0">{I.mpesa}</div>
+                <div className="border-t border-[#E7E7E7] bg-[linear-gradient(90deg,#F6F3FF,#EDE6FF)] px-6 py-3 flex items-center justify-between gap-2">
+                  <div className="flex items-center gap-2">
+                    <div className="flex h-6 w-6 items-center justify-center rounded bg-[#7B4DFF] text-white shrink-0">{I.mpesa}</div>
                     <div>
                       <span className="inline-flex items-center rounded-full bg-[#7B4DFF] text-white text-[9px] font-bold uppercase tracking-widest px-1.5 py-0.5 mr-2">New</span>
                       <span className="text-[13px] font-bold text-[#222323]">M-Pesa C2B + KRA eTIMS</span>
@@ -258,7 +258,7 @@ export default function WebNavbar() {
 
             {/* ── SOLUTIONS panel ── */}
             {openMenu === 'solutions' && (
-              <div className="bg-white border border-[#E7E7E7] rounded-[10px] overflow-hidden" style={CARD_STYLE}>
+              <div className="bg-white border border-[#E7E7E7] rounded overflow-hidden" style={CARD_STYLE}>
                 <div className="grid grid-cols-[1fr_240px] divide-x divide-[#E7E7E7]">
 
                   {/* Left: 2-col practice types */}
@@ -287,15 +287,7 @@ export default function WebNavbar() {
                       </div>
                     </div>
 
-                    {/* Mini CTA card */}
-                    <div className="rounded-[8px] bg-[linear-gradient(135deg,#F6F3FF,#DED0FF)] border border-purple-200 p-4">
-                      <p className="text-[13px] font-bold text-[#222323] mb-0.5">Start for free today</p>
-                      <p className="text-[11px] text-[#595959] mb-3">14-day trial · no credit card required</p>
-                      <button type="button" onClick={() => navigate('/register')}
-                        className="w-full h-8 text-[12px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] rounded hover:brightness-105 active:scale-[0.998] transition-all cursor-pointer">
-                        Get Started →
-                      </button>
-                    </div>
+                    
                   </div>
                 </div>
 
@@ -304,7 +296,7 @@ export default function WebNavbar() {
                   {['Pricing', 'Case Studies', 'Help Centre', 'Contact Sales'].map((l, i, arr) => (
                     <React.Fragment key={l}>
                       <button type="button" onClick={() => scrollTo('#')}
-                        className="text-[12px] font-semibold text-[#595959] hover:text-[#7B4DFF] transition-colors cursor-pointer px-1">
+                        className="text-[12px] font-semibold text-[#595959] hover:text-[#7B4DFF] transition-colors cursor-pointer ">
                         {l}
                       </button>
                       {i < arr.length - 1 && <span className="text-slate-300 select-none">|</span>}
