@@ -6,21 +6,16 @@ const ALL = [
   {
     name: 'Safaricom M-Pesa',
     desc: 'Trigger instant STK Push payments from invoices and auto-reconcile every M-Pesa receipt in real time.',
-    iconUrl: 'https://cdn.simpleicons.org/mpesa/00A651',
+    iconUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/1/15/M-PESA_LOGO-01.svg/1280px-M-PESA_LOGO-01.svg.png',
     bg: '#00A651',
     lightBg: '#E6F7EE',
   },
   {
     name: 'Kenya SHA',
     desc: 'Submit Social Health Authority pre-authorisations and insurance claims without leaving Smilux.',
-    iconUrl: 'https://cdn.simpleicons.org/kenyaairways/1D4ED8',
+    iconUrl: 'https://www.sha.go.ke/wp-content/uploads/2025/03/SHA-Logo-Alternate.png',
     bg: '#1D4ED8',
-    lightBg: '#EFF6FF',
-    fallbackIcon: (
-      <svg viewBox="0 0 24 24" fill="white" className="h-6 w-6">
-        <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z"/>
-      </svg>
-    ),
+    lightBg: '#EFF6FF', 
   },
   {
     name: 'WhatsApp Business',
@@ -32,7 +27,7 @@ const ALL = [
   {
     name: 'Twilio SMS',
     desc: 'Send bulk patient SMS reminders, appointment confirmations, and urgent clinic broadcasts.',
-    iconUrl: 'https://cdn.simpleicons.org/twilio/F22F46',
+    iconUrl: 'https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7e/Twilio-logo-red.svg/1280px-Twilio-logo-red.svg.png',
     bg: '#F22F46',
     lightBg: '#FFF1F3',
   },
@@ -110,8 +105,8 @@ function IntegrationCard({ item }) {
 
         {/* Icon */}
         <div
-          className="shrink-0 flex items-center justify-center w-12 h-12 rounded-xl transition-transform duration-300 group-hover:scale-110 overflow-hidden"
-          style={{ background: item.lightBg, border: `1.5px solid ${item.bg}22` }}
+          className=" flex items-center justify-center w-14 h-14   transition-transform duration-300 group-hover:scale-110 overflow-hidden"
+          
         >
           <img
             src={item.iconUrl}
