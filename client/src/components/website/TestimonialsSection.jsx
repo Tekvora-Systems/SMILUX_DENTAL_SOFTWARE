@@ -5,16 +5,16 @@ const TESTIMONIALS = [
     name: 'Dr. Grace Kamau',
     role: 'Clinical Director',
     clinic: 'Westlands Smile Centre, Nairobi',
-    avatar: 'GK',
+    avatar: 'https://api.dicebear.com/8.x/avataaars/svg?seed=GraceKamau&backgroundColor=b6e3f4&clothingColor=262e33&hairColor=2c1b18&skinColor=ae5d29',
     color: '#7B4DFF',
     highlight: true,
-    quote: 'Smilux completely transformed how we run our clinic. The M-Pesa integration alone saves us 2 hours a day — patients pay instantly and it reconciles automatically. The dental charting is the best I\'ve seen from any Kenyan software.',
+    quote: "Smilux completely transformed how we run our clinic. The M-Pesa integration alone saves us 2 hours a day — patients pay instantly and it reconciles automatically. The dental charting is the best I've seen from any Kenyan software.",
   },
   {
     name: 'Dr. Amina Hassan',
     role: 'Owner & Lead Dentist',
     clinic: 'Pristine Dental, Mombasa',
-    avatar: 'AH',
+    avatar: 'https://api.dicebear.com/8.x/avataaars/svg?seed=AminaHassan&backgroundColor=ffd5dc&clothingColor=ff5c5c&hairColor=2c1b18&skinColor=ae5d29',
     color: '#e8368f',
     highlight: false,
     quote: 'We switched from paper records 6 months ago. The transition was seamless — the team migrated all our data. SHA insurance submissions that used to take 3 days now take 20 minutes. Worth every shilling.',
@@ -23,7 +23,7 @@ const TESTIMONIALS = [
     name: 'Dr. Patrick Ochieng',
     role: 'Managing Partner',
     clinic: 'PO Dental Group (3 Branches)',
-    avatar: 'PO',
+    avatar: 'https://api.dicebear.com/8.x/avataaars/svg?seed=PatrickOchieng&backgroundColor=c0aede&clothingColor=3c4f5c&hairColor=2c1b18&skinColor=614335',
     color: '#2ec4b6',
     highlight: false,
     quote: 'Managing three branches was a nightmare before Smilux. Now I see real-time revenue from all locations, compare dentist productivity, and handle payroll from one dashboard. Multi-branch management is exactly what we needed.',
@@ -32,7 +32,7 @@ const TESTIMONIALS = [
     name: 'Dr. Ruth Mwangi',
     role: 'Paediatric Dentist',
     clinic: 'Kidsmile Clinic, Karen',
-    avatar: 'RM',
+    avatar: 'https://api.dicebear.com/8.x/avataaars/svg?seed=RuthMwangi&backgroundColor=d1f4cc&clothingColor=65c9ff&hairColor=2c1b18&skinColor=ae5d29',
     color: '#ffb703',
     highlight: false,
     quote: 'The appointment reminder system is a game-changer. No-shows dropped by 60% in the first month. Parents get WhatsApp reminders automatically and can confirm in one tap. The support team is incredibly responsive.',
@@ -41,7 +41,7 @@ const TESTIMONIALS = [
     name: 'Dr. John Kimani',
     role: 'Orthodontist',
     clinic: 'BrightSmile Ortho, Thika Road',
-    avatar: 'JK',
+    avatar: 'https://api.dicebear.com/8.x/avataaars/svg?seed=JohnKimani&backgroundColor=b6e3f4&clothingColor=262e33&hairColor=4a312c&skinColor=614335',
     color: '#6C44E0',
     highlight: false,
     quote: 'The treatment plan module is exceptionally detailed. I outline multi-stage orthodontic treatment, attach X-rays, get digital patient consent, and track progress visit by visit. It elevated the quality of care we deliver.',
@@ -94,11 +94,21 @@ function TestimonialCard({ t, isActive, onClick }) {
       </div>
 
       <div className="flex items-center gap-3 mt-4 pt-4 border-t border-[#F3F4F6]">
+        <img
+          src={t.avatar}
+          alt={t.name}
+          className="h-10 w-10 rounded-full shrink-0 object-cover border-2"
+          style={{ borderColor: t.color }}
+          onError={(e) => {
+            e.target.style.display = 'none';
+            e.target.nextSibling.style.display = 'flex';
+          }}
+        />
         <div
-          className="h-9 w-9 rounded-full flex items-center justify-center text-[12px] font-bold text-white shrink-0"
-          style={{ background: t.color }}
+          className="h-10 w-10 rounded-full shrink-0 items-center justify-center text-[13px] font-bold text-white"
+          style={{ background: t.color, display: 'none' }}
         >
-          {t.avatar}
+          {t.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
         </div>
         <div className="min-w-0">
           <p className="text-[13px] font-bold text-[#222323] truncate">{t.name}</p>
