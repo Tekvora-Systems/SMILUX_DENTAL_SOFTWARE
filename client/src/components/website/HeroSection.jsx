@@ -21,7 +21,7 @@ export default function HeroSection() {
             {/* Badge */}
             <div className="inline-flex items-center gap-2 self-start rounded border border-purple-200 bg-white/80 px-3 py-1 mb-5 shadow-[0px_1px_2px_rgba(0,0,0,0.05)]">
               <span className="h-1.5 w-1.5 rounded-full bg-[#7B4DFF] animate-pulse shrink-0" />
-              <span className="text-[11px] font-bold text-[#7B4DFF] uppercase tracking-wide">Kenya's #1 Dental Practice Platform</span>
+              <span className="text-[11px] font-bold text-[#7B4DFF] uppercase tracking-wide">Kenya&apos;s #1 Dental Practice Platform</span>
             </div>
 
             {/* Headline */}
@@ -57,7 +57,7 @@ export default function HeroSection() {
               </button>
               <button onClick={() => scrollTo('#about')}
                 className="h-10 px-6 text-[13.5px] font-semibold text-[#5733be] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.05)] hover:bg-[#F2F5F7] active:scale-[0.998] transition-all cursor-pointer flex items-center gap-2">
-                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><title>sprint-demo</title><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"><path d="M6 3h12a3.5 3.5 0 0 1 3.5 3.5V13a3.5 3.5 0 0 1-3.5 3.5H6A3.5 3.5 0 0 1 2.5 13V6.5A3.5 3.5 0 0 1 6 3"/><path d="m12.319 7.513l1.504.981a1.5 1.5 0 0 1 0 2.512l-1.504.981A1.5 1.5 0 0 1 10 10.731V8.769a1.5 1.5 0 0 1 2.319-1.256M10 16.5L9 21m5-4.5l1 4.5m-7.5 0h9"/></g></svg>
+                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><title>sprint-demo</title><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"><path d="M6 3h12a3.5 3.5 0 0 1 3.5 3.5V13a3.5 3.5 0 0 1-3.5 3.5H6A3.5 3.5 0 0 1 2.5 13V6.5A3.5 3.5 0 0 1 6 3"/><path d="m12.319 7.513l1.504.981a1.5 1.5 0 0 1 0 2.512l-1.504.981A1.5 1.5 0 0 1 10 10.731V8.769a1.5 1.5 0 0 1 2.319-1.256M10 16.5L9 21m5-4.5l1 4.5m-7.5 0h9"/></g></svg>
              
                 Book a Demo
               </button>

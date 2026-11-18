@@ -88,7 +88,7 @@ export default function IntegrationsSection() {
               your existing tools
             </h2>
             <p className="mt-3 text-[15px] text-[#595959] leading-relaxed max-w-2xl">
-              Smilux connects natively with Kenya's most critical payment, insurance,
+              Smilux connects natively with Kenya&apos;s most critical payment, insurance,
               and communication platforms. Everything built-in — no plugins, no extra
               setup, no developer needed.
             </p>

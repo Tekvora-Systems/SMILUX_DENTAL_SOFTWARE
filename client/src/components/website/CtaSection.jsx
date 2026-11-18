@@ -67,7 +67,7 @@ export default function CtaSection() {
 
             {/* Right — perks card */}
             <div className="bg-white border border-purple-200/60 rounded shadow-[0px_1px_2px_rgba(0,0,0,0.06),0px_1px_3px_rgba(0,0,0,0.04)] p-6">
-              <p className="text-[11px] font-bold text-[#595959] uppercase tracking-widest mb-4">What's included</p>
+              <p className="text-[11px] font-bold text-[#595959] uppercase tracking-widest mb-4">What&apos;s included</p>
               <ul className="space-y-3">
                 {PERKS.map((p) => (
                   <li key={p} className="flex items-center gap-3 text-[13px] text-[#222323]">
