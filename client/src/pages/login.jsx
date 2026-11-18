@@ -8,6 +8,7 @@ import { HugeiconsIcon } from '@hugeicons/react';
 import { Calendar01Icon, ArrowUpRight01Icon, GiftIcon, ArrowRight01Icon } from '@hugeicons/core-free-icons';
 import useSettingsStore from '../store/settingsStore.js';
 import SEO from '../components/common/SEO.jsx';
+import api from '../api/axios.js';
 
 // ─── What's New panel data for Smilux Dental Practice SaaS ────────────────
 const changelog = [
@@ -238,10 +239,10 @@ export function WideLayout({ children }) {
 }
 
 // ─── Default Exported Page Component ───────────────────────────────────────
-export default function LoginPage({ onLoginSuccess, onOpenReferral, onNavigate }) {
+export default function LoginPage({ onLoginSuccess, onOpenReferral, onNavigate, onOtpRequired }) {
   const [formData, setFormData] = useState({
-    email: 'owner@avicena.co.ke',
-    password: 'password123',
+    email: '',
+    password: '',
     remember: true
   });
   const [showPassword, setShowPassword] = useState(false);
@@ -258,7 +259,7 @@ export default function LoginPage({ onLoginSuccess, onOpenReferral, onNavigate }
 
   const isPhone = /^[0-9+ ]+$/.test(formData.email.trim());
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setError('');
 
@@ -289,10 +290,21 @@ export default function LoginPage({ onLoginSuccess, onOpenReferral, onNavigate }
     }
 
     setLoading(true);
-    setTimeout(() => {
+    try {
+      const res = await api.post('/auth/login', {
+        email: formData.email.trim(),
+        password: formData.password
+      });
+
+      if (res.data?.otpRequired) {
+        // Credentials valid — go to OTP step
+        if (onOtpRequired) onOtpRequired(res.data.email);
+      }
+    } catch (err) {
+      setError(err.response?.data?.message || 'Sign in failed. Please check your credentials.');
+    } finally {
       setLoading(false);
-      if (onLoginSuccess) onLoginSuccess({ email: formData.email, name: 'Darrell Steward' });
-    }, 600);
+    }
   };
 
   const handleOpenSocialLogin = (provider) => {

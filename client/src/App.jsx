@@ -8,6 +8,7 @@ import {
   useNavigate,
 } from 'react-router-dom';
 import LoginPage from './pages/login.jsx';
+import OtpVerifyPage from './pages/OtpVerify.jsx';
 import ForgotPasswordPage from './pages/ForgotPassword.jsx';
 import RegisterPage from './pages/Register.jsx';
 import ReferralProgram from './pages/ReferralProgram.jsx';
@@ -34,6 +35,8 @@ import {
 
 function AppRoutes({ loggedInUser, setLoggedInUser }) {
   const navigate = useNavigate();
+  // Holds the email while waiting for OTP
+  const [pendingEmail, setPendingEmail] = useState(null);
 
   const handleNavigate = (page) => {
     switch (page) {
@@ -48,175 +51,203 @@ function AppRoutes({ loggedInUser, setLoggedInUser }) {
         break;
       case 'login':
       default:
+        setPendingEmail(null);
         navigate('/login');
         break;
     }
   };
 
   const handleLogout = () => {
+    localStorage.removeItem('smilux_token');
+    localStorage.removeItem('smilux_user');
     setLoggedInUser(null);
+    setPendingEmail(null);
     navigate('/login');
+  };
+
+  const handleOtpRequired = (email) => {
+    setPendingEmail(email);
+    navigate('/verify-otp');
+  };
+
+  const handleLoginSuccess = (user) => {
+    setLoggedInUser(user);
+    setPendingEmail(null);
+    navigate('/dashboard');
   };
 
   return (
     <Routes>
-        {/* Auth Routes */}
-        <Route
-          path="/login"
-          element={
-            loggedInUser ? (
-              <Navigate to="/dashboard" replace />
-            ) : (
-              <LoginPage
-                onLoginSuccess={(user) => {
-                  setLoggedInUser(user);
-                  navigate('/dashboard');
-                }}
-                onNavigate={handleNavigate}
-                onOpenReferral={() => navigate('/referral')}
-              />
-            )
-          }
-        />
-
-        <Route
-          path="/register"
-          element={
-            <RegisterPage
-              onNavigate={handleNavigate}
-              onLoginSuccess={(user) => {
-                setLoggedInUser(user);
-                navigate('/dashboard');
-              }}
-              onOpenReferral={() => navigate('/referral')}
-            />
-          }
-        />
-
-        <Route
-          path="/forgot-password"
-          element={
-            <ForgotPasswordPage
+      {/* Auth Routes */}
+      <Route
+        path="/login"
+        element={
+          loggedInUser ? (
+            <Navigate to="/dashboard" replace />
+          ) : (
+            <LoginPage
+              onLoginSuccess={handleLoginSuccess}
+              onOtpRequired={handleOtpRequired}
               onNavigate={handleNavigate}
               onOpenReferral={() => navigate('/referral')}
             />
-          }
-        />
-        <Route
-          path="/forgot"
-          element={<Navigate to="/forgot-password" replace />}
-        />
+          )
+        }
+      />
 
+      <Route
+        path="/verify-otp"
+        element={
+          loggedInUser ? (
+            <Navigate to="/dashboard" replace />
+          ) : !pendingEmail ? (
+            <Navigate to="/login" replace />
+          ) : (
+            <OtpVerifyPage
+              email={pendingEmail}
+              onLoginSuccess={handleLoginSuccess}
+              onNavigate={handleNavigate}
+              onOpenReferral={() => navigate('/referral')}
+            />
+          )
+        }
+      />
+
+      <Route
+        path="/register"
+        element={
+          <RegisterPage
+            onNavigate={handleNavigate}
+            onLoginSuccess={handleLoginSuccess}
+            onOpenReferral={() => navigate('/referral')}
+          />
+        }
+      />
+
+      <Route
+        path="/forgot-password"
+        element={
+          <ForgotPasswordPage
+            onNavigate={handleNavigate}
+            onOpenReferral={() => navigate('/referral')}
+          />
+        }
+      />
+      <Route
+        path="/forgot"
+        element={<Navigate to="/forgot-password" replace />}
+      />
+
+      <Route
+        path="/referral"
+        element={
+          <ReferralProgram
+            onBackToLogin={() => navigate('/login')}
+          />
+        }
+      />
+
+      {/* Authenticated Layout & Workspace Routes */}
+      {loggedInUser ? (
         <Route
-          path="/referral"
           element={
-            <ReferralProgram
-              onBackToLogin={() => navigate('/login')}
+            <AppLayout
+              user={loggedInUser}
+              onLogout={handleLogout}
+              onQuickAction={() => alert('Quick Action: Add New Patient')}
             />
           }
-        />
-
-        {/* Authenticated Layout & Workspace Routes */}
-        {loggedInUser ? (
+        >
+          <Route path="/dashboard" element={<DashboardView user={loggedInUser} />} />
+          <Route path="/getting_started" element={<GettingStarted />} />
+          <Route path="/getting-started" element={<GettingStarted />} />
+          <Route path="/:workspaceId/getting_started" element={<GettingStarted />} />
+          <Route path="/patients" element={<PatientsView />} />
+          <Route path="/appointments" element={<AppointmentsView />} />
+          <Route path="/clinical-records" element={<ClinicalRecordsView />} />
+          <Route path="/charting" element={<DentalChartingView />} />
           <Route
+            path="/treatment-plans"
             element={
-              <AppLayout
-                user={loggedInUser}
-                onLogout={handleLogout}
-                onQuickAction={() => alert('Quick Action: Add New Patient')}
+              <GenericFeatureView
+                title="Treatment Plans"
+                description="Comprehensive dental treatment plans, stage estimations, and patient consent sign-offs."
               />
             }
-          >
-            <Route path="/dashboard" element={<DashboardView user={loggedInUser} />} />
-            <Route path="/getting_started" element={<GettingStarted />} />
-            <Route path="/getting-started" element={<GettingStarted />} />
-            <Route path="/:workspaceId/getting_started" element={<GettingStarted />} />
-            <Route path="/patients" element={<PatientsView />} />
-            <Route path="/appointments" element={<AppointmentsView />} />
-            <Route path="/clinical-records" element={<ClinicalRecordsView />} />
-            <Route path="/charting" element={<DentalChartingView />} />
-            <Route
-              path="/treatment-plans"
-              element={
-                <GenericFeatureView
-                  title="Treatment Plans"
-                  description="Comprehensive dental treatment plans, stage estimations, and patient consent sign-offs."
-                />
-              }
-            />
-            <Route
-              path="/treatments"
-              element={
-                <GenericFeatureView
-                  title="Treatments & Procedures"
-                  description="Dental procedure catalog, ADA/FDI codes, and standard clinic fee schedule (KES)."
-                />
-              }
-            />
-            <Route path="/invoices" element={<InvoicesView />} />
-            <Route path="/payments" element={<PaymentsView />} />
-            <Route path="/insurance" element={<InsuranceView />} />
-            <Route path="/expenses" element={<ExpensesView />} />
-            <Route path="/inventory" element={<InventoryView />} />
-            <Route path="/suppliers" element={<SuppliersView />} />
-            <Route path="/purchase-orders" element={<PurchaseOrdersView />} />
-            <Route path="/staff" element={<StaffView />} />
-            <Route path="/dentists" element={<DentistsView />} />
-            <Route path="/branches" element={<BranchesView />} />
-            <Route
-              path="/reports"
-              element={
-                <GenericFeatureView
-                  title="Reports & Practice Analytics"
-                  description="Clinic revenue intelligence, patient volume charts, and financial statements."
-                />
-              }
-            />
-            <Route
-              path="/messages"
-              element={
-                <GenericFeatureView
-                  title="Messages & Reminders"
-                  description="Automated patient SMS appointment reminders, recall notifications, and WhatsApp broadcasts."
-                />
-              }
-            />
-            <Route
-              path="/settings"
-              element={
-                <GenericFeatureView
-                  title="Clinic Settings"
-                  description="Practice profile, M-Pesa Daraja API keys, SHA integration keys, and user permissions."
-                />
-              }
-            />
-            <Route
-              path="/notifications"
-              element={
-                <GenericFeatureView
-                  title="Notifications Center"
-                  description="System alerts, claim approvals, and appointment notifications."
-                />
-              }
-            />
-            <Route
-              path="/profile"
-              element={
-                <GenericFeatureView
-                  title="User Account Profile"
-                  description="Manage your personal profile details, security credentials, and preferences."
-                />
-              }
-            />
-          </Route>
-        ) : null}
+          />
+          <Route
+            path="/treatments"
+            element={
+              <GenericFeatureView
+                title="Treatments & Procedures"
+                description="Dental procedure catalog, ADA/FDI codes, and standard clinic fee schedule (KES)."
+              />
+            }
+          />
+          <Route path="/invoices" element={<InvoicesView />} />
+          <Route path="/payments" element={<PaymentsView />} />
+          <Route path="/insurance" element={<InsuranceView />} />
+          <Route path="/expenses" element={<ExpensesView />} />
+          <Route path="/inventory" element={<InventoryView />} />
+          <Route path="/suppliers" element={<SuppliersView />} />
+          <Route path="/purchase-orders" element={<PurchaseOrdersView />} />
+          <Route path="/staff" element={<StaffView />} />
+          <Route path="/dentists" element={<DentistsView />} />
+          <Route path="/branches" element={<BranchesView />} />
+          <Route
+            path="/reports"
+            element={
+              <GenericFeatureView
+                title="Reports & Practice Analytics"
+                description="Clinic revenue intelligence, patient volume charts, and financial statements."
+              />
+            }
+          />
+          <Route
+            path="/messages"
+            element={
+              <GenericFeatureView
+                title="Messages & Reminders"
+                description="Automated patient SMS appointment reminders, recall notifications, and WhatsApp broadcasts."
+              />
+            }
+          />
+          <Route
+            path="/settings"
+            element={
+              <GenericFeatureView
+                title="Clinic Settings"
+                description="Practice profile, M-Pesa Daraja API keys, SHA integration keys, and user permissions."
+              />
+            }
+          />
+          <Route
+            path="/notifications"
+            element={
+              <GenericFeatureView
+                title="Notifications Center"
+                description="System alerts, claim approvals, and appointment notifications."
+              />
+            }
+          />
+          <Route
+            path="/profile"
+            element={
+              <GenericFeatureView
+                title="User Account Profile"
+                description="Manage your personal profile details, security credentials, and preferences."
+              />
+            }
+          />
+        </Route>
+      ) : null}
 
-        {/* Fallback route */}
-        <Route
-          path="*"
-          element={<Navigate to={loggedInUser ? '/dashboard' : '/login'} replace />}
-        />
-      </Routes>
+      {/* Fallback route */}
+      <Route
+        path="*"
+        element={<Navigate to={loggedInUser ? '/dashboard' : '/login'} replace />}
+      />
+    </Routes>
   );
 }
 
@@ -228,12 +259,13 @@ AppRoutes.propTypes = {
 export default function App() {
   const [loggedInUser, setLoggedInUser] = useState(() => {
     try {
+      const token = localStorage.getItem('smilux_token');
       const saved = localStorage.getItem('smilux_user');
-      if (saved) return JSON.parse(saved);
+      if (token && saved) return JSON.parse(saved);
     } catch {
       /* ignore */
     }
-    return { name: 'Dr. Darrell Steward', email: 'owner@avicena.co.ke', role: 'Lead Dentist' };
+    return null;
   });
 
   const handleSetUser = (user) => {
@@ -243,6 +275,7 @@ export default function App() {
         localStorage.setItem('smilux_user', JSON.stringify(user));
       } else {
         localStorage.removeItem('smilux_user');
+        localStorage.removeItem('smilux_token');
       }
     } catch {
       /* ignore */

@@ -104,6 +104,16 @@ const seedDB = async () => {
       role: 'SuperAdmin'
     });
 
+    await User.create({
+      clinicId: clinic._id,
+      branchId: branch._id,
+      name: 'Smilux Owner',
+      email: 'smiluxsoftware@gmail.com',
+      password: defaultPassword,
+      role: 'ClinicOwner',
+      phone: '+254 700 000 001'
+    });
+
     console.log('Created Users & Staff...');
 
     // 3. Create Patients

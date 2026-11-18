@@ -15,7 +15,9 @@ const userSchema = new mongoose.Schema({
   specialisation: { type: String, default: '' },
   commissionRate: { type: Number, default: 0 },
   isActive: { type: Boolean, default: true },
-  lastLogin: { type: Date }
+  lastLogin: { type: Date },
+  otp: { type: String },
+  otpExpiry: { type: Date }
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);
