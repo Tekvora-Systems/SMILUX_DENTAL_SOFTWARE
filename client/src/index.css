@@ -54,12 +54,10 @@
     font-family: var(--font-sans);
     background-color: #f6f7fc;
     color: var(--brand-navy);
-    -webkit-font-smoothing: antialiased;
-    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased; 
   }
 
-  html {
-    overflow-x: hidden;
+  html { 
     scrollbar-gutter: stable;
   }
 }

@@ -24,10 +24,11 @@ export default function WebFooter() {
   };
 
   return (
-    /* White outer — flush to bottom, no gap */
-    <div className="w-full bg-[#DED0FF]">
+    /* White outer — gives the rounded card side gaps */
+    <div className="w-full bg-white px-4 sm:px-6 lg:px-8 pt-0">
       <footer
-        className="w-full bg-[linear-gradient(180deg,#F6F3FF_0%,#DED0FF_100%)] overflow-hidden"
+        className="w-full bg-[linear-gradient(180deg,#F6F3FF_0%,#DED0FF_100%)] rounded-t-[20px] overflow-hidden"
+        style={{ boxShadow: '0 -2px 16px rgba(123,77,255,0.08), 0 1px 3px rgba(0,0,0,0.04)' }}
       >
        <div className="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-[#7B4DFF]/8 blur-3xl pointer-events-none" />
         <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-[#e8368f]/6 blur-3xl pointer-events-none" />
