@@ -16,93 +16,126 @@ const SOCIALS = [
 
 export default function WebFooter() {
   const navigate = useNavigate();
-  const scrollTo = (href) => { if (href.startsWith('#')) { const el = document.querySelector(href); if (el) el.scrollIntoView({ behavior: 'smooth' }); } };
+  const scrollTo = (href) => {
+    if (href.startsWith('#')) {
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
-    <footer className="w-full bg-[#0d1117] text-slate-400">
+    /* Outer wrapper — white bg so the rounded corners show gap on the sides */
+    <div className="w-full bg-white px-4 sm:px-6 lg:px-8 pb-6 pt-0">
+      <footer
+        className="w-full bg-[linear-gradient(180deg,#1c2536_0%,#0d1117_100%)] text-slate-400 rounded-t-[20px] overflow-hidden"
+        style={{ boxShadow: '0 -4px 32px rgba(0,0,0,0.18)' }}
+      >
 
-      {/* CTA strip */}
-      <div className="w-full border-b border-white/5">
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-          <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
+        {/* CTA strip */}
+        <div className="w-full border-b border-white/5 px-6 sm:px-10 py-10">
+          <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <h3 className="text-[22px] font-extrabold text-white leading-snug">Ready to modernise your clinic?</h3>
-              <p className="mt-1 text-[13px] text-slate-400">Join 500+ dental practices in Kenya already running on Smilux.</p>
+              <h3 className="text-[22px] font-extrabold text-white leading-snug">
+                Ready to modernise your clinic?
+              </h3>
+              <p className="mt-1 text-[13px] text-slate-400">
+                Join 500+ dental practices in Kenya already running on Smilux.
+              </p>
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">
-              <button onClick={() => navigate('/register')}
-                className="h-9 px-5 text-[13px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.12)] hover:brightness-110 active:scale-[0.998] transition-all cursor-pointer">
+              <button
+                onClick={() => navigate('/register')}
+                className="h-9 px-5 text-[13px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.12)] hover:brightness-110 active:scale-[0.998] transition-all cursor-pointer"
+              >
                 Start 14-Day Free Trial
               </button>
-              <button onClick={() => navigate('/login')}
-                className="h-9 px-5 text-[13px] font-semibold text-slate-300 border border-white/10 rounded hover:bg-white/5 transition-colors cursor-pointer">
+              <button
+                onClick={() => navigate('/login')}
+                className="h-9 px-5 text-[13px] font-semibold text-slate-300 border border-white/10 rounded hover:bg-white/5 transition-colors cursor-pointer"
+              >
                 Sign In
               </button>
             </div>
           </div>
         </div>
-      </div>
 
-      {/* Main grid */}
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
+        {/* Main grid */}
+        <div className="max-w-6xl mx-auto px-6 sm:px-10 py-10">
+          <div className="grid grid-cols-2 md:grid-cols-6 gap-8">
 
-          {/* Brand */}
-          <div className="col-span-2">
-            <Link to="/" className="flex items-center gap-2 mb-4">
-              <img src="/favicon.svg" alt="Smilux" className="h-8 w-8" />
-              <div>
-                <div className="text-[16px] font-extrabold text-white tracking-tight">Smilux<span className="text-[#e8368f]">.</span></div>
-                <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Dental Software</div>
-              </div>
-            </Link>
-            <p className="text-[13px] text-slate-500 leading-relaxed max-w-xs">
-              Kenya's leading dental practice management platform — from solo practices to multi-branch groups.
-            </p>
-            <div className="mt-4 flex items-center gap-2">
-              {SOCIALS.map((s) => (
-                <a key={s.label} href={s.href} aria-label={s.label}
-                  className="flex h-7 w-7 items-center justify-center rounded border border-white/8 bg-white/5 text-slate-500 hover:bg-[#7B4DFF]/20 hover:text-[#9C7AFF] transition-all">
-                  {s.icon}
-                </a>
-              ))}
-            </div>
-            <div className="mt-4 flex flex-wrap gap-1.5">
-              {['HIPAA Ready','SHA Kenya','M-Pesa'].map((b) => (
-                <span key={b} className="inline-flex items-center gap-1.5 rounded border border-white/8 bg-white/5 px-2.5 py-0.5 text-[11px] font-semibold text-slate-400">
-                  <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 inline-block" />{b}
-                </span>
-              ))}
-            </div>
-          </div>
+            {/* Brand column */}
+            <div className="col-span-2">
+              <Link to="/" className="flex items-center gap-2 mb-4">
+                <img src="/favicon.svg" alt="Smilux" className="h-8 w-8" />
+                <div>
+                  <div className="text-[16px] font-extrabold text-white tracking-tight">
+                    Smilux<span className="text-[#e8368f]">.</span>
+                  </div>
+                  <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Dental Software</div>
+                </div>
+              </Link>
 
-          {/* Link columns */}
-          {Object.entries(LINKS).map(([group, items]) => (
-            <div key={group}>
-              <h4 className="text-[10px] font-bold text-white uppercase tracking-widest mb-3">{group}</h4>
-              <ul className="space-y-2">
-                {items.map(([label, href]) => (
-                  <li key={label}>
-                    {href.startsWith('#')
-                      ? <button type="button" onClick={() => scrollTo(href)} className="text-[13px] text-slate-500 hover:text-slate-200 transition-colors text-left cursor-pointer">{label}</button>
-                      : <Link to={href} className="text-[13px] text-slate-500 hover:text-slate-200 transition-colors">{label}</Link>
-                    }
-                  </li>
+              <p className="text-[13px] text-slate-500 leading-relaxed max-w-xs">
+                Kenya's leading dental practice management platform — from solo practices to multi-branch groups.
+              </p>
+
+              {/* Socials */}
+              <div className="mt-4 flex items-center gap-2">
+                {SOCIALS.map((s) => (
+                  <a
+                    key={s.label} href={s.href} aria-label={s.label}
+                    className="flex h-7 w-7 items-center justify-center rounded border border-white/8 bg-white/5 text-slate-500 hover:bg-[#7B4DFF]/20 hover:text-[#9C7AFF] transition-all"
+                  >
+                    {s.icon}
+                  </a>
                 ))}
-              </ul>
-            </div>
-          ))}
-        </div>
+              </div>
 
-        {/* Bottom bar */}
-        <div className="mt-12 pt-5 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-[12px] text-slate-600">© {new Date().getFullYear()} Tekvora Systems Ltd. All rights reserved.</p>
-          <div className="flex items-center gap-1.5 text-[12px] text-slate-600">
-            <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-            All systems operational
+              {/* Trust badges */}
+              <div className="mt-4 flex flex-wrap gap-1.5">
+                {['HIPAA Ready', 'SHA Kenya', 'M-Pesa'].map((b) => (
+                  <span
+                    key={b}
+                    className="inline-flex items-center gap-1.5 rounded border border-white/8 bg-white/5 px-2.5 py-0.5 text-[11px] font-semibold text-slate-400"
+                  >
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 inline-block" />
+                    {b}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Link columns */}
+            {Object.entries(LINKS).map(([group, items]) => (
+              <div key={group}>
+                <h4 className="text-[10px] font-bold text-white uppercase tracking-widest mb-3">{group}</h4>
+                <ul className="space-y-2">
+                  {items.map(([label, href]) => (
+                    <li key={label}>
+                      {href.startsWith('#')
+                        ? <button type="button" onClick={() => scrollTo(href)} className="text-[13px] text-slate-500 hover:text-slate-200 transition-colors text-left cursor-pointer">{label}</button>
+                        : <Link to={href} className="text-[13px] text-slate-500 hover:text-slate-200 transition-colors">{label}</Link>
+                      }
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+
+          {/* Bottom bar */}
+          <div className="mt-10 pt-5 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-[12px] text-slate-600">
+              © {new Date().getFullYear()} Tekvora Systems Ltd. All rights reserved.
+            </p>
+            <div className="flex items-center gap-1.5 text-[12px] text-slate-600">
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+              All systems operational
+            </div>
           </div>
         </div>
-      </div>
-    </footer>
+
+      </footer>
+    </div>
   );
 }

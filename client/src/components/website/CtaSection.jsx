@@ -12,13 +12,19 @@ export default function CtaSection() {
   const navigate = useNavigate();
 
   return (
-    <section id="about" className="w-full border-t border-[#E7E7E7] bg-[#1c2536]">
-      {/* Grid overlay */}
-      <div className="relative w-full overflow-hidden">
-         <div className="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-[#7B4DFF]/10 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -right-24 w-64 h-64 rounded-full bg-[#e8368f]/8 blur-3xl pointer-events-none" />
+    /* White outer so the dark inner card has visible side gaps matching the footer */
+    <section id="about" className="w-full bg-white border-t border-[#E7E7E7] px-4 sm:px-6 lg:px-8 py-6">
+      <div className="w-full bg-[linear-gradient(180deg,#1c2536_0%,#0d1117_100%)] rounded-[16px] overflow-hidden relative"
+        style={{ boxShadow: '0 4px 32px rgba(0,0,0,0.14)' }}>
 
-        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        {/* Decorative blobs */}
+        <div className="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-[#7B4DFF]/10 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -right-24 w-64 h-64 rounded-full bg-[#e8368f]/8 blur-3xl pointer-events-none" />
+        {/* Grid pattern */}
+        <div className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          style={{ backgroundImage: 'linear-gradient(white 1px,transparent 1px),linear-gradient(to right,white 1px,transparent 1px)', backgroundSize: '48px 48px' }} />
+
+        <div className="relative w-full max-w-6xl mx-auto px-6 sm:px-10 py-14">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
 
             {/* Left */}
@@ -73,7 +79,7 @@ export default function CtaSection() {
               </ul>
 
               <div className="mt-6 pt-5 border-t border-white/10 grid grid-cols-3 gap-3 text-center">
-                {[['500+', 'Clinics'], ['120K+', 'Patients'], ['99.9%', 'Uptime']].map(([v,l]) => (
+                {[['500+','Clinics'],['120K+','Patients'],['99.9%','Uptime']].map(([v,l]) => (
                   <div key={l}>
                     <div className="text-[18px] font-extrabold text-white">{v}</div>
                     <div className="text-[11px] text-slate-500 font-medium mt-0.5">{l}</div>
@@ -81,6 +87,7 @@ export default function CtaSection() {
                 ))}
               </div>
             </div>
+
           </div>
         </div>
       </div>

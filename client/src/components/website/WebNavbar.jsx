@@ -47,8 +47,7 @@ export default function WebNavbar() {
   };
 
   return (
-    <div className="w-full sticky top-0 z-40">
-      <header className={`w-full bg-white border-b border-[#E7E7E7] transition-all duration-150 ${scrolled ? 'shadow-[0px_1px_3px_rgba(0,0,0,0.08),0px_1px_2px_rgba(0,0,0,0.05)]' : 'shadow-[0px_1px_2px_rgba(0,0,0,0.04)]'}`}>
+    <header className={`w-full bg-white border-b border-[#E7E7E7] transition-all duration-150 ${scrolled ? 'shadow-[0px_1px_3px_rgba(0,0,0,0.08),0px_1px_2px_rgba(0,0,0,0.05)]' : 'shadow-[0px_1px_2px_rgba(0,0,0,0.04)]'}`}>
         <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-[52px] items-center justify-between gap-4">
 
@@ -150,7 +149,6 @@ export default function WebNavbar() {
             </div>
           </div>
         )}
-      </header>
-    </div>
+      </header> 
   );
 }
