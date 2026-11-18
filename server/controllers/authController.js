@@ -281,6 +281,23 @@ exports.registerClinic = async (req, res) => {
   }
 };
 
+// ─── Dev-only: return current OTP for a user (never in production) ─────────
+exports.devGetOtp = async (req, res) => {
+  if (process.env.NODE_ENV === 'production') {
+    return res.status(404).json({ message: 'Not found' });
+  }
+  try {
+    const { email } = req.query;
+    if (!email) return res.status(400).json({ message: 'Email required' });
+    const user = await User.findOne({ email: email.toLowerCase() }).select('otp otpExpiry');
+    if (!user || !user.otp) return res.status(404).json({ message: 'No active OTP' });
+    if (user.otpExpiry < new Date()) return res.status(410).json({ message: 'OTP expired' });
+    res.json({ otp: user.otp });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
 // ─── Get current user ──────────────────────────────────────────────────────
 exports.getMe = async (req, res) => {
   try {
