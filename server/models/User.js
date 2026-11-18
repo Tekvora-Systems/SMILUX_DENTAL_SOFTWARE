@@ -17,7 +17,11 @@ const userSchema = new mongoose.Schema({
   isActive: { type: Boolean, default: true },
   lastLogin: { type: Date },
   otp: { type: String },
-  otpExpiry: { type: Date }
+  otpExpiry: { type: Date },
+  // Password reset flow (separate from login OTP)
+  resetOtp: { type: String },
+  resetOtpExpiry: { type: Date },
+  resetOtpRequestedAt: { type: Date },
 }, { timestamps: true });
 
 module.exports = mongoose.model('User', userSchema);

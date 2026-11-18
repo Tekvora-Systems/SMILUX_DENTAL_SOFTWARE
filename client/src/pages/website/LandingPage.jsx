@@ -14,6 +14,13 @@ export default function LandingPage() {
   const fixedRef = useRef(null);
   const [topOffset, setTopOffset] = useState(0);
 
+  // Force white body background on the landing page, restore on unmount
+  useEffect(() => {
+    const prev = document.body.style.backgroundColor;
+    document.body.style.backgroundColor = '#ffffff';
+    return () => { document.body.style.backgroundColor = prev; };
+  }, []);
+
   // Measure the combined height of banner + navbar whenever either renders/dismisses
   useEffect(() => {
     const measure = () => {
@@ -26,7 +33,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="w-full min-h-screen bg-white font-sans text-slate-900 antialiased overflow-x-hidden">
+    <div className="w-full min-h-screen bg-white font-sans text-slate-900 antialiased overflow-x-hidden flex flex-col">
       <SEO
         title="Smilux Dental Software — Kenya's #1 Dental Practice Management System"
         description="Appointments, dental charting, M-Pesa payments, SHA insurance, and analytics — all in one platform built for Kenyan dental clinics."

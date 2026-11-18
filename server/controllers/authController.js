@@ -1,73 +1,16 @@
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
-const nodemailer = require('nodemailer');
+const {
+  sendLoginOtpEmail,
+  sendWelcomeEmail,
+  sendPasswordResetEmail,
+  OTP_EXPIRY_MINUTES,
+} = require('../services/emailService');
 const User = require('../models/User');
 const Clinic = require('../models/Clinic');
 const Branch = require('../models/Branch');
 
 const secret = process.env.JWT_SECRET || 'smilux_secret_key_2026';
-const OTP_EXPIRY_MINUTES = parseInt(process.env.OTP_EXPIRY_MINUTES || '10', 10);
-
-// ─── Mailer ────────────────────────────────────────────────────────────────
-let _transporter = null;
-
-async function getTransporter() {
-  if (_transporter) return _transporter;
-
-  if (process.env.SMTP_USER && process.env.SMTP_PASS) {
-    _transporter = nodemailer.createTransport({
-      host: process.env.SMTP_HOST || 'smtp.ethereal.email',
-      port: parseInt(process.env.SMTP_PORT || '587', 10),
-      secure: false,
-      requireTLS: true,
-      auth: { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS }
-    });
-  } else {
-    // Dev fallback: auto-create an Ethereal test account
-    const testAccount = await nodemailer.createTestAccount();
-    _transporter = nodemailer.createTransport({
-      host: 'smtp.ethereal.email',
-      port: 587,
-      secure: false,
-      auth: { user: testAccount.user, pass: testAccount.pass }
-    });
-    console.log('\n📧 Ethereal test account created:');
-    console.log('   User:', testAccount.user);
-    console.log('   Pass:', testAccount.pass);
-    console.log('   Preview URL base: https://ethereal.email\n');
-  }
-
-  return _transporter;
-}
-
-async function sendOTPEmail(email, name, otp) {
-  try {
-    const transporter = await getTransporter();
-    const info = await transporter.sendMail({
-      from: process.env.SMTP_FROM || '"Smilux" <noreply@smilux.co.ke>',
-      to: email,
-      subject: `Your Smilux login code: ${otp}`,
-      text: `Hi ${name},\n\nYour one-time login code is: ${otp}\n\nThis code expires in ${OTP_EXPIRY_MINUTES} minutes.\n\nIf you didn't request this, please ignore this email.\n\n— Smilux Team`,
-      html: `
-        <div style="font-family:sans-serif;max-width:420px;margin:0 auto;padding:24px;border:1px solid #e2e8f0;border-radius:8px">
-          <h2 style="color:#1e3a5f;margin:0 0 8px">Your login code</h2>
-          <p style="color:#475569;margin:0 0 20px">Hi ${name}, enter this code to complete your sign-in.</p>
-          <div style="background:#f1f5f9;border-radius:6px;padding:20px;text-align:center;letter-spacing:8px;font-size:32px;font-weight:700;color:#0f172a">${otp}</div>
-          <p style="color:#94a3b8;font-size:13px;margin:16px 0 0">Expires in <strong>${OTP_EXPIRY_MINUTES} minutes</strong>. Do not share this code.</p>
-        </div>
-      `
-    });
-
-    // Print preview link when using Ethereal
-    const previewUrl = nodemailer.getTestMessageUrl(info);
-    if (previewUrl) {
-      console.log(`📧 OTP email preview: ${previewUrl}`);
-    }
-  } catch (err) {
-    console.error('Failed to send OTP email:', err.message);
-    // Don't throw — log and continue; OTP is still in DB
-  }
-}
 
 // ─── Step 1: Verify credentials → generate & send OTP ─────────────────────
 exports.login = async (req, res) => {
@@ -98,7 +41,7 @@ exports.login = async (req, res) => {
     await user.save();
 
     // Send OTP email (non-blocking on failure)
-    await sendOTPEmail(user.email, user.name, otp);
+    await sendLoginOtpEmail(user.email, user.name, otp);
 
     // In development, also log the OTP to console so you can test without email
     if (process.env.NODE_ENV !== 'production') {
@@ -200,7 +143,7 @@ exports.resendOtp = async (req, res) => {
     user.otpExpiry = new Date(Date.now() + OTP_EXPIRY_MINUTES * 60 * 1000);
     await user.save();
 
-    await sendOTPEmail(user.email, user.name, otp);
+    await sendLoginOtpEmail(user.email, user.name, otp);
 
     if (process.env.NODE_ENV !== 'production') {
       console.log(`\n🔑 Resent OTP for ${user.email}: ${otp}\n`);
@@ -254,6 +197,9 @@ exports.registerClinic = async (req, res) => {
       phone
     });
 
+    // Send a welcome email (fire-and-forget; never blocks registration)
+    sendWelcomeEmail(user.email, user.name, clinic.name).catch(() => {});
+
     const token = jwt.sign(
       {
         id: user._id,
@@ -277,6 +223,87 @@ exports.registerClinic = async (req, res) => {
         clinic
       }
     });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// ─── Forgot password → email a reset code ──────────────────────────────────
+exports.forgotPassword = async (req, res) => {
+  try {
+    const { email } = req.body;
+    // Always respond 200 (don't leak which emails are registered)
+    if (!email) {
+      return res.json({ message: 'If that email exists, reset instructions have been sent.' });
+    }
+
+    const user = await User.findOne({ email: email.toLowerCase() });
+    if (!user || !user.isActive) {
+      return res.json({ message: 'If that email exists, reset instructions have been sent.' });
+    }
+
+    // Rate-limit: one reset request per 60 seconds
+    if (user.resetOtpRequestedAt) {
+      const since = (Date.now() - user.resetOtpRequestedAt.getTime()) / 1000;
+      if (since < 60) {
+        return res.json({ message: 'If that email exists, reset instructions have been sent.' });
+      }
+    }
+
+    const otp = String(Math.floor(100000 + Math.random() * 900000));
+    user.resetOtp = otp;
+    user.resetOtpExpiry = new Date(Date.now() + OTP_EXPIRY_MINUTES * 60 * 1000);
+    user.resetOtpRequestedAt = new Date();
+    await user.save();
+
+    await sendPasswordResetEmail(user.email, user.name, otp);
+
+    if (process.env.NODE_ENV !== 'production') {
+      console.log(`\n🔑 Reset code for ${user.email}: ${otp}\n`);
+    }
+
+    res.json({ message: 'If that email exists, reset instructions have been sent.' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
+
+// ─── Reset password → verify code & set new password ──────────────────────
+exports.resetPassword = async (req, res) => {
+  try {
+    const { email, otp, newPassword } = req.body;
+    if (!email || !otp || !newPassword) {
+      return res.status(400).json({ message: 'Email, reset code, and new password are required' });
+    }
+    if (newPassword.length < 6) {
+      return res.status(400).json({ message: 'Password must be at least 6 characters' });
+    }
+
+    const user = await User.findOne({ email: email.toLowerCase() });
+    if (!user || !user.isActive) {
+      return res.status(401).json({ message: 'Invalid or expired reset code' });
+    }
+
+    if (!user.resetOtp || user.resetOtp !== String(otp).trim()) {
+      return res.status(401).json({ message: 'Invalid reset code' });
+    }
+    if (!user.resetOtpExpiry || user.resetOtpExpiry < new Date()) {
+      user.resetOtp = undefined;
+      user.resetOtpExpiry = undefined;
+      await user.save();
+      return res.status(401).json({ message: 'Reset code has expired. Please request a new one.' });
+    }
+
+    user.password = await bcrypt.hash(newPassword, 10);
+    // Clear reset fields + login OTP for safety
+    user.resetOtp = undefined;
+    user.resetOtpExpiry = undefined;
+    user.resetOtpRequestedAt = undefined;
+    user.otp = undefined;
+    user.otpExpiry = undefined;
+    await user.save();
+
+    res.json({ message: 'Your password has been reset. You can now sign in.' });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
