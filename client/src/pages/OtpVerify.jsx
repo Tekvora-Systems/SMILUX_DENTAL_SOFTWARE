@@ -200,7 +200,7 @@ export default function OtpVerifyPage({ email, onLoginSuccess, onNavigate, onOpe
             <button
               type="button"
               onClick={() => setOtp(devCode)}
-              className="shrink-0 rounded-md bg-amber-500 px-3 py-1.5 text-xs font-bold text-white hover:bg-amber-600 active:scale-95 transition-all"
+              className="shrink-0 rounded bg-amber-500 px-3 py-1.5 text-xs font-bold text-white hover:bg-amber-600 active:scale-95 transition-all"
             >
               Autofill
             </button>

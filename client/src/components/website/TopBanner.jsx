@@ -69,7 +69,7 @@ export default function TopBanner() {
             type="button"
             aria-label="Dismiss announcement"
             onClick={() => setDismissed(true)}
-            className="absolute top-1/2 right-2 inline-flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded-md transition-colors duration-150 cursor-pointer"
+            className="absolute top-1/2 right-2 inline-flex h-7 w-7 -translate-y-1/2 items-center justify-center rounded transition-colors duration-150 cursor-pointer"
             style={{ '--hover-bg': 'rgba(255,255,255,0.20)' }}
             onMouseEnter={e => e.currentTarget.style.background = 'rgba(255,255,255,0.20)'}
             onMouseLeave={e => e.currentTarget.style.background = 'transparent'}

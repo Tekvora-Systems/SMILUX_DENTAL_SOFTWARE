@@ -1347,7 +1347,7 @@ export default function AppointmentsPage() {
                   key={mode}
                   type="button"
                   onClick={() => setViewMode(mode)}
-                  className={`px-3 py-1 rounded-md text-xs transition-all cursor-pointer ${viewMode === mode
+                  className={`px-3 py-1 rounded text-xs transition-all cursor-pointer ${viewMode === mode
                     ? 'bg-white dark:bg-slate-700 text-slate-800 dark:text-white font-bold shadow-2xs'
                     : 'text-slate-500 dark:text-slate-400 font-medium hover:text-slate-800 dark:hover:text-white'
                     }`}
