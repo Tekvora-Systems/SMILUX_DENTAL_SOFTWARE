@@ -46,7 +46,7 @@ export default function LandingPage() {
           <div className="w-full border-y border-[#E7E7E7] bg-slate-50 py-5">
             <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
               <p className="text-center text-[10px] font-bold text-[#595959] uppercase tracking-widest mb-4">
-                Trusted integrations &amp; partnerships
+                Built-in tools &amp; integrations
               </p>
               <div className="flex flex-wrap items-center justify-center gap-8 opacity-50 grayscale">
                 <div className="flex items-center gap-2 text-slate-600 font-bold text-sm">

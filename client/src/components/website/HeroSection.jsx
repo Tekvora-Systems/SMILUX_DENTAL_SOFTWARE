@@ -1,21 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
-const BULLETS = [
-  { icon: '🗓️', text: 'Smart appointment scheduling with auto SMS & WhatsApp reminders' },
-  { icon: '🦷', text: 'FDI dental charting — odontogram, clinical notes & full history' },
-  { icon: '📱', text: 'M-Pesa Daraja STK Push with instant receipt reconciliation' },
-  { icon: '🏥', text: 'Kenya SHA & insurance claims, pre-auth & policy management' },
-  { icon: '👥', text: 'Staff roles, multi-branch management & granular permissions' },
-  { icon: '📊', text: 'Real-time revenue dashboards, expense tracking & KPI reports' },
-];
-
-const TRUST_LOGOS = [
-  { label: 'M-Pesa',    bg: 'bg-emerald-500', letter: 'M' },
-  { label: 'SHA Kenya', bg: 'bg-blue-600',    letter: 'S' },
-  { label: 'Jubilee',   bg: 'bg-orange-500',  letter: 'J' },
-  { label: 'WhatsApp',  bg: 'bg-green-500',   letter: 'W' },
-];
+ 
 
 export default function HeroSection() {
   const navigate = useNavigate();
@@ -23,16 +9,12 @@ export default function HeroSection() {
   return (
     <section className="w-full relative overflow-hidden bg-[linear-gradient(160deg,#F6F3FF_0%,#ffffff_55%,#F0EBFF_100%)]">
 
-      {/* Faint dot-grid texture */}
-      <div className="absolute inset-0 pointer-events-none opacity-[0.035]"
-        style={{ backgroundImage: 'repeating-conic-gradient(#7B4DFF 0% 25%, transparent 0% 50%)', backgroundSize: '20px 20px' }} />
-
-      {/* Glow blobs */}
+        {/* Glow blobs */}
       <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-purple-200/30 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-pink-100/40 blur-3xl pointer-events-none" />
 
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 lg:py-20">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6   py-10 ">
+        <div className="grid lg:grid-cols-[1.15fr_0.85fr] gap-2 items-start">
 
           {/* ── LEFT: Copy ── */}
           <div className="flex flex-col">
@@ -63,15 +45,7 @@ export default function HeroSection() {
               Everything your clinic needs, in one beautifully simple platform.
             </p>
 
-            {/* Feature bullets — 2 col */}
-            <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2.5">
-              {BULLETS.map((b) => (
-                <div key={b.text} className="flex items-start gap-2.5">
-                  <span className="shrink-0 mt-0.5 flex h-5 w-5 items-center justify-center rounded bg-purple-100 text-[11px]">{b.icon}</span>
-                  <span className="text-[12.5px] text-[#595959] leading-snug">{b.text}</span>
-                </div>
-              ))}
-            </div>
+             
 
             {/* CTAs */}
             <div className="mt-8 flex flex-wrap gap-3">
@@ -90,43 +64,7 @@ export default function HeroSection() {
                 Book a Demo
               </button>
             </div>
-
-            {/* Trust row */}
-            <div className="mt-7 flex flex-col gap-3">
-              {/* Avatar stack + clinic count */}
-              <div className="flex items-center gap-3">
-                <div className="flex -space-x-2">
-                  {[['#7B4DFF','Dr K'],['#e8368f','Dr A'],['#2ec4b6','Dr M'],['#ffb703','Dr J']].map(([c,l],i) => (
-                    <div key={i} title={l} className="h-8 w-8 rounded-full border-2 border-white flex items-center justify-center text-[10px] font-bold text-white shrink-0" style={{ background: c }}>{l[2]}</div>
-                  ))}
-                </div>
-                <div>
-                  <p className="text-[13px] font-bold text-[#222323]">Trusted by 500+ dental clinics across Kenya</p>
-                  <p className="text-[11px] text-[#595959]">Nairobi · Mombasa · Kisumu · Nakuru & beyond</p>
-                </div>
-              </div>
-
-              {/* Integration logos row */}
-              <div className="flex items-center gap-2 flex-wrap">
-                <span className="text-[11px] font-semibold text-[#595959]">Works with:</span>
-                {TRUST_LOGOS.map((t) => (
-                  <div key={t.label} className="flex items-center gap-1.5 bg-white border border-[#E7E7E7] rounded px-2.5 py-1 shadow-[0px_1px_2px_rgba(0,0,0,0.05)]">
-                    <div className={`h-4 w-4 rounded-sm ${t.bg} flex items-center justify-center`}>
-                      <span className="text-white text-[8px] font-black">{t.letter}</span>
-                    </div>
-                    <span className="text-[11px] font-semibold text-[#595959]">{t.label}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* No-risk micro-copy */}
-              <p className="text-[11px] text-[#595959] flex items-center gap-1.5">
-                <svg className="h-3.5 w-3.5 text-emerald-500 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                No credit card required · Full access from day one · Cancel anytime
-              </p>
-            </div>
+ 
           </div>
 
           {/* ── RIGHT: Dashboard mockup ── */}
