@@ -3,10 +3,10 @@ import { useNavigate } from 'react-router-dom';
 
 // ─── Icons ─────────────────────────────────────────────────────────────────
 
-function CheckIcon() {
+function CheckIcon({ color = '#7B4DFF' }) {
   return (
-    <svg className="w-4 h-4 text-[#7B4DFF] shrink-0" viewBox="0 0 18 18" fill="none">
-      <path d="M3.75 9L7.5 12.75L14.25 5.25" stroke="#7B4DFF" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+    <svg className="w-4 h-4 shrink-0" viewBox="0 0 18 18" fill="none">
+      <path d="M3.75 9L7.5 12.75L14.25 5.25" stroke={color} strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }
@@ -103,6 +103,23 @@ const PREMIUM_FEATURES = [
   'Dedicated Account Manager & Open API Access',
 ];
 
+const COMPARISON_ROWS = [
+  { feature: 'Patient Records', essential: true, professional: true, premium: true },
+  { feature: 'Appointment Scheduling', essential: true, professional: true, premium: true },
+  { feature: 'Dental Charting (FDI)', essential: true, professional: true, premium: true },
+  { feature: 'M-Pesa STK Push', essential: true, professional: true, premium: true },
+  { feature: 'SMS Reminders', essential: true, professional: true, premium: true },
+  { feature: 'WhatsApp Reminders', essential: false, professional: true, premium: true },
+  { feature: 'Insurance / SHA Claims', essential: false, professional: true, premium: true },
+  { feature: 'Inventory & Consumables', essential: false, professional: true, premium: true },
+  { feature: 'Lab Work Orders', essential: false, professional: true, premium: true },
+  { feature: 'Multi-Branch Management', essential: false, professional: false, premium: true },
+  { feature: 'PACS / X-Ray Archiving', essential: false, professional: false, premium: true },
+  { feature: 'KRA eTIMS Integration', essential: false, professional: false, premium: true },
+  { feature: 'Digital Consent Forms', essential: false, professional: false, premium: true },
+  { feature: 'Dedicated Account Manager', essential: false, professional: false, premium: true },
+];
+
 // ─── Billing toggle ────────────────────────────────────────────────────────
 function BillingToggle({ value, onChange }) {
   const monthlyRef = useRef(null);
@@ -148,16 +165,33 @@ function BillingToggle({ value, onChange }) {
 function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, monthlyPrice, billing, features, featuresLabel, variant, trialBadge, onCta }) {
   const price = billing === 'annual' ? annualPrice : monthlyPrice;
 
-  const cardBorder = variant === 'premium'
-    ? 'shadow-[0px_0px_0px_2px_#7B4DFF,0px_2px_8px_rgba(0,0,0,0.08)]'
-    : 'shadow-[0px_1px_2px_rgba(0,0,0,0.08),0px_2px_4px_rgba(0,0,0,0.04)]';
+  const isPopular = variant === 'professional';
+  const isPremium = variant === 'premium';
 
-  const btnClass = variant === 'professional'
-    ? 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] hover:brightness-105 active:scale-[0.998] transition-all cursor-pointer'
+  const cardClass = isPopular
+    ? 'bg-white rounded flex flex-col justify-between min-h-[640px] p-5 relative shadow-[0px_0px_0px_2px_#7B4DFF,0px_8px_32px_rgba(123,77,255,0.18)]'
+    : isPremium
+      ? 'bg-white rounded flex flex-col justify-between min-h-[640px] p-5 relative shadow-[0px_1px_2px_rgba(0,0,0,0.08),0px_2px_4px_rgba(0,0,0,0.04)] border border-[#E7E7E7]'
+      : 'bg-white rounded flex flex-col justify-between min-h-[640px] p-5 relative shadow-[0px_1px_2px_rgba(0,0,0,0.08),0px_2px_4px_rgba(0,0,0,0.04)] border border-[#E7E7E7]';
+
+  const btnClass = isPopular
+    ? 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] hover:brightness-105 active:scale-[0.998] transition-all cursor-pointer shadow'
     : 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-[#5733be] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] hover:bg-[#F2F5F7] active:scale-[0.998] transition-all cursor-pointer';
 
   return (
-    <div className={`bg-white rounded flex flex-col justify-between min-h-[640px] p-5 ${cardBorder}`}>
+    <div className={cardClass}>
+      {/* Most Popular floating badge */}
+      {isPopular && (
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
+          <span className="inline-flex items-center gap-1.5 bg-[linear-gradient(90deg,#9C7AFF,#6C44E0)] text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-[0px_2px_8px_rgba(123,77,255,0.35)]">
+            <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
+              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+            </svg>
+            Most Popular
+          </span>
+        </div>
+      )}
+
       {/* Upper */}
       <div className="flex flex-col gap-4">
         {/* Badge */}
@@ -208,12 +242,71 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
         <ul className="flex flex-col gap-2.5">
           {features.map((f) => (
             <li key={f} className="flex items-center gap-2">
-              <CheckIcon />
+              <CheckIcon color={isPopular ? '#7B4DFF' : '#7B4DFF'} />
               <span className="text-[12px] leading-[16px] text-[#222323]">{f}</span>
             </li>
           ))}
         </ul>
       </div>
+    </div>
+  );
+}
+
+// ─── Comparison table ──────────────────────────────────────────────────────
+function ComparisonTable() {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className="mt-6">
+      <div className="flex justify-center">
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          className="inline-flex items-center gap-2 text-[13px] font-semibold text-[#7B4DFF] hover:underline cursor-pointer transition-all"
+        >
+          <svg
+            className={`h-4 w-4 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+            fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}
+          >
+            <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+          </svg>
+          {open ? 'Hide' : 'Show'} full plan comparison
+        </button>
+      </div>
+
+      {open && (
+        <div className="mt-5 bg-white/80 border border-purple-200/60 rounded overflow-hidden shadow-[0px_1px_3px_rgba(0,0,0,0.06)] backdrop-blur-sm">
+          <div className="grid grid-cols-4 bg-purple-50/60 border-b border-purple-100 px-4 py-2.5 text-[12px] font-bold text-[#595959]">
+            <span>Feature</span>
+            <span className="text-center">Essential</span>
+            <span className="text-center text-[#7B4DFF]">Professional</span>
+            <span className="text-center">Premium</span>
+          </div>
+          {COMPARISON_ROWS.map((row, i) => (
+            <div key={row.feature} className={`grid grid-cols-4 px-4 py-2.5 text-[12px] border-b border-[#F3F4F6] last:border-b-0 ${i % 2 === 0 ? '' : 'bg-slate-50/40'}`}>
+              <span className="text-[#222323] font-medium">{row.feature}</span>
+              <span className="flex justify-center">
+                {row.essential
+                  ? <svg className="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  : <svg className="h-4 w-4 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                }
+              </span>
+              <span className="flex justify-center">
+                {row.professional
+                  ? <svg className="h-4 w-4 text-[#7B4DFF]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  : <svg className="h-4 w-4 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                }
+              </span>
+              <span className="flex justify-center">
+                {row.premium
+                  ? <svg className="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
+                  : <svg className="h-4 w-4 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                }
+              </span>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
@@ -224,8 +317,8 @@ export default function PricingSection() {
   const navigate = useNavigate();
 
   return (
-    <section id="pricing" className="py-24 bg-[linear-gradient(180deg,#F6F3FF_0%,#DED0FF_100%)]">
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <section id="pricing" className="w-full py-24 bg-[linear-gradient(180deg,#F6F3FF_0%,#DED0FF_100%)]">
+      <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 mb-10">
@@ -253,8 +346,8 @@ export default function PricingSection() {
           </div>
         </div>
 
-        {/* Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch">
+        {/* Cards — mt-6 for the floating badge overhang */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch mt-6">
           <PlanCard
             badge="Solo & Private Clinics"
             badgeSolid={false}
@@ -305,9 +398,12 @@ export default function PricingSection() {
           Smilux Dental subscriptions are priced per active dental operatory · billing frequency · clinic branches.
         </p>
 
+        {/* Comparison table (collapsed) */}
+        <ComparisonTable />
+
         {/* Bottom CTA bar */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/60 border border-purple-200/60 rounded-lg px-5 py-4 backdrop-blur-sm">
-          <span className="text-[14px] text-[#222323]">
+        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/60 border border-purple-200/60 rounded-full  px-5 py-4 backdrop-blur-sm">
+          <span className="text-[14px] text-[#222323] ">
             Not ready to purchase? Start your <span className="font-bold text-[#7B4DFF]">14-day free trial</span> — no credit card required.
           </span>
           <button

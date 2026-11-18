@@ -71,7 +71,7 @@ function OtpInput({ value, onChange, disabled }) {
           onFocus={(e) => e.target.select()}
           style={{ width: '48px', height: '56px' }}
           className={[
-            'rounded-lg border-2 text-center text-2xl font-bold',
+            'rounded border-2 text-center text-2xl font-bold',
             'text-slate-900 bg-white outline-none',
             'transition-all duration-150',
             digit
@@ -185,14 +185,14 @@ export default function OtpVerifyPage({ email, onLoginSuccess, onNavigate, onOpe
         <AuthErrorBanner error={error} onDismiss={() => setError('')} />
 
         {successMsg && (
-          <div className="rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
+          <div className="rounded border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
             {successMsg}
           </div>
         )}
 
         {/* Dev autofill banner */}
         {devCode && (
-          <div className="flex items-center justify-between gap-3 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3">
+          <div className="flex items-center justify-between gap-3 rounded border border-amber-200 bg-amber-50 px-4 py-3">
             <div className="text-sm text-amber-800">
               <span className="font-semibold">Dev mode</span> — your code is{' '}
               <span className="font-mono font-bold tracking-widest">{devCode}</span>
