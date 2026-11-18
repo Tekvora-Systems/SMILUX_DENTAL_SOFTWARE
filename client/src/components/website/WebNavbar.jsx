@@ -48,7 +48,7 @@ export default function WebNavbar() {
 
   return (
     <header className={`w-full bg-white border-b border-[#E7E7E7] transition-all duration-150 ${scrolled ? 'shadow-[0px_1px_3px_rgba(0,0,0,0.08),0px_1px_2px_rgba(0,0,0,0.05)]' : 'shadow-[0px_1px_2px_rgba(0,0,0,0.04)]'}`}>
-        <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-[52px] items-center justify-between gap-4">
 
             {/* Logo */}
@@ -106,13 +106,21 @@ export default function WebNavbar() {
 
             {/* Desktop CTAs */}
             <div className="hidden md:flex items-center gap-2 shrink-0">
+              {/* Login */}
               <button type="button" onClick={() => navigate('/login')}
                 className="h-[32px] px-4 text-[13px] font-semibold text-[#5733be] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.05)] hover:bg-[#F2F5F7] hover:border-[#D8D8DF] active:scale-[0.998] transition-all cursor-pointer">
-                Sign in
+                Login
               </button>
+              {/* Start Free Trial */}
               <button type="button" onClick={() => navigate('/register')}
                 className="h-[32px] px-4 text-[13px] font-semibold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.05)] hover:brightness-105 active:scale-[0.998] transition-all cursor-pointer">
                 Start Free Trial
+              </button>
+              {/* Book a Demo */}
+              <button type="button" onClick={() => scrollTo('#about')}
+                className="h-[32px] px-4 text-[13px] font-semibold text-[#5733be] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.05)] hover:bg-[#F2F5F7] hover:border-[#D8D8DF] active:scale-[0.998] transition-all cursor-pointer flex items-center gap-1.5">
+                
+                Book a Demo
               </button>
             </div>
 
@@ -140,11 +148,15 @@ export default function WebNavbar() {
             <div className="pt-3 flex flex-col gap-2 border-t border-[#E7E7E7] mt-2">
               <button type="button" onClick={() => { setMenuOpen(false); navigate('/login'); }}
                 className="w-full h-9 text-[13px] font-semibold text-[#5733be] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded hover:bg-[#F2F5F7] transition-all cursor-pointer">
-                Sign in
+                Login
               </button>
               <button type="button" onClick={() => { setMenuOpen(false); navigate('/register'); }}
                 className="w-full h-9 text-[13px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] rounded hover:brightness-105 transition-all cursor-pointer">
                 Start Free Trial
+              </button>
+              <button type="button" onClick={() => { setMenuOpen(false); scrollTo('#about'); }}
+                className="w-full h-9 text-[13px] font-semibold text-[#5733be] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded hover:bg-[#F2F5F7] transition-all cursor-pointer">
+                Book a Demo
               </button>
             </div>
           </div>
