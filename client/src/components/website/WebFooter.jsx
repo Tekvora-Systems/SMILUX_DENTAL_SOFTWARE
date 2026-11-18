@@ -24,34 +24,36 @@ export default function WebFooter() {
   };
 
   return (
-    /* Outer wrapper — white bg so the rounded corners show gap on the sides */
-    <div className="w-full bg-white px-4 sm:px-6 lg:px-8 pb-6 pt-0">
+    /* White outer — gives the rounded card side gaps */
+    <div className="w-full bg-white px-4 sm:px-6 lg:px-8 pt-0">
       <footer
-        className="w-full bg-[linear-gradient(180deg,#1c2536_0%,#0d1117_100%)] text-slate-400 rounded-t-[20px] overflow-hidden"
-        style={{ boxShadow: '0 -4px 32px rgba(0,0,0,0.18)' }}
+        className="w-full bg-[linear-gradient(180deg,#F6F3FF_0%,#DED0FF_100%)] rounded-t-[20px] overflow-hidden"
+        style={{ boxShadow: '0 -2px 16px rgba(123,77,255,0.08), 0 1px 3px rgba(0,0,0,0.04)' }}
       >
+       <div className="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-[#7B4DFF]/8 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-[#e8368f]/6 blur-3xl pointer-events-none" />
 
         {/* CTA strip */}
-        <div className="w-full border-b border-white/5 px-6 sm:px-10 py-10">
+        <div className="w-full border-b border-purple-200/60 px-6 sm:px-10 py-10">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
-              <h3 className="text-[22px] font-extrabold text-white leading-snug">
+              <h3 className="text-[22px] font-extrabold text-[#222323] leading-snug">
                 Ready to modernise your clinic?
               </h3>
-              <p className="mt-1 text-[13px] text-slate-400">
+              <p className="mt-1 text-[13px] text-[#595959]">
                 Join 500+ dental practices in Kenya already running on Smilux.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 shrink-0">
               <button
                 onClick={() => navigate('/register')}
-                className="h-9 px-5 text-[13px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.12)] hover:brightness-110 active:scale-[0.998] transition-all cursor-pointer"
+                className="h-9 px-5 text-[13px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.10)] hover:brightness-110 active:scale-[0.998] transition-all cursor-pointer"
               >
                 Start 14-Day Free Trial
               </button>
               <button
                 onClick={() => navigate('/login')}
-                className="h-9 px-5 text-[13px] font-semibold text-slate-300 border border-white/10 rounded hover:bg-white/5 transition-colors cursor-pointer"
+                className="h-9 px-5 text-[13px] font-semibold text-[#5733be] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.05)] hover:bg-[#F2F5F7] active:scale-[0.998] transition-all cursor-pointer"
               >
                 Sign In
               </button>
@@ -68,14 +70,14 @@ export default function WebFooter() {
               <Link to="/" className="flex items-center gap-2 mb-4">
                 <img src="/favicon.svg" alt="Smilux" className="h-8 w-8" />
                 <div>
-                  <div className="text-[16px] font-extrabold text-white tracking-tight">
+                  <div className="text-[16px] font-extrabold text-[#222323] tracking-tight">
                     Smilux<span className="text-[#e8368f]">.</span>
                   </div>
-                  <div className="text-[9px] font-bold text-slate-500 uppercase tracking-widest">Dental Software</div>
+                  <div className="text-[9px] font-bold text-[#595959] uppercase tracking-widest">Dental Software</div>
                 </div>
               </Link>
 
-              <p className="text-[13px] text-slate-500 leading-relaxed max-w-xs">
+              <p className="text-[13px] text-[#595959] leading-relaxed max-w-xs">
                 Kenya's leading dental practice management platform — from solo practices to multi-branch groups.
               </p>
 
@@ -84,7 +86,7 @@ export default function WebFooter() {
                 {SOCIALS.map((s) => (
                   <a
                     key={s.label} href={s.href} aria-label={s.label}
-                    className="flex h-7 w-7 items-center justify-center rounded border border-white/8 bg-white/5 text-slate-500 hover:bg-[#7B4DFF]/20 hover:text-[#9C7AFF] transition-all"
+                    className="flex h-7 w-7 items-center justify-center rounded border border-purple-200 bg-white/60 text-[#595959] hover:bg-[#7B4DFF] hover:text-white hover:border-[#7B4DFF] transition-all"
                   >
                     {s.icon}
                   </a>
@@ -96,9 +98,9 @@ export default function WebFooter() {
                 {['HIPAA Ready', 'SHA Kenya', 'M-Pesa'].map((b) => (
                   <span
                     key={b}
-                    className="inline-flex items-center gap-1.5 rounded border border-white/8 bg-white/5 px-2.5 py-0.5 text-[11px] font-semibold text-slate-400"
+                    className="inline-flex items-center gap-1.5 rounded border border-purple-200 bg-white/60 px-2.5 py-0.5 text-[11px] font-semibold text-[#5733be]"
                   >
-                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 inline-block" />
+                    <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 inline-block" />
                     {b}
                   </span>
                 ))}
@@ -108,13 +110,13 @@ export default function WebFooter() {
             {/* Link columns */}
             {Object.entries(LINKS).map(([group, items]) => (
               <div key={group}>
-                <h4 className="text-[10px] font-bold text-white uppercase tracking-widest mb-3">{group}</h4>
+                <h4 className="text-[10px] font-bold text-[#222323] uppercase tracking-widest mb-3">{group}</h4>
                 <ul className="space-y-2">
                   {items.map(([label, href]) => (
                     <li key={label}>
                       {href.startsWith('#')
-                        ? <button type="button" onClick={() => scrollTo(href)} className="text-[13px] text-slate-500 hover:text-slate-200 transition-colors text-left cursor-pointer">{label}</button>
-                        : <Link to={href} className="text-[13px] text-slate-500 hover:text-slate-200 transition-colors">{label}</Link>
+                        ? <button type="button" onClick={() => scrollTo(href)} className="text-[13px] text-[#595959] hover:text-[#7B4DFF] transition-colors text-left cursor-pointer">{label}</button>
+                        : <Link to={href} className="text-[13px] text-[#595959] hover:text-[#7B4DFF] transition-colors">{label}</Link>
                       }
                     </li>
                   ))}
@@ -123,14 +125,27 @@ export default function WebFooter() {
             ))}
           </div>
 
-          {/* Bottom bar */}
-          <div className="mt-10 pt-5 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-[12px] text-slate-600">
-              © {new Date().getFullYear()} Tekvora Systems Ltd. All rights reserved.
+          <div className="mt-10 pt-5 border-t border-purple-200/60 flex flex-col sm:flex-row items-center justify-between gap-3">
+            <p className="text-[12px] text-[#595959]">
+              © {new Date().getFullYear()} Smilux Dental Software. All rights reserved.
             </p>
-            <div className="flex items-center gap-1.5 text-[12px] text-slate-600">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
-              All systems operational
+            <div className="flex items-center gap-3 text-[12px] text-[#595959]">
+              <span>
+                A product of{' '}
+                <a
+                  href="https://tekvora.co.ke"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-[#7B4DFF] hover:underline"
+                >
+                  Tekvora Systems
+                </a>
+              </span>
+              <span className="h-3 w-px bg-purple-300" />
+              <div className="flex items-center gap-1.5">
+                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><title>broadcast</title><defs><mask id="SVGGzBIqcAm"><g fill="none" stroke="#fff" stroke-linejoin="round" stroke-width="4"><path fill="#555" d="M24 28.63a4.54 4.54 0 0 0 4.546-4.532A4.54 4.54 0 0 0 24 19.567a4.54 4.54 0 0 0-4.545 4.53A4.54 4.54 0 0 0 24 28.63Z"/><path stroke-linecap="round" d="M16 15c-5.333 4.97-5.333 13.03 0 18m16 0c5.333-4.97 5.333-13.03 0-18M9.858 10c-7.81 7.786-7.81 20.41 0 28.196m28.284 0c7.81-7.786 7.81-20.41 0-28.196"/></g></mask></defs><path fill="#2acd3a" d="M0 0h48v48H0z" mask="url(#SVGGzBIqcAm)"/></svg>
+                All systems operational
+              </div>
             </div>
           </div>
         </div>
