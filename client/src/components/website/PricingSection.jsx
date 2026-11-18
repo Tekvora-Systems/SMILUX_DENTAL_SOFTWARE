@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { motion, AnimatePresence } from 'motion/react';
+import { Reveal, RevealGroup, RevealItem, fadeUp, EASE } from './motion.js';
 
 // ─── Icons ─────────────────────────────────────────────────────────────────
 
@@ -120,43 +122,36 @@ const COMPARISON_ROWS = [
   { feature: 'Dedicated Account Manager', essential: false, professional: false, premium: true },
 ];
 
-// ─── Billing toggle ────────────────────────────────────────────────────────
 function BillingToggle({ value, onChange }) {
-  const monthlyRef = useRef(null);
-  const annualRef = useRef(null);
-  const [ind, setInd] = useState({ left: 0, width: 0, ready: false });
-
-  useEffect(() => {
-    const btn = value === 'monthly' ? monthlyRef.current : annualRef.current;
-    if (btn) setInd({ left: btn.offsetLeft, width: btn.offsetWidth, ready: true });
-  }, [value]);
-
   return (
     <div className="relative inline-flex items-center p-0.5 rounded-full bg-white/90 border border-purple-200/90 shadow-sm select-none">
-      <span
-        aria-hidden="true"
-        style={{ transform: `translateX(${ind.left}px)`, width: `${ind.width}px` }}
-        className={`absolute top-0.5 bottom-0.5 left-0 rounded-full bg-[#7B4DFF] shadow pointer-events-none ${ind.ready ? 'transition-all duration-300 ease-out' : 'opacity-0'}`}
-      />
-      <button
-        ref={monthlyRef}
-        type="button"
-        onClick={() => onChange('monthly')}
-        className={`relative z-10 px-4 py-1.5 rounded-full text-sm font-semibold transition-colors duration-200 cursor-pointer ${value === 'monthly' ? 'text-white' : 'text-slate-600 hover:text-slate-900'}`}
-      >
-        Monthly
-      </button>
-      <button
-        ref={annualRef}
-        type="button"
-        onClick={() => onChange('annual')}
-        className={`relative z-10 flex items-center gap-1.5 px-4 py-1.5 rounded-full text-sm font-semibold transition-colors duration-200 cursor-pointer ${value === 'annual' ? 'text-white' : 'text-slate-600 hover:text-slate-900'}`}
-      >
-        Annual
-        <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none transition-all duration-200 ${value === 'annual' ? 'bg-white/25 text-white' : 'bg-emerald-100 text-emerald-700'}`}>
-          Save 20%
-        </span>
-      </button>
+      {(['monthly', 'annual']).map((opt) => {
+        const active = value === opt;
+        return (
+          <button
+            key={opt}
+            type="button"
+            onClick={() => onChange(opt)}
+            className={`relative z-10 px-4 py-1.5 rounded-full text-sm font-semibold transition-colors duration-200 cursor-pointer ${active ? 'text-white' : 'text-slate-600 hover:text-slate-900'} ${opt === 'annual' ? 'flex items-center gap-1.5' : ''}`}
+          >
+            {active && (
+              <motion.span
+                layoutId="billingPill"
+                className="absolute inset-0 rounded-full bg-[#7B4DFF] shadow pointer-events-none -z-10"
+                transition={{ type: 'spring', stiffness: 400, damping: 32 }}
+              />
+            )}
+            {opt === 'monthly' ? 'Monthly' : (
+              <>
+                Annual
+                <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded-full leading-none transition-colors duration-200 ${active ? 'bg-white/25 text-white' : 'bg-emerald-100 text-emerald-700'}`}>
+                  Save 20%
+                </span>
+              </>
+            )}
+          </button>
+        );
+      })}
     </div>
   );
 }
@@ -179,7 +174,11 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
     : 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-[#5733be] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] hover:bg-[#F2F5F7] active:scale-[0.998] transition-all cursor-pointer';
 
   return (
-    <div className={cardClass}>
+    <motion.div
+      whileHover={{ y: -6 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      className={cardClass}
+    >
       {/* Most Popular floating badge */}
       {isPopular && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
@@ -223,9 +222,16 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
 
         {/* CTA */}
         <div className="flex flex-col gap-2">
-          <button type="button" onClick={onCta} className={btnClass}>
+          <motion.button
+            type="button"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+            onClick={onCta}
+            className={btnClass}
+          >
             Purchase Plan
-          </button>
+          </motion.button>
           {trialBadge && (
             <div className="flex justify-center">
               <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-purple-100 text-[#6C44E0] text-[12px] font-medium">
@@ -248,7 +254,7 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
           ))}
         </ul>
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -274,7 +280,15 @@ function ComparisonTable() {
         </button>
       </div>
 
+      <AnimatePresence initial={false}>
       {open && (
+        <motion.div
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: 'auto', opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.4, ease: EASE }}
+          className="overflow-hidden"
+        >
         <div className="mt-5 bg-white/80 border border-purple-200/60 rounded overflow-hidden shadow-[0px_1px_3px_rgba(0,0,0,0.06)] backdrop-blur-sm">
           <div className="grid grid-cols-4 bg-purple-50/60 border-b border-purple-100 px-4 py-2.5 text-[12px] font-bold text-[#595959]">
             <span>Feature</span>
@@ -306,7 +320,9 @@ function ComparisonTable() {
             </div>
           ))}
         </div>
+        </motion.div>
       )}
+      </AnimatePresence>
     </div>
   );
 }
@@ -323,18 +339,18 @@ export default function PricingSection() {
         {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 mb-10">
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-purple-200 px-4 py-1.5 mb-3">
+            <Reveal className="inline-flex items-center gap-2 rounded-full bg-white/70 border border-purple-200 px-4 py-1.5 mb-3">
               <span className="text-xs font-bold text-[#7B4DFF] uppercase tracking-wide">Simple pricing</span>
-            </div>
-            <h2 className="text-4xl font-extrabold text-[#222323] tracking-tight leading-tight">
+            </Reveal>
+            <Reveal as="h2" delay={0.05} className="text-4xl font-extrabold text-[#222323] tracking-tight leading-tight">
               Select a Dental Clinic Plan
-            </h2>
-            <p className="mt-2 text-[15px] text-slate-600">
+            </Reveal>
+            <Reveal as="p" delay={0.1} className="mt-2 text-[15px] text-slate-600">
               No hidden fees · Cancel anytime · 14-day free trial on all plans
-            </p>
+            </Reveal>
           </div>
 
-          <div className="flex flex-col items-start sm:items-end gap-3 shrink-0">
+          <Reveal delay={0.15} className="flex flex-col items-start sm:items-end gap-3 shrink-0">
             <BillingToggle value={billing} onChange={setBilling} />
             <button
               type="button"
@@ -343,11 +359,12 @@ export default function PricingSection() {
             >
               See Full Plan Comparison →
             </button>
-          </div>
+          </Reveal>
         </div>
 
         {/* Cards — mt-6 for the floating badge overhang */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch mt-6">
+        <RevealGroup className="grid grid-cols-1 md:grid-cols-3 gap-5 items-stretch mt-6">
+          <RevealItem>
           <PlanCard
             badge="Solo & Private Clinics"
             badgeSolid={false}
@@ -362,6 +379,8 @@ export default function PricingSection() {
             variant="essential"
             onCta={() => navigate('/register')}
           />
+          </RevealItem>
+          <RevealItem>
           <PlanCard
             badge="Most Popular"
             badgeSolid={true}
@@ -376,6 +395,8 @@ export default function PricingSection() {
             variant="professional"
             onCta={() => navigate('/register')}
           />
+          </RevealItem>
+          <RevealItem>
           <PlanCard
             badge="Multi-Branch & Full Automation"
             badgeSolid={false}
@@ -391,29 +412,33 @@ export default function PricingSection() {
             trialBadge={true}
             onCta={() => navigate('/register')}
           />
-        </div>
+          </RevealItem>
+        </RevealGroup>
 
         {/* Footnote */}
-        <p className="text-center text-[13px] font-semibold text-[#7B4DFF] mt-8">
+        <Reveal as="p" className="text-center text-[13px] font-semibold text-[#7B4DFF] mt-8">
           Smilux Dental subscriptions are priced per active dental operatory · billing frequency · clinic branches.
-        </p>
+        </Reveal>
 
         {/* Comparison table (collapsed) */}
         <ComparisonTable />
 
         {/* Bottom CTA bar */}
-        <div className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/60 border border-purple-200/60 rounded-full  px-5 py-4 backdrop-blur-sm">
+        <Reveal className="mt-6 flex flex-col sm:flex-row items-center justify-between gap-4 bg-white/60 border border-purple-200/60 rounded-full px-5 py-4 backdrop-blur-sm">
           <span className="text-[14px] text-[#222323] ">
             Not ready to purchase? Start your <span className="font-bold text-[#7B4DFF]">14-day free trial</span> — no credit card required.
           </span>
-          <button
+          <motion.button
             type="button"
+            whileHover={{ scale: 1.04 }}
+            whileTap={{ scale: 0.97 }}
+            transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             onClick={() => navigate('/register')}
-            className="shrink-0 px-5 py-2 rounded text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] hover:brightness-105 active:scale-[0.998] transition-all shadow cursor-pointer"
+            className="shrink-0 px-5 py-2 rounded text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] hover:brightness-105 transition-all shadow cursor-pointer"
           >
             Start Free Trial
-          </button>
-        </div>
+          </motion.button>
+        </Reveal>
       </div>
     </section>
   );

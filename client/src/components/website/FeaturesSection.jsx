@@ -1,4 +1,6 @@
 import React from 'react';
+import { motion } from 'motion/react';
+import { Reveal, RevealGroup, RevealItem, fadeUp } from './motion.js';
 
 const FEATURES = [
   {
@@ -52,43 +54,51 @@ export default function FeaturesSection() {
 
         {/* Header */}
         <div className="mb-10">
-          <div className="inline-flex items-center gap-2 rounded border border-purple-200 bg-purple-50 px-3 py-1 mb-3">
+          <Reveal className="inline-flex items-center gap-2 rounded border border-purple-200 bg-purple-50 px-3 py-1 mb-3">
             <span className="text-[11px] font-bold text-[#7B4DFF] uppercase tracking-wide">Everything you need</span>
-          </div>
+          </Reveal>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
-              <h2 className="text-[28px] font-extrabold text-[#222323] tracking-tight leading-tight">One platform, your entire practice</h2>
-              <p className="mt-1.5 text-[14px] text-[#595959] max-w-lg">Purpose-built for Kenyan dental clinics — not a generic SaaS with bolt-on features.</p>
+              <Reveal as="h2" delay={0.05} className="text-[28px] font-extrabold text-[#222323] tracking-tight leading-tight">One platform, your entire practice</Reveal>
+              <Reveal as="p" delay={0.1} className="mt-1.5 text-[14px] text-[#595959] max-w-lg">Purpose-built for Kenyan dental clinics — not a generic SaaS with bolt-on features.</Reveal>
             </div>
-            <span className="shrink-0 text-[13px] font-semibold text-[#7B4DFF]">6 core modules →</span>
+            <Reveal delay={0.15} as="span" className="shrink-0 text-[13px] font-semibold text-[#7B4DFF]">6 core modules →</Reveal>
           </div>
         </div>
 
         {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <RevealGroup className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {FEATURES.map((f) => (
-            <div key={f.title}
-              className="group bg-white border border-[#E7E7E7] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.06),0px_1px_3px_rgba(0,0,0,0.04)] p-5 hover:border-purple-300 hover:shadow-[0px_2px_8px_rgba(123,77,255,0.10)] transition-all duration-200 cursor-default">
+            <RevealItem key={f.title}>
+              <motion.div
+                whileHover={{ y: -6, scale: 1.015 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+                className="group h-full bg-white border border-[#E7E7E7] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.06),0px_1px_3px_rgba(0,0,0,0.04)] p-5 hover:border-purple-300 hover:shadow-[0px_2px_8px_rgba(123,77,255,0.10)] transition-colors duration-200 cursor-default">
 
-              {/* Icon */}
-              <div className={`inline-flex h-10 w-10 items-center justify-center rounded ${f.iconBg} mb-4`}>
-                {f.icon}
-              </div>
+                {/* Icon */}
+                <motion.div
+                  whileHover={{ rotate: -6, scale: 1.1 }}
+                  transition={{ type: 'spring', stiffness: 350, damping: 15 }}
+                  className={`inline-flex h-10 w-10 items-center justify-center rounded ${f.iconBg} mb-4`}
+                >
+                  {f.icon}
+                </motion.div>
 
-              <h3 className="text-[14px] font-bold text-[#222323] mb-1.5">{f.title}</h3>
-              <p className="text-[13px] text-[#595959] leading-relaxed mb-4">{f.desc}</p>
+                <h3 className="text-[14px] font-bold text-[#222323] mb-1.5">{f.title}</h3>
+                <p className="text-[13px] text-[#595959] leading-relaxed mb-4">{f.desc}</p>
 
-              {/* Tags */}
-              <div className="flex flex-wrap gap-1.5">
-                {f.tags.map((t) => (
-                  <span key={t} className="inline-flex items-center rounded border border-[#E7E7E7] bg-slate-50 px-2 py-0.5 text-[11px] font-semibold text-[#595959]">
-                    {t}
-                  </span>
-                ))}
-              </div>
-            </div>
+                {/* Tags */}
+                <div className="flex flex-wrap gap-1.5">
+                  {f.tags.map((t) => (
+                    <span key={t} className="inline-flex items-center rounded border border-[#E7E7E7] bg-slate-50 px-2 py-0.5 text-[11px] font-semibold text-[#595959]">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </motion.div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );

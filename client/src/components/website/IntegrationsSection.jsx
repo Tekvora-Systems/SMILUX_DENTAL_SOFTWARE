@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { motion } from 'motion/react';
+import { Reveal, fadeUp, fadeLeft, fadeRight } from './motion.js';
 
 const INTEGRATIONS = [
   {
@@ -37,7 +39,11 @@ function IntegrationCard({ item }) {
   const [failed, setFailed] = useState(false);
 
   return (
-    <div className="shrink-0 w-[420px] bg-white border border-[#E7E7E7] hover:bg-slate-50/40 transition-colors duration-200 group cursor-default">
+    <motion.div
+      whileHover={{ y: -4 }}
+      transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+      className="shrink-0 w-[420px] bg-white border border-[#E7E7E7] hover:bg-slate-50/40 transition-colors duration-200 group cursor-default"
+    >
       <div className="flex items-center gap-5 px-8 py-7">
 
         {/* Logo box — 64×64 so images are clearly visible */}
@@ -67,7 +73,7 @@ function IntegrationCard({ item }) {
         </div>
 
       </div>
-    </div>
+    </motion.div>
   );
 }
 
@@ -80,45 +86,57 @@ export default function IntegrationsSection() {
 
       {/* Header */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <p className="text-[11px] font-bold text-[#7B4DFF] uppercase tracking-widest mb-3">Integrations</p>
+        <Reveal as="p" variant={fadeUp} className="text-[11px] font-bold text-[#7B4DFF] uppercase tracking-widest mb-3">Integrations</Reveal>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
           <div>
-            <h2 className="text-[32px] sm:text-[40px] font-extrabold text-[#222323] tracking-tight leading-tight">
+            <Reveal as="h2" variant={fadeUp} delay={0.05} className="text-[32px] sm:text-[40px] font-extrabold text-[#222323] tracking-tight leading-tight">
               Works seamlessly with<br className="hidden sm:block" />
               your existing tools
-            </h2>
-            <p className="mt-3 text-[15px] text-[#595959] leading-relaxed max-w-2xl">
+            </Reveal>
+            <Reveal as="p" variant={fadeUp} delay={0.12} className="mt-3 text-[15px] text-[#595959] leading-relaxed max-w-2xl">
               Smilux connects natively with Kenya&apos;s most critical payment, insurance,
               and communication platforms. Everything built-in — no plugins, no extra
               setup, no developer needed.
-            </p>
+            </Reveal>
           </div>
-          <div className="shrink-0 flex items-center gap-2 bg-purple-50 border border-purple-200 rounded px-4 py-2.5">
+          <Reveal variant={fadeUp} delay={0.18} className="shrink-0 flex items-center gap-2 bg-purple-50 border border-purple-200 rounded px-4 py-2.5">
             <span className="h-2 w-2 rounded-full bg-[#7B4DFF] animate-pulse shrink-0" />
             <span className="text-[12px] font-bold text-[#7B4DFF]">5 integrations · all native</span>
-          </div>
+          </Reveal>
         </div>
       </div>
 
       {/* 2-row marquee */}
-      <div className="relative w-full ">
+      <div className="relative w-full">
         {/* Side fade masks */}
         <div className="absolute top-0 left-0 w-24 md:w-56 h-full bg-gradient-to-r from-white to-transparent z-10 pointer-events-none" />
         <div className="absolute top-0 right-0 w-24 md:w-56 h-full bg-gradient-to-l from-white to-transparent z-10 pointer-events-none" />
 
-        {/* Row 1 — scrolls left */}
-        <div className="overflow-hidden border-b border-[#E7E7E7] integ-row">
+        {/* Row 1 — slides in from right, then scrolls left */}
+        <motion.div
+          className="overflow-hidden border-b border-[#E7E7E7] integ-row"
+          initial={{ opacity: 0, x: 60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="flex integ-left" style={{ animationDuration: '40s' }}>
             {loop.map((item, i) => <IntegrationCard key={`r1-${i}`} item={item} />)}
           </div>
-        </div>
+        </motion.div>
 
-        {/* Row 2 — scrolls right (starts halfway so it covers the gap) */}
-        <div className="overflow-hidden integ-row">
+        {/* Row 2 — slides in from left, then scrolls right */}
+        <motion.div
+          className="overflow-hidden integ-row"
+          initial={{ opacity: 0, x: -60 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+        >
           <div className="flex integ-right" style={{ animationDuration: '40s' }}>
             {loop.map((item, i) => <IntegrationCard key={`r2-${i}`} item={item} />)}
           </div>
-        </div>
+        </motion.div>
       </div>
 
       <style>{`
