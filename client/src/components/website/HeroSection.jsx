@@ -8,7 +8,6 @@ export default function HeroSection() {
 
   return (
     <section className="w-full relative overflow-hidden bg-[linear-gradient(160deg,#F6F3FF_0%,#ffffff_55%,#F0EBFF_100%)]">
-
         {/* Glow blobs */}
       <div className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-purple-200/30 blur-3xl pointer-events-none" />
       <div className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-pink-100/40 blur-3xl pointer-events-none" />

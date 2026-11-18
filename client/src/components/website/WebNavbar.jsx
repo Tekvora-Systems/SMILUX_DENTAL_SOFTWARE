@@ -211,10 +211,11 @@ export default function WebNavbar() {
         </div>
       </div>
 
-      {/* ── Mega dropdowns — absolute overlay, never pushes content ── */}
+      {/* ── Mega dropdowns — fixed to viewport, never causes overflow ── */}
       {openMenu && (
         <div
-          className="hidden md:block absolute left-0 right-0 z-50"
+          className="hidden md:block fixed left-0 right-0 z-50"
+          style={{ top: navbarRef.current ? navbarRef.current.getBoundingClientRect().bottom : 52 }}
           onMouseLeave={() => setOpenMenu(null)}
         >
           <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-1 pb-3">
