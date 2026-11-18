@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'motion/react';
-import { Reveal, fadeUp } from './motion.js';
+import { Reveal, fadeUp } from './motion.jsx';
 
 const TESTIMONIALS = [
   {

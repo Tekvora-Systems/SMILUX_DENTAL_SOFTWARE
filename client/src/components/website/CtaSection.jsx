@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'motion/react';
-import { Reveal, RevealGroup, RevealItem, fadeUp, EASE } from './motion.js';
+import { Reveal, RevealGroup, RevealItem, fadeUp, EASE } from './motion.jsx';
 
 const PERKS = [
   '14-day free trial — no card required',

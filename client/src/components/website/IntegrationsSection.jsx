@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'motion/react';
-import { Reveal, fadeUp, fadeLeft, fadeRight } from './motion.js';
+import { Reveal, fadeUp, fadeLeft, fadeRight } from './motion.jsx';
 
 const INTEGRATIONS = [
   {

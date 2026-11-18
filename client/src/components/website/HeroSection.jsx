@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { staggerContainer, fadeUp, fadeDown, EASE } from './motion.js';
+import { staggerContainer, fadeUp, fadeDown, EASE } from './motion.jsx';
 
 export default function HeroSection() {
   const navigate = useNavigate();

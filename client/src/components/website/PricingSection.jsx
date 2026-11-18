@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
-import { Reveal, RevealGroup, RevealItem, fadeUp, EASE } from './motion.js';
+import { Reveal, RevealGroup, RevealItem, fadeUp, EASE } from './motion.jsx';
 
 // ─── Icons ─────────────────────────────────────────────────────────────────
 

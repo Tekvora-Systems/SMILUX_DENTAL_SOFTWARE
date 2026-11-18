@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { Reveal, RevealGroup, RevealItem, fadeUp } from './motion.js';
+import { Reveal, RevealGroup, RevealItem, fadeUp } from './motion.jsx';
 
 const FEATURES = [
   {
