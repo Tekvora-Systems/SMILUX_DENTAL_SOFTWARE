@@ -11,7 +11,7 @@ import WebFooter from '../../components/website/WebFooter.jsx';
 
 export default function LandingPage() {
   return (
-    <div className="min-h-screen bg-white font-sans text-slate-900 antialiased">
+    <div className="w-full min-h-screen bg-white font-sans text-slate-900 antialiased overflow-x-hidden">
       <SEO
         title="Smilux Dental Software — Kenya's #1 Dental Practice Management System"
         description="Appointments, dental charting, M-Pesa payments, SHA insurance, and analytics — all in one platform built for Kenyan dental clinics."
@@ -27,9 +27,9 @@ export default function LandingPage() {
         <HeroSection />
 
         {/* Logo / integrations strip */}
-        <div className="border-y border-[#E7E7E7] bg-slate-50/60 py-6">
-          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-            <p className="text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-5">
+        <div className="w-full border-y border-[#E7E7E7] bg-slate-50 py-5">
+          <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p className="text-center text-[10px] font-bold text-[#595959] uppercase tracking-widest mb-4">
               Trusted integrations &amp; partnerships
             </p>
             <div className="flex flex-wrap items-center justify-center gap-8 opacity-50 grayscale">

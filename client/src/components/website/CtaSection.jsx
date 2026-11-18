@@ -2,81 +2,87 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const PERKS = [
-  { icon: '✓', text: '14-day free trial — no card required' },
-  { icon: '✓', text: 'Full feature access from day one' },
-  { icon: '✓', text: 'Free data migration from paper / Excel' },
-  { icon: '✓', text: 'Onboarding call with our team' },
+  '14-day free trial — no card required',
+  'Full feature access from day one',
+  'Free data migration from paper / Excel',
+  'Onboarding call with our team',
 ];
 
 export default function CtaSection() {
   const navigate = useNavigate();
+
   return (
-    <section id="about" className="py-24 relative overflow-hidden bg-[#1c2536]">
-      {/* Background decorations */}
-      <div className="absolute inset-0 -z-0 pointer-events-none">
-        <div className="absolute -top-32 -left-32 w-96 h-96 rounded-full bg-purple-600/10 blur-3xl" />
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 rounded-full bg-pink-500/10 blur-3xl" />
-        <div
-          className="absolute inset-0 opacity-[0.03]"
-          style={{
-            backgroundImage: 'linear-gradient(white 1px, transparent 1px), linear-gradient(to right, white 1px, transparent 1px)',
-            backgroundSize: '48px 48px',
-          }}
-        />
-      </div>
+    <section id="about" className="w-full border-t border-[#E7E7E7] bg-[#1c2536]">
+      {/* Grid overlay */}
+      <div className="relative w-full overflow-hidden">
+         <div className="absolute -top-24 -left-24 w-64 h-64 rounded-full bg-[#7B4DFF]/10 blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-24 -right-24 w-64 h-64 rounded-full bg-[#e8368f]/8 blur-3xl pointer-events-none" />
 
-      <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 rounded-full bg-white/5 border border-white/10 px-4 py-1.5 mb-6">
-          <span className="h-2 w-2 rounded-full bg-emerald-400 animate-pulse" />
-          <span className="text-xs font-bold text-slate-300 uppercase tracking-wide">Start today · Free for 14 days</span>
-        </div>
+        <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
 
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          Your clinic deserves<br />
-          <span className="text-[#9C7AFF]">modern software.</span>
-        </h2>
+            {/* Left */}
+            <div>
+              <div className="inline-flex items-center gap-2 rounded border border-white/10 bg-white/5 px-3 py-1 mb-5">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="text-[11px] font-bold text-slate-300 uppercase tracking-wide">Start today · Free for 14 days</span>
+              </div>
 
-        <p className="mt-5 text-lg text-slate-400 leading-relaxed max-w-xl mx-auto">
-          Stop juggling WhatsApp, paper files, and Excel. Run your entire dental practice from one place — built in Kenya, for Kenya.
-        </p>
+              <h2 className="text-[32px] sm:text-[40px] font-extrabold text-white tracking-tight leading-tight">
+                Your clinic deserves<br />
+                <span className="text-[#9C7AFF]">modern software.</span>
+              </h2>
 
-        {/* Perks */}
-        <div className="mt-8 grid sm:grid-cols-2 gap-2.5 max-w-lg mx-auto text-left">
-          {PERKS.map((p) => (
-            <div key={p.text} className="flex items-center gap-2.5 text-sm text-slate-300">
-              <span className="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-500/20 text-emerald-400 font-bold text-xs shrink-0">
-                {p.icon}
-              </span>
-              {p.text}
+              <p className="mt-4 text-[14px] text-slate-400 leading-relaxed max-w-md">
+                Stop juggling WhatsApp, paper files, and Excel. Run your entire dental practice from one place — built in Kenya, for Kenya.
+              </p>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <button onClick={() => navigate('/register')}
+                  className="h-10 px-5 text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.12)] hover:brightness-110 active:scale-[0.998] transition-all cursor-pointer flex items-center gap-2">
+                  Create Your Free Clinic
+                  <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
+                  </svg>
+                </button>
+                <button onClick={() => navigate('/login')}
+                  className="h-10 px-5 text-[13.5px] font-semibold text-slate-300 border border-white/10 rounded hover:bg-white/5 transition-colors cursor-pointer">
+                  I already have an account
+                </button>
+              </div>
+
+              <p className="mt-6 text-[11px] text-slate-600">
+                Built and maintained by <span className="font-semibold text-slate-500">Tekvora Systems Ltd, Nairobi</span>
+              </p>
             </div>
-          ))}
-        </div>
 
-        {/* CTA buttons */}
-        <div className="mt-10 flex flex-col sm:flex-row gap-4 justify-center">
-          <button
-            onClick={() => navigate('/register')}
-            className="px-8 py-4 text-base font-bold text-white rounded-xl bg-[linear-gradient(135deg,#9C7AFF_0%,#6C44E0_100%)] hover:brightness-110 active:scale-95 transition-all shadow-xl shadow-purple-900/50 flex items-center justify-center gap-2"
-          >
-            Create Your Free Clinic
-            <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
-            </svg>
-          </button>
-          <button
-            onClick={() => navigate('/login')}
-            className="px-8 py-4 text-base font-semibold text-slate-300 border border-white/10 rounded-xl hover:bg-white/5 transition-colors"
-          >
-            I already have an account
-          </button>
-        </div>
+            {/* Right — perks card */}
+            <div className="bg-white/5 border border-white/10 rounded p-6">
+              <p className="text-[12px] font-bold text-slate-400 uppercase tracking-widest mb-4">What's included</p>
+              <ul className="space-y-3">
+                {PERKS.map((p) => (
+                  <li key={p} className="flex items-center gap-3 text-[13px] text-slate-300">
+                    <span className="shrink-0 flex h-5 w-5 items-center justify-center rounded bg-emerald-500/20 border border-emerald-500/30">
+                      <svg className="h-3 w-3 text-emerald-400" fill="none" viewBox="0 0 18 18">
+                        <path d="M3.75 9L7.5 12.75L14.25 5.25" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                      </svg>
+                    </span>
+                    {p}
+                  </li>
+                ))}
+              </ul>
 
-        {/* Tekvora credit */}
-        <p className="mt-10 text-xs text-slate-600">
-          Built and maintained by{' '}
-          <span className="font-semibold text-slate-500">Tekvora Systems Ltd, Nairobi</span>
-        </p>
+              <div className="mt-6 pt-5 border-t border-white/10 grid grid-cols-3 gap-3 text-center">
+                {[['500+', 'Clinics'], ['120K+', 'Patients'], ['99.9%', 'Uptime']].map(([v,l]) => (
+                  <div key={l}>
+                    <div className="text-[18px] font-extrabold text-white">{v}</div>
+                    <div className="text-[11px] text-slate-500 font-medium mt-0.5">{l}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   );
