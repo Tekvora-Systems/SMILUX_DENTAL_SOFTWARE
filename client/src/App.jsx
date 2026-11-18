@@ -7,6 +7,7 @@ import {
   Navigate,
   useNavigate,
 } from 'react-router-dom';
+import LandingPage from './pages/website/LandingPage.jsx';
 import LoginPage from './pages/login.jsx';
 import OtpVerifyPage from './pages/OtpVerify.jsx';
 import ForgotPasswordPage from './pages/ForgotPassword.jsx';
@@ -53,8 +54,7 @@ function AppRoutes({ loggedInUser, setLoggedInUser }) {
       default:
         setPendingEmail(null);
         navigate('/login');
-        break;
-    }
+        break;    }
   };
 
   const handleLogout = () => {
@@ -78,6 +78,9 @@ function AppRoutes({ loggedInUser, setLoggedInUser }) {
 
   return (
     <Routes>
+      {/* Landing page */}
+      <Route path="/" element={<LandingPage />} />
+
       {/* Auth Routes */}
       <Route
         path="/login"
@@ -245,7 +248,7 @@ function AppRoutes({ loggedInUser, setLoggedInUser }) {
       {/* Fallback route */}
       <Route
         path="*"
-        element={<Navigate to={loggedInUser ? '/dashboard' : '/login'} replace />}
+        element={<Navigate to={loggedInUser ? '/dashboard' : '/'} replace />}
       />
     </Routes>
   );
