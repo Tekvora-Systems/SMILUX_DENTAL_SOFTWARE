@@ -321,7 +321,7 @@ export default function PlansModal({ isOpen, onClose }) {
                   <div className="flex items-baseline overflow-hidden">
                     <span
                       key={billingCycle}
-                      className="inline-block text-[32px] leading-[40px] font-bold text-[#0f5d77] animate-in fade-in slide-in-from-bottom-2 duration-300 ease-out"
+                      className="inline-block text-[40px] leading-[40px] font-bold text-[#0f5d77] animate-in fade-in slide-in-from-bottom-2 duration-300 ease-out"
                     >
                       {billingCycle === 'annual' ? '$29' : '$36'}
                     </span>
@@ -390,7 +390,7 @@ export default function PlansModal({ isOpen, onClose }) {
                 {/* Pricing & Billing */}
                 <div className="flex flex-col gap-2">
                   <div className="flex items-baseline">
-                    <span className="text-[32px] leading-[40px] font-bold text-[#0f5d77] tabular-nums tracking-tight">
+                    <span className="text-[40px] leading-[40px] font-bold text-[#0f5d77] tabular-nums tracking-tight">
                       <AnimatedPrice value={billingCycle === 'annual' ? 59 : 74} />
                     </span>
                   </div>
@@ -455,7 +455,7 @@ export default function PlansModal({ isOpen, onClose }) {
                 {/* Pricing & Billing */}
                 <div className="flex flex-col gap-2">
                   <div className="flex items-baseline">
-                    <span className="text-[32px] leading-[40px] font-bold text-[#0f5d77] tabular-nums tracking-tight">
+                    <span className="text-[40px] leading-[40px] font-bold text-[#0f5d77] tabular-nums tracking-tight">
                       <AnimatedPrice value={billingCycle === 'annual' ? 99 : 124} />
                     </span>
                   </div>

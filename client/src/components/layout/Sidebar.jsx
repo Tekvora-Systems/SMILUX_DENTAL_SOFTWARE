@@ -193,7 +193,7 @@ export default function Sidebar({
             <button
               type="button"
               onClick={() => setClinicMenuOpen((prev) => !prev)}
-              className="flex flex-1 items-center justify-between gap-2 rounded border border-gray-200 bg-gray-50/80 p-1 text-left hover:bg-gray-100 transition-colors cursor-pointer min-w-0"
+              className="flex flex-1 items-center justify-between gap-2 rounded border border-gray-00 bg-gray-50/80 p-1 text-left hover:bg-gray-100 transition-colors cursor-pointer min-w-0"
               title="Switch Clinic Workspace"
             >
               <div className="flex items-center gap-2 min-w-0">

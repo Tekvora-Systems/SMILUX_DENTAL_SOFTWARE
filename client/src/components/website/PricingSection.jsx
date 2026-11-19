@@ -212,7 +212,7 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
 
         {/* Price */}
         <div className="flex flex-col gap-1.5">
-          <div className="text-[32px] leading-[40px] font-bold text-[#0f5d77] tabular-nums tracking-tight">
+          <div className="inline-block text-[40px] leading-[40px] font-bold text-[#0f5d77]  ">
             <AnimatedPrice value={price} />
           </div>
           <p className="text-[13px] leading-[20px] text-[#595959]">
