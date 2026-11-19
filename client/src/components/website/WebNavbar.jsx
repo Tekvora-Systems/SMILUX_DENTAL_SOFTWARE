@@ -88,7 +88,7 @@ function MegaItem({ icon, label, desc, onClick }) {
   );
 }
 
-// ─── Shared drop shadow + animation style ───────────────────────────────────
+// ─── Shared drop   + animation style ───────────────────────────────────
 const CARD_STYLE = {
   boxShadow: '0 12px 40px rgba(0,0,0,0.11), 0 2px 6px rgba(0,0,0,0.06)',
   animation: 'megaIn 0.17s cubic-bezier(0.16,1,0.3,1) forwards',

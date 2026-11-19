@@ -120,7 +120,7 @@ export default function HelpModal({ isOpen, onClose, user }) {
 
       {/* Centered Modal Card */}
       <div
-        className="relative w-full max-w-[960px] bg-white rounded shadow border border-gray-200 overflow-hidden z-10 animate-in zoom-in-100 fade-in duration-150 font-sans select-text"
+        className="relative w-full max-w-[960px] bg-white rounded   border border-gray-200 overflow-hidden z-10 animate-in zoom-in-100 fade-in duration-150 font-sans select-text"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header */}

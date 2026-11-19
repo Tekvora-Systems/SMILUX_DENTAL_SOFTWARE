@@ -137,7 +137,7 @@ function BillingToggle({ value, onChange }) {
             {active && (
               <motion.span
                 layoutId="billingPill"
-                className="absolute inset-0 rounded-full bg-[#118bb0] shadow pointer-events-none -z-10"
+                className="absolute inset-0 rounded-full bg-[#118bb0]   pointer-events-none -z-10"
                 transition={{ type: 'spring', stiffness: 400, damping: 32 }}
               />
             )}
@@ -170,7 +170,7 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
       : 'bg-white rounded flex flex-col justify-between min-h-[640px] p-5 relative  [0px_1px_2px_rgba(0,0,0,0.08),0px_2px_4px_rgba(0,0,0,0.04)] border border-[#E7E7E7]';
 
   const btnClass = isPopular
-    ? 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-white bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)]   hover:brightness-105 active:scale-[0.998] transition-all cursor-pointer shadow'
+    ? 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-white bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)]   hover:brightness-105 active:scale-[0.998] transition-all cursor-pointer  '
     : 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-[#0f5d77] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] hover:bg-[#F2F5F7] active:scale-[0.998] transition-all cursor-pointer';
 
   return (
@@ -182,7 +182,7 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
       {/* Most Popular floating badge */}
       {isPopular && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
-          <span className="inline-flex items-center gap-1.5 bg-[linear-gradient(90deg,#1ba7ce,#0e7394)] text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-[0px_2px_8px_rgba(17,139,176,0.35)]">
+          <span className="inline-flex items-center gap-1.5 bg-[linear-gradient(90deg,#1ba7ce,#0e7394)] text-white text-[11px] font-bold px-3 py-1 rounded-full  -[0px_2px_8px_rgba(17,139,176,0.35)]">
             <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
@@ -434,7 +434,7 @@ export default function PricingSection() {
             whileTap={{ scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             onClick={() => navigate('/register')}
-            className="shrink-0 px-5 py-2 rounded text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)]   hover:brightness-105 transition-all shadow cursor-pointer"
+            className="shrink-0 px-5 py-2 rounded text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)]   hover:brightness-105 transition-all   cursor-pointer"
           >
             Start Free Trial
           </motion.button>

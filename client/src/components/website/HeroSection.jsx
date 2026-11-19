@@ -94,7 +94,7 @@ export default function HeroSection() {
                 variant="primary"
                 size="md"
                 onClick={() => navigate('/register')}
-                className="h-10 px-6 text-[13.5px] font-bold shadow-[0_4px_14px_rgba(17,139,176,0.35)]"
+                className="h-10 px-6 text-[13.5px] font-bold"
               >
                 Start 14-Day Free Trial
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>

@@ -72,7 +72,7 @@ function wrapHtml({ preheader, body }) {
   <div style="background:#f4f1fb;padding:32px 0;font-family:'Lexend',Segoe UI,Arial,sans-serif;color:#222323">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;margin:0 auto">
       <tr><td style="padding:0 16px">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #e9e4f7;border-radius:14px;overflow:hidden;box-shadow:0 4px 20px rgba(123,77,255,0.08)">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#ffffff;border:1px solid #e9e4f7;border-radius:14px;overflow:hidden;box- :0 4px 20px rgba(123,77,255,0.08)">
           <!-- Header -->
           <tr><td style="background:linear-gradient(135deg,#9C7AFF,#6C44E0);padding:24px 28px">
             <span style="font-size:18px;font-weight:800;color:#ffffff;letter-spacing:.2px">Smilux</span>

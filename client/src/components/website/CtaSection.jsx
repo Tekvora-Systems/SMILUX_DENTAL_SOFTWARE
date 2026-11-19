@@ -57,7 +57,7 @@ export default function CtaSection() {
                   whileTap={{ scale: 0.97 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                   onClick={() => navigate('/register')}
-                  className="h-10 px-5 text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)]   rounded shadow-[0px_1px_2px_rgba(0,0,0,0.10)] hover:brightness-110 transition-all cursor-pointer flex items-center gap-2"
+                  className="h-10 px-5 text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)]   rounded  -[0px_1px_2px_rgba(0,0,0,0.10)] hover:brightness-110 transition-all cursor-pointer flex items-center gap-2"
                 >
                   Create Your Free Clinic
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
