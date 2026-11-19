@@ -929,7 +929,7 @@ export default function Invoices() {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold rounded text-white bg-[ #7b4dff] hover:bg-[#02683E]   transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold rounded text-white bg-[#118bb0] hover:bg-[#0e7394]   transition-colors cursor-pointer"
                 >
                   Save & Generate Invoice
                 </button>
@@ -1008,7 +1008,7 @@ export default function Invoices() {
                 <button
                   type="submit"
                   disabled={stkLoading}
-                  className="px-4 py-2 text-xs font-semibold rounded text-white bg-[ #7b4dff] hover:bg-[#02683E] flex items-center gap-1.5   cursor-pointer disabled:opacity-50"
+                  className="px-4 py-2 text-xs font-semibold rounded text-white bg-[#118bb0] hover:bg-[#0e7394] flex items-center gap-1.5   cursor-pointer disabled:opacity-50"
                 >
                   {stkLoading ? (
                     <span>Sending prompt...</span>
@@ -1161,7 +1161,7 @@ export default function Invoices() {
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}
-                className="px-4 py-1.5 rounded text-xs font-semibold bg-[ #7b4dff] text-white hover:bg-[#02683E] cursor-pointer"
+                className="px-4 py-1.5 rounded text-xs font-semibold bg-[#118bb0] text-white hover:bg-[#0e7394] cursor-pointer"
               >
                 Got it, thanks
               </button>

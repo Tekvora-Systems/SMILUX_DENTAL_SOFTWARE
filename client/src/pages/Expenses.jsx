@@ -745,7 +745,7 @@ export default function Expenses() {
                 </button>
                 <button
                   type="submit"
-                  className="px-4 py-2 text-xs font-semibold rounded text-white bg-[ #7b4dff] hover:bg-[#02683E]   transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold rounded text-white bg-[#118bb0] hover:bg-[#0e7394]   transition-colors cursor-pointer"
                 >
                   Save Expense Voucher
                 </button>
@@ -822,7 +822,7 @@ export default function Expenses() {
               <button
                 type="button"
                 onClick={() => setViewingExpense(null)}
-                className="px-4 py-1.5 rounded text-xs font-semibold bg-[ #7b4dff] text-white hover:bg-[#02683E] cursor-pointer"
+                className="px-4 py-1.5 rounded text-xs font-semibold bg-[#118bb0] text-white hover:bg-[#0e7394] cursor-pointer"
               >
                 Close Voucher
               </button>
@@ -882,7 +882,7 @@ export default function Expenses() {
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}
-                className="px-4 py-1.5 rounded text-xs font-semibold bg-[ #7b4dff] text-white hover:bg-[#02683E] cursor-pointer"
+                className="px-4 py-1.5 rounded text-xs font-semibold bg-[#118bb0] text-white hover:bg-[#0e7394] cursor-pointer"
               >
                 Got it, thanks
               </button>

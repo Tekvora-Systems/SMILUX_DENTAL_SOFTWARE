@@ -21,19 +21,19 @@ export default function HeroSection() {
       {/* ── Hero Card Container (Rectangle with rounded card sides & image overlay) ── */}
       <div className="relative max-w-8xl mx-auto rounded overflow-hidden">
         {/* Background Image with subtle parallax */}
-        <motion.div
+        <div
           style={{ y: bgY }}
           className="absolute inset-0 -top-10 -bottom-10 w-full h-[calc(100%+80px)] pointer-events-none"
         >
           <img
-            src="/images/hero-bg.jpg"
+            src="/images/hero-bg.png"
             alt="Dental Healthcare Professionals"
-            className="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.05]"
+            className="w-full h-full object-cover object-contain  brightness-[0.85]"
           />
-        </motion.div>
+        </div>
 
         {/* Dark Rich Gradient Overlay */}
-        <div className="absolute inset-0  bg-gradient-to-b from-[#090514]/50 via-[#12092c]/50 to-[#090514]/50 backdrop-blur-[0.5px]" />
+        <div className="absolute inset-0  bg-gradient-to-b from-[#090514]/40 via-[#12092c]/40 to-[#090514]/50 backdrop-blur-[0.5px]" />
 
         {/* Centered Content */}
         <div className="relative z-10 w-full px-5 sm:px-8 lg:px-12 py-14 sm:py-20 lg:py-24">
@@ -83,7 +83,7 @@ export default function HeroSection() {
               className="mt-6 text-[15px] sm:text-[17px] text-white leading-[1.7] max-w-2xl mx-auto"
             >
               Smilux is a complete dental practice management system built specifically for Kenyan clinics.
-              From the moment a patient walks in to the moment their M-Pesa receipt lands in their inbox —
+              From the moment a patient walks in to the moment their M-Pesa receipt lands in their inbox,
               every touchpoint is handled. No more juggling WhatsApp, paper files, and Excel spreadsheets.
               Everything your clinic needs, in one beautifully simple platform.
             </motion.p>
