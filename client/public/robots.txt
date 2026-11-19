@@ -1,9 +1,45 @@
-# Robots.txt for Smilux Software Dental Practice SaaS
+# Robots.txt for Smilux Software (https://smilux.co.ke)
+# Dental Practice Management SaaS - Kenya
+
 User-agent: *
-Allow: /
+Allow: /$
 Allow: /login
 Allow: /register
 Allow: /forgot-password
 Allow: /referral
+Allow: /favicon.svg
+Allow: /image.png
+Allow: /site.webmanifest
+Allow: /sitemap.xml
 
+# Disallow private application & patient data workspace routes
+Disallow: /dashboard
+Disallow: /patients
+Disallow: /appointments
+Disallow: /clinical-records
+Disallow: /charting
+Disallow: /treatment-plans
+Disallow: /treatments
+Disallow: /invoices
+Disallow: /payments
+Disallow: /insurance
+Disallow: /expenses
+Disallow: /inventory
+Disallow: /suppliers
+Disallow: /purchase-orders
+Disallow: /staff
+Disallow: /dentists
+Disallow: /branches
+Disallow: /reports
+Disallow: /messages
+Disallow: /settings
+Disallow: /notifications
+Disallow: /profile
+Disallow: /verify-otp
+Disallow: /getting_started
+Disallow: /getting-started
+Disallow: /api/
+
+# Sitemaps
 Sitemap: https://smilux.co.ke/sitemap.xml
+Host: https://smilux.co.ke

@@ -27,7 +27,7 @@ export default function LandingPage() {
   }, []);
 
   return (
-    <div className="w-fulbg-mesh font-sans ">
+    <div className="w-full min-h-screen bg-mesh font-sans">
       <SEO
         title="Smilux Dental Software — Kenya's #1 Dental Practice Management System"
         description="Appointments, dental charting, M-Pesa payments, SHA insurance, and analytics — all in one platform built for Kenyan dental clinics."

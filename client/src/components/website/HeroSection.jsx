@@ -7,50 +7,61 @@ export default function HeroSection() {
   const navigate = useNavigate();
   const { scrollY } = useScroll();
 
-  // Subtle parallax on the decorative blobs as the user scrolls.
-  const blob1Y = useTransform(scrollY, [0, 600], [0, 80]);
-  const blob1X = useTransform(scrollY, [0, 600], [0, -40]);
-  const blob2Y = useTransform(scrollY, [0, 600], [0, -60]);
-  const blob2X = useTransform(scrollY, [0, 600], [0, 30]);
+  const scrollTo = (id) => {
+    const el = document.querySelector(id);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  // Subtle parallax effect on background image
+  const bgY = useTransform(scrollY, [0, 600], [0, 50]);
 
   return (
-    <section className="w-full relative overflow-hidden bg-[linear-gradient(160deg,#F6F3FF_0%,#ffffff_55%,#F0EBFF_100%)]">
-      {/* Glow blobs */}
-      <motion.div
-        style={{ y: blob1Y, x: blob1X }}
-        className="absolute -top-32 -right-32 w-[500px] h-[500px] rounded-full bg-purple-200/30 blur-3xl pointer-events-none"
-      />
-      <motion.div
-        style={{ y: blob2Y, x: blob2X }}
-        className="absolute -bottom-32 -left-32 w-[400px] h-[400px] rounded-full bg-pink-100/40 blur-3xl pointer-events-none"
-      />
-
-      <div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 py-10">
+    <section className="w-full pt-4 sm:pt-6 pb-6 sm:pb-10 px-3 sm:px-6 lg:px-8">
+      {/* ── Hero Card Container (Rectangle with rounded card sides & image overlay) ── */}
+      <div className="relative max-w-8xl mx-auto rounded border border-white/15 shadow-[0_25px_60px_-15px_rgba(11,6,26,0.5),0_4px_12px_rgba(0,0,0,0.15)] overflow-hidden">
+        {/* Background Image with subtle parallax */}
         <motion.div
-          className="grid lg:grid-cols-[1.15fr_0.85fr] gap-2 items-start"
-          initial="hidden"
-          animate="show"
-          variants={staggerContainer(0.12, 0.05)}
+          style={{ y: bgY }}
+          className="absolute inset-0 -top-10 -bottom-10 w-full h-[calc(100%+80px)] pointer-events-none"
         >
-          {/* ── LEFT: Copy ── */}
-          <div className="flex flex-col">
+          <img
+            src="/images/hero-bg.jpg"
+            alt="Dental Healthcare Professionals"
+            className="w-full h-full object-cover object-center filter brightness-[0.85] contrast-[1.05]"
+          />
+        </motion.div>
 
+        {/* Dark Rich Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-[#090514]/55 via-[#12092c]/80 to-[#090514]/90 backdrop-blur-[1.5px]" />
+
+        {/* Ambient Glows */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-purple-600/25 blur-[120px] rounded-full pointer-events-none" />
+        <div className="absolute -bottom-20 -left-20 w-[350px] h-[350px] bg-pink-500/15 blur-[100px] rounded-full pointer-events-none" />
+
+        {/* Centered Content */}
+        <div className="relative z-10 w-full px-5 sm:px-8 lg:px-12 py-14 sm:py-20 lg:py-24">
+          <motion.div
+            className="max-w-4xl mx-auto flex flex-col items-center text-center"
+            initial="hidden"
+            animate="show"
+            variants={staggerContainer(0.12, 0.05)}
+          >
             {/* Badge */}
             <motion.div
               variants={fadeDown}
-              className="inline-flex items-center gap-2 self-start rounded border border-purple-200 bg-white/80 px-3 py-1 mb-5 shadow-[0px_1px_2px_rgba(0,0,0,0.05)]"
+              className="inline-flex items-center gap-2 self-center rounded-full border border-purple-400/30 bg-purple-950/40 px-3.5 py-1 mb-6 backdrop-blur-md shadow-sm"
             >
-              <span className="h-1.5 w-1.5 rounded-full bg-[#7B4DFF] animate-pulse shrink-0" />
-              <span className="text-[11px] font-bold text-[#7B4DFF] uppercase tracking-wide">Kenya&apos;s #1 Dental Practice Platform</span>
+              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
+              <span className="text-[11px] font-bold text-purple-200 uppercase tracking-wider">Kenya&apos;s #1 Dental Practice Platform</span>
             </motion.div>
 
             {/* Headline */}
             <motion.h1
               variants={fadeUp}
-              className="text-[38px] sm:text-[48px] lg:text-[52px] font-extrabold text-[#222323] leading-[1.06] tracking-tight"
+              className="text-[36px] sm:text-[48px] lg:text-[56px] font-extrabold text-white leading-[1.08] tracking-tight"
             >
               Run Your Entire<br />
-              <span className="relative inline-block text-[#7B4DFF]">
+              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-pink-200 to-indigo-100">
                 Dental Clinic
                 <motion.svg
                   className="absolute -bottom-1 left-0 w-full"
@@ -63,7 +74,7 @@ export default function HeroSection() {
                 >
                   <motion.path
                     d="M2 8 Q80 2 160 6 Q240 10 318 4"
-                    stroke="#e8368f"
+                    stroke="#ec4899"
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     fill="none"
@@ -79,7 +90,7 @@ export default function HeroSection() {
             {/* Sub-headline */}
             <motion.p
               variants={fadeUp}
-              className="mt-5 text-[15px] text-[#595959] leading-[1.7] max-w-xl"
+              className="mt-6 text-[15px] sm:text-[17px] text-slate-200/90 leading-[1.7] max-w-2xl mx-auto"
             >
               Smilux is a complete dental practice management system built specifically for Kenyan clinics.
               From the moment a patient walks in to the moment their M-Pesa receipt lands in their inbox —
@@ -88,16 +99,16 @@ export default function HeroSection() {
             </motion.p>
 
             {/* CTAs */}
-            <motion.div variants={fadeUp} className="mt-8 flex flex-wrap gap-3">
+            <motion.div variants={fadeUp} className="mt-9 flex flex-wrap items-center justify-center gap-3.5">
               <motion.button
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.985 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                 onClick={() => navigate('/register')}
-                className="h-10 px-6 text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.08)] cursor-pointer flex items-center gap-2"
+                className="h-11 px-7 text-[14px] font-bold text-white bg-gradient-to-r from-[#7B4DFF] via-[#8B5CF6] to-[#6C44E0] hover:from-[#6C44E0] hover:to-[#5733BE] rounded-lg shadow-[0_8px_25px_rgba(123,77,255,0.4)] border border-purple-400/30 cursor-pointer flex items-center gap-2"
               >
                 Start 14-Day Free Trial
-                <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" />
                 </svg>
               </motion.button>
@@ -105,113 +116,36 @@ export default function HeroSection() {
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.985 }}
                 transition={{ type: 'spring', stiffness: 400, damping: 17 }}
-                onClick={() => scrollTo('#about')}
-                className="h-10 px-6 text-[13.5px] font-semibold text-[#5733be] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.05)] hover:bg-[#F2F5F7] cursor-pointer flex items-center gap-2"
+                onClick={() => scrollTo('#features')}
+                className="h-11 px-7 text-[14px] font-semibold text-white bg-white/10 hover:bg-white/20 border border-white/25 rounded-lg backdrop-blur-md shadow-sm cursor-pointer flex items-center gap-2 transition-colors"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><title>sprint-demo</title><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"><path d="M6 3h12a3.5 3.5 0 0 1 3.5 3.5V13a3.5 3.5 0 0 1-3.5 3.5H6A3.5 3.5 0 0 1 2.5 13V6.5A3.5 3.5 0 0 1 6 3"/><path d="m12.319 7.513l1.504.981a1.5 1.5 0 0 1 0 2.512l-1.504.981A1.5 1.5 0 0 1 10 10.731V8.769a1.5 1.5 0 0 1 2.319-1.256M10 16.5L9 21m5-4.5l1 4.5m-7.5 0h9"/></g></svg>
                 Book a Demo
               </motion.button>
             </motion.div>
-          </div>
 
-          {/* ── RIGHT: Dashboard mockup ── */}
-          <motion.div
-            className="hidden lg:flex flex-col gap-3 relative"
-            initial={{ opacity: 0, scale: 0.94, y: 24 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.75, ease: EASE, delay: 0.25 }}
-          >
-            {/* Continuous gentle float */}
+            {/* Feature Pills Strip */}
             <motion.div
-              animate={{ y: [0, -10, 0] }}
-              transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              variants={fadeUp}
+              className="mt-10 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-[12px] text-purple-200/80 pt-6 border-t border-white/10 w-full max-w-2xl"
             >
-              <motion.div
-                whileHover={{ scale: 1.015 }}
-                transition={{ type: 'spring', stiffness: 200, damping: 20 }}
-                className="w-full bg-white border border-[#E7E7E7] rounded-[10px] shadow-[0px_8px_32px_rgba(123,77,255,0.12),0px_1px_3px_rgba(0,0,0,0.08)] overflow-hidden"
-              >
-                {/* Topbar */}
-                <div className="flex items-center justify-between px-5 py-3.5 border-b border-[#E7E7E7] bg-[linear-gradient(90deg,#F6F3FF,#ffffff)]">
-                  <div className="flex items-center gap-2">
-                    <div className="h-2.5 w-2.5 rounded-full bg-red-400" />
-                    <div className="h-2.5 w-2.5 rounded-full bg-amber-400" />
-                    <div className="h-2.5 w-2.5 rounded-full bg-emerald-400" />
-                    <span className="ml-3 text-[11px] font-semibold text-[#595959]">Smilux — Dr. Kamau Dental Clinic</span>
-                  </div>
-                </div>
-
-                <div className="p-5">
-                  {/* KPI strip */}
-                  <div className="grid grid-cols-3 gap-3 mb-5">
-                    {[
-                      { label: "Today's Appointments", val: '14', sub: '+3 walk-ins', bg: 'bg-purple-50', border: 'border-purple-200', text: 'text-[#7B4DFF]' },
-                      { label: 'Revenue Today', val: 'KES 48K', sub: '↑ 12% vs yesterday', bg: 'bg-emerald-50', border: 'border-emerald-200', text: 'text-emerald-700' },
-                      { label: 'New Patients', val: '5', sub: '2 referrals', bg: 'bg-pink-50', border: 'border-pink-200', text: 'text-[#e8368f]' },
-                    ].map((k) => (
-                      <div key={k.label} className={`${k.bg} border ${k.border} rounded p-3`}>
-                        <div className={`text-[20px] font-extrabold ${k.text}`}>{k.val}</div>
-                        <div className="text-[10px] font-semibold text-[#595959] leading-tight mt-0.5">{k.label}</div>
-                        <div className="text-[10px] text-[#595959] mt-1 opacity-70">{k.sub}</div>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Appointment list */}
-                  <div className="mb-4">
-                    <div className="flex items-center justify-between mb-2">
-                      <p className="text-[10px] font-bold text-[#595959] uppercase tracking-widest">Upcoming Appointments</p>
-                      <span className="text-[10px] font-semibold text-[#7B4DFF] cursor-pointer hover:underline">View all →</span>
-                    </div>
-                    <div className="space-y-1.5">
-                      {[
-                        { name: 'Alice Wanjiku', time: '9:00 AM', type: 'Scaling & Polishing', status: 'Confirmed', color: '#7B4DFF' },
-                        { name: 'Brian Otieno', time: '10:30 AM', type: 'Root Canal', status: 'Arrived', color: '#e8368f' },
-                        { name: 'Carol Muthoni', time: '12:00 PM', type: 'General Checkup', status: 'Scheduled', color: '#2ec4b6' },
-                      ].map((apt) => (
-                        <div key={apt.name} className="flex items-center gap-3 bg-white border border-[#E7E7E7] rounded px-3 py-2.5 shadow-[0px_1px_2px_rgba(0,0,0,0.04)]">
-                          <div className="h-7 w-7 rounded-full flex items-center justify-center text-[11px] font-bold text-white shrink-0" style={{ background: apt.color }}>{apt.name[0]}</div>
-                          <div className="flex-1 min-w-0">
-                            <p className="text-[12px] font-semibold text-[#222323] truncate">{apt.name}</p>
-                            <p className="text-[10px] text-[#595959]">{apt.type}</p>
-                          </div>
-                          <div className="text-right shrink-0">
-                            <p className="text-[11px] font-bold text-[#595959]">{apt.time}</p>
-                            <span className={`text-[9px] font-bold rounded-full px-1.5 py-0.5 ${apt.status === 'Confirmed' ? 'bg-purple-100 text-[#7B4DFF]' : apt.status === 'Arrived' ? 'bg-emerald-100 text-emerald-700' : 'bg-slate-100 text-slate-500'}`}>
-                              {apt.status}
-                            </span>
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Bottom notification row */}
-                  <div className="grid grid-cols-2 gap-2.5">
-                    <div className="flex items-center gap-2 bg-emerald-50 border border-emerald-200 rounded px-3 py-2">
-                      <div className="h-6 w-6 rounded bg-emerald-500 flex items-center justify-center shrink-0">
-                        <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-bold text-emerald-800 leading-tight">M-Pesa Received</p>
-                        <p className="text-[10px] text-emerald-600">KES 8,000 · QKT984920</p>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2 bg-blue-50 border border-blue-200 rounded px-3 py-2">
-                      <div className="h-6 w-6 rounded bg-blue-600 flex items-center justify-center shrink-0">
-                        <svg className="h-3 w-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" /></svg>
-                      </div>
-                      <div>
-                        <p className="text-[10px] font-bold text-blue-800 leading-tight">SHA Claim Approved</p>
-                        <p className="text-[10px] text-blue-600">Jubilee · KES 15,000</p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
+              <span className="inline-flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                Safaricom M-Pesa STK Push
+              </span>
+              <span className="text-white/20">•</span>
+              <span className="inline-flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                SHA &amp; Insurance Claims
+              </span>
+              <span className="text-white/20">•</span>
+              <span className="inline-flex items-center gap-1.5">
+                <svg className="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
+                Interactive FDI Charting
+              </span>
             </motion.div>
           </motion.div>
-        </motion.div>
+        </div>
       </div>
     </section>
   );

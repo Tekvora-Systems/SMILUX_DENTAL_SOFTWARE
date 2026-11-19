@@ -1,0 +1,14 @@
+/* TEAM */
+  Product: Smilux Software
+  Company: Tekvora Systems
+  Website: https://smilux.co.ke
+  Location: Nairobi, Kenya
+  Contact: support@smilux.co.ke
+
+/* THANKS */
+  Dental practitioners, oral health professionals, and clinic teams across Kenya
+
+/* TECHNOLOGY & STANDARDS */
+  Frontend: React, Tailwind CSS, Vite
+  Standards: HTML5, CSS3, Schema.org (JSON-LD), Open Graph, Web App Manifest
+  Integrations: Safaricom M-Pesa STK Push, Social Health Authority (SHA)

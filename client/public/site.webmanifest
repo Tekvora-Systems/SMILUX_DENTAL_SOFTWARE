@@ -1,0 +1,31 @@
+{
+  "name": "Smilux Software — Smart Dental Practice Management",
+  "short_name": "Smilux",
+  "description": "Kenya's leading Smart Dental Practice Management SaaS. Featuring interactive FDI dental charting, Safaricom M-Pesa STK Push billing, SHA & insurance claims, and automated patient scheduling.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#5733be",
+  "orientation": "portrait-primary",
+  "categories": ["medical", "business", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/image.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/image.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
