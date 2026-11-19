@@ -32,7 +32,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Dark Rich Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#090514]/50 via-[#12092c]/50 to-[#090514]/50 backdrop-blur-[1.5px]" />
+        <div className="absolute inset-0  bg-gradient-to-b from-[#090514]/50 via-[#12092c]/50 to-[#090514]/50 backdrop-blur-[0.5px]" />
 
         {/* Centered Content */}
         <div className="relative z-10 w-full px-5 sm:px-8 lg:px-12 py-14 sm:py-20 lg:py-24">
