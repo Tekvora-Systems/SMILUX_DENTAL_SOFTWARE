@@ -48,8 +48,8 @@ export default function LandingPage() {
           <IntegrationsSection />
 
           <FeaturesSection />
-          <TestimonialsSection />
           <PricingSection />
+          <TestimonialsSection />
           <CtaSection />
         </main>
 

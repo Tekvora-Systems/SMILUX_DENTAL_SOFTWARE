@@ -151,7 +151,7 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section id="testimonials" className="w-full py-20  bg-[linear-gradient(180deg,#f0f9fb_0%,#d9f0f5_100%)]  ">
+    <section id="testimonials" className="w-full py-20  bg-white ">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
