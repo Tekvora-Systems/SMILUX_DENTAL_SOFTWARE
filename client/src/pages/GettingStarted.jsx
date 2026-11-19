@@ -226,7 +226,7 @@ export default function GettingStarted() {
         <div className="w-full sm:w-[286px] shrink-0 flex flex-col gap-2 font-inter text-[#222323]">
 
           {/* Card 1: Getting started Card (286px width, Figma border, radius & layout) */}
-          <div className="box-border w-full sm:w-[286px] bg-white border border-[#D4D4D4] rounded-[4px] flex flex-col items-start p-0 overflow-hidden shrink-0">
+          <div className="box-border w-full sm:w-[286px] bg-white border border-[#D4D4D4] rounded flex flex-col items-start p-0 overflow-hidden shrink-0">
             {/* Header row: 284px × 72px */}
             <div className="w-full h-[72px] flex flex-row justify-between items-center px-4 py-3 border-b border-gray-100">
               {/* 48px × 48px Image */}
@@ -311,7 +311,7 @@ export default function GettingStarted() {
           </div>
 
           {/* Card 2: Need Help Card (286px × 150px) */}
-          <div className="box-border w-full sm:w-[286px] h-[150px] bg-white border border-[#D4D4D4] rounded-[4px] p-4 flex flex-col justify-between shrink-0">
+          <div className="box-border w-full sm:w-[286px] h-[150px] bg-white border border-[#D4D4D4] rounded p-4 flex flex-col justify-between shrink-0">
             {/* Header */}
             <div className="flex flex-row items-center gap-2 h-7">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" className="shrink-0">
