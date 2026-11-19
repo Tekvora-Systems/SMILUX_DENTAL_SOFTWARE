@@ -36,7 +36,7 @@ export default function Button({
 
   const variantClasses = {
     primary:
-      'bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)] border border-[#0f5d77]  [0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13.5px] leading-[20px] not-italic text-white [font-variation-settings:\'slnt\'_0] hover:brightness-105 hover:opacity-95 active:scale-[0.995] focus-visible:ring-[#118bb0]/50 focus-visible:border-[#118bb0]',
+      'bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)]    [0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13.5px] leading-[20px] not-italic text-white [font-variation-settings:\'slnt\'_0] hover:brightness-105 hover:opacity-95 active:scale-[0.995] focus-visible:ring-[#118bb0]/50 focus-visible:border-[#118bb0]',
     upgrade:
       'bg-[linear-gradient(180deg,#FFC42E_0%,#E09F00_100%)] border border-[#ffb703]  [0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13.5px] leading-[20px] not-italic text-white [font-variation-settings:\'slnt\'_0] hover:brightness-105 hover:opacity-95 active:scale-[0.995] focus-visible:ring-[#ffb703]/50 focus-visible:border-[#ffb703]',
     outline:
@@ -47,7 +47,7 @@ export default function Button({
       'bg-transparent hover:bg-slate-100 text-slate-700 border-transparent',
     destructive:
       'bg-rose-600 text-white hover:bg-rose-700 border border-rose-600',
-  }[variant] || 'bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)] border border-[#0f5d77]  [0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13.5px] leading-[20px] not-italic text-white [font-variation-settings:\'slnt\'_0]';
+  }[variant] || 'bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)]    [0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13.5px] leading-[20px] not-italic text-white [font-variation-settings:\'slnt\'_0]';
 
   const spinnerSize = size === 'lg' ? 'md' : 'sm';
 

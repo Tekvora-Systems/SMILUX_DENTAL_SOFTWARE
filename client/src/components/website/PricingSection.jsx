@@ -170,7 +170,7 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
       : 'bg-white rounded flex flex-col justify-between min-h-[640px] p-5 relative  [0px_1px_2px_rgba(0,0,0,0.08),0px_2px_4px_rgba(0,0,0,0.04)] border border-[#E7E7E7]';
 
   const btnClass = isPopular
-    ? 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-white bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)] border border-[#0f5d77] hover:brightness-105 active:scale-[0.998] transition-all cursor-pointer shadow'
+    ? 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-white bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)]   hover:brightness-105 active:scale-[0.998] transition-all cursor-pointer shadow'
     : 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-[#0f5d77] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] hover:bg-[#F2F5F7] active:scale-[0.998] transition-all cursor-pointer';
 
   return (
@@ -434,7 +434,7 @@ export default function PricingSection() {
             whileTap={{ scale: 0.97 }}
             transition={{ type: 'spring', stiffness: 400, damping: 17 }}
             onClick={() => navigate('/register')}
-            className="shrink-0 px-5 py-2 rounded text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#118bb0] hover:brightness-105 transition-all shadow cursor-pointer"
+            className="shrink-0 px-5 py-2 rounded text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)]   hover:brightness-105 transition-all shadow cursor-pointer"
           >
             Start Free Trial
           </motion.button>

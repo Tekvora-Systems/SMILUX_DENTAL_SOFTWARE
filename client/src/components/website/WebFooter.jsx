@@ -47,7 +47,7 @@ export default function WebFooter() {
             <div className="flex flex-wrap gap-3 shrink-0">
               <button
                 onClick={() => navigate('/register')}
-                className="h-9 px-5 text-[13px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#118bb0] rounded  [0px_1px_2px_rgba(0,0,0,0.10)] hover:brightness-110 active:scale-[0.998] transition-all cursor-pointer"
+                className="h-9 px-5 text-[13px] font-bold text-white bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)]   rounded shadow-[0px_1px_2px_rgba(0,0,0,0.10)] hover:brightness-110 active:scale-[0.998] transition-all cursor-pointer"
               >
                 Start 14-Day Free Trial
               </button>

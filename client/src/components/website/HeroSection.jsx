@@ -51,7 +51,7 @@ export default function HeroSection() {
               className="text-[36px] sm:text-[48px] lg:text-[56px] font-extrabold text-white leading-[1.08] tracking-tight"
             >
               Run Your Entire<br />
-              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-purple-200 via-pink-200 to-indigo-100">
+              <span className="relative inline-block text-transparent bg-clip-text bg-gradient-to-r from-cyan-200 via-sky-200 to-teal-100">
                 Dental Clinic
                 <motion.svg
                   className="absolute -bottom-1 left-0 w-full"
@@ -94,7 +94,7 @@ export default function HeroSection() {
                 variant="primary"
                 size="md"
                 onClick={() => navigate('/register')}
-                className="h-10 px-6 text-[13.5px] font-bold  [0_4px_14px_rgba(123,77,255,0.35)]"
+                className="h-10 px-6 text-[13.5px] font-bold shadow-[0_4px_14px_rgba(17,139,176,0.35)]"
               >
                 Start 14-Day Free Trial
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -115,7 +115,7 @@ export default function HeroSection() {
             {/* Feature Pills Strip */}
             <motion.div
               variants={fadeUp}
-              className="mt-10 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-[12px] text-purple-200/80 pt-6 border-t border-white/10 w-full max-w-2xl"
+              className="mt-10 flex flex-wrap items-center justify-center gap-2.5 sm:gap-4 text-[12px] text-cyan-100/90 pt-6 border-t border-white/10 w-full max-w-2xl"
             >
               <span className="inline-flex items-center gap-1.5">
                 <svg className="w-4 h-4 text-emerald-400" fill="currentColor" viewBox="0 0 20 20"><path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" /></svg>
