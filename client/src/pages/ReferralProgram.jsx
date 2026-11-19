@@ -80,7 +80,7 @@ export default function ReferralProgram({ onBackToLogin }) {
   };
 
   return (
-    <div className="min-h-[100dvh] bg-mesh font-sans text-slate-900 antialiased py-6">
+    <div className="min-h-[100dvh] bg-mesh font-sans text-gray-900 antialiased py-6">
       <SEO title="Referral Program" description="Refer a dental clinic or practice to Smilux Software and earn up to KES 10,000 in rewards." />
       <AuthBrandHeader className="px-4 py-2.5 sm:py-3" />
 
@@ -104,13 +104,13 @@ export default function ReferralProgram({ onBackToLogin }) {
           </p>
         </div>
 
-        <div className="rounded border border-slate-200 bg-white/90 backdrop-blur-md px-5 py-6  sm">
-          <h1 className="text-center text-xl font-bold tracking-tight text-slate-900">
+        <div className="rounded border border-gray-200 bg-white/90 backdrop-blur-md px-5 py-6  sm">
+          <h1 className="text-center text-xl font-bold tracking-tight text-gray-900">
             Submit a Referral
           </h1>
-          <p className="mt-1 text-center text-xs text-slate-500">
+          <p className="mt-1 text-center text-xs text-gray-500">
             Tell us about a clinic or organization you&apos;ve referred to{' '}
-            <strong className="text-slate-800">Smilux Software</strong>.
+            <strong className="text-gray-800">Smilux Software</strong>.
           </p>
 
           {success ? (
@@ -222,7 +222,7 @@ export default function ReferralProgram({ onBackToLogin }) {
               <div className="mb-3">
                 <label
                   htmlFor="notes"
-                  className="mb-1 block text-sm font-medium text-slate-800"
+                  className="mb-1 block text-sm font-medium text-gray-800"
                 >
                   Additional notes (optional)
                 </label>
@@ -234,7 +234,7 @@ export default function ReferralProgram({ onBackToLogin }) {
                   onChange={handleChange}
                   disabled={loading}
                   placeholder="How do you know this clinic? Expected timeline, size, etc."
-                  className="w-full rounded border border-slate-300 bg-white px-3 py-2 text-xs text-slate-900 transition placeholder:text-slate-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:opacity-60"
+                  className="w-full rounded border border-gray-300 bg-white px-3 py-2 text-xs text-gray-900 transition placeholder:text-gray-400 focus:border-blue-600 focus:outline-none focus:ring-1 focus:ring-blue-600 disabled:opacity-60"
                 />
               </div>
 
@@ -250,7 +250,7 @@ export default function ReferralProgram({ onBackToLogin }) {
           )}
         </div>
 
-        <p className="mt-4 text-center text-xs text-slate-500">
+        <p className="mt-4 text-center text-xs text-gray-500">
           Questions? Email{' '}
           <a href="mailto:support@smilux.co.ke" className="font-semibold text-blue-600 hover:underline">
             support@smilux.co.ke

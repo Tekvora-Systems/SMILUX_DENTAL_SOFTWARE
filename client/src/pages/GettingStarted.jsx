@@ -22,14 +22,14 @@ import {
 // ─── SVG Mock Chart Components for the Video Tour Preview Container ──────────
 function MiniBarChart() {
   return (
-    <div className="flex items-end gap-1.5 h-36 w-full pt-4 px-2 border-b border-l border-slate-200">
-      <div className="w-1/8 bg-slate-300 h-[25%] rounded-t-xs" />
+    <div className="flex items-end gap-1.5 h-36 w-full pt-4 px-2 border-b border-l border-gray-200">
+      <div className="w-1/8 bg-gray-300 h-[25%] rounded-t-xs" />
       <div className="w-1/8 bg-rose-500 h-[40%] rounded-t-xs" />
-      <div className="w-1/8 bg-slate-300 h-[15%] rounded-t-xs" />
-      <div className="w-1/8 bg-slate-400 h-[30%] rounded-t-xs" />
+      <div className="w-1/8 bg-gray-300 h-[15%] rounded-t-xs" />
+      <div className="w-1/8 bg-gray-400 h-[30%] rounded-t-xs" />
       <div className="w-1/8 bg-brand-green h-[55%] rounded-t-xs" />
-      <div className="w-1/8 bg-slate-400 h-[20%] rounded-t-xs" />
-      <div className="w-1/8 bg-slate-500 h-[92%] rounded-t-xs" />
+      <div className="w-1/8 bg-gray-400 h-[20%] rounded-t-xs" />
+      <div className="w-1/8 bg-gray-500 h-[92%] rounded-t-xs" />
       <div className="w-1/8 bg-brand-green h-[35%] rounded-t-xs" />
     </div>
   );
@@ -37,25 +37,25 @@ function MiniBarChart() {
 
 function MiniScatterPlot() {
   return (
-    <div className="relative h-36 w-full p-2 border-b border-l border-slate-200 bg-slate-50/50">
-      <span className="absolute top-6 left-8 h-1.5 w-1.5 rounded-full bg-slate-400" />
-      <span className="absolute top-10 left-12 h-1.5 w-1.5 rounded-full bg-slate-500" />
+    <div className="relative h-36 w-full p-2 border-b border-l border-gray-200 bg-gray-50/50">
+      <span className="absolute top-6 left-8 h-1.5 w-1.5 rounded-full bg-gray-400" />
+      <span className="absolute top-10 left-12 h-1.5 w-1.5 rounded-full bg-gray-500" />
       <span className="absolute top-8 left-16 h-1.5 w-1.5 rounded-full bg-brand-green" />
       <span className="absolute top-14 left-20 h-1.5 w-1.5 rounded-full bg-rose-500" />
-      <span className="absolute top-16 left-10 h-1.5 w-1.5 rounded-full bg-slate-400" />
+      <span className="absolute top-16 left-10 h-1.5 w-1.5 rounded-full bg-gray-400" />
       <span className="absolute top-20 left-14 h-1.5 w-1.5 rounded-full bg-brand-green" />
       <span className="absolute top-24 left-22 h-1.5 w-1.5 rounded-full bg-amber-500" />
-      <span className="absolute top-12 left-26 h-1.5 w-1.5 rounded-full bg-slate-400" />
-      <span className="absolute top-18 left-30 h-1.5 w-1.5 rounded-full bg-slate-600" />
-      <span className="absolute top-28 left-28 h-1.5 w-1.5 rounded-full bg-slate-400" />
+      <span className="absolute top-12 left-26 h-1.5 w-1.5 rounded-full bg-gray-400" />
+      <span className="absolute top-18 left-30 h-1.5 w-1.5 rounded-full bg-gray-600" />
+      <span className="absolute top-28 left-28 h-1.5 w-1.5 rounded-full bg-gray-400" />
       <span className="absolute top-8 left-34 h-1.5 w-1.5 rounded-full bg-brand-green" />
       <span className="absolute top-22 left-38 h-1.5 w-1.5 rounded-full bg-rose-400" />
-      <span className="absolute top-14 left-42 h-1.5 w-1.5 rounded-full bg-slate-400" />
-      <span className="absolute top-20 left-48 h-1.5 w-1.5 rounded-full bg-slate-500" />
-      <span className="absolute top-16 left-52 h-1.5 w-1.5 rounded-full bg-slate-600" />
-      <span className="absolute top-26 left-56 h-1.5 w-1.5 rounded-full bg-slate-400" />
+      <span className="absolute top-14 left-42 h-1.5 w-1.5 rounded-full bg-gray-400" />
+      <span className="absolute top-20 left-48 h-1.5 w-1.5 rounded-full bg-gray-500" />
+      <span className="absolute top-16 left-52 h-1.5 w-1.5 rounded-full bg-gray-600" />
+      <span className="absolute top-26 left-56 h-1.5 w-1.5 rounded-full bg-gray-400" />
       <span className="absolute top-10 left-60 h-1.5 w-1.5 rounded-full bg-brand-green" />
-      <span className="absolute top-18 left-64 h-1.5 w-1.5 rounded-full bg-slate-500" />
+      <span className="absolute top-18 left-64 h-1.5 w-1.5 rounded-full bg-gray-500" />
     </div>
   );
 }
@@ -97,7 +97,7 @@ function MiniPieChart() {
           />
         </svg>
       </div>
-      <div className="flex items-center gap-2 mt-2 text-[9px] text-slate-500 font-medium">
+      <div className="flex items-center gap-2 mt-2 text-[9px] text-gray-500 font-medium">
         <span className="flex items-center gap-1">
           <span className="h-1.5 w-1.5 rounded-full bg-brand-green" /> M-Pesa (60%)
         </span>
@@ -228,7 +228,7 @@ export default function GettingStarted() {
           {/* Card 1: Getting started Card (286px width, Figma border, radius & layout) */}
           <div className="box-border w-full sm:w-[286px] bg-white border border-[#D4D4D4] rounded-[4px] flex flex-col items-start p-0 overflow-hidden shrink-0">
             {/* Header row: 284px × 72px */}
-            <div className="w-full h-[72px] flex flex-row justify-between items-center px-4 py-3 border-b border-slate-100">
+            <div className="w-full h-[72px] flex flex-row justify-between items-center px-4 py-3 border-b border-gray-100">
               {/* 48px × 48px Image */}
               <div className="w-12 h-12 shrink-0 rounded-[2px] bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white  xs">
                 <HugeiconsIcon icon={StethoscopeIcon} size={24} />
@@ -251,7 +251,7 @@ export default function GettingStarted() {
             </div>
 
             {/* Setup goals row: 284px × 46px */}
-            <div className="w-full h-[46px] flex flex-row items-center px-4 py-3 gap-1 border-b border-slate-100">
+            <div className="w-full h-[46px] flex flex-row items-center px-4 py-3 gap-1 border-b border-gray-100">
               <span className="font-semibold text-[10px] leading-[12px] text-[#222323] shrink-0 mr-0.5">
                 Setup goals:
               </span>
@@ -276,8 +276,8 @@ export default function GettingStarted() {
                     type="button"
                     onClick={() => setActiveTaskId(task.id)}
                     className={`w-full h-[44px] flex flex-row items-center justify-between px-4 py-3 text-left transition-colors cursor-pointer select-none shrink-0 ${isSelected
-                      ? ' [inset_3px_0_0_#28A466] bg-slate-50/60'
-                      : 'hover:bg-slate-50/70'
+                      ? ' [inset_3px_0_0_#28A466] bg-gray-50/60'
+                      : 'hover:bg-gray-50/70'
                       }`}
                   >
                     <div className="flex items-center gap-3 min-w-0">
@@ -333,16 +333,16 @@ export default function GettingStarted() {
               <button
                 type="button"
                 onClick={() => setHelpDropdownOpen((prev) => !prev)}
-                className="box-border w-[73px] h-[32px] bg-white border border-[#D4D4D4] rounded-[6px] flex items-center justify-center font-medium text-[13px] leading-[20px] text-[#222323] hover:bg-slate-50 transition-colors cursor-pointer"
+                className="box-border w-[73px] h-[32px] bg-white border border-[#D4D4D4] rounded-[6px] flex items-center justify-center font-medium text-[13px] leading-[20px] text-[#222323] hover:bg-gray-50 transition-colors cursor-pointer"
               >
                 Get Help
               </button>
 
               {helpDropdownOpen && (
-                <div className="absolute left-0 bottom-full mb-1 z-30 w-56 rounded border border-slate-200 bg-white p-1.5   text-xs">
+                <div className="absolute left-0 bottom-full mb-1 z-30 w-56 rounded border border-gray-200 bg-white p-1.5   text-xs">
                   <a
                     href="mailto:support@smilux.co.ke"
-                    className="block rounded px-2.5 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium"
+                    className="block rounded px-2.5 py-1.5 text-gray-700 hover:bg-gray-50 hover:text-gray-900 font-medium"
                     onClick={() => setHelpDropdownOpen(false)}
                   >
                     Email Support
@@ -353,7 +353,7 @@ export default function GettingStarted() {
                       setHelpDropdownOpen(false);
                       navigate('/settings');
                     }}
-                    className="w-full text-left rounded px-2.5 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium cursor-pointer"
+                    className="w-full text-left rounded px-2.5 py-1.5 text-gray-700 hover:bg-gray-50 hover:text-gray-900 font-medium cursor-pointer"
                   >
                     View Documentation
                   </button>
@@ -376,27 +376,27 @@ export default function GettingStarted() {
           <button
             type="button"
             onClick={() => navigate('/dashboard')}
-            className="flex items-center gap-2 px-3 py-1.5 rounded border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors cursor-pointer w-auto"
+            className="flex items-center gap-2 px-3 py-1.5 rounded border border-gray-200 bg-white hover:bg-gray-50 text-xs font-semibold text-gray-600 hover:text-gray-900 transition-colors cursor-pointer w-auto"
           >
-            <HugeiconsIcon icon={ViewOffIcon} size={15} className="text-slate-400" />
+            <HugeiconsIcon icon={ViewOffIcon} size={15} className="text-gray-400" />
             <span>Hide onboarding tasks</span>
           </button>
         </div>
 
         {/* ── RIGHT SIDE: Active Task Content Pane (Brand Green Theme) ─────────── */}
-        <div className="flex-1 min-w-0 bg-white rounded border border-slate-200 p-6 sm:p-8 space-y-6">
+        <div className="flex-1 min-w-0 bg-white rounded border border-gray-200 p-6 sm:p-8 space-y-6">
 
           {/* 1. OVERVIEW VIEW */}
           {activeTaskId === 'overview' && (
             <div className="space-y-6 animate-in fade-in-50 duration-200">
               <div className="space-y-3">
-                <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">
+                <h2 className="text-2xl font-extrabold text-gray-900 tracking-tight">
                   Overview
                 </h2>
-                <p className="text-sm text-slate-700 leading-relaxed font-medium">
+                <p className="text-sm text-gray-700 leading-relaxed font-medium">
                   Before diving in to specific features, it helps to start with the essentials.
                 </p>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-gray-600 leading-relaxed">
                   Take a quick tour of the app and get a closer look at clinic settings to ensure we have the right information. Not only will covering these things now make the rest of setup much quicker, it also helps avoid future problems that usually stem from an inaccurate or incomplete profile.
                 </p>
               </div>
@@ -425,16 +425,16 @@ export default function GettingStarted() {
                 />
 
                 {/* Dashboard Mock Card */}
-                <div className="relative rounded border border-slate-200 bg-white p-4  sm space-y-3">
-                  <div className="flex items-center justify-between border-b border-slate-100 pb-2">
-                    <span className="text-xs font-bold text-slate-800">
+                <div className="relative rounded border border-gray-200 bg-white p-4  sm space-y-3">
+                  <div className="flex items-center justify-between border-b border-gray-100 pb-2">
+                    <span className="text-xs font-bold text-gray-800">
                       Utilization Summary &amp; Practice Health
                     </span>
                     <div className="flex items-center gap-1.5">
-                      <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] text-slate-600 font-medium">
+                      <span className="rounded bg-gray-100 px-2 py-0.5 text-[10px] text-gray-600 font-medium">
                         Year 2026
                       </span>
-                      <span className="rounded bg-slate-100 px-2 py-0.5 text-[10px] text-slate-600 font-medium">
+                      <span className="rounded bg-gray-100 px-2 py-0.5 text-[10px] text-gray-600 font-medium">
                         All Chairs
                       </span>
                     </div>
@@ -443,21 +443,21 @@ export default function GettingStarted() {
                   {/* 3 mini chart panels */}
                   <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-1">
                     <div className="space-y-1">
-                      <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                      <span className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
                         Count by Dental Procedure
                       </span>
                       <MiniBarChart />
                     </div>
 
                     <div className="space-y-1">
-                      <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                      <span className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
                         Utilization Rate by Chair
                       </span>
                       <MiniScatterPlot />
                     </div>
 
                     <div className="space-y-1">
-                      <span className="block text-[10px] font-bold text-slate-500 uppercase tracking-wider">
+                      <span className="block text-[10px] font-bold text-gray-500 uppercase tracking-wider">
                         Revenue Source (M-Pesa / SHA / Cash)
                       </span>
                       <MiniPieChart />
@@ -487,30 +487,30 @@ export default function GettingStarted() {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-brand-green">
                   Step 2 of {totalTasks} • Setup
                 </span>
-                <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">
+                <h2 className="text-2xl font-extrabold text-gray-900 tracking-tight">
                   Account &amp; Clinic Practice Settings
                 </h2>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-gray-600 leading-relaxed">
                   Configure your dental clinic practice details, practice licenses (KMPDC), primary location, and default currency (KES) so billing and prescriptions print accurately.
                 </p>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div className="p-4 rounded border border-slate-200 bg-slate-50/60 space-y-2">
-                  <span className="text-xs font-bold text-slate-800">Practice Name</span>
-                  <p className="text-xs text-slate-600">Avicena Dental Practice</p>
+                <div className="p-4 rounded border border-gray-200 bg-gray-50/60 space-y-2">
+                  <span className="text-xs font-bold text-gray-800">Practice Name</span>
+                  <p className="text-xs text-gray-600">Avicena Dental Practice</p>
                 </div>
-                <div className="p-4 rounded border border-slate-200 bg-slate-50/60 space-y-2">
-                  <span className="text-xs font-bold text-slate-800">Primary Branch</span>
-                  <p className="text-xs text-slate-600">Nairobi Main Clinic</p>
+                <div className="p-4 rounded border border-gray-200 bg-gray-50/60 space-y-2">
+                  <span className="text-xs font-bold text-gray-800">Primary Branch</span>
+                  <p className="text-xs text-gray-600">Nairobi Main Clinic</p>
                 </div>
-                <div className="p-4 rounded border border-slate-200 bg-slate-50/60 space-y-2">
-                  <span className="text-xs font-bold text-slate-800">Currency</span>
-                  <p className="text-xs text-slate-600">KES (Kenyan Shillings)</p>
+                <div className="p-4 rounded border border-gray-200 bg-gray-50/60 space-y-2">
+                  <span className="text-xs font-bold text-gray-800">Currency</span>
+                  <p className="text-xs text-gray-600">KES (Kenyan Shillings)</p>
                 </div>
-                <div className="p-4 rounded border border-slate-200 bg-slate-50/60 space-y-2">
-                  <span className="text-xs font-bold text-slate-800">KMPDC Registration</span>
-                  <p className="text-xs text-slate-600">Verified &amp; Active</p>
+                <div className="p-4 rounded border border-gray-200 bg-gray-50/60 space-y-2">
+                  <span className="text-xs font-bold text-gray-800">KMPDC Registration</span>
+                  <p className="text-xs text-gray-600">Verified &amp; Active</p>
                 </div>
               </div>
 
@@ -528,7 +528,7 @@ export default function GettingStarted() {
                 <button
                   type="button"
                   onClick={() => navigate('/settings')}
-                  className="rounded border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs px-4 py-2 transition-colors cursor-pointer"
+                  className="rounded border border-gray-200 bg-white hover:bg-gray-50 text-gray-700 font-bold text-xs px-4 py-2 transition-colors cursor-pointer"
                 >
                   Open Full Settings
                 </button>
@@ -543,20 +543,20 @@ export default function GettingStarted() {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-brand-green">
                   Step 3 of {totalTasks} • Operations
                 </span>
-                <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">
+                <h2 className="text-2xl font-extrabold text-gray-900 tracking-tight">
                   Appointments &amp; Chair Scheduling
                 </h2>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-gray-600 leading-relaxed">
                   Manage dental chair allocations, operative schedules, and automated SMS appointment reminders for your patients.
                 </p>
               </div>
 
-              <div className="p-4 rounded border border-slate-200 bg-slate-50/50 space-y-3">
+              <div className="p-4 rounded border border-gray-200 bg-gray-50/50 space-y-3">
                 <div className="flex items-center justify-between text-xs">
-                  <span className="font-bold text-slate-800">Today&apos;s Appointment Slots</span>
+                  <span className="font-bold text-gray-800">Today&apos;s Appointment Slots</span>
                   <span className="text-brand-green font-bold">5 Confirmed Today</span>
                 </div>
-                <div className="h-2 rounded-full bg-slate-200 overflow-hidden">
+                <div className="h-2 rounded-full bg-gray-200 overflow-hidden">
                   <div className="h-full bg-brand-green rounded-full w-3/5" />
                 </div>
               </div>
@@ -575,7 +575,7 @@ export default function GettingStarted() {
                 <button
                   type="button"
                   onClick={() => navigate('/appointments')}
-                  className="rounded border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs px-4 py-2 transition-colors cursor-pointer"
+                  className="rounded border border-gray-200 bg-white hover:bg-gray-50 text-gray-700 font-bold text-xs px-4 py-2 transition-colors cursor-pointer"
                 >
                   Go to Appointments Calendar
                 </button>
@@ -590,25 +590,25 @@ export default function GettingStarted() {
                 <span className="text-[10px] font-bold uppercase tracking-wider text-brand-green">
                   Step {ONBOARDING_TASKS.findIndex((t) => t.id === activeTaskId) + 1} of {totalTasks}
                 </span>
-                <h2 className="text-2xl font-extrabold text-slate-900 tracking-tight">
+                <h2 className="text-2xl font-extrabold text-gray-900 tracking-tight">
                   {ONBOARDING_TASKS.find((t) => t.id === activeTaskId)?.title}
                 </h2>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-gray-600 leading-relaxed">
                   {ONBOARDING_TASKS.find((t) => t.id === activeTaskId)?.subtitle}. Complete this setup item to unlock full practice automation across Avicena Dental.
                 </p>
               </div>
 
-              <div className="p-6 rounded border border-slate-200 bg-slate-50/50 text-center space-y-3">
+              <div className="p-6 rounded border border-gray-200 bg-gray-50/50 text-center space-y-3">
                 <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand-green/10 text-brand-green mx-auto">
                   <HugeiconsIcon
                     icon={ONBOARDING_TASKS.find((t) => t.id === activeTaskId)?.icon || CheckmarkCircle01Icon}
                     size={24}
                   />
                 </div>
-                <h4 className="text-xs font-bold text-slate-800">
+                <h4 className="text-xs font-bold text-gray-800">
                   {completedTasks[activeTaskId] ? 'Task Marked as Complete!' : 'Ready to configure this feature?'}
                 </h4>
-                <p className="text-xs text-slate-500 max-w-md mx-auto">
+                <p className="text-xs text-gray-500 max-w-md mx-auto">
                   {completedTasks[activeTaskId]
                     ? 'This step is completed. You can revisit and edit settings at any time.'
                     : 'Click below to mark this step as complete and proceed through your onboarding checklist.'}
@@ -626,7 +626,7 @@ export default function GettingStarted() {
                 <button
                   type="button"
                   onClick={() => navigate('/dashboard')}
-                  className="rounded border border-slate-200 bg-white hover:bg-slate-50 text-slate-700 font-bold text-xs px-4 py-2 transition-colors cursor-pointer"
+                  className="rounded border border-gray-200 bg-white hover:bg-gray-50 text-gray-700 font-bold text-xs px-4 py-2 transition-colors cursor-pointer"
                 >
                   Back to Dashboard
                 </button>
@@ -639,44 +639,44 @@ export default function GettingStarted() {
 
       {/* ── VIDEO TOUR MODAL ─────────────────────────────────────────────────── */}
       {videoModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in duration-200">
-          <div className="relative w-full max-w-2xl bg-white rounded border border-slate-200 overflow-hidden">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/60 backdrop-blur-xs animate-in fade-in duration-200">
+          <div className="relative w-full max-w-2xl bg-white rounded border border-gray-200 overflow-hidden">
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 bg-slate-50/70">
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-gray-100 bg-gray-50/70">
               <div className="flex items-center gap-2">
                 <HugeiconsIcon icon={PlayIcon} size={18} className="text-brand-green" />
-                <h3 className="text-xs font-bold text-slate-900">Smilux Dental Platform Walkthrough</h3>
+                <h3 className="text-xs font-bold text-gray-900">Smilux Dental Platform Walkthrough</h3>
               </div>
               <button
                 type="button"
                 onClick={() => setVideoModalOpen(false)}
-                className="p-1 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-200/60 transition-colors cursor-pointer"
+                className="p-1 rounded text-gray-400 hover:text-gray-700 hover:bg-gray-200/60 transition-colors cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
             {/* Video Player Canvas */}
-            <div className="relative aspect-video bg-slate-900 flex flex-col items-center justify-center text-white p-6 text-center">
+            <div className="relative aspect-video bg-gray-900 flex flex-col items-center justify-center text-white p-6 text-center">
               <div className="h-16 w-16 rounded-full bg-brand-green flex items-center justify-center mb-4 ring-8 ring-brand-green/20">
                 <HugeiconsIcon icon={PlayIcon} size={32} className="fill-white translate-x-0.5" />
               </div>
               <h4 className="text-base font-bold">Welcome to Smilux Dental SaaS</h4>
-              <p className="text-xs text-slate-300 max-w-md mt-1">
+              <p className="text-xs text-gray-300 max-w-md mt-1">
                 Explore how to schedule patient visits, perform interactive 3D dental charting, and reconcile M-Pesa STK push receipts in seconds.
               </p>
-              <span className="mt-4 inline-block px-2.5 py-1 rounded bg-slate-800 text-[10px] text-brand-green font-semibold border border-slate-700">
+              <span className="mt-4 inline-block px-2.5 py-1 rounded bg-gray-800 text-[10px] text-brand-green font-semibold border border-gray-700">
                 Duration: 3 mins 45 secs • HD 1080p
               </span>
             </div>
 
             {/* Modal Footer */}
-            <div className="flex items-center justify-between px-5 py-3 bg-slate-50 border-t border-slate-100 text-xs">
-              <span className="text-slate-500">Avicena Dental Practice Onboarding</span>
+            <div className="flex items-center justify-between px-5 py-3 bg-gray-50 border-t border-gray-100 text-xs">
+              <span className="text-gray-500">Avicena Dental Practice Onboarding</span>
               <button
                 type="button"
                 onClick={() => setVideoModalOpen(false)}
-                className="rounded bg-slate-900 text-white font-bold px-3 py-1.5 hover:bg-slate-800 transition-colors cursor-pointer"
+                className="rounded bg-gray-900 text-white font-bold px-3 py-1.5 hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 Close Tour
               </button>

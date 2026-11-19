@@ -21,7 +21,7 @@ export function AuthInput({
   return (
     <div className="mb-3">
       {label && (
-        <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-slate-800">
+        <label htmlFor={id} className="mb-1.5 block text-sm font-medium text-gray-800">
           {label}
         </label>
       )}
@@ -68,7 +68,7 @@ export function AuthPasswordField({
   return (
     <div className="mb-3">
       <div className={`mb-1.5 flex ${showTextToggle ? 'items-center justify-between gap-2' : ''}`}>
-        <label htmlFor={id} className={`block text-sm font-medium text-slate-800 ${showTextToggle ? '' : 'w-full'}`}>
+        <label htmlFor={id} className={`block text-sm font-medium text-gray-800 ${showTextToggle ? '' : 'w-full'}`}>
           {label}
         </label>
         {showTextToggle && (
@@ -100,7 +100,7 @@ export function AuthPasswordField({
           <button
             type="button"
             onClick={onToggleVisible}
-            className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded p-1 text-slate-500 hover:bg-slate-100 hover:text-slate-800 cursor-pointer"
+            className="absolute right-2.5 top-1/2 -translate-y-1/2 rounded p-1 text-gray-500 hover:bg-gray-100 hover:text-gray-800 cursor-pointer"
             aria-label={visible ? 'Hide password' : 'Show password'}
           >
             {visible ? (

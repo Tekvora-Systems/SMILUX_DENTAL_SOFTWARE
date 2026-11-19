@@ -179,13 +179,13 @@ export default function Sidebar({
   const sidebarContent = (
     <aside
       className={`
-        flex h-full flex-col border-r border-slate-200 bg-white font-sans text-slate-800 shrink-0 transition-all duration-300 ease-in-out 
+        flex h-full flex-col border-r border-gray-200 bg-white font-sans text-gray-800 shrink-0 transition-all duration-300 ease-in-out 
         ${isCollapsed ? 'w-[68px]' : 'w-[264px]'}
       `.trim()}
     >
       {/* Clinic Workspace Selector Header */}
       <div
-        className={`relative flex h-14 shrink-0 items-center border-b border-slate-100 ${isCollapsed ? 'justify-center px-1' : 'justify-between px-3'}`}
+        className={`relative flex h-14 shrink-0 items-center border-b border-gray-100 ${isCollapsed ? 'justify-center px-1' : 'justify-between px-3'}`}
         ref={clinicMenuRef}
       >
         {!isCollapsed ? (
@@ -193,7 +193,7 @@ export default function Sidebar({
             <button
               type="button"
               onClick={() => setClinicMenuOpen((prev) => !prev)}
-              className="flex flex-1 items-center justify-between gap-2 rounded border border-slate-200 bg-slate-50/80 p-1 text-left hover:bg-slate-100 transition-colors cursor-pointer min-w-0"
+              className="flex flex-1 items-center justify-between gap-2 rounded border border-gray-200 bg-gray-50/80 p-1 text-left hover:bg-gray-100 transition-colors cursor-pointer min-w-0"
               title="Switch Clinic Workspace"
             >
               <div className="flex items-center gap-2 min-w-0">
@@ -201,10 +201,10 @@ export default function Sidebar({
                   AD
                 </div>
                 <div className="flex flex-col min-w-0">
-                  <span className="text-xs font-bold text-slate-900 truncate leading-tight">
+                  <span className="text-xs font-bold text-gray-900 truncate leading-tight">
                     Avicena Dental
                   </span>
-                  <span className="text-[10px] text-slate-500 font-medium truncate">
+                  <span className="text-[10px] text-gray-500 font-medium truncate">
                     Nairobi Main
                   </span>
                 </div>
@@ -212,7 +212,7 @@ export default function Sidebar({
               <HugeiconsIcon
                 icon={AiAutoRotateIcon}
                 size={16}
-                className={`text-slate-400 shrink-0 transition-transform ${clinicMenuOpen ? 'rotate-180 text-brand-600' : ''}`}
+                className={`text-gray-400 shrink-0 transition-transform ${clinicMenuOpen ? 'rotate-180 text-brand-600' : ''}`}
               />
             </button>
 
@@ -222,10 +222,10 @@ export default function Sidebar({
                 variant="ghost"
                 size="sm"
                 onClick={onToggleCollapse}
-                className="hidden lg:flex ml-1.5 rounded p-1.5 h-auto text-slate-400 hover:bg-slate-100 hover:text-slate-700 transition-colors cursor-pointer shrink-0"
+                className="hidden lg:flex ml-1.5 rounded p-1.5 h-auto text-gray-400 hover:bg-gray-100 hover:text-gray-700 transition-colors cursor-pointer shrink-0"
                 title="Collapse Sidebar (264px → 68px)"
               >
-                <PanelLeftCloseIcon className="h-4 w-4 text-slate-500" />
+                <PanelLeftCloseIcon className="h-4 w-4 text-gray-500" />
               </Button>
             )}
           </>
@@ -250,7 +250,7 @@ export default function Sidebar({
             variant="ghost"
             size="sm"
             onClick={onCloseMobile}
-            className="ml-1.5 rounded p-1 h-auto text-slate-400 hover:bg-slate-100 hover:text-slate-700 lg:hidden cursor-pointer shrink-0"
+            className="ml-1.5 rounded p-1 h-auto text-gray-400 hover:bg-gray-100 hover:text-gray-700 lg:hidden cursor-pointer shrink-0"
             aria-label="Close Sidebar"
           >
             <HugeiconsIcon icon={Cancel01Icon} size={18} />
@@ -259,8 +259,8 @@ export default function Sidebar({
 
         {/* Clinic Dropdown Popover */}
         {clinicMenuOpen && !isCollapsed && (
-          <div className="absolute left-3 right-3 top-[60px] z-50 rounded border border-slate-200 bg-white p-2     animate-in fade-in zoom-in-95 duration-100 font-sans">
-            <div className="px-1.5 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+          <div className="absolute left-3 right-3 top-[60px] z-50 rounded border border-gray-200 bg-white p-2     animate-in fade-in zoom-in-95 duration-100 font-sans">
+            <div className="px-1.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-400">
               Current Workspace
             </div>
             <div className="flex items-center justify-between p-2 rounded bg-brand-50 text-xs font-bold text-brand-900 border border-brand-200/60">
@@ -276,9 +276,9 @@ export default function Sidebar({
               <HugeiconsIcon icon={CheckmarkCircle01Icon} size={16} className="text-brand-600 shrink-0 ml-1" />
             </div>
 
-            <div className="my-1.5 border-t border-slate-100" />
+            <div className="my-1.5 border-t border-gray-100" />
 
-            <div className="px-1.5 py-1 text-[10px] font-bold uppercase tracking-wider text-slate-400">
+            <div className="px-1.5 py-1 text-[10px] font-bold uppercase tracking-wider text-gray-400">
               Other Branches
             </div>
             <Button
@@ -287,20 +287,20 @@ export default function Sidebar({
                 alert("Switching to Westlands Branch...");
                 setClinicMenuOpen(false);
               }}
-              className="flex w-full items-center justify-between p-2 h-auto rounded hover:bg-slate-100 text-xs text-slate-700 font-medium transition-colors cursor-pointer text-left"
+              className="flex w-full items-center justify-between p-2 h-auto rounded hover:bg-gray-100 text-xs text-gray-700 font-medium transition-colors cursor-pointer text-left"
             >
               <div className="flex items-center gap-2 min-w-0">
-                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-slate-200 text-slate-700 text-[10px] font-bold">
+                <div className="flex h-6 w-6 shrink-0 items-center justify-center rounded bg-gray-200 text-gray-700 text-[10px] font-bold">
                   WB
                 </div>
                 <div className="flex flex-col min-w-0">
-                  <span className="truncate font-semibold text-slate-800">Avicena Dental</span>
-                  <span className="text-[10px] text-slate-500 truncate">Westlands Branch</span>
+                  <span className="truncate font-semibold text-gray-800">Avicena Dental</span>
+                  <span className="text-[10px] text-gray-500 truncate">Westlands Branch</span>
                 </div>
               </div>
             </Button>
 
-            <div className="my-1 border-t border-slate-100" />
+            <div className="my-1 border-t border-gray-100" />
 
             <Button
               variant="ghost"
@@ -331,13 +331,13 @@ export default function Sidebar({
               navigate('/getting_started');
               if (isMobileOpen && onCloseMobile) onCloseMobile();
             }}
-            className="group flex items-center justify-between h-[34px] px-3.5 mb-2 rounded-full border border-slate-200 bg-slate-50/80 hover:bg-slate-100 hover:border-slate-300 text-slate-800   transition-all cursor-pointer select-none"
+            className="group flex items-center justify-between h-[34px] px-3.5 mb-2 rounded-full border border-gray-200 bg-gray-50/80 hover:bg-gray-100 hover:border-gray-300 text-gray-800   transition-all cursor-pointer select-none"
           >
-            <span className="text-[13px] font-semibold text-slate-800 group-hover:text-slate-900 tracking-tight">
+            <span className="text-[13px] font-semibold text-gray-800 group-hover:text-gray-900 tracking-tight">
               Get Started
             </span>
             <div className="flex items-center gap-2">
-              <span className="text-[11px] font-semibold text-slate-500 group-hover:text-slate-700" data-testid="fraction_complete">
+              <span className="text-[11px] font-semibold text-gray-500 group-hover:text-gray-700" data-testid="fraction_complete">
                 {onboardingProgress.completed}/{onboardingProgress.total}
               </span>
               <svg
@@ -378,7 +378,7 @@ export default function Sidebar({
               onMouseEnter={handleMouseEnter('Get Started', `${onboardingProgress.completed}/${onboardingProgress.total}`)}
               onMouseLeave={handleMouseLeave}
               aria-label={`Get Started (${onboardingProgress.completed}/${onboardingProgress.total} complete)`}
-              className="group flex items-center justify-center w-9 h-9 rounded-full border border-slate-200 bg-slate-50/80 hover:bg-slate-100 text-slate-600 hover:text-brand-green   transition-all cursor-pointer select-none"
+              className="group flex items-center justify-center w-9 h-9 rounded-full border border-gray-200 bg-gray-50/80 hover:bg-gray-100 text-gray-600 hover:text-brand-green   transition-all cursor-pointer select-none"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -386,7 +386,7 @@ export default function Sidebar({
                 height="18"
                 fill="currentColor"
                 viewBox="0 0 24 24"
-                className="opacity-100 spark-icon text-slate-600 group-hover:text-brand-green transition-colors shrink-0"
+                className="opacity-100 spark-icon text-gray-600 group-hover:text-brand-green transition-colors shrink-0"
                 data-iname="rocket-fill"
               >
                 <path
@@ -402,11 +402,11 @@ export default function Sidebar({
         {NAV_GROUPS.map((group) => (
           <div key={group.title} className="space-y-1">
             {!isCollapsed ? (
-              <h3 className="px-2 text-[10px] font-bold   text-slate-400 uppercase">
+              <h3 className="px-2 text-[10px] font-bold   text-gray-400 uppercase">
                 {group.title}
               </h3>
             ) : (
-              <div className=" border-t border-slate-100" title={group.title} />
+              <div className=" border-t border-gray-100" title={group.title} />
             )}
             <ul className="space-y-1">
               {group.items.map((item) => {
@@ -425,13 +425,13 @@ export default function Sidebar({
                         ${isCollapsed ? 'justify-center px-1 py-1' : 'justify-between px-3 py-1.5'}
                         ${isActive
                           ? 'bg-sky-100 text-sky-700 font-bold  '
-                          : 'text-slate-600 hover:bg-slate-100 hover:text-slate-900'
+                          : 'text-gray-600 hover:bg-gray-100 hover:text-gray-900'
                         }
                       `.trim()}
                     >
                       <div className="flex items-center gap-2 min-w-0">
                         <IconComponent
-                          className={`w-[20px] h-[20px] shrink-0 transition-colors ${isActive ? 'text-sky-600' : 'text-slate-400 group-hover:text-slate-600'
+                          className={`w-[20px] h-[20px] shrink-0 transition-colors ${isActive ? 'text-sky-600' : 'text-gray-400 group-hover:text-gray-600'
                             }`}
                         />
                         {!isCollapsed && <span className="truncate">{item.label}</span>}
@@ -447,7 +447,7 @@ export default function Sidebar({
 
                           {item.badge && !item.isNew && (
                             <span
-                              className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${isActive ? 'bg-sky-100 text-sky-800' : 'bg-slate-100 text-slate-600'
+                              className={`rounded px-1.5 py-0.5 text-[10px] font-bold ${isActive ? 'bg-sky-100 text-sky-800' : 'bg-gray-100 text-gray-600'
                                 }`}
                             >
                               {item.badge}
@@ -469,7 +469,7 @@ export default function Sidebar({
       </nav>
 
       {/* Fixed bottom controls */}
-      <div className={`shrink-0 border-t border-slate-200 ${isCollapsed ? 'p-1.5 space-y-1' : 'p-2 space-y-1'}`}>
+      <div className={`shrink-0 border-t border-gray-200 ${isCollapsed ? 'p-1.5 space-y-1' : 'p-2 space-y-1'}`}>
         {/* Upgrade Plan Button */}
         <Button
           variant="upgrade"
@@ -499,12 +499,12 @@ export default function Sidebar({
             ${isCollapsed ? 'justify-center p-2' : 'gap-2 px-2 py-1.5'}
             ${location.pathname === '/settings'
               ? 'bg-sky-50 text-sky-700 font-bold  '
-              : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'
+              : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'
             }
           `.trim()}
         >
           <ClinicSettingsIcon
-            className={`w-[20px] h-[20px] shrink-0 transition-colors ${location.pathname === '/settings' ? 'text-sky-600' : 'text-slate-400 group-hover:text-slate-600'}`}
+            className={`w-[20px] h-[20px] shrink-0 transition-colors ${location.pathname === '/settings' ? 'text-sky-600' : 'text-gray-400 group-hover:text-gray-600'}`}
           />
           {!isCollapsed && <span>Clinic Settings</span>}
         </button>
@@ -521,17 +521,17 @@ export default function Sidebar({
           onMouseLeave={handleMouseLeave}
           aria-label="Help & Support Center"
           className={`
-            w-full flex items-center rounded text-xs font-semibold text-slate-700 hover:bg-slate-100 hover:text-slate-900 transition-all cursor-pointer h-auto
+            w-full flex items-center rounded text-xs font-semibold text-gray-700 hover:bg-gray-100 hover:text-gray-900 transition-all cursor-pointer h-auto
             ${isCollapsed ? 'justify-center p-2' : 'gap-2 px-2 py-1.5'}
           `.trim()}
         >
-          <SupportIcon className="w-[18px] h-[18px] text-slate-400 shrink-0" />
+          <SupportIcon className="w-[18px] h-[18px] text-gray-400 shrink-0" />
           {!isCollapsed && <span>Help &amp; Support</span>}
         </button>
       </div>
 
       {/* User Footer Profile & Quick Expand/Collapse */}
-      <div className={`shrink-0 border-t border-slate-100 ${isCollapsed ? 'p-0' : 'p-0'}`}>
+      <div className={`shrink-0 border-t border-gray-100 ${isCollapsed ? 'p-0' : 'p-0'}`}>
         {isCollapsed && (
           <div className="flex flex-col items-center gap-2 py-1">
             <Button
@@ -540,10 +540,10 @@ export default function Sidebar({
               onClick={onToggleCollapse}
               onMouseEnter={handleMouseEnter('Expand Sidebar')}
               onMouseLeave={handleMouseLeave}
-              className="rounded p-1 h-auto text-slate-400 hover:text-brand-600 hover:bg-brand-50 transition-colors cursor-pointer mt-1"
+              className="rounded p-1 h-auto text-gray-400 hover:text-brand-600 hover:bg-brand-50 transition-colors cursor-pointer mt-1"
               aria-label="Expand Sidebar (68px → 264px)"
             >
-              <PanelLeftOpenIcon className="h-4 w-4 text-slate-500" />
+              <PanelLeftOpenIcon className="h-4 w-4 text-gray-500" />
             </Button>
           </div>
         )}
@@ -566,9 +566,9 @@ export default function Sidebar({
           className="fixed z-50 pointer-events-none -translate-y-1/2 flex items-center transition-all duration-150 animate-in fade-in zoom-in-95"
           style={{ left: 74, top: activeTooltip.top }}
         >
-          <div className="relative flex items-center gap-1.5 rounded bg-slate-900 px-2.5 py-1 text-xs font-semibold text-white    slate-900/25 whitespace-nowrap">
+          <div className="relative flex items-center gap-1.5 rounded bg-gray-900 px-2.5 py-1 text-xs font-semibold text-white    gray-900/25 whitespace-nowrap">
             {/* Arrow pointing to icon */}
-            <span className="absolute -left-1 top-1/2 -translate-y-1/2 h-2 w-2 rotate-45 bg-slate-900" />
+            <span className="absolute -left-1 top-1/2 -translate-y-1/2 h-2 w-2 rotate-45 bg-gray-900" />
             <span>{activeTooltip.text}</span>
             {activeTooltip.badge && (
               <span className="ml-0.5 rounded bg-sky-500/20 px-1.5 py-0.2 text-[10px] font-bold text-sky-300">
@@ -583,7 +583,7 @@ export default function Sidebar({
       {isMobileOpen && (
         <div className="fixed inset-0 z-50 flex lg:hidden">
           <div
-            className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs transition-opacity duration-200 ease-out"
+            className="fixed inset-0 bg-gray-900/40 backdrop-blur-xs transition-opacity duration-200 ease-out"
             onClick={onCloseMobile}
           />
           <div className="relative z-10 w-[264px] max-w-full animate-drawer-left">

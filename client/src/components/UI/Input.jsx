@@ -27,13 +27,13 @@ const Input = forwardRef(function Input(
       disabled={disabled}
       className={cn(
         // Figma specifications
-        "box-border h-[42px] w-full rounded-[4px] border border-[#D4D4D4] bg-[#FFFFFF] px-3 text-sm text-slate-900 transition-colors",
+        "box-border h-[42px] w-full rounded-[4px] border border-[#D4D4D4] bg-[#FFFFFF] px-3 text-sm text-gray-900 transition-colors",
         // Typography & Placeholder
-        "placeholder:text-slate-400 placeholder:text-sm font-sans font-normal",
+        "placeholder:text-gray-400 placeholder:text-sm font-sans font-normal",
         // Focus state
         "focus:border-[#118bb0] focus:outline-none focus:ring-2 focus:ring-[#118bb0]/25",
         // Disabled state
-        "disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400 disabled:opacity-60",
+        "disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-400 disabled:opacity-60",
         // Error state
         error && "!border-red-400 focus:!border-red-500 focus:!ring-red-500/25",
         className

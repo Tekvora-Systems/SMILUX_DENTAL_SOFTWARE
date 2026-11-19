@@ -348,11 +348,11 @@ export default function Insurance() {
         filterPlaceholder: 'Filter claim #...',
         render: (val, row) => (
           <div className="flex flex-col py-0.5 leading-tight">
-            <span className="font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-1.5">
+            <span className="font-bold text-gray-900 dark:text-white tracking-tight flex items-center gap-1.5">
               <HugeiconsIcon icon={Doc01Icon} size={13} className="text-emerald-700 dark:text-emerald-400" />
               {row.id}
             </span>
-            <span className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+            <span className="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">
               Submitted: {row.date}
             </span>
           </div>
@@ -371,10 +371,10 @@ export default function Insurance() {
               {row.patientName.charAt(0)}
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-semibold text-slate-800 dark:text-slate-100 truncate">
+              <span className="font-semibold text-gray-800 dark:text-gray-100 truncate">
                 {row.patientName}
               </span>
-              <span className="text-[10px] text-slate-500 font-sans">
+              <span className="text-[10px] text-gray-500 font-sans">
                 {row.memberNo}
               </span>
             </div>
@@ -417,7 +417,7 @@ export default function Insurance() {
         filterable: true,
         filterPlaceholder: 'AUTH-...',
         render: (val) => (
-          <span className="text-xs font-sans text-slate-700 dark:text-slate-300 font-semibold">
+          <span className="text-xs font-sans text-gray-700 dark:text-gray-300 font-semibold">
             {val}
           </span>
         ),
@@ -431,10 +431,10 @@ export default function Insurance() {
         filterPlaceholder: 'Filter procedure...',
         render: (val, row) => (
           <div className="flex flex-col py-0.5">
-            <span className="text-xs font-semibold text-slate-800 dark:text-slate-100 truncate">
+            <span className="text-xs font-semibold text-gray-800 dark:text-gray-100 truncate">
               {val}
             </span>
-            <span className="text-[10px] text-slate-500 font-sans truncate">
+            <span className="text-[10px] text-gray-500 font-sans truncate">
               ICD-10: {row.icd10}
             </span>
           </div>
@@ -447,7 +447,7 @@ export default function Insurance() {
         sortable: true,
         filterable: true,
         render: (val) => (
-          <span className="text-xs font-bold text-slate-900 dark:text-white font-sans">
+          <span className="text-xs font-bold text-gray-900 dark:text-white font-sans">
             KES {val.toLocaleString()}
           </span>
         ),
@@ -471,7 +471,7 @@ export default function Insurance() {
         sortable: true,
         filterable: true,
         render: (val) => (
-          <span className="text-xs font-sans text-slate-600 dark:text-slate-300">
+          <span className="text-xs font-sans text-gray-600 dark:text-gray-300">
             KES {val.toLocaleString()}
           </span>
         ),
@@ -502,7 +502,7 @@ export default function Insurance() {
               'bg-orange-50 text-orange-800 border-orange-200 dark:bg-orange-950/40 dark:text-orange-300',
             Rejected:
               'bg-rose-50 text-rose-800 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300',
-          }[val] || 'bg-slate-100 text-slate-700 border-slate-200';
+          }[val] || 'bg-gray-100 text-gray-700 border-gray-200';
 
           return (
             <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold border ${style}`}>
@@ -535,7 +535,7 @@ export default function Insurance() {
               title={`Claim ${row.id}`}
               align="right"
               triggerIcon={MoreHorizontalIcon}
-              triggerClassName="h-7 w-7 rounded hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center   transition-colors cursor-pointer"
+              triggerClassName="h-7 w-7 rounded hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center   transition-colors cursor-pointer"
               items={[
                 {
                   id: 'view',
@@ -580,7 +580,7 @@ export default function Insurance() {
   );
 
   return (
-    <div className=" bg-slate-50/40 dark:bg-slate-950 font-sans mb-6">
+    <div className=" bg-gray-50/40 dark:bg-gray-950 font-sans mb-6">
       {/* ─── 1. Page Header ─────────────────────────────────────────────────── */}
       <PageHeader
         title="Insurance & SHA"
@@ -658,18 +658,18 @@ export default function Insurance() {
 
       {/* ─── 3. New Claim / Pre-Authorization Modal ─────────────────────────── */}
       {isNewClaimModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={PlusSignIcon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white">
                     Submit New Insurance / SHA Claim
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Validate member eligibility & submit ICD-10 coded dental claim
                   </p>
                 </div>
@@ -677,7 +677,7 @@ export default function Insurance() {
               <button
                 type="button"
                 onClick={() => setIsNewClaimModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
@@ -686,7 +686,7 @@ export default function Insurance() {
             <form onSubmit={handleCreateClaim} className="p-6 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Patient Name *
                   </label>
                   <input
@@ -697,12 +697,12 @@ export default function Insurance() {
                     onChange={(e) =>
                       setClaimForm({ ...claimForm, patientName: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     SHA / Member Number *
                   </label>
                   <input
@@ -713,12 +713,12 @@ export default function Insurance() {
                     onChange={(e) =>
                       setClaimForm({ ...claimForm, memberNo: e.target.value })
                     }
-                    className="w-full text-xs font-sans rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs font-sans rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Insurance Payer / Scheme
                   </label>
                   <select
@@ -726,7 +726,7 @@ export default function Insurance() {
                     onChange={(e) =>
                       setClaimForm({ ...claimForm, payer: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="Kenya SHA Direct">Kenya SHA Direct</option>
                     <option value="Kenya SHA (Civil Servants)">Kenya SHA (Civil Servants)</option>
@@ -739,7 +739,7 @@ export default function Insurance() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Pre-Authorization Code
                   </label>
                   <input
@@ -749,13 +749,13 @@ export default function Insurance() {
                     onChange={(e) =>
                       setClaimForm({ ...claimForm, preAuthCode: e.target.value })
                     }
-                    className="w-full text-xs font-sans rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs font-sans rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                   Claimed Dental Procedure *
                 </label>
                 <input
@@ -766,12 +766,12 @@ export default function Insurance() {
                   onChange={(e) =>
                     setClaimForm({ ...claimForm, procedure: e.target.value })
                   }
-                  className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                   WHO ICD-10 Diagnosis Code
                 </label>
                 <select
@@ -779,7 +779,7 @@ export default function Insurance() {
                   onChange={(e) =>
                     setClaimForm({ ...claimForm, icd10: e.target.value })
                   }
-                  className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 >
                   <option value="K02.1 (Dentin Caries)">K02.1 — Caries of Dentin</option>
                   <option value="K04.0 (Irreversible Pulpitis)">K04.0 — Pulpitis (Root Canal)</option>
@@ -792,7 +792,7 @@ export default function Insurance() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Total Claimed Amount (KES) *
                   </label>
                   <input
@@ -803,12 +803,12 @@ export default function Insurance() {
                     onChange={(e) =>
                       setClaimForm({ ...claimForm, claimedAmount: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Patient Co-Pay (KES)
                   </label>
                   <input
@@ -818,16 +818,16 @@ export default function Insurance() {
                     onChange={(e) =>
                       setClaimForm({ ...claimForm, coPay: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-gray-100 dark:border-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsNewClaimModalOpen(false)}
-                  className="px-4 py-2 text-xs font-semibold rounded text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold rounded text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -845,67 +845,67 @@ export default function Insurance() {
 
       {/* ─── 4. View Claim Dossier Modal ────────────────────────────────────── */}
       {viewingClaim && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={Doc01Icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                     {viewingClaim.id}
                   </h3>
-                  <p className="text-xs text-slate-500">{viewingClaim.payer}</p>
+                  <p className="text-xs text-gray-500">{viewingClaim.payer}</p>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => setViewingClaim(null)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
             <div className="p-6 space-y-4 text-xs">
-              <div className="grid grid-cols-2 gap-3 p-3 rounded bg-slate-50 dark:bg-slate-850 border border-slate-100 dark:border-slate-800">
+              <div className="grid grid-cols-2 gap-3 p-3 rounded bg-gray-50 dark:bg-gray-850 border border-gray-100 dark:border-gray-800">
                 <div>
-                  <span className="text-[10px] text-slate-400 uppercase font-semibold">Beneficiary</span>
-                  <p className="font-bold text-slate-900 dark:text-white mt-0.5">{viewingClaim.patientName}</p>
-                  <p className="text-[10px] text-slate-500 font-sans">{viewingClaim.memberNo}</p>
+                  <span className="text-[10px] text-gray-400 uppercase font-semibold">Beneficiary</span>
+                  <p className="font-bold text-gray-900 dark:text-white mt-0.5">{viewingClaim.patientName}</p>
+                  <p className="text-[10px] text-gray-500 font-sans">{viewingClaim.memberNo}</p>
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 uppercase font-semibold">Pre-Auth Code</span>
+                  <span className="text-[10px] text-gray-400 uppercase font-semibold">Pre-Auth Code</span>
                   <p className="font-bold text-emerald-700 dark:text-emerald-400 font-sans mt-0.5">{viewingClaim.preAuthCode}</p>
-                  <p className="text-[10px] text-slate-500">{viewingClaim.date}</p>
+                  <p className="text-[10px] text-gray-500">{viewingClaim.date}</p>
                 </div>
               </div>
 
               <div>
-                <span className="text-[10px] text-slate-400 uppercase font-semibold">Procedure & ICD-10 Coding</span>
-                <p className="font-bold text-slate-800 dark:text-slate-100 mt-0.5">{viewingClaim.procedure}</p>
-                <p className="text-slate-500 font-sans mt-0.5">{viewingClaim.icd10}</p>
+                <span className="text-[10px] text-gray-400 uppercase font-semibold">Procedure & ICD-10 Coding</span>
+                <p className="font-bold text-gray-800 dark:text-gray-100 mt-0.5">{viewingClaim.procedure}</p>
+                <p className="text-gray-500 font-sans mt-0.5">{viewingClaim.icd10}</p>
               </div>
 
-              <div className="border-t border-slate-100 dark:border-slate-800 pt-3 space-y-1.5">
+              <div className="border-t border-gray-100 dark:border-gray-800 pt-3 space-y-1.5">
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Gross Claimed Tariff:</span>
+                  <span className="text-gray-500">Gross Claimed Tariff:</span>
                   <span className="font-sans font-bold">KES {viewingClaim.claimedAmount.toLocaleString()}</span>
                 </div>
                 <div className="flex justify-between text-emerald-700 dark:text-emerald-400">
                   <span>Approved Underwriter Payout:</span>
                   <span className="font-sans font-bold">KES {viewingClaim.approvedAmount.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between text-slate-700 dark:text-slate-300 border-t border-slate-100 dark:border-slate-800 pt-1.5">
+                <div className="flex justify-between text-gray-700 dark:text-gray-300 border-t border-gray-100 dark:border-gray-800 pt-1.5">
                   <span>Patient Co-Pay Share:</span>
                   <span className="font-sans font-bold">KES {viewingClaim.coPay.toLocaleString()}</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center justify-between px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
-              <span className="text-[11px] text-slate-500">
+            <div className="flex items-center justify-between px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
+              <span className="text-[11px] text-gray-500">
                 Status: <strong>{viewingClaim.status}</strong>
               </span>
               <button
@@ -922,18 +922,18 @@ export default function Insurance() {
 
       {/* ─── 5. Learn Modal ─────────────────────────────────────────────────── */}
       {isLearnModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">
                   <HugeiconsIcon icon={Idea01Icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                     SHA & Dental Claims Governance
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Social Health Authority (SHA), Smart Biometrics & ICD-10 Coding
                   </p>
                 </div>
@@ -941,13 +941,13 @@ export default function Insurance() {
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
-            <div className="p-6 space-y-3.5 text-xs text-slate-600 dark:text-slate-300">
+            <div className="p-6 space-y-3.5 text-xs text-gray-600 dark:text-gray-300">
               <div className="p-3 rounded bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/40">
                 <h4 className="font-bold text-emerald-900 dark:text-emerald-300 mb-1">
                   Kenya Social Health Authority (SHA) e-Claims
@@ -958,7 +958,7 @@ export default function Insurance() {
               </div>
 
               <div className="space-y-1.5">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   Pre-Authorization Thresholds
                 </h4>
                 <p className="leading-relaxed">
@@ -967,7 +967,7 @@ export default function Insurance() {
               </div>
             </div>
 
-            <div className="flex items-center justify-end px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+            <div className="flex items-center justify-end px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}

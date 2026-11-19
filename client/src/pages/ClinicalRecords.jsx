@@ -512,11 +512,11 @@ export default function ClinicalRecords() {
         filterPlaceholder: 'Filter record ID...',
         render: (val, row) => (
           <div className="flex flex-col py-0.5 leading-tight">
-            <span className="font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-1.5">
+            <span className="font-bold text-gray-900 dark:text-white tracking-tight flex items-center gap-1.5">
               <HugeiconsIcon icon={Doc01Icon} size={13} className="text-emerald-700 dark:text-emerald-400" />
               {row.id}
             </span>
-            <span className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+            <span className="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">
               {row.date}
             </span>
           </div>
@@ -535,10 +535,10 @@ export default function ClinicalRecords() {
               {row.patientName.charAt(0)}
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-semibold text-slate-800 dark:text-slate-100 truncate hover:text-emerald-700 cursor-pointer">
+              <span className="font-semibold text-gray-800 dark:text-gray-100 truncate hover:text-emerald-700 cursor-pointer">
                 {row.patientName}
               </span>
-              <span className="text-[10px] text-slate-400 font-sans">
+              <span className="text-[10px] text-gray-400 font-sans">
                 {row.patientId}
               </span>
             </div>
@@ -553,8 +553,8 @@ export default function ClinicalRecords() {
         filterable: true,
         filterPlaceholder: 'Tooth #...',
         render: (val) => (
-          <div className="flex items-center gap-1.5 text-xs text-slate-700 dark:text-slate-300">
-            <HugeiconsIcon icon={DentalToothIcon} size={14} className="text-slate-400 shrink-0" />
+          <div className="flex items-center gap-1.5 text-xs text-gray-700 dark:text-gray-300">
+            <HugeiconsIcon icon={DentalToothIcon} size={14} className="text-gray-400 shrink-0" />
             <span className="font-medium truncate">{val}</span>
           </div>
         ),
@@ -568,10 +568,10 @@ export default function ClinicalRecords() {
         filterPlaceholder: 'Filter procedure...',
         render: (val, row) => (
           <div className="flex flex-col py-0.5">
-            <span className="text-xs font-semibold text-slate-800 dark:text-slate-100 truncate">
+            <span className="text-xs font-semibold text-gray-800 dark:text-gray-100 truncate">
               {val}
             </span>
-            <span className="text-[11px] text-slate-500 dark:text-slate-400 truncate">
+            <span className="text-[11px] text-gray-500 dark:text-gray-400 truncate">
               Dx: {row.diagnosis}
             </span>
           </div>
@@ -602,7 +602,7 @@ export default function ClinicalRecords() {
             Orthodontics: 'bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950/40 dark:text-teal-300',
             Prosthodontics: 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300',
             Pediatric: 'bg-pink-50 text-pink-700 border-pink-200 dark:bg-pink-950/40 dark:text-pink-300',
-          }[val] || 'bg-slate-100 text-slate-700 border-slate-200';
+          }[val] || 'bg-gray-100 text-gray-700 border-gray-200';
 
           return (
             <span className={`inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold border ${colorStyles}`}>
@@ -619,7 +619,7 @@ export default function ClinicalRecords() {
         filterable: true,
         filterPlaceholder: 'Filter doctor...',
         render: (val) => (
-          <span className="text-xs text-slate-700 dark:text-slate-300 font-medium">
+          <span className="text-xs text-gray-700 dark:text-gray-300 font-medium">
             {val}
           </span>
         ),
@@ -640,7 +640,7 @@ export default function ClinicalRecords() {
               'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300',
             'Follow Up Required':
               'bg-rose-50 text-rose-800 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300',
-          }[val] || 'bg-slate-100 text-slate-700 border-slate-200';
+          }[val] || 'bg-gray-100 text-gray-700 border-gray-200';
 
           return (
             <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold border ${badgeStyle}`}>
@@ -657,8 +657,8 @@ export default function ClinicalRecords() {
         sortable: true,
         filterable: false,
         render: (val) => (
-          <div className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-300">
-            <HugeiconsIcon icon={FileAttachmentIcon} size={13} className="text-slate-400" />
+          <div className="flex items-center gap-1.5 text-xs text-gray-600 dark:text-gray-300">
+            <HugeiconsIcon icon={FileAttachmentIcon} size={13} className="text-gray-400" />
             <span>{val > 0 ? `${val} image${val > 1 ? 's' : ''}` : 'None'}</span>
           </div>
         ),
@@ -677,7 +677,7 @@ export default function ClinicalRecords() {
               title={`Record ${row.id}`}
               align="right"
               triggerIcon={MoreHorizontalIcon}
-              triggerClassName="h-7 w-7 rounded hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center   transition-colors cursor-pointer"
+              triggerClassName="h-7 w-7 rounded hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center   transition-colors cursor-pointer"
               items={[
                 {
                   id: 'view',
@@ -728,7 +728,7 @@ export default function ClinicalRecords() {
   );
 
   return (
-    <div className=" bg-slate-50/40 dark:bg-slate-950 font-sans mb-6">
+    <div className=" bg-gray-50/40 dark:bg-gray-950 font-sans mb-6">
       {/* ─── 1. Page Header (Exact composition matching Patients page) ────── */}
       <PageHeader
         title="Clinical Records"
@@ -807,18 +807,18 @@ export default function ClinicalRecords() {
 
       {/* ─── 3. Add Clinical Record Modal ───────────────────────────────────── */}
       {isAddModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-2xl max-h-[90vh] overflow-y-auto animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800 sticky top-0 bg-white dark:bg-slate-900 z-10">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-2xl max-h-[90vh] overflow-y-auto animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 sticky top-0 bg-white dark:bg-gray-900 z-10">
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={PlusSignIcon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white">
                     New Clinical Entry
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Record SOAP notes, procedure details, and materials used
                   </p>
                 </div>
@@ -826,7 +826,7 @@ export default function ClinicalRecords() {
               <button
                 type="button"
                 onClick={() => setIsAddModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
@@ -835,7 +835,7 @@ export default function ClinicalRecords() {
             <form onSubmit={handleCreateRecord} className="p-6 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Patient Name *
                   </label>
                   <input
@@ -846,12 +846,12 @@ export default function ClinicalRecords() {
                     onChange={(e) =>
                       setNewRecordForm({ ...newRecordForm, patientName: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Patient File ID
                   </label>
                   <input
@@ -861,12 +861,12 @@ export default function ClinicalRecords() {
                     onChange={(e) =>
                       setNewRecordForm({ ...newRecordForm, patientId: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Tooth / FDI Area
                   </label>
                   <input
@@ -876,12 +876,12 @@ export default function ClinicalRecords() {
                     onChange={(e) =>
                       setNewRecordForm({ ...newRecordForm, tooth: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Category
                   </label>
                   <select
@@ -889,7 +889,7 @@ export default function ClinicalRecords() {
                     onChange={(e) =>
                       setNewRecordForm({ ...newRecordForm, category: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="Restorative">Restorative</option>
                     <option value="Endodontics">Endodontics</option>
@@ -903,7 +903,7 @@ export default function ClinicalRecords() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                   Procedure Performed *
                 </label>
                 <input
@@ -914,12 +914,12 @@ export default function ClinicalRecords() {
                   onChange={(e) =>
                     setNewRecordForm({ ...newRecordForm, procedure: e.target.value })
                   }
-                  className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                   Primary Diagnosis
                 </label>
                 <input
@@ -929,19 +929,19 @@ export default function ClinicalRecords() {
                   onChange={(e) =>
                     setNewRecordForm({ ...newRecordForm, diagnosis: e.target.value })
                   }
-                  className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
               {/* SOAP Documentation Fields */}
-              <div className="space-y-2 pt-2 border-t border-slate-100 dark:border-slate-800">
-                <span className="text-xs font-bold text-slate-900 dark:text-white uppercase tracking-wider">
+              <div className="space-y-2 pt-2 border-t border-gray-100 dark:border-gray-800">
+                <span className="text-xs font-bold text-gray-900 dark:text-white uppercase tracking-wider">
                   SOAP Clinical Notes
                 </span>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                   <div>
-                    <label className="block text-[11px] font-semibold text-slate-600 dark:text-slate-400 mb-0.5">
+                    <label className="block text-[11px] font-semibold text-gray-600 dark:text-gray-400 mb-0.5">
                       S (Subjective - Patient complaints, pain scale)
                     </label>
                     <textarea
@@ -951,12 +951,12 @@ export default function ClinicalRecords() {
                       onChange={(e) =>
                         setNewRecordForm({ ...newRecordForm, soapS: e.target.value })
                       }
-                      className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 p-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 p-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-slate-600 dark:text-slate-400 mb-0.5">
+                    <label className="block text-[11px] font-semibold text-gray-600 dark:text-gray-400 mb-0.5">
                       O (Objective - Clinical examination & radiographic findings)
                     </label>
                     <textarea
@@ -966,12 +966,12 @@ export default function ClinicalRecords() {
                       onChange={(e) =>
                         setNewRecordForm({ ...newRecordForm, soapO: e.target.value })
                       }
-                      className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 p-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 p-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-slate-600 dark:text-slate-400 mb-0.5">
+                    <label className="block text-[11px] font-semibold text-gray-600 dark:text-gray-400 mb-0.5">
                       A (Assessment - Working diagnosis & differential)
                     </label>
                     <textarea
@@ -981,12 +981,12 @@ export default function ClinicalRecords() {
                       onChange={(e) =>
                         setNewRecordForm({ ...newRecordForm, soapA: e.target.value })
                       }
-                      className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 p-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 p-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-[11px] font-semibold text-slate-600 dark:text-slate-400 mb-0.5">
+                    <label className="block text-[11px] font-semibold text-gray-600 dark:text-gray-400 mb-0.5">
                       P (Plan & Treatment Rendered)
                     </label>
                     <textarea
@@ -996,15 +996,15 @@ export default function ClinicalRecords() {
                       onChange={(e) =>
                         setNewRecordForm({ ...newRecordForm, soapP: e.target.value })
                       }
-                      className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 p-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                      className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 p-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                     />
                   </div>
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-slate-100 dark:border-slate-800">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2 border-t border-gray-100 dark:border-gray-800">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Local Anesthetic
                   </label>
                   <input
@@ -1014,12 +1014,12 @@ export default function ClinicalRecords() {
                     onChange={(e) =>
                       setNewRecordForm({ ...newRecordForm, anesthetic: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Record Status
                   </label>
                   <select
@@ -1027,7 +1027,7 @@ export default function ClinicalRecords() {
                     onChange={(e) =>
                       setNewRecordForm({ ...newRecordForm, status: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="Completed">Completed</option>
                     <option value="In Progress">In Progress</option>
@@ -1036,11 +1036,11 @@ export default function ClinicalRecords() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-gray-100 dark:border-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsAddModalOpen(false)}
-                  className="px-4 py-2 text-xs font-semibold rounded text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold rounded text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -1058,96 +1058,96 @@ export default function ClinicalRecords() {
 
       {/* ─── 4. View Record Detail Modal ────────────────────────────────────── */}
       {viewingRecord && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-xl max-h-[85vh] overflow-y-auto animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800 sticky top-0 bg-white dark:bg-slate-900">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-xl max-h-[85vh] overflow-y-auto animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 sticky top-0 bg-white dark:bg-gray-900">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={Doc01Icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                     {viewingRecord.id}
                   </h3>
-                  <p className="text-xs text-slate-500">{viewingRecord.date}</p>
+                  <p className="text-xs text-gray-500">{viewingRecord.date}</p>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => setViewingRecord(null)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
             <div className="p-6 space-y-4 text-xs">
-              <div className="grid grid-cols-2 gap-3 p-3 rounded bg-slate-50 dark:bg-slate-850 border border-slate-100 dark:border-slate-800">
+              <div className="grid grid-cols-2 gap-3 p-3 rounded bg-gray-50 dark:bg-gray-850 border border-gray-100 dark:border-gray-800">
                 <div>
-                  <span className="text-[10px] text-slate-400 uppercase font-semibold">Patient</span>
-                  <p className="font-bold text-slate-900 dark:text-white mt-0.5">{viewingRecord.patientName}</p>
-                  <p className="text-[10px] text-slate-500 font-sans">{viewingRecord.patientId}</p>
+                  <span className="text-[10px] text-gray-400 uppercase font-semibold">Patient</span>
+                  <p className="font-bold text-gray-900 dark:text-white mt-0.5">{viewingRecord.patientName}</p>
+                  <p className="text-[10px] text-gray-500 font-sans">{viewingRecord.patientId}</p>
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 uppercase font-semibold">Clinician</span>
-                  <p className="font-bold text-slate-900 dark:text-white mt-0.5">{viewingRecord.doctor}</p>
+                  <span className="text-[10px] text-gray-400 uppercase font-semibold">Clinician</span>
+                  <p className="font-bold text-gray-900 dark:text-white mt-0.5">{viewingRecord.doctor}</p>
                   <p className="text-[10px] text-emerald-700 dark:text-emerald-400 font-semibold">{viewingRecord.category}</p>
                 </div>
               </div>
 
               <div>
-                <span className="text-[10px] text-slate-400 uppercase font-semibold">Tooth & Procedure</span>
-                <p className="font-bold text-slate-800 dark:text-slate-100 mt-0.5">{viewingRecord.tooth}</p>
-                <p className="text-slate-600 dark:text-slate-300 mt-0.5">{viewingRecord.procedure}</p>
-                <p className="text-[11px] text-slate-500 italic mt-0.5">Diagnosis: {viewingRecord.diagnosis}</p>
+                <span className="text-[10px] text-gray-400 uppercase font-semibold">Tooth & Procedure</span>
+                <p className="font-bold text-gray-800 dark:text-gray-100 mt-0.5">{viewingRecord.tooth}</p>
+                <p className="text-gray-600 dark:text-gray-300 mt-0.5">{viewingRecord.procedure}</p>
+                <p className="text-[11px] text-gray-500 italic mt-0.5">Diagnosis: {viewingRecord.diagnosis}</p>
               </div>
 
               {/* SOAP Breakdown */}
-              <div className="space-y-2 border-t border-slate-100 dark:border-slate-800 pt-3">
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+              <div className="space-y-2 border-t border-gray-100 dark:border-gray-800 pt-3">
+                <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
                   SOAP Progress Notes
                 </span>
 
                 <div className="space-y-2">
-                  <div className="p-2.5 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
+                  <div className="p-2.5 rounded bg-gray-50 dark:bg-gray-800/60 border border-gray-100 dark:border-gray-800">
                     <span className="font-bold text-emerald-700 dark:text-emerald-400">S (Subjective):</span>{' '}
-                    <span className="text-slate-700 dark:text-slate-300">{viewingRecord.soap.s}</span>
+                    <span className="text-gray-700 dark:text-gray-300">{viewingRecord.soap.s}</span>
                   </div>
-                  <div className="p-2.5 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
+                  <div className="p-2.5 rounded bg-gray-50 dark:bg-gray-800/60 border border-gray-100 dark:border-gray-800">
                     <span className="font-bold text-emerald-700 dark:text-emerald-400">O (Objective):</span>{' '}
-                    <span className="text-slate-700 dark:text-slate-300">{viewingRecord.soap.o}</span>
+                    <span className="text-gray-700 dark:text-gray-300">{viewingRecord.soap.o}</span>
                   </div>
-                  <div className="p-2.5 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
+                  <div className="p-2.5 rounded bg-gray-50 dark:bg-gray-800/60 border border-gray-100 dark:border-gray-800">
                     <span className="font-bold text-emerald-700 dark:text-emerald-400">A (Assessment):</span>{' '}
-                    <span className="text-slate-700 dark:text-slate-300">{viewingRecord.soap.a}</span>
+                    <span className="text-gray-700 dark:text-gray-300">{viewingRecord.soap.a}</span>
                   </div>
-                  <div className="p-2.5 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-100 dark:border-slate-800">
+                  <div className="p-2.5 rounded bg-gray-50 dark:bg-gray-800/60 border border-gray-100 dark:border-gray-800">
                     <span className="font-bold text-emerald-700 dark:text-emerald-400">P (Plan):</span>{' '}
-                    <span className="text-slate-700 dark:text-slate-300">{viewingRecord.soap.p}</span>
+                    <span className="text-gray-700 dark:text-gray-300">{viewingRecord.soap.p}</span>
                   </div>
                 </div>
               </div>
 
-              <div className="border-t border-slate-100 dark:border-slate-800 pt-3 grid grid-cols-2 gap-3 text-[11px]">
+              <div className="border-t border-gray-100 dark:border-gray-800 pt-3 grid grid-cols-2 gap-3 text-[11px]">
                 <div>
-                  <span className="text-slate-400 font-semibold">Anesthetic Used:</span>
-                  <p className="text-slate-700 dark:text-slate-300 mt-0.5">{viewingRecord.anesthetic}</p>
+                  <span className="text-gray-400 font-semibold">Anesthetic Used:</span>
+                  <p className="text-gray-700 dark:text-gray-300 mt-0.5">{viewingRecord.anesthetic}</p>
                 </div>
                 <div>
-                  <span className="text-slate-400 font-semibold">Materials & Consumables:</span>
-                  <p className="text-slate-700 dark:text-slate-300 mt-0.5">{viewingRecord.materials}</p>
+                  <span className="text-gray-400 font-semibold">Materials & Consumables:</span>
+                  <p className="text-gray-700 dark:text-gray-300 mt-0.5">{viewingRecord.materials}</p>
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center justify-between px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
-              <span className="text-[11px] text-slate-500">
+            <div className="flex items-center justify-between px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
+              <span className="text-[11px] text-gray-500">
                 Attachments: {viewingRecord.xrayCount} diagnostic image(s)
               </span>
               <button
                 type="button"
                 onClick={() => setViewingRecord(null)}
-                className="px-3.5 py-1.5 rounded text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-300 cursor-pointer"
+                className="px-3.5 py-1.5 rounded text-xs font-semibold bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-300 cursor-pointer"
               >
                 Close Note
               </button>
@@ -1158,18 +1158,18 @@ export default function ClinicalRecords() {
 
       {/* ─── 5. Learn Modal ─────────────────────────────────────────────────── */}
       {isLearnModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">
                   <HugeiconsIcon icon={Idea01Icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                     Clinical Documentation Guide
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Standard operating procedures for dental record keeping
                   </p>
                 </div>
@@ -1177,13 +1177,13 @@ export default function ClinicalRecords() {
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
-            <div className="p-6 space-y-3.5 text-xs text-slate-600 dark:text-slate-300">
+            <div className="p-6 space-y-3.5 text-xs text-gray-600 dark:text-gray-300">
               <div className="p-3 rounded bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/40">
                 <h4 className="font-bold text-emerald-900 dark:text-emerald-300 mb-1">
                   SOAP Progress Note Structure
@@ -1196,7 +1196,7 @@ export default function ClinicalRecords() {
               </div>
 
               <div className="space-y-1.5">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   FDI Two-Digit Tooth Notation System
                 </h4>
                 <p className="leading-relaxed">
@@ -1207,7 +1207,7 @@ export default function ClinicalRecords() {
               </div>
 
               <div className="space-y-1.5">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   Audit Trails & Medical-Legal Compliance
                 </h4>
                 <p className="leading-relaxed">
@@ -1217,7 +1217,7 @@ export default function ClinicalRecords() {
               </div>
             </div>
 
-            <div className="flex items-center justify-end px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+            <div className="flex items-center justify-end px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}

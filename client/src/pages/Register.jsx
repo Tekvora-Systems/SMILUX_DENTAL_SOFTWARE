@@ -76,8 +76,8 @@ export default function Register({ onNavigate, onLoginSuccess, onOpenReferral })
       <SEO title="Start 14-Day Free Trial" description="Register your dental practice for a 14-day free trial on Smilux Software." />
       <div className="space-y-4">
         <div className="text-center">
-          <h2 className="text-xl font-bold text-slate-900">Start 14-Day Free Trial</h2>
-          <p className="mt-1 text-xs text-slate-500">Register your clinic to access Smilux Dental SaaS</p>
+          <h2 className="text-xl font-bold text-gray-900">Start 14-Day Free Trial</h2>
+          <p className="mt-1 text-xs text-gray-500">Register your clinic to access Smilux Dental SaaS</p>
         </div>
 
         <AuthErrorBanner error={error} onDismiss={() => setError('')} />
@@ -152,7 +152,7 @@ export default function Register({ onNavigate, onLoginSuccess, onOpenReferral })
           </Button>
         </form>
 
-        <div className="text-center pt-3 border-t border-slate-100 text-xs text-slate-500">
+        <div className="text-center pt-3 border-t border-gray-100 text-xs text-gray-500">
           Already have a clinic account?{' '}
           <button
             onClick={() => onNavigate('login')}

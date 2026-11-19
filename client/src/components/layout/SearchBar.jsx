@@ -269,15 +269,15 @@ export default function SearchBar() {
           <HugeiconsIcon
             icon={Search01Icon}
             size={18}
-            className="text-[#8D8D8D] shrink-0 group-hover:text-slate-700 transition-colors"
+            className="text-[#8D8D8D] shrink-0 group-hover:text-gray-700 transition-colors"
           />
-          <span className="truncate font-normal text-[15px] leading-[18px] text-[#686868] group-hover:text-slate-800 transition-colors">
+          <span className="truncate font-normal text-[15px] leading-[18px] text-[#686868] group-hover:text-gray-800 transition-colors">
             Search Smilux... (⌘K)
           </span>
         </div>
 
         {/* Right: "All" filter indicator with 14px chevron */}
-        <div className="flex items-center gap-1 pl-2 pr-1 shrink-0 text-[#767676] select-none border-l border-slate-100">
+        <div className="flex items-center gap-1 pl-2 pr-1 shrink-0 text-[#767676] select-none border-l border-gray-100">
           <span className="font-normal text-[11px] leading-[17px] text-[#767676]">
             All
           </span>
@@ -289,16 +289,16 @@ export default function SearchBar() {
 
       {isOpen && typeof document !== 'undefined' && createPortal(
         <div
-          className="fixed inset-0 z-[99999] bg-slate-900/40 backdrop-blur-xs flex items-start justify-center p-3 sm:p-6 md:p-10 font-sans animate-in fade-in duration-100"
+          className="fixed inset-0 z-[99999] bg-gray-900/40 backdrop-blur-xs flex items-start justify-center p-3 sm:p-6 md:p-10 font-sans animate-in fade-in duration-100"
           onClick={() => setIsOpen(false)}
         >
           <div
-            className="w-full max-w-4xl bg-white rounded border border-slate-200   overflow-hidden flex flex-col max-h-[88vh]"
+            className="w-full max-w-4xl bg-white rounded border border-gray-200   overflow-hidden flex flex-col max-h-[88vh]"
             onClick={(e) => e.stopPropagation()}
             onKeyDown={handleKeyDown}
           >
             {/* Header Input */}
-            <div className="p-3.5 border-b border-slate-100 flex items-center gap-3 shrink-0 bg-white">
+            <div className="p-3.5 border-b border-gray-100 flex items-center gap-3 shrink-0 bg-white">
               <HugeiconsIcon icon={Search01Icon} size={18} className="text-brand-600 shrink-0" />
               <input
                 ref={inputRef}
@@ -306,7 +306,7 @@ export default function SearchBar() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Type patient name, invoice #, FDI tooth #, or procedure..."
-                className="flex-1 bg-transparent text-xs sm:text-sm font-semibold text-slate-900 placeholder-slate-400 focus:outline-none min-w-0"
+                className="flex-1 bg-transparent text-xs sm:text-sm font-semibold text-gray-900 placeholder-gray-400 focus:outline-none min-w-0"
                 autoComplete="off"
               />
               {isLoading && (
@@ -316,7 +316,7 @@ export default function SearchBar() {
                 <button
                   type="button"
                   onClick={() => setQuery('')}
-                  className="p-1 rounded text-slate-400 hover:bg-slate-100"
+                  className="p-1 rounded text-gray-400 hover:bg-gray-100"
                 >
                   <HugeiconsIcon icon={Cancel01Icon} size={16} />
                 </button>
@@ -324,22 +324,22 @@ export default function SearchBar() {
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
-                className="px-2 py-0.5 rounded text-[10px] font-medium text-slate-400 bg-slate-100"
+                className="px-2 py-0.5 rounded text-[10px] font-medium text-gray-400 bg-gray-100"
               >
                 ESC
               </button>
             </div>
 
             {/* Filter Pills */}
-            <div className="px-3 py-2 border-b border-slate-100 flex items-center gap-1.5 overflow-x-auto bg-slate-50/50 shrink-0 no-scrollbar">
+            <div className="px-3 py-2 border-b border-gray-100 flex items-center gap-1.5 overflow-x-auto bg-gray-50/50 shrink-0 no-scrollbar">
               {FILTER_PILLS.map((pill) => (
                 <button
                   key={pill.value}
                   type="button"
                   onClick={() => setFilterScope(pill.value)}
                   className={`px-2.5 py-1 rounded-full text-[11px] font-bold whitespace-nowrap transition-all cursor-pointer ${filterScope === pill.value
-                    ? 'bg-slate-900 text-white  '
-                    : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
+                    ? 'bg-gray-900 text-white  '
+                    : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-100'
                     }`}
                 >
                   {pill.label}
@@ -350,7 +350,7 @@ export default function SearchBar() {
             {/* Results Layout */}
             <div className="flex-1 flex overflow-hidden min-h-[320px] max-h-[56vh]">
               {/* Left Column */}
-              <div className="w-full md:w-[58%] overflow-y-auto border-r border-slate-100 divide-y divide-slate-100 no-scrollbar">
+              <div className="w-full md:w-[58%] overflow-y-auto border-r border-gray-100 divide-y divide-gray-100 no-scrollbar">
                 {query.trim() ? (
                   combinedList.length > 0 ? (
                     <div className="py-1">
@@ -363,7 +363,7 @@ export default function SearchBar() {
                             type="button"
                             onClick={() => handleSelect(item)}
                             onMouseEnter={() => setHighlightIndex(idx)}
-                            className={`w-full px-3.5 py-2.5 text-left flex items-start gap-3 transition-colors cursor-pointer ${isSelected ? 'bg-brand-50/90 text-brand-950 border-l-3 border-brand-600 font-semibold' : 'hover:bg-slate-50 text-slate-800'
+                            className={`w-full px-3.5 py-2.5 text-left flex items-start gap-3 transition-colors cursor-pointer ${isSelected ? 'bg-brand-50/90 text-brand-950 border-l-3 border-brand-600 font-semibold' : 'hover:bg-gray-50 text-gray-800'
                               }`}
                           >
                             <div className="w-7 h-7 rounded bg-brand-50 text-brand-700 flex items-center justify-center shrink-0 mt-0.5">
@@ -374,25 +374,25 @@ export default function SearchBar() {
                                 <h4 className="text-xs font-bold truncate">
                                   <HighlightMatch text={item.label} query={query} />
                                 </h4>
-                                <span className="text-[9px] px-1.5 py-0.2 rounded bg-slate-100 text-slate-500 font-bold uppercase shrink-0">
+                                <span className="text-[9px] px-1.5 py-0.2 rounded bg-gray-100 text-gray-500 font-bold uppercase shrink-0">
                                   {item.category}
                                 </span>
                               </div>
-                              <p className="text-[11px] text-slate-500 truncate mt-0.5">{item.description}</p>
+                              <p className="text-[11px] text-gray-500 truncate mt-0.5">{item.description}</p>
                             </div>
                           </button>
                         );
                       })}
                     </div>
                   ) : (
-                    <div className="p-8 text-center text-xs text-slate-400 space-y-1">
-                      <p className="font-bold text-slate-700">No records found for &quot;{query}&quot;</p>
+                    <div className="p-8 text-center text-xs text-gray-400 space-y-1">
+                      <p className="font-bold text-gray-700">No records found for &quot;{query}&quot;</p>
                       <p>Try searching by patient name, invoice ID, or dental procedure.</p>
                     </div>
                   )
                 ) : (
                   <div className="p-4 space-y-3">
-                    <p className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                    <p className="text-[10px] font-bold uppercase tracking-wider text-gray-400">
                       Recent Lookups &amp; Pages
                     </p>
                     {recentItems.length > 0 ? (
@@ -402,29 +402,29 @@ export default function SearchBar() {
                             key={item.path}
                             type="button"
                             onClick={() => handleSelect(item)}
-                            className="w-full px-3 py-2 rounded text-left flex items-center justify-between gap-2 hover:bg-slate-50 cursor-pointer"
+                            className="w-full px-3 py-2 rounded text-left flex items-center justify-between gap-2 hover:bg-gray-50 cursor-pointer"
                           >
-                            <span className="text-xs font-semibold text-slate-800 truncate">{item.title}</span>
-                            <span className="text-[10px] font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">{item.category}</span>
+                            <span className="text-xs font-semibold text-gray-800 truncate">{item.title}</span>
+                            <span className="text-[10px] font-bold text-gray-400 bg-gray-100 px-1.5 py-0.5 rounded">{item.category}</span>
                           </button>
                         ))}
                       </div>
                     ) : (
-                      <p className="text-xs text-slate-400">Your recent patient and invoice lookups will show here.</p>
+                      <p className="text-xs text-gray-400">Your recent patient and invoice lookups will show here.</p>
                     )}
                   </div>
                 )}
               </div>
 
               {/* Right Preview Pane */}
-              <div className="hidden md:flex flex-col md:w-[42%] bg-slate-50/50 p-4 overflow-y-auto">
+              <div className="hidden md:flex flex-col md:w-[42%] bg-gray-50/50 p-4 overflow-y-auto">
                 {activeItem ? (
                   <div className="space-y-3 animate-in fade-in-50 duration-100">
                     <span className="text-[10px] font-bold uppercase tracking-wider text-brand-600 bg-brand-50 px-2 py-0.5 rounded border border-brand-200/60">
                       {activeItem.category || 'Record'}
                     </span>
-                    <h3 className="text-sm font-bold text-slate-900">{activeItem.title || activeItem.label}</h3>
-                    <p className="text-xs text-slate-500">{activeItem.subtitle || activeItem.description}</p>
+                    <h3 className="text-sm font-bold text-gray-900">{activeItem.title || activeItem.label}</h3>
+                    <p className="text-xs text-gray-500">{activeItem.subtitle || activeItem.description}</p>
                     <Button
                       type="button"
                       size="sm"
@@ -435,9 +435,9 @@ export default function SearchBar() {
                     </Button>
                   </div>
                 ) : (
-                  <div className="h-full flex flex-col items-center justify-center text-center p-4 text-slate-400">
-                    <p className="text-xs font-bold text-slate-600">Smart Preview</p>
-                    <p className="text-[11px] text-slate-400 mt-1">Select or hover over search items to inspect records.</p>
+                  <div className="h-full flex flex-col items-center justify-center text-center p-4 text-gray-400">
+                    <p className="text-xs font-bold text-gray-600">Smart Preview</p>
+                    <p className="text-[11px] text-gray-400 mt-1">Select or hover over search items to inspect records.</p>
                   </div>
                 )}
               </div>

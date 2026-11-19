@@ -363,11 +363,11 @@ export default function Payments() {
         filterPlaceholder: 'Filter receipt #...',
         render: (val, row) => (
           <div className="flex flex-col py-0.5 leading-tight">
-            <span className="font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-1.5">
+            <span className="font-bold text-gray-900 dark:text-white tracking-tight flex items-center gap-1.5">
               <HugeiconsIcon icon={Coins01Icon} size={13} className="text-emerald-700 dark:text-emerald-400" />
               {row.id}
             </span>
-            <span className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+            <span className="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">
               {row.date}
             </span>
           </div>
@@ -381,7 +381,7 @@ export default function Payments() {
         filterable: true,
         filterPlaceholder: 'M-Pesa or EFT code...',
         render: (val) => (
-          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-sans font-bold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 border border-slate-200 dark:border-slate-700">
+          <span className="inline-flex items-center px-2 py-0.5 rounded text-xs font-sans font-bold bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700">
             {val}
           </span>
         ),
@@ -399,10 +399,10 @@ export default function Payments() {
               {row.patientName.charAt(0)}
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-semibold text-slate-800 dark:text-slate-100 truncate">
+              <span className="font-semibold text-gray-800 dark:text-gray-100 truncate">
                 {row.patientName}
               </span>
-              <span className="text-[10px] text-slate-400 font-sans">
+              <span className="text-[10px] text-gray-400 font-sans">
                 {row.phone}
               </span>
             </div>
@@ -445,7 +445,7 @@ export default function Payments() {
             'Insurance EFT': 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300',
             'Visa / Mastercard': 'bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950/40 dark:text-purple-300',
             Cash: 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300',
-          }[val] || 'bg-slate-100 text-slate-700 border-slate-200';
+          }[val] || 'bg-gray-100 text-gray-700 border-gray-200';
 
           return (
             <span className={`inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold border ${style}`}>
@@ -478,7 +478,7 @@ export default function Payments() {
         sortable: true,
         filterable: true,
         render: (val) => (
-          <span className="text-xs text-slate-600 dark:text-slate-300 truncate block">
+          <span className="text-xs text-gray-600 dark:text-gray-300 truncate block">
             {val}
           </span>
         ),
@@ -497,7 +497,7 @@ export default function Payments() {
             Reconciled: 'bg-blue-50 text-blue-800 border-blue-200 dark:bg-blue-950/40 dark:text-blue-300',
             'Pending Verification': 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300',
             Refunded: 'bg-rose-50 text-rose-800 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300',
-          }[val] || 'bg-slate-100 text-slate-700 border-slate-200';
+          }[val] || 'bg-gray-100 text-gray-700 border-gray-200';
 
           return (
             <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold border ${style}`}>
@@ -530,7 +530,7 @@ export default function Payments() {
               title={`Receipt ${row.id}`}
               align="right"
               triggerIcon={MoreHorizontalIcon}
-              triggerClassName="h-7 w-7 rounded hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center   transition-colors cursor-pointer"
+              triggerClassName="h-7 w-7 rounded hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center   transition-colors cursor-pointer"
               items={[
                 {
                   id: 'view',
@@ -577,7 +577,7 @@ export default function Payments() {
   );
 
   return (
-    <div className=" bg-slate-50/40 dark:bg-slate-950 font-sans mb-6">
+    <div className=" bg-gray-50/40 dark:bg-gray-950 font-sans mb-6">
       {/* ─── 1. Page Header ─────────────────────────────────────────────────── */}
       <PageHeader
         title="Payments"
@@ -655,18 +655,18 @@ export default function Payments() {
 
       {/* ─── 3. Record Payment Modal ────────────────────────────────────────── */}
       {isRecordModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={PlusSignIcon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white">
                     Record Payment Receipt
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Log M-Pesa, Cash, Card, or EFT remittance against an invoice
                   </p>
                 </div>
@@ -674,7 +674,7 @@ export default function Payments() {
               <button
                 type="button"
                 onClick={() => setIsRecordModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
@@ -683,7 +683,7 @@ export default function Payments() {
             <form onSubmit={handleRecordPayment} className="p-6 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Patient Name *
                   </label>
                   <input
@@ -694,12 +694,12 @@ export default function Payments() {
                     onChange={(e) =>
                       setPaymentForm({ ...paymentForm, patientName: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Linked Invoice #
                   </label>
                   <input
@@ -709,12 +709,12 @@ export default function Payments() {
                     onChange={(e) =>
                       setPaymentForm({ ...paymentForm, invoiceId: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Payment Method
                   </label>
                   <select
@@ -722,7 +722,7 @@ export default function Payments() {
                     onChange={(e) =>
                       setPaymentForm({ ...paymentForm, method: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="M-Pesa STK">M-Pesa STK</option>
                     <option value="M-Pesa Till">M-Pesa Till</option>
@@ -734,7 +734,7 @@ export default function Payments() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Amount Received (KES) *
                   </label>
                   <input
@@ -745,12 +745,12 @@ export default function Payments() {
                     onChange={(e) =>
                       setPaymentForm({ ...paymentForm, amount: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     M-Pesa / EFT Ref Code
                   </label>
                   <input
@@ -760,12 +760,12 @@ export default function Payments() {
                     onChange={(e) =>
                       setPaymentForm({ ...paymentForm, txnRef: e.target.value.toUpperCase() })
                     }
-                    className="w-full text-xs font-sans rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs font-sans rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Patient Phone
                   </label>
                   <input
@@ -775,13 +775,13 @@ export default function Payments() {
                     onChange={(e) =>
                       setPaymentForm({ ...paymentForm, phone: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                   Payment Notes / Remarks
                 </label>
                 <input
@@ -791,15 +791,15 @@ export default function Payments() {
                   onChange={(e) =>
                     setPaymentForm({ ...paymentForm, notes: e.target.value })
                   }
-                  className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
-              <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-gray-100 dark:border-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsRecordModalOpen(false)}
-                  className="px-4 py-2 text-xs font-semibold rounded text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold rounded text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -817,32 +817,32 @@ export default function Payments() {
 
       {/* ─── 4. View Receipt Modal ──────────────────────────────────────────── */}
       {viewingPayment && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-md overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-md overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={Coins01Icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                     Official Payment Receipt
                   </h3>
-                  <p className="text-xs text-slate-500">{viewingPayment.id}</p>
+                  <p className="text-xs text-gray-500">{viewingPayment.id}</p>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => setViewingPayment(null)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
             <div className="p-6 space-y-4 text-xs">
-              <div className="p-4 rounded bg-slate-50 dark:bg-slate-850 border border-slate-100 dark:border-slate-800 text-center">
-                <span className="text-[10px] text-slate-400 uppercase font-bold tracking-wider">
+              <div className="p-4 rounded bg-gray-50 dark:bg-gray-850 border border-gray-100 dark:border-gray-800 text-center">
+                <span className="text-[10px] text-gray-400 uppercase font-bold tracking-wider">
                   Amount Received
                 </span>
                 <p className="text-2xl font-extrabold text-emerald-700 dark:text-emerald-400 font-sans mt-1">
@@ -853,35 +853,35 @@ export default function Payments() {
                 </span>
               </div>
 
-              <div className="space-y-2 border-t border-slate-100 dark:border-slate-800 pt-3">
+              <div className="space-y-2 border-t border-gray-100 dark:border-gray-800 pt-3">
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Received From:</span>
-                  <span className="font-bold text-slate-900 dark:text-white">{viewingPayment.patientName}</span>
+                  <span className="text-gray-500">Received From:</span>
+                  <span className="font-bold text-gray-900 dark:text-white">{viewingPayment.patientName}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Linked Invoice:</span>
+                  <span className="text-gray-500">Linked Invoice:</span>
                   <span className="font-sans font-semibold text-blue-600">{viewingPayment.invoiceId}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Date & Time:</span>
-                  <span className="text-slate-700 dark:text-slate-300">{viewingPayment.date}</span>
+                  <span className="text-gray-500">Date & Time:</span>
+                  <span className="text-gray-700 dark:text-gray-300">{viewingPayment.date}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Processed By:</span>
-                  <span className="text-slate-700 dark:text-slate-300">{viewingPayment.cashier}</span>
+                  <span className="text-gray-500">Processed By:</span>
+                  <span className="text-gray-700 dark:text-gray-300">{viewingPayment.cashier}</span>
                 </div>
               </div>
 
-              <div className="p-2.5 rounded bg-slate-50 dark:bg-slate-800 text-[11px] text-slate-600 dark:text-slate-300">
+              <div className="p-2.5 rounded bg-gray-50 dark:bg-gray-800 text-[11px] text-gray-600 dark:text-gray-300">
                 <strong>Remarks:</strong> {viewingPayment.notes}
               </div>
             </div>
 
-            <div className="flex items-center justify-end gap-2 px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+            <div className="flex items-center justify-end gap-2 px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <button
                 type="button"
                 onClick={() => alert(`Printing thermal receipt ${viewingPayment.id}...`)}
-                className="px-3 py-1.5 rounded text-xs font-semibold border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 flex items-center gap-1.5 cursor-pointer"
+                className="px-3 py-1.5 rounded text-xs font-semibold border border-gray-200 bg-white text-gray-700 hover:bg-gray-50 flex items-center gap-1.5 cursor-pointer"
               >
                 <HugeiconsIcon icon={PrinterIcon} size={14} />
                 <span>Print</span>
@@ -900,18 +900,18 @@ export default function Payments() {
 
       {/* ─── 5. Learn Modal ─────────────────────────────────────────────────── */}
       {isLearnModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">
                   <HugeiconsIcon icon={Idea01Icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                     Payments & Reconciliation Guide
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Safaricom Daraja C2B, Insurance EFTs, and daily till closing
                   </p>
                 </div>
@@ -919,13 +919,13 @@ export default function Payments() {
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
-            <div className="p-6 space-y-3.5 text-xs text-slate-600 dark:text-slate-300">
+            <div className="p-6 space-y-3.5 text-xs text-gray-600 dark:text-gray-300">
               <div className="p-3 rounded bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/40">
                 <h4 className="font-bold text-emerald-900 dark:text-emerald-300 mb-1">
                   Automated M-Pesa Daraja Verification
@@ -936,7 +936,7 @@ export default function Payments() {
               </div>
 
               <div className="space-y-1.5">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   Insurance Batch Remittance Allocation
                 </h4>
                 <p className="leading-relaxed">
@@ -945,7 +945,7 @@ export default function Payments() {
               </div>
             </div>
 
-            <div className="flex items-center justify-end px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+            <div className="flex items-center justify-end px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}

@@ -49,7 +49,7 @@ const FEATURES = [
 
 export default function FeaturesSection() {
   return (
-    <section id="features" className="w-full py-20 bg-white border-t border-[#E7E7E7]">
+    <section id="features" className="w-full py-20 bg-white  ">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -90,7 +90,7 @@ export default function FeaturesSection() {
                 {/* Tags */}
                 <div className="flex flex-wrap gap-1.5">
                   {f.tags.map((t) => (
-                    <span key={t} className="inline-flex items-center rounded border border-[#E7E7E7] bg-slate-50 px-2 py-0.5 text-[11px] font-semibold text-[#595959]">
+                    <span key={t} className="inline-flex items-center rounded border border-[#E7E7E7] bg-gray-50 px-2 py-0.5 text-[11px] font-semibold text-[#595959]">
                       {t}
                     </span>
                   ))}

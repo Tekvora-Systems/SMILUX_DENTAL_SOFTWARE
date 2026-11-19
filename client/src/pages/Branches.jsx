@@ -411,13 +411,13 @@ export default function BranchesPage() {
                 <HugeiconsIcon icon={Hospital01Icon} size={13} />
               </div>
               <div className="truncate min-w-0">
-                <div className="font-semibold text-slate-900 dark:text-white flex items-center gap-1.5 leading-tight">
+                <div className="font-semibold text-gray-900 dark:text-white flex items-center gap-1.5 leading-tight">
                   <span className="truncate">{row.name}</span>
-                  <span className="px-1 py-0.2 rounded text-[9px] font-bold bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300 shrink-0">
+                  <span className="px-1 py-0.2 rounded text-[9px] font-bold bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300 shrink-0">
                     {row.code}
                   </span>
                 </div>
-                <div className="text-slate-500 font-medium leading-none mt-0.5 truncate text-[11px]">
+                <div className="text-gray-500 font-medium leading-none mt-0.5 truncate text-[11px]">
                   {row.city} • {row.type}
                 </div>
               </div>
@@ -432,7 +432,7 @@ export default function BranchesPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="font-semibold text-slate-800 dark:text-slate-200 truncate block max-w-[175px]">
+          <span className="font-semibold text-gray-800 dark:text-gray-200 truncate block max-w-[175px]">
             {row.manager}
           </span>
         ),
@@ -449,7 +449,7 @@ export default function BranchesPage() {
             <span className="inline-block px-1.5 py-0.5 rounded bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-200/60 font-bold text-xs">
               {row.chairs} Chairs
             </span>
-            <span className="text-[11px] text-slate-500">
+            <span className="text-[11px] text-gray-500">
               ({row.activeChairs} Active)
             </span>
           </div>
@@ -462,7 +462,7 @@ export default function BranchesPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="font-medium text-slate-700 dark:text-slate-300">
+          <span className="font-medium text-gray-700 dark:text-gray-300">
             {row.phone}
           </span>
         ),
@@ -474,7 +474,7 @@ export default function BranchesPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="text-slate-600 dark:text-slate-400 truncate block max-w-[175px]">
+          <span className="text-gray-600 dark:text-gray-400 truncate block max-w-[175px]">
             {row.email}
           </span>
         ),
@@ -486,7 +486,7 @@ export default function BranchesPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="text-slate-600 dark:text-slate-300 font-medium truncate block max-w-[185px]" title={row.operatingHours}>
+          <span className="text-gray-600 dark:text-gray-300 font-medium truncate block max-w-[185px]" title={row.operatingHours}>
             {row.operatingHours}
           </span>
         ),
@@ -498,7 +498,7 @@ export default function BranchesPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="text-slate-700 dark:text-slate-300 font-medium truncate block">
+          <span className="text-gray-700 dark:text-gray-300 font-medium truncate block">
             {row.staffCount}
           </span>
         ),
@@ -530,13 +530,12 @@ export default function BranchesPage() {
         ],
         render: (val, row) => (
           <span
-            className={`inline-block px-2 py-0.5 rounded-full font-semibold text-xs ${
-              row.status === 'Operational'
+            className={`inline-block px-2 py-0.5 rounded-full font-semibold text-xs ${row.status === 'Operational'
                 ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300'
                 : row.status === 'Expanding'
-                ? 'bg-blue-100 text-blue-800 dark:bg-blue-950/50 dark:text-blue-300'
-                : 'bg-amber-100 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300'
-            }`}
+                  ? 'bg-blue-100 text-blue-800 dark:bg-blue-950/50 dark:text-blue-300'
+                  : 'bg-amber-100 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300'
+              }`}
           >
             {row.status}
           </span>
@@ -559,7 +558,7 @@ export default function BranchesPage() {
                 e.stopPropagation();
                 alert(`Calling clinic reception at ${row.phone}`);
               }}
-              className="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-emerald-700 dark:text-emerald-400 transition-colors cursor-pointer"
+              className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 text-emerald-700 dark:text-emerald-400 transition-colors cursor-pointer"
             >
               <HugeiconsIcon icon={CallIcon} size={14} />
             </button>
@@ -682,25 +681,25 @@ export default function BranchesPage() {
 
       {/* ─── Add Branch Modal ─── */}
       {isAddModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-1.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={PlusSignIcon} size={16} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-white text-base">
+                  <h3 className="font-bold text-gray-900 dark:text-white text-base">
                     Register Clinic Branch Location
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Add new dental facility to practice network and assign operatories
                   </p>
                 </div>
               </div>
               <button
                 onClick={() => setIsAddModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-white p-1 rounded"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-white p-1 rounded"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
@@ -709,7 +708,7 @@ export default function BranchesPage() {
             <form onSubmit={handleAddBranch} className="p-5 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div className="space-y-1 sm:col-span-2">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Branch Facility Name *
                   </label>
                   <input
@@ -718,12 +717,12 @@ export default function BranchesPage() {
                     placeholder="e.g. Kisumu Mega City Branch"
                     value={newBranch.name}
                     onChange={(e) => setNewBranch({ ...newBranch, name: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Facility Code
                   </label>
                   <input
@@ -731,12 +730,12 @@ export default function BranchesPage() {
                     placeholder="e.g. KSM-01"
                     value={newBranch.code}
                     onChange={(e) => setNewBranch({ ...newBranch, code: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Facility Type
                   </label>
                   <select
@@ -746,7 +745,7 @@ export default function BranchesPage() {
                       const cat = t.includes('Flagship') ? 'flagship' : 'satellite';
                       setNewBranch({ ...newBranch, type: t, category: cat });
                     }}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   >
                     <option value="Specialist Dental Center">Specialist Dental Center</option>
                     <option value="Flagship Dental Hospital">Flagship Dental Hospital</option>
@@ -757,13 +756,13 @@ export default function BranchesPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Clinical Director / Manager
                   </label>
                   <select
                     value={newBranch.manager}
                     onChange={(e) => setNewBranch({ ...newBranch, manager: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   >
                     <option value="Dr. Darrell Steward">Dr. Darrell Steward</option>
                     <option value="Dr. Faith Mutua">Dr. Faith Mutua</option>
@@ -775,7 +774,7 @@ export default function BranchesPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Dental Chairs / Operatories *
                   </label>
                   <input
@@ -785,12 +784,12 @@ export default function BranchesPage() {
                     required
                     value={newBranch.chairs}
                     onChange={(e) => setNewBranch({ ...newBranch, chairs: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1 sm:col-span-2">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Physical Address & Building *
                   </label>
                   <input
@@ -799,12 +798,12 @@ export default function BranchesPage() {
                     placeholder="e.g. Mega City Mall, 1st Floor, Nairobi-Kisumu Highway"
                     value={newBranch.address}
                     onChange={(e) => setNewBranch({ ...newBranch, address: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     City / County
                   </label>
                   <input
@@ -812,12 +811,12 @@ export default function BranchesPage() {
                     placeholder="e.g. Kisumu or Nairobi"
                     value={newBranch.city}
                     onChange={(e) => setNewBranch({ ...newBranch, city: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Contact Phone (+254) *
                   </label>
                   <input
@@ -826,16 +825,16 @@ export default function BranchesPage() {
                     placeholder="+254 20 XXX XXXX"
                     value={newBranch.phone}
                     onChange={(e) => setNewBranch({ ...newBranch, phone: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsAddModalOpen(false)}
-                  className="px-4 py-2 rounded text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  className="px-4 py-2 rounded text-xs font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 >
                   Cancel
                 </button>
@@ -854,24 +853,24 @@ export default function BranchesPage() {
 
       {/* ─── Learn Drawer / Modal ─── */}
       {isLearnModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <span className="text-xl">💡</span>
-                <h3 className="font-bold text-slate-900 dark:text-white text-base">
+                <h3 className="font-bold text-gray-900 dark:text-white text-base">
                   Branches & Workspaces: Guide
                 </h3>
               </div>
               <button
                 onClick={() => setIsLearnModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-white p-1 rounded"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-white p-1 rounded"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
-            <div className="p-5 space-y-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            <div className="p-5 space-y-4 text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
               <div className="p-3 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200/60 dark:border-emerald-800/50 rounded">
                 <p className="font-semibold text-emerald-800 dark:text-emerald-300 mb-1">
                   Unified Multi-Location Dental Practice Management
@@ -882,7 +881,7 @@ export default function BranchesPage() {
               </div>
 
               <div className="space-y-2">
-                <h4 className="font-bold text-slate-900 dark:text-white text-sm">Key Multi-Branch Capabilities</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white text-sm">Key Multi-Branch Capabilities</h4>
                 <ul className="space-y-1.5 list-disc pl-4">
                   <li>
                     <strong>Operatory & Chair Utilization:</strong> Track active chairs per facility to optimize daily practitioner bookings and surgery turnaround.

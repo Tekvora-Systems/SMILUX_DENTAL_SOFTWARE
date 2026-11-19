@@ -58,7 +58,7 @@ export default function Topbar({
 
   return (
     <header
-      className="sticky top-0 z-20 flex h-14 w-full items-center justify-between border-b border-slate-200 bg-white/95 px-3 sm:px-4 backdrop-blur-md font-sans shrink-0"
+      className="sticky top-0 z-20 flex h-14 w-full items-center justify-between border-b border-gray-200 bg-white/95 px-3 sm:px-4 backdrop-blur-md font-sans shrink-0"
     >
       {/* ── Left: Mobile Menu Toggle + Smilux Brand Badge ───────────────── */}
       <div className="flex items-center gap-2.5 shrink-0 min-w-0">
@@ -66,7 +66,7 @@ export default function Topbar({
           variant="ghost"
           size="sm"
           onClick={onOpenMobile}
-          className="rounded p-1.5 h-auto text-slate-500 hover:bg-slate-100 hover:text-slate-800 lg:hidden cursor-pointer"
+          className="rounded p-1.5 h-auto text-gray-500 hover:bg-gray-100 hover:text-gray-800 lg:hidden cursor-pointer"
           aria-label="Open Mobile Menu"
         >
           <HugeiconsIcon icon={Menu01Icon} size={20} />
@@ -121,7 +121,7 @@ export default function Topbar({
           <button
             type="button"
             onClick={() => setUserMenuOpen(!userMenuOpen)}
-            className="flex items-center p-0.5 h-auto rounded-full border border-slate-200 hover:border-brand-pink transition-all cursor-pointer ring-offset-2 hover:ring-2 hover:ring-brand-pink/20"
+            className="flex items-center p-0.5 h-auto rounded-full border border-gray-200 hover:border-brand-pink transition-all cursor-pointer ring-offset-2 hover:ring-2 hover:ring-brand-pink/20"
             aria-label="User menu"
           >
             <div className="flex h-8 w-8 items-center justify-center rounded-full overflow-hidden shrink-0  ">
@@ -130,22 +130,22 @@ export default function Topbar({
           </button>
 
           {userMenuOpen && (
-            <div className="absolute right-0 top-full mt-1.5 w-60 py-1.5 bg-white rounded border border-slate-200 z-50 text-sm overflow-hidden     animate-in fade-in zoom-in-95 duration-100 font-sans">
+            <div className="absolute right-0 top-full mt-1.5 w-60 py-1.5 bg-white rounded border border-gray-200 z-50 text-sm overflow-hidden     animate-in fade-in zoom-in-95 duration-100 font-sans">
               {/* User Info Header */}
-              <div className="px-4 py-3 border-b border-slate-100 bg-slate-50/50">
+              <div className="px-4 py-3 border-b border-gray-100 bg-gray-50/50">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full overflow-hidden shrink-0   border border-slate-200">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full overflow-hidden shrink-0   border border-gray-200">
                     <UserAvatar user={user} className="h-10 w-10" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="font-bold text-slate-900 text-xs truncate">{user?.name || 'Dr. John Doe'}</p>
-                    <p className="text-[11px] text-slate-500 truncate">{user?.email || 'doctor@clinic.co.ke'}</p>
+                    <p className="font-bold text-gray-900 text-xs truncate">{user?.name || 'Dr. John Doe'}</p>
+                    <p className="text-[11px] text-gray-500 truncate">{user?.email || 'doctor@clinic.co.ke'}</p>
                     <div className="flex items-center gap-1.5 mt-1">
                       <span className="inline-block px-1.5 py-0.5 rounded text-[10px] bg-brand-50 text-brand-700 capitalize font-bold border border-brand-200/60">
                         {user?.role || 'Lead Dentist'}
                       </span>
                       {user?.gender && (
-                        <span className="inline-block px-1.5 py-0.5 rounded text-[10px] bg-slate-100 text-slate-600 capitalize font-medium">
+                        <span className="inline-block px-1.5 py-0.5 rounded text-[10px] bg-gray-100 text-gray-600 capitalize font-medium">
                           {user.gender}
                         </span>
                       )}
@@ -159,27 +159,27 @@ export default function Topbar({
                 <Link
                   to="/settings"
                   onClick={() => setUserMenuOpen(false)}
-                  className="flex items-center gap-2.5 px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+                  className="flex items-center gap-2.5 px-4 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
                 >
-                  <HugeiconsIcon icon={UserCircleIcon} size={16} className="text-slate-400" />
+                  <HugeiconsIcon icon={UserCircleIcon} size={16} className="text-gray-400" />
                   <span>Account Profile</span>
                 </Link>
 
                 <Link
                   to="/settings"
                   onClick={() => setUserMenuOpen(false)}
-                  className="flex items-center gap-2.5 px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+                  className="flex items-center gap-2.5 px-4 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
                 >
-                  <HugeiconsIcon icon={LockPasswordIcon} size={16} className="text-slate-400" />
+                  <HugeiconsIcon icon={LockPasswordIcon} size={16} className="text-gray-400" />
                   <span>Change Password</span>
                 </Link>
 
                 <Link
                   to="/settings"
                   onClick={() => setUserMenuOpen(false)}
-                  className="flex items-center gap-2.5 px-4 py-2 text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors"
+                  className="flex items-center gap-2.5 px-4 py-2 text-xs font-semibold text-gray-700 hover:bg-gray-50 transition-colors"
                 >
-                  <HugeiconsIcon icon={Settings01Icon} size={16} className="text-slate-400" />
+                  <HugeiconsIcon icon={Settings01Icon} size={16} className="text-gray-400" />
                   <span>Clinic Settings</span>
                 </Link>
 
@@ -188,13 +188,13 @@ export default function Topbar({
                     setUserMenuOpen(false);
                     if (onOpenHelp) onOpenHelp();
                   }}
-                  className="w-full flex items-center justify-start gap-2.5 px-4 py-2 h-auto text-xs font-semibold text-slate-700 hover:bg-slate-50 transition-colors cursor-pointer text-left"
+                  className="w-full flex items-center justify-start gap-2.5 px-4 py-2 h-auto text-xs font-semibold text-gray-700 hover:bg-gray-50 transition-colors cursor-pointer text-left"
                 >
-                  <HugeiconsIcon icon={HelpCircleIcon} size={16} className="text-slate-400" />
+                  <HugeiconsIcon icon={HelpCircleIcon} size={16} className="text-gray-400" />
                   <span>Documentation &amp; Status</span>
                 </button>
 
-                <div className="my-1 h-px bg-slate-100" />
+                <div className="my-1 h-px bg-gray-100" />
 
                 <button
                   onClick={handleLogout}
@@ -206,7 +206,7 @@ export default function Topbar({
               </div>
 
               {/* Version Footer */}
-              <div className="px-4 py-1.5 bg-slate-50 text-[10px] text-slate-400 font-medium flex items-center justify-between border-t border-slate-100">
+              <div className="px-4 py-1.5 bg-gray-50 text-[10px] text-gray-400 font-medium flex items-center justify-between border-t border-gray-100">
                 <span>Smilux Dental SaaS</span>
                 <span>v1.0.0</span>
               </div>

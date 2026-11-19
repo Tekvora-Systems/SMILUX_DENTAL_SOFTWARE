@@ -94,7 +94,7 @@ export function InfoBadgeIcon({
 
       {isOpen && (
         <div className="absolute left-0 top-6 z-50 w-80 sm:w-96 rounded border border-[#E0E0E0] bg-white p-4  [0px_16px_36px_rgba(0,0,0,0.14)] animate-in fade-in zoom-in-95 duration-150">
-          <div className="flex items-start justify-between gap-2 border-b border-slate-100 pb-2.5 mb-3">
+          <div className="flex items-start justify-between gap-2 border-b border-gray-100 pb-2.5 mb-3">
             <div>
               <h4 className="text-xs font-bold text-[#080808]">{title}</h4>
               {subtitle && <p className="text-[11px] text-[#888888] mt-0.5">{subtitle}</p>}
@@ -102,7 +102,7 @@ export function InfoBadgeIcon({
             <button
               type="button"
               onClick={() => setIsOpen(false)}
-              className="rounded p-1 text-slate-400 hover:bg-slate-100 hover:text-slate-700 cursor-pointer"
+              className="rounded p-1 text-gray-400 hover:bg-gray-100 hover:text-gray-700 cursor-pointer"
               aria-label="Close data popover"
             >
               ✕
@@ -112,7 +112,7 @@ export function InfoBadgeIcon({
           {stats.length > 0 && (
             <div className="grid grid-cols-2 gap-2 mb-3">
               {stats.map((st) => (
-                <div key={st.label} className="rounded bg-slate-50 border border-slate-100 px-2.5 py-1.5">
+                <div key={st.label} className="rounded bg-gray-50 border border-gray-100 px-2.5 py-1.5">
                   <div className="text-[10px] font-medium text-[#888888]">{st.label}</div>
                   <div className="text-xs font-bold text-[#080808] mt-0.5">{st.value}</div>
                 </div>
@@ -129,7 +129,7 @@ export function InfoBadgeIcon({
                 {items.map((item) => (
                   <div
                     key={item.label}
-                    className="flex items-center justify-between rounded border border-slate-100 bg-white px-2 py-1 text-[11px]"
+                    className="flex items-center justify-between rounded border border-gray-100 bg-white px-2 py-1 text-[11px]"
                   >
                     <span className="font-semibold text-[#555555]">{item.label}</span>
                     <span className="font-bold text-[#080808]">{item.value}</span>
@@ -146,7 +146,7 @@ export function InfoBadgeIcon({
                 setIsOpen(false);
                 onOpenModal();
               }}
-              className="mt-3 w-full rounded bg-slate-900 py-1.5 text-[11px] font-semibold text-white hover:bg-slate-800 transition-colors cursor-pointer"
+              className="mt-3 w-full rounded bg-gray-900 py-1.5 text-[11px] font-semibold text-white hover:bg-gray-800 transition-colors cursor-pointer"
             >
               Open Full Chart Display Modal
             </button>
@@ -240,8 +240,8 @@ export function CardActionToolbar({
                   setIsMenuOpen(false);
                 }}
                 className={`flex w-full items-center justify-between rounded px-2.5 py-1.5 text-xs font-semibold transition-colors cursor-pointer ${isSelected
-                  ? 'bg-slate-900 text-white'
-                  : 'text-[#080808] hover:bg-slate-100'
+                  ? 'bg-gray-900 text-white'
+                  : 'text-[#080808] hover:bg-gray-100'
                   }`}
               >
                 <span>Year {yr}</span>
@@ -258,10 +258,10 @@ export function CardActionToolbar({
 // ─── Shared Section Header ──────────────────────────────────────────────────
 export function ViewHeader({ title, subtitle, actions }) {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-slate-200  mb-1">
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-gray-200  mb-1">
       <div>
-        <h1 className="text-xl font-bold text-slate-900 tracking-tight">{title}</h1>
-        {subtitle && <p className="text-xs text-slate-500 mt-0.5">{subtitle}</p>}
+        <h1 className="text-xl font-bold text-gray-900 tracking-tight">{title}</h1>
+        {subtitle && <p className="text-xs text-gray-500 mt-0.5">{subtitle}</p>}
       </div>
       {actions && <div className="flex items-center gap-2 shrink-0">{actions}</div>}
     </div>
@@ -539,7 +539,7 @@ export function DashboardView({ user }) {
   }
 
   return (
-    <div className="space-y-2 font-sans text-slate-900 mb-8">
+    <div className="space-y-2 font-sans text-gray-900 mb-8">
       {/* Workspace Header & Action Bar */}
       <ViewHeader
         title={`${greeting.text} ${greeting.emoji} , ${doctorName}`}
@@ -561,9 +561,9 @@ export function DashboardView({ user }) {
               size="sm"
               loading={isRefreshing}
               onClick={handleRefresh}
-              className="px-3 py-1.5 cursor-pointer font-bold border-slate-300 text-slate-700 hover:bg-slate-50"
+              className="px-3 py-1.5 cursor-pointer font-bold border-gray-300 text-gray-700 hover:bg-gray-50"
             >
-              <RefreshIcon className={`w-3.5 h-3.5 ${isRefreshing ? 'animate-spin text-brand-green' : 'text-slate-600'}`} />
+              <RefreshIcon className={`w-3.5 h-3.5 ${isRefreshing ? 'animate-spin text-brand-green' : 'text-gray-600'}`} />
               <span>Refresh</span>
             </Button>
 
@@ -1082,7 +1082,7 @@ export function DashboardView({ user }) {
       {/* Full Display Chart Modal (Triggered by CardActionToolbar Expand or InfoBadgeIcon) */}
       {activeChartModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4"
+          className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-xs p-4"
           onClick={() => setActiveChartModal(null)}
         >
           <div
@@ -1090,7 +1090,7 @@ export function DashboardView({ user }) {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Modal Header */}
-            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-gray-100 pb-4">
               <div className="flex items-center gap-3">
                 <div
                   className={`flex h-10 w-10 shrink-0 items-center justify-center rounded border ${activeChartModal === 'sales'
@@ -1195,7 +1195,7 @@ export function DashboardView({ user }) {
                     else if (activeChartModal === 'payment-growth') setPaymentGrowthYear(yr);
                     else setBalanceYear(yr);
                   }}
-                  className="rounded border border-slate-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-slate-700   cursor-pointer"
+                  className="rounded border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-semibold text-gray-700   cursor-pointer"
                 >
                   {availableYears.map((yr) => (
                     <option key={yr} value={yr}>
@@ -1207,7 +1207,7 @@ export function DashboardView({ user }) {
                 <button
                   type="button"
                   onClick={() => setActiveChartModal(null)}
-                  className="flex h-8 w-8 items-center justify-center rounded border border-slate-200 text-slate-500 hover:bg-slate-100 hover:text-slate-900 cursor-pointer"
+                  className="flex h-8 w-8 items-center justify-center rounded border border-gray-200 text-gray-500 hover:bg-gray-100 hover:text-gray-900 cursor-pointer"
                   aria-label="Close modal"
                 >
                   ✕
@@ -1216,7 +1216,7 @@ export function DashboardView({ user }) {
             </div>
 
             {/* Quick Chart Switch Tabs */}
-            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 border-b border-slate-100">
+            <div className="flex items-center gap-1.5 overflow-x-auto pb-1 border-b border-gray-100">
               {[
                 { id: 'sales', label: 'Sales & Revenue' },
                 { id: 'patient-growth', label: 'Patient Growth' },
@@ -1233,8 +1233,8 @@ export function DashboardView({ user }) {
                     type="button"
                     onClick={() => setActiveChartModal(tab.id)}
                     className={`rounded px-3 py-1.5 text-xs font-semibold transition-all cursor-pointer whitespace-nowrap ${isActive
-                      ? 'bg-slate-900 text-white  '
-                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200 hover:text-slate-900'
+                      ? 'bg-gray-900 text-white  '
+                      : 'bg-gray-100 text-gray-600 hover:bg-gray-200 hover:text-gray-900'
                       }`}
                   >
                     {tab.label}
@@ -1248,7 +1248,7 @@ export function DashboardView({ user }) {
                 {/* Sales KPI Summary Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy(currentSalesData.totalProfit, 'Total Net Profit')}
                     title="Click to copy net profit"
                   >
@@ -1256,7 +1256,7 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{currentSalesData.totalProfit}</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalAnnualSales), '12-Month Gross Sales')}
                     title="Click to copy gross sales"
                   >
@@ -1264,7 +1264,7 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{formatCurrency(totalAnnualSales)}</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(avgMonthlySales), 'Monthly Average Sales')}
                     title="Click to copy monthly average"
                   >
@@ -1391,7 +1391,7 @@ export function DashboardView({ user }) {
                           onClick={() => setSelectedSalesMonth(m.month)}
                           className={`flex flex-col items-start rounded border p-2.5 text-left transition-all cursor-pointer ${isSelected
                             ? 'border-[#5654DC] bg-indigo-50/60  '
-                            : 'border-slate-100 bg-slate-50/50 hover:border-slate-200 hover:bg-white'
+                            : 'border-gray-100 bg-gray-50/50 hover:border-gray-200 hover:bg-white'
                             }`}
                         >
                           <span className="text-[11px] font-semibold text-[#888888]">
@@ -1411,7 +1411,7 @@ export function DashboardView({ user }) {
                   {currentPatientData.metrics.map((metric) => (
                     <div
                       key={metric.id}
-                      className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                      className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                       onClick={() => handleCopy(metric.value, metric.label)}
                       title="Click to copy metric value"
                     >
@@ -1542,7 +1542,7 @@ export function DashboardView({ user }) {
                           onClick={() => setSelectedWebWeek(bar.month)}
                           className={`flex flex-col items-start rounded border p-2.5 text-left transition-all cursor-pointer ${isSelected
                             ? 'border-[#FF9F0A] bg-amber-50/70  '
-                            : 'border-slate-100 bg-slate-50/50 hover:border-slate-200 hover:bg-white'
+                            : 'border-gray-100 bg-gray-50/50 hover:border-gray-200 hover:bg-white'
                             }`}
                         >
                           <span className="text-[11px] font-semibold text-[#888888]">
@@ -1560,7 +1560,7 @@ export function DashboardView({ user }) {
                 {/* Payment Distribution KPI Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy(`${formatNumber(totalTransactions)} sales`, 'Total Transactions')}
                     title="Click to copy total transactions"
                   >
@@ -1568,7 +1568,7 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{formatNumber(totalTransactions)} sales</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy('+14% vs last mo', 'Monthly Growth')}
                     title="Click to copy growth"
                   >
@@ -1578,7 +1578,7 @@ export function DashboardView({ user }) {
                     </div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy('Cash & Private Pay (60%)', 'Dominant Channel')}
                     title="Click to copy dominant channel"
                   >
@@ -1696,7 +1696,7 @@ export function DashboardView({ user }) {
                 {/* Income Summary KPI Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalIncomeVal), 'Total Income')}
                     title="Click to copy total income"
                   >
@@ -1704,7 +1704,7 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{formatCurrency(totalIncomeVal)}</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy('+32.1%', 'Growth Pace')}
                     title="Click to copy growth pace"
                   >
@@ -1714,7 +1714,7 @@ export function DashboardView({ user }) {
                     </div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy('94% Optimal', 'Yield Score')}
                     title="Click to copy yield score"
                   >
@@ -1780,35 +1780,35 @@ export function DashboardView({ user }) {
                   <div className="space-y-3 w-full max-w-sm">
                     <h4 className="text-xs font-bold uppercase tracking-wider text-[#888888] select-text">Settlement Routes</h4>
                     <div
-                      className="rounded border border-slate-100 bg-slate-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-slate-100 transition-all select-text"
+                      className="rounded border border-gray-100 bg-gray-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition-all select-text"
                       onClick={() => handleCopy(formatCurrency(mpesaIncomeVal), 'M-Pesa STK Income')}
                       title="Click to copy M-Pesa STK income"
                     >
                       <div className="flex items-center gap-2">
                         <span className="h-3 w-3 rounded-full bg-[#00C26B]" />
-                        <span className="text-xs font-semibold text-slate-800 select-text">M-Pesa STK</span>
+                        <span className="text-xs font-semibold text-gray-800 select-text">M-Pesa STK</span>
                       </div>
                       <span className="text-xs font-bold text-[#080808] select-text">{formatCurrency(mpesaIncomeVal)}</span>
                     </div>
                     <div
-                      className="rounded border border-slate-100 bg-slate-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-slate-100 transition-all select-text"
+                      className="rounded border border-gray-100 bg-gray-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition-all select-text"
                       onClick={() => handleCopy(formatCurrency(privateIncomeVal), 'Private Payers Income')}
                       title="Click to copy Private Payers income"
                     >
                       <div className="flex items-center gap-2">
                         <span className="h-3 w-3 rounded-full bg-[#FF9900]" />
-                        <span className="text-xs font-semibold text-slate-800 select-text">Private Payers</span>
+                        <span className="text-xs font-semibold text-gray-800 select-text">Private Payers</span>
                       </div>
                       <span className="text-xs font-bold text-[#080808] select-text">{formatCurrency(privateIncomeVal)}</span>
                     </div>
                     <div
-                      className="rounded border border-slate-100 bg-slate-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-slate-100 transition-all select-text"
+                      className="rounded border border-gray-100 bg-gray-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition-all select-text"
                       onClick={() => handleCopy(formatCurrency(claimsIncomeVal), 'Insurance Claims Income')}
                       title="Click to copy Insurance Claims income"
                     >
                       <div className="flex items-center gap-2">
                         <span className="h-3 w-3 rounded-full bg-[#FFE88C]" />
-                        <span className="text-xs font-semibold text-slate-800 select-text">Insurance Claims</span>
+                        <span className="text-xs font-semibold text-gray-800 select-text">Insurance Claims</span>
                       </div>
                       <span className="text-xs font-bold text-[#080808] select-text">{formatCurrency(claimsIncomeVal)}</span>
                     </div>
@@ -1820,7 +1820,7 @@ export function DashboardView({ user }) {
                 {/* Expenses KPI Summary Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalExpenseVal), 'Total Practice Expense')}
                     title="Click to copy total expense"
                   >
@@ -1828,14 +1828,14 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{formatCurrency(totalExpenseVal)}</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy(`${formatCurrency(expenseCategories[0].amount)} (45%)`, 'Top Expense (Internet)')}
                     title="Click to copy top expense"
                   >
                     <span className="text-[11px] font-medium text-[#888888] select-text">Top Category</span>
                     <div className="mt-1 text-lg font-bold text-[#9353D3] select-text">Internet (45%)</div>
                   </div>
-                  <div className="rounded border border-slate-100 bg-slate-50/70 p-3 select-text">
+                  <div className="rounded border border-gray-100 bg-gray-50/70 p-3 select-text">
                     <span className="text-[11px] font-medium text-[#888888] select-text">Period Window</span>
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{expensesPeriod}</div>
                   </div>
@@ -1879,15 +1879,15 @@ export function DashboardView({ user }) {
                       <div
                         key={cat.id}
                         onClick={() => handleCopy(`${formatCurrency(cat.amount)} (${cat.pct})`, `${cat.label} Expense`)}
-                        className="flex items-center justify-between rounded border border-slate-100 bg-slate-50/70 px-3.5 py-2.5 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                        className="flex items-center justify-between rounded border border-gray-100 bg-gray-50/70 px-3.5 py-2.5 cursor-pointer hover:bg-gray-100 transition-all select-text"
                       >
                         <div className="flex items-center gap-2.5">
                           <span className="h-2 w-3.5 rounded-full" style={{ backgroundColor: cat.color }} />
-                          <span className="text-xs font-semibold text-slate-800 select-text">{cat.label}</span>
+                          <span className="text-xs font-semibold text-gray-800 select-text">{cat.label}</span>
                         </div>
                         <div className="flex items-center gap-3">
                           <span className="text-xs font-bold text-[#0F172A] select-text">{formatCurrency(cat.amount)}</span>
-                          <span className="text-xs font-extrabold text-slate-500 select-text">{cat.pct}</span>
+                          <span className="text-xs font-extrabold text-gray-500 select-text">{cat.pct}</span>
                         </div>
                       </div>
                     ))}
@@ -1899,7 +1899,7 @@ export function DashboardView({ user }) {
                 {/* Income & Expense KPI Summary Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalIncomeCompVal), 'Total Income')}
                   >
                     <div className="flex items-center gap-1.5">
@@ -1912,7 +1912,7 @@ export function DashboardView({ user }) {
                     </div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalExpenseCompVal), 'Total Expenses')}
                   >
                     <div className="flex items-center gap-1.5">
@@ -1925,7 +1925,7 @@ export function DashboardView({ user }) {
                     </div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(cashSettlementVal), 'Net Surplus')}
                   >
                     <span className="text-[11px] font-medium text-[#888888] select-text">Net Surplus</span>
@@ -2030,7 +2030,7 @@ export function DashboardView({ user }) {
                 {/* Balance KPI Summary Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalBalanceVal), 'Settled Balance')}
                     title="Click to copy settled balance"
                   >
@@ -2038,7 +2038,7 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{formatCurrency(totalBalanceVal)}</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
+                    className="rounded border border-gray-100 bg-gray-50/70 p-3 cursor-pointer hover:bg-gray-100 transition-all select-text"
                     onClick={() => handleCopy('+12% vs last yrs', 'Fiscal Pace')}
                     title="Click to copy fiscal pace"
                   >
@@ -2047,7 +2047,7 @@ export function DashboardView({ user }) {
                       <span>▲</span> 12% vs last yrs
                     </div>
                   </div>
-                  <div className="rounded border border-slate-100 bg-slate-50/70 p-3 select-text">
+                  <div className="rounded border border-gray-100 bg-gray-50/70 p-3 select-text">
                     <span className="text-[11px] font-medium text-[#888888] select-text">Cycle Window</span>
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">Feb 1 – 28</div>
                   </div>
@@ -2185,7 +2185,7 @@ export function DashboardView({ user }) {
             {/* Top Summaries Row (Matching Top Cards UI) */}
             <div className="grid grid-cols-2 gap-3 mb-3">
               <div
-                className="flex flex-col rounded border border-slate-100 bg-slate-50/50 p-3 cursor-pointer hover:border-slate-200 transition-all select-text group"
+                className="flex flex-col rounded border border-gray-100 bg-gray-50/50 p-3 cursor-pointer hover:border-gray-200 transition-all select-text group"
                 onClick={() => handleCopy('+14%', 'Monthly Channel Growth')}
                 title="Click to copy growth rate"
               >
@@ -2194,14 +2194,14 @@ export function DashboardView({ user }) {
                   <span className="text-xl font-bold tracking-tight text-[#080808] group-hover:text-emerald-600 transition-colors select-text">
                     +14%
                   </span>
-                  <div className="flex items-center gap-0.5 rounded bg-[#FFFFFF] border border-slate-200 px-1.5 py-0.5 text-[10px] font-bold text-[#00C26B] select-text">
+                  <div className="flex items-center gap-0.5 rounded bg-[#FFFFFF] border border-gray-200 px-1.5 py-0.5 text-[10px] font-bold text-[#00C26B] select-text">
                     <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
                       <path d="M6 2.5L9 6.5H3L6 2.5Z" fill="#00C26B" />
                     </svg>
                     <span>vs last mo</span>
                   </div>
                 </div>
-                <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-slate-200 flex">
+                <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-gray-200 flex">
                   <div className="h-full bg-[#00CBE8]" style={{ width: '60%' }} title="Cash & Private (60%)" />
                   <div className="h-full bg-[#5654DC]" style={{ width: '24%' }} title="M-Pesa Till (24%)" />
                   <div className="h-full bg-[#FB3B52]" style={{ width: '16%' }} title="SHA / Insurance (16%)" />
@@ -2209,7 +2209,7 @@ export function DashboardView({ user }) {
               </div>
 
               <div
-                className="flex flex-col rounded border border-slate-100 bg-slate-50/50 p-3 cursor-pointer hover:border-slate-200 transition-all select-text group"
+                className="flex flex-col rounded border border-gray-100 bg-gray-50/50 p-3 cursor-pointer hover:border-gray-200 transition-all select-text group"
                 onClick={() => handleCopy(`${formatNumber(totalTransactions)} sales`, 'Total Transactions')}
                 title="Click to copy total sales transactions"
               >
@@ -2525,7 +2525,7 @@ export function DashboardView({ user }) {
             {/* Top Summaries Row (Matching Top Cards UI) */}
             <div className="grid grid-cols-2 gap-3 mb-4">
               <div
-                className="flex flex-col rounded border border-slate-100 bg-slate-50/50 p-3 cursor-pointer hover:border-amber-300 hover:bg-amber-50/30 transition-all select-text group"
+                className="flex flex-col rounded border border-gray-100 bg-gray-50/50 p-3 cursor-pointer hover:border-amber-300 hover:bg-amber-50/30 transition-all select-text group"
                 onClick={() => handleCopy(formatCurrency(totalIncomeVal), 'Active Practice Income')}
                 title="Click to copy active practice income"
               >
@@ -2534,14 +2534,14 @@ export function DashboardView({ user }) {
                   <span className="text-xl font-bold tracking-tight text-[#080808] group-hover:text-amber-600 transition-colors select-text">
                     {formatCurrency(totalIncomeVal)}
                   </span>
-                  <div className="flex items-center gap-0.5 rounded bg-[#FFFFFF] border border-slate-200 px-1.5 py-0.5 text-[10px] font-bold text-[#00C26B] select-text">
+                  <div className="flex items-center gap-0.5 rounded bg-[#FFFFFF] border border-gray-200 px-1.5 py-0.5 text-[10px] font-bold text-[#00C26B] select-text">
                     <svg width="10" height="10" viewBox="0 0 12 12" fill="none">
                       <path d="M6 2.5L9 6.5H3L6 2.5Z" fill="#00C26B" />
                     </svg>
                     <span>32.1%</span>
                   </div>
                 </div>
-                <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-slate-200 flex">
+                <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-gray-200 flex">
                   <div className="h-full bg-[#00C26B]" style={{ width: '45%' }} />
                   <div className="h-full bg-[#FF9900]" style={{ width: '35%' }} />
                   <div className="h-full bg-[#FFDC8E]" style={{ width: '20%' }} />
@@ -2549,7 +2549,7 @@ export function DashboardView({ user }) {
               </div>
 
               <div
-                className="flex flex-col rounded border border-slate-100 bg-slate-50/50 p-3 select-text cursor-pointer hover:border-slate-300 transition-all"
+                className="flex flex-col rounded border border-gray-100 bg-gray-50/50 p-3 select-text cursor-pointer hover:border-gray-300 transition-all"
                 onClick={() => handleCopy('94% Optimal (3 active routes)', 'Channel Yield Status')}
                 title="Click to copy yield status"
               >
@@ -2635,12 +2635,12 @@ export function DashboardView({ user }) {
           </div>
 
           {/* Breakdown Mini Cards & Footer */}
-          <div className="space-y-2 pt-3 border-t border-slate-100">
+          <div className="space-y-2 pt-3 border-t border-gray-100">
             <div className="grid grid-cols-3 gap-2">
               <div
                 className={`flex flex-col rounded border p-2.5 cursor-pointer transition-all select-text ${focusedIncomeRoute === 'mpesa'
                   ? 'border-emerald-400 bg-emerald-50/70  '
-                  : 'border-slate-100 bg-slate-50/50 hover:bg-slate-100 hover:border-slate-300'
+                  : 'border-gray-100 bg-gray-50/50 hover:bg-gray-100 hover:border-gray-300'
                   }`}
                 onClick={() => {
                   setFocusedIncomeRoute((p) => (p === 'mpesa' ? null : 'mpesa'));
@@ -2659,7 +2659,7 @@ export function DashboardView({ user }) {
               <div
                 className={`flex flex-col rounded border p-2.5 cursor-pointer transition-all select-text ${focusedIncomeRoute === 'private'
                   ? 'border-orange-400 bg-orange-50/70  '
-                  : 'border-slate-100 bg-slate-50/50 hover:bg-slate-100 hover:border-slate-300'
+                  : 'border-gray-100 bg-gray-50/50 hover:bg-gray-100 hover:border-gray-300'
                   }`}
                 onClick={() => {
                   setFocusedIncomeRoute((p) => (p === 'private' ? null : 'private'));
@@ -2678,7 +2678,7 @@ export function DashboardView({ user }) {
               <div
                 className={`flex flex-col rounded border p-2.5 cursor-pointer transition-all select-text ${focusedIncomeRoute === 'claims'
                   ? 'border-amber-400 bg-amber-50/70  '
-                  : 'border-slate-100 bg-slate-50/50 hover:bg-slate-100 hover:border-slate-300'
+                  : 'border-gray-100 bg-gray-50/50 hover:bg-gray-100 hover:border-gray-300'
                   }`}
                 onClick={() => {
                   setFocusedIncomeRoute((p) => (p === 'claims' ? null : 'claims'));
@@ -3075,7 +3075,7 @@ export function DashboardView({ user }) {
                         handleCopy(`${formatCurrency(cat.amount)} (${cat.pct})`, `${cat.label} Expense`);
                       }}
                       title={`Click to copy ${cat.label}: ${formatCurrency(cat.amount)}`}
-                      className={`flex items-center justify-between rounded px-2.5 py-1.5 cursor-pointer transition-all select-text ${isFocused ? 'bg-slate-100  ' : 'hover:bg-slate-50'
+                      className={`flex items-center justify-between rounded px-2.5 py-1.5 cursor-pointer transition-all select-text ${isFocused ? 'bg-gray-100  ' : 'hover:bg-gray-50'
                         }`}
                     >
                       <div className="flex items-center gap-2.5">
@@ -3098,7 +3098,7 @@ export function DashboardView({ user }) {
           </div>
 
           {/* Bottom Section: TOP EXPENSE 2x2 Grid (Matching Reference Image) */}
-          <div className="mt-3 pt-3 border-t border-slate-100">
+          <div className="mt-3 pt-3 border-t border-gray-100">
             <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#888888] mb-2.5 select-text">
               TOP EXPENSE
             </h4>
@@ -3115,7 +3115,7 @@ export function DashboardView({ user }) {
                     title={`Click to copy ${item.shortLabel} expense`}
                     className={`rounded border p-3 cursor-pointer transition-all select-text ${isFocused
                       ? 'border-purple-300 bg-purple-50/40  '
-                      : 'border-slate-100 bg-[#F8FAFC] hover:border-slate-200 hover:bg-slate-100/60'
+                      : 'border-gray-100 bg-[#F8FAFC] hover:border-gray-200 hover:bg-gray-100/60'
                       }`}
                   >
                     <div className="flex items-center gap-2">
@@ -3182,7 +3182,7 @@ export function DashboardView({ user }) {
               <div
                 onClick={() => handleCopy(`${formatCurrency(totalIncomeCompVal)} (+4.51%)`, 'Total Income')}
                 title="Click to copy total income"
-                className="flex flex-col rounded p-2.5 hover:bg-slate-50/90 cursor-pointer transition-colors select-text"
+                className="flex flex-col rounded p-2.5 hover:bg-gray-50/90 cursor-pointer transition-colors select-text"
               >
                 <div className="flex items-center gap-2">
                   <span className="h-1.5 w-3.5 rounded-full bg-[#6BCE85] shrink-0" />
@@ -3205,7 +3205,7 @@ export function DashboardView({ user }) {
               <div
                 onClick={() => handleCopy(`${formatCurrency(totalExpenseCompVal)} (-2.41%)`, 'Total Expenses')}
                 title="Click to copy total expenses"
-                className="flex flex-col rounded p-2.5 hover:bg-slate-50/90 cursor-pointer transition-colors select-text"
+                className="flex flex-col rounded p-2.5 hover:bg-gray-50/90 cursor-pointer transition-colors select-text"
               >
                 <div className="flex items-center gap-2">
                   <span className="h-1.5 w-3.5 rounded-full bg-[#FFB100] shrink-0" />
@@ -3384,9 +3384,9 @@ export function DashboardView({ user }) {
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
         {/* Appointments Queue Table */}
         <div className="lg:col-span-2 rounded border border-[#EFEFEF] bg-white p-6  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+          <div className="flex items-center justify-between border-b border-gray-100 pb-3 mb-4">
             <div className="flex items-center gap-2">
-              <h3 className="text-sm font-bold text-slate-900">Today&apos;s Clinic Queue &amp; Appointments</h3>
+              <h3 className="text-sm font-bold text-gray-900">Today&apos;s Clinic Queue &amp; Appointments</h3>
             </div>
             <span className="text-xs font-bold text-brand-700 bg-brand-50 px-2.5 py-1 rounded-full border border-brand-200/60">
               5 In Chair / Active
@@ -3395,7 +3395,7 @@ export function DashboardView({ user }) {
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
-                <tr className="border-b border-slate-100 text-[11px] font-bold text-slate-400 uppercase">
+                <tr className="border-b border-gray-100 text-[11px] font-bold text-gray-400 uppercase">
                   <th className="pb-2">Time</th>
                   <th className="pb-2">Patient</th>
                   <th className="pb-2">Procedure &amp; Tooth</th>
@@ -3403,47 +3403,47 @@ export function DashboardView({ user }) {
                   <th className="pb-2">Status</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100 text-slate-700">
-                <tr className="hover:bg-slate-50/80">
-                  <td className="py-3 font-bold text-slate-900">09:00 AM</td>
-                  <td className="py-3 font-semibold text-slate-900">Wanjiku Kamau</td>
-                  <td className="py-3 font-medium text-slate-700">Composite Filling <span className="text-slate-400 text-[10px]">(#16)</span></td>
-                  <td className="py-3 text-slate-600">Dr. Darrell Steward</td>
+              <tbody className="divide-y divide-gray-100 text-gray-700">
+                <tr className="hover:bg-gray-50/80">
+                  <td className="py-3 font-bold text-gray-900">09:00 AM</td>
+                  <td className="py-3 font-semibold text-gray-900">Wanjiku Kamau</td>
+                  <td className="py-3 font-medium text-gray-700">Composite Filling <span className="text-gray-400 text-[10px]">(#16)</span></td>
+                  <td className="py-3 text-gray-600">Dr. Darrell Steward</td>
                   <td className="py-3">
                     <span className="rounded-full bg-emerald-100 border border-emerald-200 px-2.5 py-0.5 text-[10px] font-extrabold text-emerald-800">
                       In Treatment
                     </span>
                   </td>
                 </tr>
-                <tr className="hover:bg-slate-50/80">
-                  <td className="py-3 font-bold text-slate-900">10:00 AM</td>
-                  <td className="py-3 font-semibold text-slate-900">Brian Omondi</td>
-                  <td className="py-3 font-medium text-slate-700">Scaling &amp; Polishing <span className="text-slate-400 text-[10px]">(Full Mouth)</span></td>
-                  <td className="py-3 text-slate-600">Dr. Amina Patel</td>
+                <tr className="hover:bg-gray-50/80">
+                  <td className="py-3 font-bold text-gray-900">10:00 AM</td>
+                  <td className="py-3 font-semibold text-gray-900">Brian Omondi</td>
+                  <td className="py-3 font-medium text-gray-700">Scaling &amp; Polishing <span className="text-gray-400 text-[10px]">(Full Mouth)</span></td>
+                  <td className="py-3 text-gray-600">Dr. Amina Patel</td>
                   <td className="py-3">
                     <span className="rounded-full bg-sky-100 border border-sky-200 px-2.5 py-0.5 text-[10px] font-extrabold text-sky-800">
                       Checked In
                     </span>
                   </td>
                 </tr>
-                <tr className="hover:bg-slate-50/80">
-                  <td className="py-3 font-bold text-slate-900">11:30 AM</td>
-                  <td className="py-3 font-semibold text-slate-900">Mercy Njeri</td>
-                  <td className="py-3 font-medium text-slate-700">Root Canal Tx <span className="text-slate-400 text-[10px]">(#24)</span></td>
-                  <td className="py-3 text-slate-600">Dr. Darrell Steward</td>
+                <tr className="hover:bg-gray-50/80">
+                  <td className="py-3 font-bold text-gray-900">11:30 AM</td>
+                  <td className="py-3 font-semibold text-gray-900">Mercy Njeri</td>
+                  <td className="py-3 font-medium text-gray-700">Root Canal Tx <span className="text-gray-400 text-[10px]">(#24)</span></td>
+                  <td className="py-3 text-gray-600">Dr. Darrell Steward</td>
                   <td className="py-3">
-                    <span className="rounded-full bg-slate-100 border border-slate-200 px-2.5 py-0.5 text-[10px] font-extrabold text-slate-600">
+                    <span className="rounded-full bg-gray-100 border border-gray-200 px-2.5 py-0.5 text-[10px] font-extrabold text-gray-600">
                       Scheduled
                     </span>
                   </td>
                 </tr>
-                <tr className="hover:bg-slate-50/80">
-                  <td className="py-3 font-bold text-slate-900">02:00 PM</td>
-                  <td className="py-3 font-semibold text-slate-900">Kevin Mutua</td>
-                  <td className="py-3 font-medium text-slate-700">Orthodontic Aligners <span className="text-slate-400 text-[10px]">(Upper Arc)</span></td>
-                  <td className="py-3 text-slate-600">Dr. Amina Patel</td>
+                <tr className="hover:bg-gray-50/80">
+                  <td className="py-3 font-bold text-gray-900">02:00 PM</td>
+                  <td className="py-3 font-semibold text-gray-900">Kevin Mutua</td>
+                  <td className="py-3 font-medium text-gray-700">Orthodontic Aligners <span className="text-gray-400 text-[10px]">(Upper Arc)</span></td>
+                  <td className="py-3 text-gray-600">Dr. Amina Patel</td>
                   <td className="py-3">
-                    <span className="rounded-full bg-slate-100 border border-slate-200 px-2.5 py-0.5 text-[10px] font-extrabold text-slate-600">
+                    <span className="rounded-full bg-gray-100 border border-gray-200 px-2.5 py-0.5 text-[10px] font-extrabold text-gray-600">
                       Confirmed
                     </span>
                   </td>
@@ -3457,7 +3457,7 @@ export function DashboardView({ user }) {
         <div className="space-y-2">
           {/* Quick Action Operations */}
           <div className="rounded border border-[#EFEFEF] bg-white p-5  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]">
-            <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">Clinic Fast Actions</h3>
+            <h3 className="text-xs font-bold text-gray-900 uppercase tracking-wider mb-3">Clinic Fast Actions</h3>
             <div className="space-y-2">
               <button
                 onClick={() => alert('Initiating Safaricom M-Pesa STK Push Billing...')}
@@ -3521,7 +3521,7 @@ export function DashboardView({ user }) {
 
       {/* Floating Copy Feedback Toast */}
       {copiedText && (
-        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded bg-slate-900 px-4 py-2.5 text-xs font-semibold text-white  ">
+        <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded bg-gray-900 px-4 py-2.5 text-xs font-semibold text-white  ">
           <svg
             width="14"
             height="14"
@@ -3586,9 +3586,9 @@ export function DentalChartingView() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Odontogram Grid */}
-        <div className="lg:col-span-2 rounded border border-slate-200 bg-white p-5   space-y-6">
+        <div className="lg:col-span-2 rounded border border-gray-200 bg-white p-5   space-y-6">
           <div>
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2 text-center">
+            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-2 text-center">
               MAXILLARY ARCH (UPPER TEETH)
             </span>
             <div className="flex justify-center gap-1 sm:gap-2">
@@ -3600,7 +3600,7 @@ export function DentalChartingView() {
                     ? 'bg-blue-600 text-white border-blue-700   scale-105'
                     : t === 16 || t === 24
                       ? 'bg-amber-100 text-amber-900 border-amber-300'
-                      : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
+                      : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
                     }`}
                 >
                   <span className="text-[10px]">{t}</span>
@@ -3610,8 +3610,8 @@ export function DentalChartingView() {
             </div>
           </div>
 
-          <div className="border-t border-slate-200 pt-4">
-            <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2 text-center">
+          <div className="border-t border-gray-200 pt-4">
+            <span className="text-xs font-bold text-gray-400 uppercase tracking-wider block mb-2 text-center">
               MANDIBULAR ARCH (LOWER TEETH)
             </span>
             <div className="flex justify-center gap-1 sm:gap-2">
@@ -3621,7 +3621,7 @@ export function DentalChartingView() {
                   onClick={() => setSelectedTooth(t)}
                   className={`w-9 h-12 rounded border text-xs font-bold flex flex-col items-center justify-between p-1 transition-all cursor-pointer ${selectedTooth === t
                     ? 'bg-blue-600 text-white border-blue-700   scale-105'
-                    : 'bg-slate-50 text-slate-700 border-slate-200 hover:bg-slate-100'
+                    : 'bg-gray-50 text-gray-700 border-gray-200 hover:bg-gray-100'
                     }`}
                 >
                   <span className="text-[9px] font-extrabold">OK</span>
@@ -3633,17 +3633,17 @@ export function DentalChartingView() {
         </div>
 
         {/* Selected Tooth Inspector */}
-        <div className="rounded border border-slate-200 bg-white p-5   space-y-4">
-          <h3 className="text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">
+        <div className="rounded border border-gray-200 bg-white p-5   space-y-4">
+          <h3 className="text-sm font-bold text-gray-900 border-b border-gray-100 pb-2">
             Selected Tooth #{selectedTooth} Details
           </h3>
           <div className="space-y-3 text-xs">
             <div>
-              <label className="font-semibold text-slate-700 block mb-1">Tooth Condition / Diagnosis</label>
+              <label className="font-semibold text-gray-700 block mb-1">Tooth Condition / Diagnosis</label>
               <select
                 value={condition}
                 onChange={(e) => setCondition(e.target.value)}
-                className="w-full rounded border border-slate-300 bg-white p-2 text-xs font-semibold focus:outline-none focus:border-blue-600"
+                className="w-full rounded border border-gray-300 bg-white p-2 text-xs font-semibold focus:outline-none focus:border-blue-600"
               >
                 <option value="Healthy / Intact">Healthy / Intact</option>
                 <option value="Composite Filling">Composite Filling</option>
@@ -3655,11 +3655,11 @@ export function DentalChartingView() {
             </div>
 
             <div>
-              <label className="font-semibold text-slate-700 block mb-1">Clinical Procedure Note</label>
+              <label className="font-semibold text-gray-700 block mb-1">Clinical Procedure Note</label>
               <textarea
                 rows={3}
                 placeholder="Enter clinical notes for Tooth #..."
-                className="w-full rounded border border-slate-300 p-2 text-xs focus:outline-none focus:border-blue-600"
+                className="w-full rounded border border-gray-300 p-2 text-xs focus:outline-none focus:border-blue-600"
                 defaultValue="Mesial-occlusal composite restoration completed under local anaesthesia."
               />
             </div>
@@ -3738,30 +3738,30 @@ export function GenericFeatureView({ title, description, badge = 'Active Module'
         }
       />
 
-      <div className="rounded border border-slate-200 bg-white p-6   space-y-4">
-        <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+      <div className="rounded border border-gray-200 bg-white p-6   space-y-4">
+        <div className="flex items-center justify-between border-b border-gray-100 pb-3">
           <div className="flex items-center gap-2">
-            <span className="text-xs font-bold text-slate-900">{title} Workspace Data</span>
+            <span className="text-xs font-bold text-gray-900">{title} Workspace Data</span>
             <span className="rounded bg-sky-100 text-sky-800 px-2 py-0.5 text-[10px] font-bold uppercase">{badge}</span>
           </div>
-          <span className="text-xs text-slate-500">Avicena Dental Practice</span>
+          <span className="text-xs text-gray-500">Avicena Dental Practice</span>
         </div>
 
-        <p className="text-xs text-slate-600 leading-relaxed">
+        <p className="text-xs text-gray-600 leading-relaxed">
           {description} Module is connected to your clinic workspace. All transactions, records, and updates sync automatically.
         </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-2">
-          <div className="p-4 rounded border border-slate-200 bg-slate-50/70">
-            <span className="text-[11px] font-bold text-slate-400 uppercase">Total Entries</span>
-            <span className="block text-lg font-extrabold text-slate-900 mt-1">128 Items</span>
+          <div className="p-4 rounded border border-gray-200 bg-gray-50/70">
+            <span className="text-[11px] font-bold text-gray-400 uppercase">Total Entries</span>
+            <span className="block text-lg font-extrabold text-gray-900 mt-1">128 Items</span>
           </div>
-          <div className="p-4 rounded border border-slate-200 bg-slate-50/70">
-            <span className="text-[11px] font-bold text-slate-400 uppercase">Sync Status</span>
+          <div className="p-4 rounded border border-gray-200 bg-gray-50/70">
+            <span className="text-[11px] font-bold text-gray-400 uppercase">Sync Status</span>
             <span className="block text-lg font-extrabold text-emerald-600 mt-1">Live &amp; Synced</span>
           </div>
-          <div className="p-4 rounded border border-slate-200 bg-slate-50/70">
-            <span className="text-[11px] font-bold text-slate-400 uppercase">Branch</span>
+          <div className="p-4 rounded border border-gray-200 bg-gray-50/70">
+            <span className="text-[11px] font-bold text-gray-400 uppercase">Branch</span>
             <span className="block text-lg font-extrabold text-blue-600 mt-1">Nairobi Main</span>
           </div>
         </div>

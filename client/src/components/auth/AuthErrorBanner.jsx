@@ -54,21 +54,21 @@ export default function AuthErrorBanner({ error, onDismiss }) {
 
   if (isDeactivated) {
     return (
-      <div className="mt-3 rounded border border-slate-300 bg-slate-50 p-3 text-xs text-slate-800   font-sans">
+      <div className="mt-3 rounded border border-gray-300 bg-gray-50 p-3 text-xs text-gray-800   font-sans">
         <div className="flex items-start justify-between gap-2.5">
           <div className="flex items-start gap-2.5">
-            <div className="w-6 h-6 rounded-full bg-slate-200 flex items-center justify-center shrink-0 text-slate-600 mt-0.5">
+            <div className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center shrink-0 text-gray-600 mt-0.5">
               <AlertIcon className="w-3.5 h-3.5" />
             </div>
             <div className="space-y-1">
-              <p className="font-bold text-slate-900 text-sm">Account Deactivated</p>
-              <p className="text-slate-600 leading-relaxed">
+              <p className="font-bold text-gray-900 text-sm">Account Deactivated</p>
+              <p className="text-gray-600 leading-relaxed">
                 This account has been deactivated. If you believe this occurred in error, please reach out to clinic support.
               </p>
               <div className="pt-1 flex items-center gap-2">
                 <a
                   href="mailto:support@smilux.co.ke?subject=Account%20Reactivation%20Request"
-                  className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold rounded bg-slate-800 text-white hover:bg-slate-900 transition-colors"
+                  className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-semibold rounded bg-gray-800 text-white hover:bg-gray-900 transition-colors"
                 >
                   <MailIcon className="w-3 h-3" />
                   Request Assistance
@@ -80,7 +80,7 @@ export default function AuthErrorBanner({ error, onDismiss }) {
             <button
               type="button"
               onClick={onDismiss}
-              className="shrink-0 text-slate-400 hover:text-slate-700 p-0.5 cursor-pointer"
+              className="shrink-0 text-gray-400 hover:text-gray-700 p-0.5 cursor-pointer"
               aria-label="Dismiss"
             >
               <XIcon className="w-4 h-4" />

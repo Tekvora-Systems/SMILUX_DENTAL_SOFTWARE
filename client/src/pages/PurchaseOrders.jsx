@@ -392,7 +392,7 @@ export default function PurchaseOrders() {
             selectedIds.length === filteredOrders.length
           }
           onChange={handleToggleSelectAll}
-          className="rounded border-slate-300 dark:border-slate-600 text-[#118bb0] focus:ring-0 cursor-pointer"
+          className="rounded border-gray-300 dark:border-gray-600 text-[#118bb0] focus:ring-0 cursor-pointer"
         />
       ),
       width: '44px',
@@ -403,7 +403,7 @@ export default function PurchaseOrders() {
           checked={selectedIds.includes(row?.id)}
           onChange={() => handleToggleSelectOne(row?.id)}
           onClick={(e) => e.stopPropagation()}
-          className="rounded border-slate-300 dark:border-slate-600 text-[#118bb0] focus:ring-0 cursor-pointer"
+          className="rounded border-gray-300 dark:border-gray-600 text-[#118bb0] focus:ring-0 cursor-pointer"
         />
       ),
     },
@@ -415,10 +415,10 @@ export default function PurchaseOrders() {
       width: '140px',
       render: (val, row) => (
         <div className="flex flex-col">
-          <span className="font-sans text-xs font-semibold text-slate-800 dark:text-slate-100 hover:text-[#118bb0] transition-colors cursor-pointer" onClick={() => handleViewLPO(row)}>
+          <span className="font-sans text-xs font-semibold text-gray-800 dark:text-gray-100 hover:text-[#118bb0] transition-colors cursor-pointer" onClick={() => handleViewLPO(row)}>
             {val || row?.id}
           </span>
-          <span className="text-[10px] text-slate-500">
+          <span className="text-[10px] text-gray-500">
             {row?.issueDate}
           </span>
         </div>
@@ -431,10 +431,10 @@ export default function PurchaseOrders() {
       sortable: true,
       render: (_, row) => (
         <div className="flex flex-col max-w-[240px]">
-          <span className="font-medium text-slate-900 dark:text-slate-100 truncate">
+          <span className="font-medium text-gray-900 dark:text-gray-100 truncate">
             {row?.supplierName}
           </span>
-          <span className="text-[10px] text-slate-400 font-sans">
+          <span className="text-[10px] text-gray-400 font-sans">
             ID: {row?.supplierId}
           </span>
         </div>
@@ -446,10 +446,10 @@ export default function PurchaseOrders() {
       header: 'Requisition Items Summary',
       render: (val, row) => (
         <div className="flex items-center gap-2 max-w-[280px]">
-          <span className="text-xs text-slate-600 dark:text-slate-300 truncate">
+          <span className="text-xs text-gray-600 dark:text-gray-300 truncate">
             {val || row?.itemsSummary}
           </span>
-          <span className="shrink-0 px-1.5 py-0.5 rounded text-[10px] bg-slate-100 dark:bg-slate-800 text-slate-500 border border-slate-200 dark:border-slate-700 font-sans">
+          <span className="shrink-0 px-1.5 py-0.5 rounded text-[10px] bg-gray-100 dark:bg-gray-800 text-gray-500 border border-gray-200 dark:border-gray-700 font-sans">
             {row?.itemsCount} lines
           </span>
         </div>
@@ -464,7 +464,7 @@ export default function PurchaseOrders() {
       render: (val, row) => {
         const amount = typeof val === 'number' ? val : (row?.totalAmount || 0);
         return (
-          <span className="font-sans text-xs font-bold text-slate-900 dark:text-slate-100">
+          <span className="font-sans text-xs font-bold text-gray-900 dark:text-gray-100">
             KES {amount.toLocaleString()}
           </span>
         );
@@ -476,8 +476,8 @@ export default function PurchaseOrders() {
       header: 'Expected Delivery',
       sortable: true,
       render: (val, row) => (
-        <div className="flex items-center gap-1.5 text-xs text-slate-600 dark:text-slate-400">
-          <HugeiconsIcon icon={DeliveryTruck01Icon} className="w-3.5 h-3.5 text-slate-400" />
+        <div className="flex items-center gap-1.5 text-xs text-gray-600 dark:text-gray-400">
+          <HugeiconsIcon icon={DeliveryTruck01Icon} className="w-3.5 h-3.5 text-gray-400" />
           <span>{val || row?.expectedDelivery}</span>
         </div>
       ),
@@ -489,7 +489,7 @@ export default function PurchaseOrders() {
       render: (val, row) => {
         const grn = val || row?.grnRef || '';
         return (
-          <span className={`text-xs font-sans font-medium ${grn.startsWith('GRN') ? 'text-[#118bb0]' : 'text-slate-400'}`}>
+          <span className={`text-xs font-sans font-medium ${grn.startsWith('GRN') ? 'text-[#118bb0]' : 'text-gray-400'}`}>
             {grn}
           </span>
         );
@@ -502,7 +502,7 @@ export default function PurchaseOrders() {
       sortable: true,
       render: (val, row) => {
         const priority = val || row?.priority;
-        let badgeCls = 'bg-slate-100 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300';
+        let badgeCls = 'bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300';
         if (priority === 'Urgent / Chairside') {
           badgeCls = 'bg-rose-50 text-rose-700 border-rose-200 dark:bg-rose-900/30 dark:text-rose-300';
         } else if (priority === 'Equipment Reorder') {
@@ -521,7 +521,7 @@ export default function PurchaseOrders() {
       title: 'Approved By',
       header: 'Approved By',
       render: (val, row) => (
-        <span className="text-xs text-slate-700 dark:text-slate-300 truncate max-w-[150px]">
+        <span className="text-xs text-gray-700 dark:text-gray-300 truncate max-w-[150px]">
           {val || row?.approvedBy}
         </span>
       ),
@@ -533,7 +533,7 @@ export default function PurchaseOrders() {
       sortable: true,
       render: (val, row) => {
         const status = val || row?.status;
-        let badgeCls = 'bg-slate-100 text-slate-700 border-slate-200';
+        let badgeCls = 'bg-gray-100 text-gray-700 border-gray-200';
         if (status === 'Received') {
           badgeCls = 'bg-[#ECFDF3] text-[#118bb0] border-[#A6F4C5] dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-800';
         } else if (status === 'In Transit') {
@@ -677,13 +677,13 @@ export default function PurchaseOrders() {
           onRowClick={(row) => handleViewLPO(row)}
           emptyMessage={
             <div className="flex flex-col items-center justify-center py-12 text-center">
-              <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 mb-3">
+              <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-400 mb-3">
                 <HugeiconsIcon icon={Invoice01Icon} className="w-6 h-6" />
               </div>
-              <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-1">
+              <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-1">
                 No purchase orders found
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 max-w-sm mb-4">
+              <p className="text-xs text-gray-500 dark:text-gray-400 max-w-sm mb-4">
                 {searchQuery
                   ? `No purchase orders matching "${searchQuery}". Try modifying your filter criteria.`
                   : 'Generate Local Purchase Orders (LPO) to restock clinic materials or commission prosthetic lab work.'}
@@ -703,18 +703,18 @@ export default function PurchaseOrders() {
 
       {/* ─── Create Purchase Order Modal ──────────────────────────────────── */}
       {isCreateModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4">
-          <div className="bg-white dark:bg-slate-850 rounded   w-full max-w-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-xs p-4">
+          <div className="bg-white dark:bg-gray-850 rounded   w-full max-w-2xl border border-gray-200 dark:border-gray-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded bg-[#ECFDF3] dark:bg-emerald-950/60 flex items-center justify-center text-[#118bb0]">
                   <HugeiconsIcon icon={Invoice01Icon} className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100">
                     Create Local Purchase Order (LPO)
                   </h3>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[11px] text-gray-500">
                     Itemized dental supply requisition and approval authorization
                   </p>
                 </div>
@@ -722,7 +722,7 @@ export default function PurchaseOrders() {
               <button
                 type="button"
                 onClick={() => setIsCreateModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} className="w-5 h-5" />
               </button>
@@ -731,7 +731,7 @@ export default function PurchaseOrders() {
             <form onSubmit={handleCreateLPO} className="p-6 space-y-4 max-h-[80vh] overflow-y-auto">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Select Supplier / Vendor *
                   </label>
                   <select
@@ -751,7 +751,7 @@ export default function PurchaseOrders() {
                         supplierId: idMap[name] || 'SUP-KEN-100',
                       });
                     }}
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   >
                     <option value="Nairobi Dental Supplies Ltd">Nairobi Dental Supplies Ltd</option>
                     <option value="MedPlus Surgical & Pharma Ltd">MedPlus Surgical & Pharma Ltd</option>
@@ -762,13 +762,13 @@ export default function PurchaseOrders() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Order Priority
                   </label>
                   <select
                     value={formData.priority}
                     onChange={(e) => setFormData({ ...formData, priority: e.target.value })}
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   >
                     <option value="Standard Restock">Standard Restock</option>
                     <option value="Urgent / Chairside">Urgent / Chairside Emergency</option>
@@ -777,26 +777,26 @@ export default function PurchaseOrders() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Expected Delivery Date
                   </label>
                   <input
                     type="date"
                     value={formData.expectedDelivery}
                     onChange={(e) => setFormData({ ...formData, expectedDelivery: e.target.value })}
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Authorized Signatory
                   </label>
                   <input
                     type="text"
                     value={formData.approvedBy}
                     onChange={(e) => setFormData({ ...formData, approvedBy: e.target.value })}
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   />
                 </div>
               </div>
@@ -804,7 +804,7 @@ export default function PurchaseOrders() {
               {/* Line Items */}
               <div className="pt-2">
                 <div className="flex items-center justify-between mb-2">
-                  <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider">
+                  <h4 className="text-xs font-bold text-gray-800 dark:text-gray-200 uppercase tracking-wider">
                     Requisitioned Line Items
                   </h4>
                   <button
@@ -821,37 +821,37 @@ export default function PurchaseOrders() {
                   {formData.items.map((item, idx) => (
                     <div
                       key={idx}
-                      className="flex items-center gap-2 p-2 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-700"
+                      className="flex items-center gap-2 p-2 rounded bg-gray-50 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-700"
                     >
                       <input
                         type="text"
                         placeholder="Item Description (e.g. Septanest Articaine 4%)"
                         value={item.name}
                         onChange={(e) => handleItemChange(idx, 'name', e.target.value)}
-                        className="flex-1 px-2.5 py-1 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                        className="flex-1 px-2.5 py-1 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                       />
                       <input
                         type="number"
                         placeholder="Qty"
                         value={item.qty}
                         onChange={(e) => handleItemChange(idx, 'qty', e.target.value)}
-                        className="w-16 px-2.5 py-1 text-xs text-right rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                        className="w-16 px-2.5 py-1 text-xs text-right rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                       />
                       <input
                         type="number"
                         placeholder="Price"
                         value={item.unitCost}
                         onChange={(e) => handleItemChange(idx, 'unitCost', e.target.value)}
-                        className="w-24 px-2.5 py-1 text-xs text-right font-sans rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                        className="w-24 px-2.5 py-1 text-xs text-right font-sans rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                       />
-                      <div className="w-28 text-right font-sans text-xs font-semibold text-slate-800 dark:text-slate-200">
+                      <div className="w-28 text-right font-sans text-xs font-semibold text-gray-800 dark:text-gray-200">
                         KES {((Number(item.qty) || 0) * (Number(item.unitCost) || 0)).toLocaleString()}
                       </div>
                       <button
                         type="button"
                         onClick={() => handleRemoveItemRow(idx)}
                         disabled={formData.items.length <= 1}
-                        className="text-slate-400 hover:text-rose-500 disabled:opacity-30 cursor-pointer p-1"
+                        className="text-gray-400 hover:text-rose-500 disabled:opacity-30 cursor-pointer p-1"
                       >
                         <HugeiconsIcon icon={Delete02Icon} className="w-4 h-4" />
                       </button>
@@ -861,8 +861,8 @@ export default function PurchaseOrders() {
 
                 <div className="flex justify-end pt-3">
                   <div className="text-right">
-                    <span className="text-xs text-slate-500 block">Estimated LPO Subtotal</span>
-                    <span className="text-base font-bold font-sans text-slate-900 dark:text-slate-100">
+                    <span className="text-xs text-gray-500 block">Estimated LPO Subtotal</span>
+                    <span className="text-base font-bold font-sans text-gray-900 dark:text-gray-100">
                       KES{' '}
                       {formData.items
                         .reduce((acc, curr) => acc + (Number(curr.qty) || 0) * (Number(curr.unitCost) || 0), 0)
@@ -872,11 +872,11 @@ export default function PurchaseOrders() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-100 dark:border-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsCreateModalOpen(false)}
-                  className="px-4 py-1.5 rounded text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+                  className="px-4 py-1.5 rounded text-xs font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -894,21 +894,21 @@ export default function PurchaseOrders() {
 
       {/* ─── View Purchase Order Modal ────────────────────────────────────── */}
       {isDetailModalOpen && activeLPO && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4">
-          <div className="bg-white dark:bg-slate-850 rounded   w-full max-w-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-xs p-4">
+          <div className="bg-white dark:bg-gray-850 rounded   w-full max-w-2xl border border-gray-200 dark:border-gray-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded bg-[#ECFDF3] dark:bg-emerald-950/60 flex items-center justify-center text-[#118bb0]">
                   <HugeiconsIcon icon={Invoice01Icon} className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100 font-sans">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100 font-sans">
                     {activeLPO.id}
                   </h3>
-                  <div className="flex items-center gap-2 text-[11px] text-slate-500 mt-0.5">
+                  <div className="flex items-center gap-2 text-[11px] text-gray-500 mt-0.5">
                     <span>Issued: {activeLPO.issueDate}</span>
                     <span>•</span>
-                    <span className="font-semibold text-slate-700 dark:text-slate-300">{activeLPO.supplierName}</span>
+                    <span className="font-semibold text-gray-700 dark:text-gray-300">{activeLPO.supplierName}</span>
                     <span>•</span>
                     <span className="text-[#118bb0] font-medium">{activeLPO.status}</span>
                   </div>
@@ -917,7 +917,7 @@ export default function PurchaseOrders() {
               <button
                 type="button"
                 onClick={() => setIsDetailModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} className="w-5 h-5" />
               </button>
@@ -926,23 +926,23 @@ export default function PurchaseOrders() {
             <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
               {/* LPO Summary Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="p-3 rounded bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                  <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">
+                <div className="p-3 rounded bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                  <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider block">
                     Total Order Value
                   </span>
-                  <span className="text-base font-bold font-sans text-slate-900 dark:text-slate-100 mt-1 block">
+                  <span className="text-base font-bold font-sans text-gray-900 dark:text-gray-100 mt-1 block">
                     KES {activeLPO.totalAmount.toLocaleString()}
                   </span>
-                  <span className="text-[10px] text-slate-500 mt-0.5 block">
+                  <span className="text-[10px] text-gray-500 mt-0.5 block">
                     Payment: {activeLPO.paymentStatus}
                   </span>
                 </div>
 
-                <div className="p-3 rounded bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                  <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">
+                <div className="p-3 rounded bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                  <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider block">
                     Receiving Reference (GRN)
                   </span>
-                  <span className="text-base font-bold font-sans text-slate-900 dark:text-slate-100 mt-1 block">
+                  <span className="text-base font-bold font-sans text-gray-900 dark:text-gray-100 mt-1 block">
                     {activeLPO.grnRef}
                   </span>
                   <span className="text-[10px] text-emerald-600 dark:text-emerald-400 mt-0.5 block">
@@ -950,36 +950,36 @@ export default function PurchaseOrders() {
                   </span>
                 </div>
 
-                <div className="p-3 rounded bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                  <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">
+                <div className="p-3 rounded bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                  <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider block">
                     Priority / Tier
                   </span>
-                  <span className="text-base font-bold text-slate-900 dark:text-slate-100 mt-1 block">
+                  <span className="text-base font-bold text-gray-900 dark:text-gray-100 mt-1 block">
                     {activeLPO.priority}
                   </span>
-                  <span className="text-[10px] text-slate-500 mt-0.5 block">
+                  <span className="text-[10px] text-gray-500 mt-0.5 block">
                     Approved: {activeLPO.approvedBy}
                   </span>
                 </div>
               </div>
 
               {/* Line Items Table */}
-              <div className="rounded border border-slate-200 dark:border-slate-700 overflow-hidden">
-                <div className="bg-slate-50 dark:bg-slate-800 px-4 py-2 border-b border-slate-200 dark:border-slate-700">
-                  <h4 className="text-xs font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+              <div className="rounded border border-gray-200 dark:border-gray-700 overflow-hidden">
+                <div className="bg-gray-50 dark:bg-gray-800 px-4 py-2 border-b border-gray-200 dark:border-gray-700">
+                  <h4 className="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wider">
                     Itemized Order Details
                   </h4>
                 </div>
-                <div className="divide-y divide-slate-100 dark:divide-slate-800">
+                <div className="divide-y divide-gray-100 dark:divide-gray-800">
                   {activeLPO.items.map((line, idx) => (
                     <div key={idx} className="flex items-center justify-between px-4 py-2.5 text-xs">
                       <div>
-                        <p className="font-medium text-slate-800 dark:text-slate-200">{line.name}</p>
-                        <p className="text-[11px] text-slate-400 font-sans">
+                        <p className="font-medium text-gray-800 dark:text-gray-200">{line.name}</p>
+                        <p className="text-[11px] text-gray-400 font-sans">
                           {line.qty} units @ KES {line.unitCost.toLocaleString()}
                         </p>
                       </div>
-                      <span className="font-sans font-bold text-slate-900 dark:text-slate-100">
+                      <span className="font-sans font-bold text-gray-900 dark:text-gray-100">
                         KES {line.total.toLocaleString()}
                       </span>
                     </div>
@@ -993,7 +993,7 @@ export default function PurchaseOrders() {
                   <button
                     type="button"
                     onClick={() => alert(`Printing official LPO document ${activeLPO.id}...`)}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
                   >
                     <HugeiconsIcon icon={PrinterIcon} className="w-3.5 h-3.5" />
                     Print LPO
@@ -1001,7 +1001,7 @@ export default function PurchaseOrders() {
                   <button
                     type="button"
                     onClick={() => alert(`Emailing LPO ${activeLPO.id} to vendor...`)}
-                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded text-xs font-medium text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
                   >
                     <HugeiconsIcon icon={Mail01Icon} className="w-3.5 h-3.5" />
                     Send to Supplier
@@ -1024,7 +1024,7 @@ export default function PurchaseOrders() {
                   <button
                     type="button"
                     onClick={() => setIsDetailModalOpen(false)}
-                    className="px-4 py-1.5 rounded text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+                    className="px-4 py-1.5 rounded text-xs font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
                   >
                     Close
                   </button>
@@ -1037,18 +1037,18 @@ export default function PurchaseOrders() {
 
       {/* ─── Receive Goods / Generate GRN Modal ───────────────────────────── */}
       {isReceiveModalOpen && activeLPO && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4">
-          <div className="bg-white dark:bg-slate-850 rounded   w-full max-w-lg border border-slate-200 dark:border-slate-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-xs p-4">
+          <div className="bg-white dark:bg-gray-850 rounded   w-full max-w-lg border border-gray-200 dark:border-gray-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded bg-[#ECFDF3] dark:bg-emerald-950/60 flex items-center justify-center text-[#118bb0]">
                   <HugeiconsIcon icon={PackageReceiveIcon} className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100">
                     Receive Shipment & Generate GRN
                   </h3>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[11px] text-gray-500">
                     Verify delivered items against {activeLPO.id}
                   </p>
                 </div>
@@ -1056,13 +1056,13 @@ export default function PurchaseOrders() {
               <button
                 type="button"
                 onClick={() => setIsReceiveModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="p-6 space-y-4 text-xs text-slate-600 dark:text-slate-300">
+            <div className="p-6 space-y-4 text-xs text-gray-600 dark:text-gray-300">
               <div className="p-3 rounded bg-emerald-50 dark:bg-emerald-950/40 border border-emerald-200 dark:border-emerald-800 text-emerald-800 dark:text-emerald-300">
                 <p className="font-medium">
                   Confirm receipt from <span className="font-bold">{activeLPO.supplierName}</span>:
@@ -1074,23 +1074,23 @@ export default function PurchaseOrders() {
 
               <div className="space-y-3">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Delivery Note / Carrier Waybill #
                   </label>
                   <input
                     type="text"
                     defaultValue="DN-99401-NDS"
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 font-sans focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 font-sans focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Inspection / Condition Assessment
                   </label>
                   <select
                     defaultValue="Intact / Full Batch Verified"
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   >
                     <option value="Intact / Full Batch Verified">Intact / Full Batch Verified & Sealed</option>
                     <option value="Partial Delivery">Partial Delivery (Balance Backordered)</option>
@@ -1099,22 +1099,22 @@ export default function PurchaseOrders() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Dispensary Storage Bin Assigned
                   </label>
                   <input
                     type="text"
                     defaultValue="Cabinet A1 (Chairside Restoratives)"
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-3 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-3 pt-3 border-t border-gray-100 dark:border-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsReceiveModalOpen(false)}
-                  className="px-4 py-1.5 rounded text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+                  className="px-4 py-1.5 rounded text-xs font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -1133,18 +1133,18 @@ export default function PurchaseOrders() {
 
       {/* ─── Educational Learn Modal ───────────────────────────────────────── */}
       {isLearnModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4">
-          <div className="bg-white dark:bg-slate-850 rounded   w-full max-w-lg border border-slate-200 dark:border-slate-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-xs p-4">
+          <div className="bg-white dark:bg-gray-850 rounded   w-full max-w-lg border border-gray-200 dark:border-gray-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded bg-amber-50 dark:bg-amber-950/60 flex items-center justify-center text-amber-600">
                   <HugeiconsIcon icon={Idea01Icon} className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100">
                     Dental Procurement & LPO Best Practices
                   </h3>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[11px] text-gray-500">
                     Understanding 3-way matching and receipt controls
                   </p>
                 </div>
@@ -1152,15 +1152,15 @@ export default function PurchaseOrders() {
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="p-6 space-y-4 text-xs text-slate-600 dark:text-slate-300">
+            <div className="p-6 space-y-4 text-xs text-gray-600 dark:text-gray-300">
               <div className="space-y-1">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   The 3-Way Matching Protocol
                 </h4>
                 <p className="leading-relaxed">
@@ -1169,7 +1169,7 @@ export default function PurchaseOrders() {
               </div>
 
               <div className="space-y-1">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   Cold Chain & Sterile Seal Verification
                 </h4>
                 <p className="leading-relaxed">
@@ -1178,7 +1178,7 @@ export default function PurchaseOrders() {
               </div>
 
               <div className="space-y-1">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   Automated Stock Replenishment
                 </h4>
                 <p className="leading-relaxed">
@@ -1187,7 +1187,7 @@ export default function PurchaseOrders() {
               </div>
             </div>
 
-            <div className="flex items-center justify-end px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+            <div className="flex items-center justify-end px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}

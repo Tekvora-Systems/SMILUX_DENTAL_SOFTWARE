@@ -42,7 +42,7 @@ function IntegrationCard({ item }) {
     <motion.div
       whileHover={{ y: -4 }}
       transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-      className="shrink-0 w-[420px] bg-white border border-[#E7E7E7] hover:bg-slate-50/40 transition-colors duration-200 group cursor-default"
+      className="shrink-0 w-[420px] bg-white border border-[#E7E7E7] hover:bg-gray-50/40 transition-colors duration-200 group cursor-default"
     >
       <div className="flex items-center gap-5 px-8 py-7">
 
@@ -82,7 +82,7 @@ export default function IntegrationsSection() {
   const loop = [...INTEGRATIONS, ...INTEGRATIONS, ...INTEGRATIONS, ...INTEGRATIONS];
 
   return (
-    <section id="integrations" className="w-full py-16 bg-white border-y border-[#E7E7E7]">
+    <section id="integrations" className="w-full py-16 bg-white">
 
       {/* Header */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">

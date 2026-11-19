@@ -4,7 +4,7 @@ import { HugeiconsIcon } from '@hugeicons/react';
 import { Cancel01Icon } from '@hugeicons/core-free-icons';
 
 // SVG Icons matching the clean modern outline style in the reference
-function BookOpenIcon({ className = 'w-5 h-5 text-slate-800' }) {
+function BookOpenIcon({ className = 'w-5 h-5 text-gray-800' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" />
@@ -13,7 +13,7 @@ function BookOpenIcon({ className = 'w-5 h-5 text-slate-800' }) {
   );
 }
 
-function ClassicalPillarIcon({ className = 'w-5 h-5 text-slate-800' }) {
+function ClassicalPillarIcon({ className = 'w-5 h-5 text-gray-800' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M3 21h18" />
@@ -27,7 +27,7 @@ function ClassicalPillarIcon({ className = 'w-5 h-5 text-slate-800' }) {
   );
 }
 
-function ChatBubbleIcon({ className = 'w-5 h-5 text-slate-800' }) {
+function ChatBubbleIcon({ className = 'w-5 h-5 text-gray-800' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
@@ -35,7 +35,7 @@ function ChatBubbleIcon({ className = 'w-5 h-5 text-slate-800' }) {
   );
 }
 
-function MailIcon({ className = 'w-5 h-5 text-slate-800' }) {
+function MailIcon({ className = 'w-5 h-5 text-gray-800' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <rect x="2" y="4" width="20" height="16" rx="2" />
@@ -44,7 +44,7 @@ function MailIcon({ className = 'w-5 h-5 text-slate-800' }) {
   );
 }
 
-function ExternalArrowIcon({ className = 'w-3.5 h-3.5 text-slate-600' }) {
+function ExternalArrowIcon({ className = 'w-3.5 h-3.5 text-gray-600' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
@@ -54,7 +54,7 @@ function ExternalArrowIcon({ className = 'w-3.5 h-3.5 text-slate-600' }) {
   );
 }
 
-function ChatPillIcon({ className = 'w-3.5 h-3.5 text-slate-400' }) {
+function ChatPillIcon({ className = 'w-3.5 h-3.5 text-gray-400' }) {
   return (
     <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
       <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
@@ -114,27 +114,27 @@ export default function HelpModal({ isOpen, onClose, user }) {
     >
       {/* Dimmed backdrop */}
       <div
-        className="fixed inset-0 bg-slate-900/50 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
+        className="fixed inset-0 bg-gray-900/50 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
         onClick={onClose}
       />
 
       {/* Centered Modal Card */}
       <div
-        className="relative w-full max-w-[960px] bg-white rounded shadow border border-slate-200 overflow-hidden z-10 animate-in zoom-in-100 fade-in duration-150 font-sans select-text"
+        className="relative w-full max-w-[960px] bg-white rounded shadow border border-gray-200 overflow-hidden z-10 animate-in zoom-in-100 fade-in duration-150 font-sans select-text"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header */}
-        <div className="flex items-center justify-between px-4 py-2 border-b border-slate-100">
+        <div className="flex items-center justify-between px-4 py-2 border-b border-gray-100">
           <h2
             id="help-support-title"
-            className="text-base font-bold text-slate-900 tracking-tight"
+            className="text-base font-bold text-gray-900 tracking-tight"
           >
             Help &amp; Support
           </h2>
           <button
             type="button"
             onClick={onClose}
-            className="p-1.5 rounded text-slate-400 hover:text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
+            className="p-1.5 rounded text-gray-400 hover:text-gray-700 hover:bg-gray-100 transition-colors cursor-pointer"
             aria-label="Close Help & Support dialog"
           >
             <HugeiconsIcon icon={Cancel01Icon} size={18} />
@@ -145,10 +145,10 @@ export default function HelpModal({ isOpen, onClose, user }) {
         <div className="px-3 py-8">
           {/* Greeting Hero Section */}
           <div className="text-center mb-8">
-            <h1 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+            <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
               Hi {displayName}. How can we help?
             </h1>
-            <p className="mt-2 text-sm sm:text-base text-slate-500 font-normal">
+            <p className="mt-2 text-sm sm:text-base text-gray-500 font-normal">
               Choose one of the options below to find the support you need.
             </p>
           </div>
@@ -156,13 +156,13 @@ export default function HelpModal({ isOpen, onClose, user }) {
           {/* 4 Support Action Cards Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
             {/* Card 1: Help Center */}
-            <div className="flex flex-col justify-between rounded border border-slate-200 bg-white p-4 hover:border-slate-300   transition-all group">
+            <div className="flex flex-col justify-between rounded border border-gray-200 bg-white p-4 hover:border-gray-300   transition-all group">
               <div>
                 <div className="mb-4">
-                  <BookOpenIcon className="w-5 h-5 text-slate-800" />
+                  <BookOpenIcon className="w-5 h-5 text-gray-800" />
                 </div>
-                <h3 className="text-sm font-bold text-slate-900">Help Center</h3>
-                <p className="mt-2 text-xs text-slate-500 leading-relaxed font-normal">
+                <h3 className="text-sm font-bold text-gray-900">Help Center</h3>
+                <p className="mt-2 text-xs text-gray-500 leading-relaxed font-normal">
                   Explore guides and tips to get the most out of Smilux.
                 </p>
               </div>
@@ -171,23 +171,23 @@ export default function HelpModal({ isOpen, onClose, user }) {
                 <button
                   type="button"
                   onClick={handleOpenHelpCenter}
-                  className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700   transition-colors cursor-pointer group-hover:border-slate-300"
+                  className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded border border-gray-200 bg-white hover:bg-gray-50 text-xs font-semibold text-gray-700   transition-colors cursor-pointer group-hover:border-gray-300"
                 >
-                  <ClassicalPillarIcon className="w-3.5 h-3.5 text-slate-600 shrink-0" />
+                  <ClassicalPillarIcon className="w-3.5 h-3.5 text-gray-600 shrink-0" />
                   <span>Visit Help Center</span>
-                  <ExternalArrowIcon className="w-3 h-3 text-slate-500 shrink-0 ml-auto sm:ml-0" />
+                  <ExternalArrowIcon className="w-3 h-3 text-gray-500 shrink-0 ml-auto sm:ml-0" />
                 </button>
               </div>
             </div>
 
             {/* Card 2: Resource Center (formerly Fleetio Academy) */}
-            <div className="flex flex-col justify-between rounded border border-slate-200 bg-white p-5 hover:border-slate-300   transition-all group">
+            <div className="flex flex-col justify-between rounded border border-gray-200 bg-white p-5 hover:border-gray-300   transition-all group">
               <div>
                 <div className="mb-4">
-                  <ClassicalPillarIcon className="w-5 h-5 text-slate-800" />
+                  <ClassicalPillarIcon className="w-5 h-5 text-gray-800" />
                 </div>
-                <h3 className="text-sm font-bold text-slate-900">Resource Center</h3>
-                <p className="mt-2 text-xs text-slate-500 leading-relaxed font-normal">
+                <h3 className="text-sm font-bold text-gray-900">Resource Center</h3>
+                <p className="mt-2 text-xs text-gray-500 leading-relaxed font-normal">
                   Explore certifications &amp; resources to learn Smilux.
                 </p>
               </div>
@@ -196,22 +196,22 @@ export default function HelpModal({ isOpen, onClose, user }) {
                 <button
                   type="button"
                   onClick={handleOpenResourceCenter}
-                  className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700   transition-colors cursor-pointer group-hover:border-slate-300"
+                  className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded border border-gray-200 bg-white hover:bg-gray-50 text-xs font-semibold text-gray-700   transition-colors cursor-pointer group-hover:border-gray-300"
                 >
                   <span>Visit Resource Center</span>
-                  <ExternalArrowIcon className="w-3 h-3 text-slate-500 shrink-0" />
+                  <ExternalArrowIcon className="w-3 h-3 text-gray-500 shrink-0" />
                 </button>
               </div>
             </div>
 
             {/* Card 3: Live Support */}
-            <div className="flex flex-col justify-between rounded border border-slate-200 bg-white p-5 hover:border-slate-300   transition-all group">
+            <div className="flex flex-col justify-between rounded border border-gray-200 bg-white p-5 hover:border-gray-300   transition-all group">
               <div>
                 <div className="mb-4">
-                  <ChatBubbleIcon className="w-5 h-5 text-slate-800" />
+                  <ChatBubbleIcon className="w-5 h-5 text-gray-800" />
                 </div>
-                <h3 className="text-sm font-bold text-slate-900">Live Support</h3>
-                <p className="mt-2 text-xs text-slate-500 leading-relaxed font-normal">
+                <h3 className="text-sm font-bold text-gray-900">Live Support</h3>
+                <p className="mt-2 text-xs text-gray-500 leading-relaxed font-normal">
                   Chat with Smilux experts 4pm-4am (GMT+3), Mon-Fri.
                 </p>
               </div>
@@ -221,22 +221,22 @@ export default function HelpModal({ isOpen, onClose, user }) {
                   type="button"
                   onClick={handleLiveSupport}
                   disabled={chatActive}
-                  className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-600 transition-colors cursor-pointer disabled:opacity-60"
+                  className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded bg-gray-100 hover:bg-gray-200 text-xs font-semibold text-gray-600 transition-colors cursor-pointer disabled:opacity-60"
                 >
-                  <ChatPillIcon className="w-3.5 h-3.5 text-slate-500 shrink-0" />
+                  <ChatPillIcon className="w-3.5 h-3.5 text-gray-500 shrink-0" />
                   <span>{chatActive ? 'Connecting...' : 'Chat Now'}</span>
                 </button>
               </div>
             </div>
 
             {/* Card 4: Email */}
-            <div className="flex flex-col justify-between rounded border border-slate-200 bg-white p-5 hover:border-slate-300   transition-all group">
+            <div className="flex flex-col justify-between rounded border border-gray-200 bg-white p-5 hover:border-gray-300   transition-all group">
               <div>
                 <div className="mb-4">
-                  <MailIcon className="w-5 h-5 text-slate-800" />
+                  <MailIcon className="w-5 h-5 text-gray-800" />
                 </div>
-                <h3 className="text-sm font-bold text-slate-900">Email</h3>
-                <p className="mt-2 text-xs text-slate-500 leading-relaxed font-normal">
+                <h3 className="text-sm font-bold text-gray-900">Email</h3>
+                <p className="mt-2 text-xs text-gray-500 leading-relaxed font-normal">
                   Send a message to our team at support@smilux.co.ke.
                 </p>
               </div>
@@ -245,11 +245,11 @@ export default function HelpModal({ isOpen, onClose, user }) {
                 <button
                   type="button"
                   onClick={handleEmailSupport}
-                  className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded border border-slate-200 bg-white hover:bg-slate-50 text-xs font-semibold text-slate-700   transition-colors cursor-pointer group-hover:border-slate-300"
+                  className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded border border-gray-200 bg-white hover:bg-gray-50 text-xs font-semibold text-gray-700   transition-colors cursor-pointer group-hover:border-gray-300"
                   title="Click to email support@smilux.co.ke"
                 >
                   <span>{copiedEmail ? 'Email Copied!' : 'Contact Support'}</span>
-                  <ExternalArrowIcon className="w-3 h-3 text-slate-500 shrink-0" />
+                  <ExternalArrowIcon className="w-3 h-3 text-gray-500 shrink-0" />
                 </button>
               </div>
             </div>

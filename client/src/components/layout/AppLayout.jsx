@@ -32,7 +32,7 @@ export default function AppLayout({ children, user, onLogout, onQuickAction }) {
   };
 
   return (
-    <div className="flex h-screen w-full overflow-hidden bg-slate-50 font-sans text-slate-900 antialiased">
+    <div className="flex h-screen w-full overflow-hidden bg-gray-50 font-sans text-gray-900 antialiased">
       {/* Desktop Persistent Sidebar (264px <-> 68px) & Mobile Drawer */}
       <Sidebar
         isMobileOpen={isMobileOpen}

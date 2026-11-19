@@ -960,7 +960,7 @@ export default function PatientsPage() {
                 {initials}
               </div>
               <div className="truncate min-w-0">
-                <div className="font-semibold text-slate-900 dark:text-white flex items-center gap-1.5 leading-tight">
+                <div className="font-semibold text-gray-900 dark:text-white flex items-center gap-1.5 leading-tight">
                   <span className="truncate">{row.name}</span>
                   {row.dentalAlert !== 'None' && (
                     <span
@@ -971,7 +971,7 @@ export default function PatientsPage() {
                     </span>
                   )}
                 </div>
-                <div className="  text-slate-500 font-medium leading-none mt-0.5">
+                <div className="  text-gray-500 font-medium leading-none mt-0.5">
                   {row.id}
                 </div>
               </div>
@@ -986,7 +986,7 @@ export default function PatientsPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="font-medium text-slate-700 dark:text-slate-300">
+          <span className="font-medium text-gray-700 dark:text-gray-300">
             {row.phone}
           </span>
         ),
@@ -998,7 +998,7 @@ export default function PatientsPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="text-slate-600 dark:text-slate-400 truncate block max-w-[160px]">
+          <span className="text-gray-600 dark:text-gray-400 truncate block max-w-[160px]">
             {row.email}
           </span>
         ),
@@ -1011,8 +1011,8 @@ export default function PatientsPage() {
         filterable: true,
         filterType: 'number',
         render: (val, row) => (
-          <span className="text-slate-700 dark:text-slate-300 font-medium">
-            {row.age} yrs <span className="text-slate-400 font-normal">({row.gender[0]})</span>
+          <span className="text-gray-700 dark:text-gray-300 font-medium">
+            {row.age} yrs <span className="text-gray-400 font-normal">({row.gender[0]})</span>
           </span>
         ),
       },
@@ -1042,7 +1042,7 @@ export default function PatientsPage() {
         filterable: true,
         render: (val, row) => (
           <span
-            className="text-slate-700 dark:text-slate-300 truncate block max-w-[175px]"
+            className="text-gray-700 dark:text-gray-300 truncate block max-w-[175px]"
             title={row.treatment}
           >
             {row.treatment}
@@ -1056,7 +1056,7 @@ export default function PatientsPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="text-slate-500 dark:text-slate-400 font-medium  ">
+          <span className="text-gray-500 dark:text-gray-400 font-medium  ">
             {row.lastVisit}
           </span>
         ),
@@ -1068,7 +1068,7 @@ export default function PatientsPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="text-slate-600 dark:text-slate-300   truncate block">
+          <span className="text-gray-600 dark:text-gray-300   truncate block">
             {row.nextAppointment}
           </span>
         ),
@@ -1084,7 +1084,7 @@ export default function PatientsPage() {
           <span
             className={`font-medium font-medium text-right block tabular-nums ${row.balance !== 'KES 0'
               ? 'text-amber-600 dark:text-amber-400 font-semibold'
-              : 'text-slate-500'
+              : 'text-gray-500'
               }`}
           >
             {row.balance}
@@ -1109,7 +1109,7 @@ export default function PatientsPage() {
               ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300'
               : row.status === 'Follow Up'
                 ? 'bg-amber-100 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300'
-                : 'bg-slate-100 text-slate-700 dark:bg-slate-800 dark:text-slate-300'
+                : 'bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300'
               }`}
           >
             {row.status}
@@ -1133,7 +1133,7 @@ export default function PatientsPage() {
                 e.stopPropagation();
                 alert(`Opening Dental Chart for ${row.name} (${row.id})`);
               }}
-              className="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-emerald-700 dark:text-emerald-400 transition-colors cursor-pointer"
+              className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 text-emerald-700 dark:text-emerald-400 transition-colors cursor-pointer"
             >
               <HugeiconsIcon icon={DentalToothIcon} size={14} />
             </button>
@@ -1252,25 +1252,25 @@ export default function PatientsPage() {
 
       {/* ─── Add Patient Modal ─── */}
       {isAddModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-1.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={PlusSignIcon} size={16} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-white text-base">
+                  <h3 className="font-bold text-gray-900 dark:text-white text-base">
                     Register New Patient
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Create medical file and assign patient identification number
                   </p>
                 </div>
               </div>
               <button
                 onClick={() => setIsAddModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-white p-1 rounded"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-white p-1 rounded"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
@@ -1279,7 +1279,7 @@ export default function PatientsPage() {
             <form onSubmit={handleAddPatient} className="p-5 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Full Legal Name *
                   </label>
                   <input
@@ -1288,12 +1288,12 @@ export default function PatientsPage() {
                     placeholder="e.g. Samuel Waweru"
                     value={newPatient.name}
                     onChange={(e) => setNewPatient({ ...newPatient, name: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Phone Number (+254) *
                   </label>
                   <input
@@ -1302,12 +1302,12 @@ export default function PatientsPage() {
                     placeholder="+254 7XX XXX XXX"
                     value={newPatient.phone}
                     onChange={(e) => setNewPatient({ ...newPatient, phone: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Email Address
                   </label>
                   <input
@@ -1315,12 +1315,12 @@ export default function PatientsPage() {
                     placeholder="patient@example.com"
                     value={newPatient.email}
                     onChange={(e) => setNewPatient({ ...newPatient, email: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Age & Gender
                   </label>
                   <div className="flex gap-2">
@@ -1329,12 +1329,12 @@ export default function PatientsPage() {
                       placeholder="Age"
                       value={newPatient.age}
                       onChange={(e) => setNewPatient({ ...newPatient, age: e.target.value })}
-                      className="w-20 px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                      className="w-20 px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                     />
                     <select
                       value={newPatient.gender}
                       onChange={(e) => setNewPatient({ ...newPatient, gender: e.target.value })}
-                      className="flex-1 px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                      className="flex-1 px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                     >
                       <option value="Female">Female</option>
                       <option value="Male">Male</option>
@@ -1344,13 +1344,13 @@ export default function PatientsPage() {
                 </div>
 
                 <div className="space-y-1 sm:col-span-2">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Insurance / Payment Scheme
                   </label>
                   <select
                     value={newPatient.insurance}
                     onChange={(e) => setNewPatient({ ...newPatient, insurance: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   >
                     <option value="Self Pay (M-Pesa)">Self Pay (M-Pesa)</option>
                     <option value="Self Pay (Cash)">Self Pay (Cash)</option>
@@ -1363,7 +1363,7 @@ export default function PatientsPage() {
                 </div>
 
                 <div className="space-y-1 sm:col-span-2">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Medical / Allergy Alerts
                   </label>
                   <input
@@ -1371,16 +1371,16 @@ export default function PatientsPage() {
                     placeholder="e.g. Penicillin allergy, diabetic, pregnant, none"
                     value={newPatient.dentalAlert}
                     onChange={(e) => setNewPatient({ ...newPatient, dentalAlert: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsAddModalOpen(false)}
-                  className="px-4 py-2 rounded text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  className="px-4 py-2 rounded text-xs font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 >
                   Cancel
                 </button>
@@ -1399,24 +1399,24 @@ export default function PatientsPage() {
 
       {/* ─── Learn Drawer / Modal ─── */}
       {isLearnModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <span className="text-xl">💡</span>
-                <h3 className="font-bold text-slate-900 dark:text-white text-base">
+                <h3 className="font-bold text-gray-900 dark:text-white text-base">
                   Patients Directory: Quick Guide
                 </h3>
               </div>
               <button
                 onClick={() => setIsLearnModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-white p-1 rounded"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-white p-1 rounded"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
-            <div className="p-5 space-y-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            <div className="p-5 space-y-4 text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
               <div className="p-3 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200/60 dark:border-emerald-800/50 rounded">
                 <p className="font-semibold text-emerald-800 dark:text-emerald-300 mb-1">
                   Spreadsheet Power & Compliance
@@ -1427,10 +1427,10 @@ export default function PatientsPage() {
               </div>
 
               <div className="space-y-2">
-                <h4 className="font-bold text-slate-900 dark:text-white text-sm">Key Table Features</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white text-sm">Key Table Features</h4>
                 <ul className="space-y-1.5 list-disc pl-4">
                   <li>
-                    <strong>Multi-Column Sorting:</strong> Click any header to sort. Hold <kbd className="px-1 py-0.5 rounded bg-slate-200 dark:bg-slate-800 font-medium  ">Shift</kbd> + click to sort by multiple columns with precedence numbers (1, 2, 3).
+                    <strong>Multi-Column Sorting:</strong> Click any header to sort. Hold <kbd className="px-1 py-0.5 rounded bg-gray-200 dark:bg-gray-800 font-medium  ">Shift</kbd> + click to sort by multiple columns with precedence numbers (1, 2, 3).
                   </li>
                   <li>
                     <strong>Per-Column Filters:</strong> Enter text or pick from dropdowns in the filter row to narrow down columns directly.

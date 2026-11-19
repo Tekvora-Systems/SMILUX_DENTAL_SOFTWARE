@@ -349,7 +349,7 @@ export default function Suppliers() {
             selectedIds.length === filteredSuppliers.length
           }
           onChange={handleToggleSelectAll}
-          className="rounded border-slate-300 dark:border-slate-600 text-[#118bb0] focus:ring-0 cursor-pointer"
+          className="rounded border-gray-300 dark:border-gray-600 text-[#118bb0] focus:ring-0 cursor-pointer"
         />
       ),
       width: '44px',
@@ -360,7 +360,7 @@ export default function Suppliers() {
           checked={selectedIds.includes(row?.id)}
           onChange={() => handleToggleSelectOne(row?.id)}
           onClick={(e) => e.stopPropagation()}
-          className="rounded border-slate-300 dark:border-slate-600 text-[#118bb0] focus:ring-0 cursor-pointer"
+          className="rounded border-gray-300 dark:border-gray-600 text-[#118bb0] focus:ring-0 cursor-pointer"
         />
       ),
     },
@@ -372,10 +372,10 @@ export default function Suppliers() {
       width: '150px',
       render: (_, row) => (
         <div className="flex flex-col">
-          <span className="font-sans text-xs font-semibold text-slate-800 dark:text-slate-100">
+          <span className="font-sans text-xs font-semibold text-gray-800 dark:text-gray-100">
             {row?.id}
           </span>
-          <span className="text-[10px] text-slate-500 font-sans">
+          <span className="text-[10px] text-gray-500 font-sans">
             PIN: {row?.kraPin}
           </span>
         </div>
@@ -388,10 +388,10 @@ export default function Suppliers() {
       sortable: true,
       render: (_, row) => (
         <div className="flex flex-col max-w-[280px]">
-          <span className="font-medium text-slate-900 dark:text-slate-100 truncate hover:text-[#118bb0] transition-colors cursor-pointer" onClick={() => handleViewSupplier(row)}>
+          <span className="font-medium text-gray-900 dark:text-gray-100 truncate hover:text-[#118bb0] transition-colors cursor-pointer" onClick={() => handleViewSupplier(row)}>
             {row?.name}
           </span>
-          <span className="text-[11px] text-slate-400 dark:text-slate-500 truncate flex items-center gap-1">
+          <span className="text-[11px] text-gray-400 dark:text-gray-500 truncate flex items-center gap-1">
             <HugeiconsIcon icon={Location01Icon} className="w-3 h-3 shrink-0" />
             {row?.location}
           </span>
@@ -429,11 +429,11 @@ export default function Suppliers() {
       header: 'Primary Contact & Phone',
       render: (_, row) => (
         <div className="flex flex-col">
-          <span className="text-xs font-medium text-slate-700 dark:text-slate-200">
+          <span className="text-xs font-medium text-gray-700 dark:text-gray-200">
             {row?.contactPerson}
           </span>
-          <span className="text-[11px] text-slate-500 flex items-center gap-1">
-            <HugeiconsIcon icon={CallIcon} className="w-3 h-3 text-slate-400" />
+          <span className="text-[11px] text-gray-500 flex items-center gap-1">
+            <HugeiconsIcon icon={CallIcon} className="w-3 h-3 text-gray-400" />
             {row?.phone}
           </span>
         </div>
@@ -444,7 +444,7 @@ export default function Suppliers() {
       title: 'Email / Orders Desk',
       header: 'Email / Orders Desk',
       render: (val, row) => (
-        <span className="text-xs text-slate-600 dark:text-slate-300 font-sans truncate max-w-[200px]">
+        <span className="text-xs text-gray-600 dark:text-gray-300 font-sans truncate max-w-[200px]">
           {val || row?.email}
         </span>
       ),
@@ -455,7 +455,7 @@ export default function Suppliers() {
       header: 'Payment Terms',
       sortable: true,
       render: (val, row) => (
-        <span className="text-xs font-medium text-slate-700 dark:text-slate-300">
+        <span className="text-xs font-medium text-gray-700 dark:text-gray-300">
           {val || row?.paymentTerms}
         </span>
       ),
@@ -466,7 +466,7 @@ export default function Suppliers() {
       header: 'Lead Time',
       sortable: true,
       render: (val, row) => (
-        <span className="text-xs text-slate-600 dark:text-slate-400">
+        <span className="text-xs text-gray-600 dark:text-gray-400">
           {val || row?.leadTime}
         </span>
       ),
@@ -480,7 +480,7 @@ export default function Suppliers() {
       render: (val, row) => {
         const amount = typeof val === 'number' ? val : (row?.openPayables || 0);
         return (
-          <span className={`font-sans text-xs font-semibold ${amount > 0 ? 'text-amber-600 dark:text-amber-400' : 'text-slate-400'}`}>
+          <span className={`font-sans text-xs font-semibold ${amount > 0 ? 'text-amber-600 dark:text-amber-400' : 'text-gray-400'}`}>
             {amount > 0 ? `KES ${amount.toLocaleString()}` : 'KES 0'}
           </span>
         );
@@ -493,7 +493,7 @@ export default function Suppliers() {
       sortable: true,
       render: (val, row) => {
         const status = val || row?.status;
-        let badgeCls = 'bg-slate-100 text-slate-700 border-slate-200 dark:bg-slate-800 dark:text-slate-300';
+        let badgeCls = 'bg-gray-100 text-gray-700 border-gray-200 dark:bg-gray-800 dark:text-gray-300';
         if (status === 'Preferred Partner') {
           badgeCls = 'bg-[#ECFDF3] text-[#118bb0] border-[#A6F4C5] dark:bg-emerald-950/40 dark:text-emerald-400 dark:border-emerald-800';
         } else if (status === 'Active') {
@@ -664,13 +664,13 @@ export default function Suppliers() {
           onRowClick={(row) => handleViewSupplier(row)}
           emptyMessage={
             <div className="flex flex-col items-center justify-center py-12 text-center">
-              <div className="w-12 h-12 rounded-full bg-slate-100 dark:bg-slate-700 flex items-center justify-center text-slate-400 mb-3">
+              <div className="w-12 h-12 rounded-full bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-gray-400 mb-3">
                 <HugeiconsIcon icon={Building01Icon} className="w-6 h-6" />
               </div>
-              <h3 className="text-sm font-semibold text-slate-900 dark:text-slate-100 mb-1">
+              <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100 mb-1">
                 No suppliers found
               </h3>
-              <p className="text-xs text-slate-500 dark:text-slate-400 max-w-sm mb-4">
+              <p className="text-xs text-gray-500 dark:text-gray-400 max-w-sm mb-4">
                 {searchQuery
                   ? `No suppliers matching "${searchQuery}". Try clearing search filters.`
                   : 'Get started by adding your clinic’s verified dental suppliers and dental laboratories.'}
@@ -690,18 +690,18 @@ export default function Suppliers() {
 
       {/* ─── Add / Edit Supplier Modal ────────────────────────────────────── */}
       {isAddModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4">
-          <div className="bg-white dark:bg-slate-850 rounded   w-full max-w-xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-xs p-4">
+          <div className="bg-white dark:bg-gray-850 rounded   w-full max-w-xl border border-gray-200 dark:border-gray-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded bg-[#ECFDF3] dark:bg-emerald-950/60 flex items-center justify-center text-[#118bb0]">
                   <HugeiconsIcon icon={Building01Icon} className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100">
                     {formData.code ? 'Edit Supplier Record' : 'Register New Dental Supplier / Lab'}
                   </h3>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[11px] text-gray-500">
                     Vendor compliance, tax identifier, and delivery logistics
                   </p>
                 </div>
@@ -709,7 +709,7 @@ export default function Suppliers() {
               <button
                 type="button"
                 onClick={() => setIsAddModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} className="w-5 h-5" />
               </button>
@@ -718,7 +718,7 @@ export default function Suppliers() {
             <form onSubmit={handleCreateSupplier} className="p-6 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="sm:col-span-2">
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Company / Laboratory Name *
                   </label>
                   <input
@@ -727,18 +727,18 @@ export default function Suppliers() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="e.g. Apex Dental Prosthetics Ltd"
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Category
                   </label>
                   <select
                     value={formData.category}
                     onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   >
                     <option value="Dental Consumables">Dental Consumables</option>
                     <option value="Prosthetic & Crown Labs">Prosthetic & Crown Labs</option>
@@ -749,7 +749,7 @@ export default function Suppliers() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     KRA PIN (Tax ID)
                   </label>
                   <input
@@ -757,12 +757,12 @@ export default function Suppliers() {
                     value={formData.kraPin}
                     onChange={(e) => setFormData({ ...formData, kraPin: e.target.value })}
                     placeholder="e.g. P051294812Z"
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0] font-sans"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0] font-sans"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Primary Contact Person
                   </label>
                   <input
@@ -770,12 +770,12 @@ export default function Suppliers() {
                     value={formData.contactPerson}
                     onChange={(e) => setFormData({ ...formData, contactPerson: e.target.value })}
                     placeholder="e.g. David Karani (Sales Rep)"
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Phone Number *
                   </label>
                   <input
@@ -784,12 +784,12 @@ export default function Suppliers() {
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder="+254 722 000 000"
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Orders Desk Email
                   </label>
                   <input
@@ -797,18 +797,18 @@ export default function Suppliers() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="orders@vendor.co.ke"
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Payment Terms
                   </label>
                   <select
                     value={formData.paymentTerms}
                     onChange={(e) => setFormData({ ...formData, paymentTerms: e.target.value })}
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   >
                     <option value="Net 30 Days">Net 30 Days</option>
                     <option value="Net 15 Days">Net 15 Days</option>
@@ -820,7 +820,7 @@ export default function Suppliers() {
                 </div>
 
                 <div className="sm:col-span-2">
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Physical Address / Delivery Hub
                   </label>
                   <input
@@ -828,12 +828,12 @@ export default function Suppliers() {
                     value={formData.location}
                     onChange={(e) => setFormData({ ...formData, location: e.target.value })}
                     placeholder="Building, Street, Town"
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Typical Lead Time
                   </label>
                   <input
@@ -841,18 +841,18 @@ export default function Suppliers() {
                     value={formData.leadTime}
                     onChange={(e) => setFormData({ ...formData, leadTime: e.target.value })}
                     placeholder="e.g. 24-48 Hours"
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Status
                   </label>
                   <select
                     value={formData.status}
                     onChange={(e) => setFormData({ ...formData, status: e.target.value })}
-                    className="w-full px-3 py-1.5 rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-xs text-slate-800 dark:text-slate-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
+                    className="w-full px-3 py-1.5 rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-xs text-gray-800 dark:text-gray-100 focus:outline-none focus:ring-1 focus:ring-[#118bb0]"
                   >
                     <option value="Active">Active</option>
                     <option value="Preferred Partner">Preferred Partner</option>
@@ -862,11 +862,11 @@ export default function Suppliers() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-3 pt-4 border-t border-gray-100 dark:border-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsAddModalOpen(false)}
-                  className="px-4 py-1.5 rounded text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+                  className="px-4 py-1.5 rounded text-xs font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -884,18 +884,18 @@ export default function Suppliers() {
 
       {/* ─── Supplier Dossier Modal ───────────────────────────────────────── */}
       {isDetailModalOpen && activeSupplier && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4">
-          <div className="bg-white dark:bg-slate-850 rounded   w-full max-w-2xl border border-slate-200 dark:border-slate-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-xs p-4">
+          <div className="bg-white dark:bg-gray-850 rounded   w-full max-w-2xl border border-gray-200 dark:border-gray-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded bg-[#ECFDF3] dark:bg-emerald-950/60 flex items-center justify-center text-[#118bb0]">
                   <HugeiconsIcon icon={Building01Icon} className="w-5 h-5" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100">
                     {activeSupplier.name}
                   </h3>
-                  <div className="flex items-center gap-2 text-[11px] text-slate-500 font-sans mt-0.5">
+                  <div className="flex items-center gap-2 text-[11px] text-gray-500 font-sans mt-0.5">
                     <span>{activeSupplier.id}</span>
                     <span>•</span>
                     <span>KRA PIN: {activeSupplier.kraPin}</span>
@@ -907,7 +907,7 @@ export default function Suppliers() {
               <button
                 type="button"
                 onClick={() => setIsDetailModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} className="w-5 h-5" />
               </button>
@@ -916,23 +916,23 @@ export default function Suppliers() {
             <div className="p-6 space-y-6 max-h-[75vh] overflow-y-auto">
               {/* Summary Cards */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
-                <div className="p-3 rounded bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                  <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">
+                <div className="p-3 rounded bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                  <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider block">
                     Outstanding Payable
                   </span>
-                  <span className="text-base font-bold font-sans text-slate-900 dark:text-slate-100 mt-1 block">
+                  <span className="text-base font-bold font-sans text-gray-900 dark:text-gray-100 mt-1 block">
                     KES {activeSupplier.openPayables.toLocaleString()}
                   </span>
-                  <span className="text-[10px] text-slate-500 mt-0.5 block">
+                  <span className="text-[10px] text-gray-500 mt-0.5 block">
                     Terms: {activeSupplier.paymentTerms}
                   </span>
                 </div>
 
-                <div className="p-3 rounded bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                  <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">
+                <div className="p-3 rounded bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                  <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider block">
                     Active Purchase Orders
                   </span>
-                  <span className="text-base font-bold text-slate-900 dark:text-slate-100 mt-1 block">
+                  <span className="text-base font-bold text-gray-900 dark:text-gray-100 mt-1 block">
                     {activeSupplier.activeLPOs} Open LPOs
                   </span>
                   <span className="text-[10px] text-emerald-600 dark:text-emerald-400 mt-0.5 block">
@@ -940,44 +940,44 @@ export default function Suppliers() {
                   </span>
                 </div>
 
-                <div className="p-3 rounded bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
-                  <span className="text-[10px] font-semibold text-slate-400 uppercase tracking-wider block">
+                <div className="p-3 rounded bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700">
+                  <span className="text-[10px] font-semibold text-gray-400 uppercase tracking-wider block">
                     Catalog Coverage
                   </span>
-                  <span className="text-base font-bold text-slate-900 dark:text-slate-100 mt-1 block">
+                  <span className="text-base font-bold text-gray-900 dark:text-gray-100 mt-1 block">
                     {activeSupplier.catalogItems} Linked Items
                   </span>
-                  <span className="text-[10px] text-slate-500 mt-0.5 block">
+                  <span className="text-[10px] text-gray-500 mt-0.5 block">
                     Category: {activeSupplier.category}
                   </span>
                 </div>
               </div>
 
               {/* Vendor Logistics & Settlement Details */}
-              <div className="rounded border border-slate-200 dark:border-slate-700 p-4 space-y-3">
-                <h4 className="text-xs font-bold text-slate-800 dark:text-slate-200 uppercase tracking-wider">
+              <div className="rounded border border-gray-200 dark:border-gray-700 p-4 space-y-3">
+                <h4 className="text-xs font-bold text-gray-800 dark:text-gray-200 uppercase tracking-wider">
                   Logistics & Banking Information
                 </h4>
                 <div className="grid grid-cols-2 gap-4 text-xs">
                   <div>
-                    <span className="text-slate-400 block text-[11px]">Primary Contact</span>
-                    <span className="font-medium text-slate-800 dark:text-slate-200">{activeSupplier.contactPerson}</span>
+                    <span className="text-gray-400 block text-[11px]">Primary Contact</span>
+                    <span className="font-medium text-gray-800 dark:text-gray-200">{activeSupplier.contactPerson}</span>
                   </div>
                   <div>
-                    <span className="text-slate-400 block text-[11px]">Contact Phone</span>
-                    <span className="font-medium text-slate-800 dark:text-slate-200">{activeSupplier.phone}</span>
+                    <span className="text-gray-400 block text-[11px]">Contact Phone</span>
+                    <span className="font-medium text-gray-800 dark:text-gray-200">{activeSupplier.phone}</span>
                   </div>
                   <div>
-                    <span className="text-slate-400 block text-[11px]">Orders Desk Email</span>
-                    <span className="font-medium text-slate-800 dark:text-slate-200 font-sans">{activeSupplier.email}</span>
+                    <span className="text-gray-400 block text-[11px]">Orders Desk Email</span>
+                    <span className="font-medium text-gray-800 dark:text-gray-200 font-sans">{activeSupplier.email}</span>
                   </div>
                   <div>
-                    <span className="text-slate-400 block text-[11px]">Settlement Account</span>
-                    <span className="font-medium text-slate-800 dark:text-slate-200">{activeSupplier.bankDetails}</span>
+                    <span className="text-gray-400 block text-[11px]">Settlement Account</span>
+                    <span className="font-medium text-gray-800 dark:text-gray-200">{activeSupplier.bankDetails}</span>
                   </div>
                   <div className="col-span-2">
-                    <span className="text-slate-400 block text-[11px]">Physical Warehouse / Lab Location</span>
-                    <span className="font-medium text-slate-800 dark:text-slate-200">{activeSupplier.location}</span>
+                    <span className="text-gray-400 block text-[11px]">Physical Warehouse / Lab Location</span>
+                    <span className="font-medium text-gray-800 dark:text-gray-200">{activeSupplier.location}</span>
                   </div>
                 </div>
               </div>
@@ -1001,7 +1001,7 @@ export default function Suppliers() {
                   <button
                     type="button"
                     onClick={() => setIsDetailModalOpen(false)}
-                    className="px-3 py-1.5 rounded text-xs font-medium text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 cursor-pointer"
+                    className="px-3 py-1.5 rounded text-xs font-medium text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 cursor-pointer"
                   >
                     Close
                   </button>
@@ -1014,18 +1014,18 @@ export default function Suppliers() {
 
       {/* ─── Educational Learn Modal ───────────────────────────────────────── */}
       {isLearnModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-slate-900/50 backdrop-blur-xs p-4">
-          <div className="bg-white dark:bg-slate-850 rounded   w-full max-w-lg border border-slate-200 dark:border-slate-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-gray-900/50 backdrop-blur-xs p-4">
+          <div className="bg-white dark:bg-gray-850 rounded   w-full max-w-lg border border-gray-200 dark:border-gray-800 overflow-hidden animate-in fade-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <div className="flex items-center gap-2.5">
                 <div className="w-8 h-8 rounded bg-amber-50 dark:bg-amber-950/60 flex items-center justify-center text-amber-600">
                   <HugeiconsIcon icon={Idea01Icon} className="w-4 h-4" />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-slate-100">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-gray-100">
                     Dental Supply Chain & Vendor Management
                   </h3>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[11px] text-gray-500">
                     Best practices for procurement, lab turnaround, and tax compliance
                   </p>
                 </div>
@@ -1033,15 +1033,15 @@ export default function Suppliers() {
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 cursor-pointer"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} className="w-5 h-5" />
               </button>
             </div>
 
-            <div className="p-6 space-y-4 text-xs text-slate-600 dark:text-slate-300">
+            <div className="p-6 space-y-4 text-xs text-gray-600 dark:text-gray-300">
               <div className="space-y-1">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   Dental Laboratory SLA & Remake Tracking
                 </h4>
                 <p className="leading-relaxed">
@@ -1050,7 +1050,7 @@ export default function Suppliers() {
               </div>
 
               <div className="space-y-1">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   KRA eTIMS & Tax Identification (PIN)
                 </h4>
                 <p className="leading-relaxed">
@@ -1059,7 +1059,7 @@ export default function Suppliers() {
               </div>
 
               <div className="space-y-1">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   Consolidated Payment Terms & Discounts
                 </h4>
                 <p className="leading-relaxed">
@@ -1068,7 +1068,7 @@ export default function Suppliers() {
               </div>
             </div>
 
-            <div className="flex items-center justify-end px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+            <div className="flex items-center justify-end px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}

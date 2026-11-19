@@ -445,11 +445,11 @@ export default function Invoices() {
         filterPlaceholder: 'Filter invoice #...',
         render: (val, row) => (
           <div className="flex flex-col py-0.5 leading-tight">
-            <span className="font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-1.5">
+            <span className="font-bold text-gray-900 dark:text-white tracking-tight flex items-center gap-1.5">
               <HugeiconsIcon icon={Invoice01Icon} size={13} className="text-emerald-700 dark:text-emerald-400" />
               {row.id}
             </span>
-            <span className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+            <span className="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">
               Issued: {row.date}
             </span>
           </div>
@@ -468,10 +468,10 @@ export default function Invoices() {
               {row.patientName.charAt(0)}
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="font-semibold text-slate-800 dark:text-slate-100 truncate hover:text-emerald-700 cursor-pointer">
+              <span className="font-semibold text-gray-800 dark:text-gray-100 truncate hover:text-emerald-700 cursor-pointer">
                 {row.patientName}
               </span>
-              <span className="text-[10px] text-slate-400 font-sans">
+              <span className="text-[10px] text-gray-400 font-sans">
                 {row.phone} • {row.patientId}
               </span>
             </div>
@@ -486,7 +486,7 @@ export default function Invoices() {
         filterable: true,
         filterPlaceholder: 'Filter treatment...',
         render: (val) => (
-          <span className="text-xs text-slate-700 dark:text-slate-200 font-medium truncate block">
+          <span className="text-xs text-gray-700 dark:text-gray-200 font-medium truncate block">
             {val}
           </span>
         ),
@@ -509,7 +509,7 @@ export default function Invoices() {
           'Corporate (AAR)',
         ],
         render: (val) => (
-          <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+          <span className="inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 border border-gray-200 dark:border-gray-700">
             {val}
           </span>
         ),
@@ -521,7 +521,7 @@ export default function Invoices() {
         sortable: true,
         filterable: true,
         render: (val) => (
-          <span className="text-xs font-bold text-slate-900 dark:text-white font-sans">
+          <span className="text-xs font-bold text-gray-900 dark:text-white font-sans">
             KES {val.toLocaleString()}
           </span>
         ),
@@ -548,7 +548,7 @@ export default function Invoices() {
           <span
             className={`text-xs font-bold font-sans ${val > 0
               ? 'text-rose-600 dark:text-rose-400'
-              : 'text-slate-400 dark:text-slate-500'
+              : 'text-gray-400 dark:text-gray-500'
               }`}
           >
             KES {val.toLocaleString()}
@@ -568,9 +568,9 @@ export default function Invoices() {
             Paid: 'bg-emerald-50 text-emerald-800 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300',
             'Partially Paid':
               'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300',
-            Unpaid: 'bg-slate-100 text-slate-800 border-slate-200 dark:bg-slate-800 dark:text-slate-200',
+            Unpaid: 'bg-gray-100 text-gray-800 border-gray-200 dark:bg-gray-800 dark:text-gray-200',
             Overdue: 'bg-rose-50 text-rose-800 border-rose-200 dark:bg-rose-950/40 dark:text-rose-300',
-          }[val] || 'bg-slate-100 text-slate-700 border-slate-200';
+          }[val] || 'bg-gray-100 text-gray-700 border-gray-200';
 
           return (
             <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold border ${style}`}>
@@ -581,7 +581,7 @@ export default function Invoices() {
                     ? 'bg-amber-500'
                     : val === 'Overdue'
                       ? 'bg-rose-500'
-                      : 'bg-slate-400'
+                      : 'bg-gray-400'
                   }`}
               />
               {val}
@@ -599,7 +599,7 @@ export default function Invoices() {
           <span
             className={`text-xs ${row.status === 'Overdue'
               ? 'text-rose-600 font-bold'
-              : 'text-slate-600 dark:text-slate-300'
+              : 'text-gray-600 dark:text-gray-300'
               }`}
           >
             {val}
@@ -634,7 +634,7 @@ export default function Invoices() {
               title={`Invoice ${row.id}`}
               align="right"
               triggerIcon={MoreHorizontalIcon}
-              triggerClassName="h-7 w-7 rounded hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center   transition-colors cursor-pointer"
+              triggerClassName="h-7 w-7 rounded hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center   transition-colors cursor-pointer"
               items={[
                 {
                   id: 'view',
@@ -695,7 +695,7 @@ export default function Invoices() {
   );
 
   return (
-    <div className=" bg-slate-50/40 dark:bg-slate-950 font-sans mb-6">
+    <div className=" bg-gray-50/40 dark:bg-gray-950 font-sans mb-6">
       {/* ─── 1. Page Header (Exact composition matching Patients page) ────── */}
       <PageHeader
         title="Invoices"
@@ -774,18 +774,18 @@ export default function Invoices() {
 
       {/* ─── 3. Create Invoice Modal ────────────────────────────────────────── */}
       {isCreateModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={PlusSignIcon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white">
                     Create New Invoice
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     KRA eTIMS compliant dental patient billing
                   </p>
                 </div>
@@ -793,7 +793,7 @@ export default function Invoices() {
               <button
                 type="button"
                 onClick={() => setIsCreateModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-300 p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
@@ -802,7 +802,7 @@ export default function Invoices() {
             <form onSubmit={handleCreateInvoice} className="p-6 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Patient Name *
                   </label>
                   <input
@@ -813,12 +813,12 @@ export default function Invoices() {
                     onChange={(e) =>
                       setNewInvoiceForm({ ...newInvoiceForm, patientName: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Phone (for M-Pesa STK) *
                   </label>
                   <input
@@ -829,13 +829,13 @@ export default function Invoices() {
                     onChange={(e) =>
                       setNewInvoiceForm({ ...newInvoiceForm, phone: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                   Treatment / Line Item Description *
                 </label>
                 <input
@@ -846,13 +846,13 @@ export default function Invoices() {
                   onChange={(e) =>
                     setNewInvoiceForm({ ...newInvoiceForm, treatment: e.target.value })
                   }
-                  className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Billing Type / Scheme
                   </label>
                   <select
@@ -860,7 +860,7 @@ export default function Invoices() {
                     onChange={(e) =>
                       setNewInvoiceForm({ ...newInvoiceForm, billingType: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="Self-Pay (M-Pesa)">Self-Pay (M-Pesa)</option>
                     <option value="Self-Pay (Cash)">Self-Pay (Cash)</option>
@@ -873,7 +873,7 @@ export default function Invoices() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Due Date
                   </label>
                   <input
@@ -883,12 +883,12 @@ export default function Invoices() {
                     onChange={(e) =>
                       setNewInvoiceForm({ ...newInvoiceForm, dueDate: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Total Amount (KES) *
                   </label>
                   <input
@@ -899,12 +899,12 @@ export default function Invoices() {
                     onChange={(e) =>
                       setNewInvoiceForm({ ...newInvoiceForm, totalAmount: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Initial Deposit / Paid (KES)
                   </label>
                   <input
@@ -914,16 +914,16 @@ export default function Invoices() {
                     onChange={(e) =>
                       setNewInvoiceForm({ ...newInvoiceForm, paidAmount: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-gray-100 dark:border-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsCreateModalOpen(false)}
-                  className="px-4 py-2 text-xs font-semibold rounded text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold rounded text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -941,39 +941,39 @@ export default function Invoices() {
 
       {/* ─── 4. M-Pesa STK Push Dialog ─────────────────────────────────────── */}
       {isStkModalOpen && stkTargetInvoice && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-md overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-md overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={SmartPhone01Icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                     Safaricom M-Pesa STK Push
                   </h3>
-                  <p className="text-xs text-slate-500">{stkTargetInvoice.id}</p>
+                  <p className="text-xs text-gray-500">{stkTargetInvoice.id}</p>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => setIsStkModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
             <form onSubmit={handleExecuteStkPush} className="p-6 space-y-4">
-              <div className="p-3 rounded bg-slate-50 dark:bg-slate-850 border border-slate-100 dark:border-slate-800 text-xs">
+              <div className="p-3 rounded bg-gray-50 dark:bg-gray-850 border border-gray-100 dark:border-gray-800 text-xs">
                 <div className="flex justify-between py-0.5">
-                  <span className="text-slate-500">Patient:</span>
-                  <span className="font-bold text-slate-900 dark:text-white">
+                  <span className="text-gray-500">Patient:</span>
+                  <span className="font-bold text-gray-900 dark:text-white">
                     {stkTargetInvoice.patientName}
                   </span>
                 </div>
                 <div className="flex justify-between py-0.5">
-                  <span className="text-slate-500">Outstanding Balance:</span>
+                  <span className="text-gray-500">Outstanding Balance:</span>
                   <span className="font-bold text-rose-600 font-sans">
                     KES {stkTargetInvoice.balance.toLocaleString()}
                   </span>
@@ -981,7 +981,7 @@ export default function Invoices() {
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                   M-Pesa Mobile Number
                 </label>
                 <input
@@ -990,9 +990,9 @@ export default function Invoices() {
                   placeholder="0712345678"
                   value={stkPhoneNumber}
                   onChange={(e) => setStkPhoneNumber(e.target.value)}
-                  className="w-full text-xs font-sans rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full text-xs font-sans rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
-                <span className="text-[11px] text-slate-400 mt-1 block">
+                <span className="text-[11px] text-gray-400 mt-1 block">
                   A PIN entry prompt will pop up immediately on the patient&apos;s phone.
                 </span>
               </div>
@@ -1001,7 +1001,7 @@ export default function Invoices() {
                 <button
                   type="button"
                   onClick={() => setIsStkModalOpen(false)}
-                  className="px-3.5 py-2 text-xs font-semibold rounded text-slate-700 hover:bg-slate-100 dark:text-slate-200 dark:hover:bg-slate-800"
+                  className="px-3.5 py-2 text-xs font-semibold rounded text-gray-700 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-gray-800"
                 >
                   Cancel
                 </button>
@@ -1027,50 +1027,50 @@ export default function Invoices() {
 
       {/* ─── 5. View Invoice Detail Modal ───────────────────────────────────── */}
       {viewingInvoice && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg max-h-[85vh] overflow-y-auto animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800 sticky top-0 bg-white dark:bg-slate-900">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg max-h-[85vh] overflow-y-auto animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800 sticky top-0 bg-white dark:bg-gray-900">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={Invoice01Icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                     {viewingInvoice.id}
                   </h3>
-                  <p className="text-xs text-slate-500">{viewingInvoice.etimsNumber}</p>
+                  <p className="text-xs text-gray-500">{viewingInvoice.etimsNumber}</p>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => setViewingInvoice(null)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
             <div className="p-6 space-y-4 text-xs">
-              <div className="grid grid-cols-2 gap-3 p-3 rounded bg-slate-50 dark:bg-slate-850 border border-slate-100 dark:border-slate-800">
+              <div className="grid grid-cols-2 gap-3 p-3 rounded bg-gray-50 dark:bg-gray-850 border border-gray-100 dark:border-gray-800">
                 <div>
-                  <span className="text-[10px] text-slate-400 uppercase font-semibold">Billed To</span>
-                  <p className="font-bold text-slate-900 dark:text-white mt-0.5">{viewingInvoice.patientName}</p>
-                  <p className="text-[10px] text-slate-500 font-sans">{viewingInvoice.phone}</p>
+                  <span className="text-[10px] text-gray-400 uppercase font-semibold">Billed To</span>
+                  <p className="font-bold text-gray-900 dark:text-white mt-0.5">{viewingInvoice.patientName}</p>
+                  <p className="text-[10px] text-gray-500 font-sans">{viewingInvoice.phone}</p>
                 </div>
                 <div>
-                  <span className="text-[10px] text-slate-400 uppercase font-semibold">Payment Scheme</span>
-                  <p className="font-bold text-slate-900 dark:text-white mt-0.5">{viewingInvoice.billingType}</p>
-                  <p className="text-[10px] text-slate-500">Due: {viewingInvoice.dueDate}</p>
+                  <span className="text-[10px] text-gray-400 uppercase font-semibold">Payment Scheme</span>
+                  <p className="font-bold text-gray-900 dark:text-white mt-0.5">{viewingInvoice.billingType}</p>
+                  <p className="text-[10px] text-gray-500">Due: {viewingInvoice.dueDate}</p>
                 </div>
               </div>
 
               <div>
-                <span className="text-[10px] text-slate-400 uppercase font-semibold">Item Description</span>
-                <p className="font-semibold text-slate-800 dark:text-slate-100 mt-1">{viewingInvoice.treatment}</p>
+                <span className="text-[10px] text-gray-400 uppercase font-semibold">Item Description</span>
+                <p className="font-semibold text-gray-800 dark:text-gray-100 mt-1">{viewingInvoice.treatment}</p>
               </div>
 
-              <div className="border-t border-slate-100 dark:border-slate-800 pt-3 space-y-1.5">
-                <div className="flex justify-between text-slate-600 dark:text-slate-400">
+              <div className="border-t border-gray-100 dark:border-gray-800 pt-3 space-y-1.5">
+                <div className="flex justify-between text-gray-600 dark:text-gray-400">
                   <span>Subtotal Amount:</span>
                   <span className="font-sans font-semibold">KES {viewingInvoice.totalAmount.toLocaleString()}</span>
                 </div>
@@ -1078,21 +1078,21 @@ export default function Invoices() {
                   <span>Amount Paid to Date:</span>
                   <span className="font-sans font-semibold">KES {viewingInvoice.paidAmount.toLocaleString()}</span>
                 </div>
-                <div className="flex justify-between text-sm font-bold text-slate-900 dark:text-white border-t border-slate-200 dark:border-slate-700 pt-2">
+                <div className="flex justify-between text-sm font-bold text-gray-900 dark:text-white border-t border-gray-200 dark:border-gray-700 pt-2">
                   <span>Outstanding Balance:</span>
                   <span className="font-sans text-rose-600">KES {viewingInvoice.balance.toLocaleString()}</span>
                 </div>
               </div>
             </div>
 
-            <div className="flex items-center justify-between px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
-              <span className="text-[11px] text-slate-500">
-                Status: <strong className="text-slate-700 dark:text-slate-300">{viewingInvoice.status}</strong>
+            <div className="flex items-center justify-between px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
+              <span className="text-[11px] text-gray-500">
+                Status: <strong className="text-gray-700 dark:text-gray-300">{viewingInvoice.status}</strong>
               </span>
               <button
                 type="button"
                 onClick={() => setViewingInvoice(null)}
-                className="px-3.5 py-1.5 rounded text-xs font-semibold bg-slate-200 dark:bg-slate-700 text-slate-800 dark:text-slate-100 hover:bg-slate-300 cursor-pointer"
+                className="px-3.5 py-1.5 rounded text-xs font-semibold bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-100 hover:bg-gray-300 cursor-pointer"
               >
                 Close
               </button>
@@ -1103,18 +1103,18 @@ export default function Invoices() {
 
       {/* ─── 6. Learn Modal ─────────────────────────────────────────────────── */}
       {isLearnModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">
                   <HugeiconsIcon icon={Idea01Icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                     Dental Invoicing & Billing Guide
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     KRA eTIMS, M-Pesa STK Push, and insurance co-pay standards
                   </p>
                 </div>
@@ -1122,13 +1122,13 @@ export default function Invoices() {
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
-            <div className="p-6 space-y-3.5 text-xs text-slate-600 dark:text-slate-300">
+            <div className="p-6 space-y-3.5 text-xs text-gray-600 dark:text-gray-300">
               <div className="p-3 rounded bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/40">
                 <h4 className="font-bold text-emerald-900 dark:text-emerald-300 mb-1">
                   Safaricom M-Pesa STK Push Integration
@@ -1139,7 +1139,7 @@ export default function Invoices() {
               </div>
 
               <div className="space-y-1.5">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   KRA eTIMS Electronic Tax Invoicing
                 </h4>
                 <p className="leading-relaxed">
@@ -1148,7 +1148,7 @@ export default function Invoices() {
               </div>
 
               <div className="space-y-1.5">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   Insurance Co-Payment Rules
                 </h4>
                 <p className="leading-relaxed">
@@ -1157,7 +1157,7 @@ export default function Invoices() {
               </div>
             </div>
 
-            <div className="flex items-center justify-end px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+            <div className="flex items-center justify-end px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}

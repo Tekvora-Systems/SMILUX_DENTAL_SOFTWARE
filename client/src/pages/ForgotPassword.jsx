@@ -21,19 +21,19 @@ function Steps({ current }) {
               <div className={`flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold border-2 transition-all duration-200
                 ${done ? 'bg-[#118bb0] border-[#118bb0] text-white' :
                   active ? 'bg-white border-[#118bb0] text-[#118bb0]' :
-                    'bg-white border-slate-200 text-slate-400'}`}>
+                    'bg-white border-gray-200 text-gray-400'}`}>
                 {done ? (
                   <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 ) : idx}
               </div>
-              <span className={`mt-1 text-[10px] font-semibold ${active ? 'text-[#118bb0]' : done ? 'text-[#118bb0]' : 'text-slate-400'}`}>
+              <span className={`mt-1 text-[10px] font-semibold ${active ? 'text-[#118bb0]' : done ? 'text-[#118bb0]' : 'text-gray-400'}`}>
                 {label}
               </span>
             </div>
             {i < steps.length - 1 && (
-              <div className={`h-[2px] w-10 mx-1 mb-4 rounded transition-all duration-300 ${done ? 'bg-[#118bb0]' : 'bg-slate-200'}`} />
+              <div className={`h-[2px] w-10 mx-1 mb-4 rounded transition-all duration-300 ${done ? 'bg-[#118bb0]' : 'bg-gray-200'}`} />
             )}
           </React.Fragment>
         );
@@ -93,7 +93,7 @@ function OtpInput({ value, onChange, disabled }) {
           onKeyDown={(e) => handleKey(e, i)}
           onPaste={handlePaste}
           onFocus={(e) => e.target.select()}
-          className="h-11 w-10 rounded-lg border-2 border-slate-200 bg-white text-center text-lg font-bold text-slate-900 outline-none transition-all focus:border-[#118bb0] focus:ring-2 focus:ring-[#118bb0]/20 disabled:opacity-50"
+          className="h-11 w-10 rounded-lg border-2 border-gray-200 bg-white text-center text-lg font-bold text-gray-900 outline-none transition-all focus:border-[#118bb0] focus:ring-2 focus:ring-[#118bb0]/20 disabled:opacity-50"
         />
       ))}
     </div>
@@ -120,7 +120,7 @@ function ResendTimer({ onResend, loading }) {
 
   if (secs > 0) {
     return (
-      <p className="text-center text-xs text-slate-500 mt-1">
+      <p className="text-center text-xs text-gray-500 mt-1">
         Resend code in <span className="font-semibold text-[#118bb0]">{secs}s</span>
       </p>
     );
@@ -242,8 +242,8 @@ export default function ForgotPassword({ onNavigate, onOpenReferral }) {
             </svg>
           </div>
           <div>
-            <h2 className="text-lg font-bold text-slate-900">Password reset!</h2>
-            <p className="mt-1 text-xs text-slate-500">Your new password has been saved. You can now sign in.</p>
+            <h2 className="text-lg font-bold text-gray-900">Password reset!</h2>
+            <p className="mt-1 text-xs text-gray-500">Your new password has been saved. You can now sign in.</p>
           </div>
           <Button variant="primary" className="w-full" onClick={() => onNavigate('login')}>
             Go to Sign In
@@ -259,8 +259,8 @@ export default function ForgotPassword({ onNavigate, onOpenReferral }) {
       <div className="space-y-1">
 
         <div className="text-center mb-2">
-          <h2 className="text-xl font-bold text-slate-900">Reset Password</h2>
-          <p className="mt-1 text-xs text-slate-500">
+          <h2 className="text-xl font-bold text-gray-900">Reset Password</h2>
+          <p className="mt-1 text-xs text-gray-500">
             {step === 1 && 'Enter your account email to receive a reset code.'}
             {step === 2 && `Enter the 6-digit code sent to ${email}.`}
             {step === 3 && 'Choose a new password for your account.'}
@@ -308,7 +308,7 @@ export default function ForgotPassword({ onNavigate, onOpenReferral }) {
             <button
               type="button"
               onClick={() => { setStep(1); setOtp(''); setError(''); }}
-              className="block w-full text-center text-xs text-slate-500 hover:text-slate-700 mt-1 cursor-pointer"
+              className="block w-full text-center text-xs text-gray-500 hover:text-gray-700 mt-1 cursor-pointer"
             >
               ← Use a different email
             </button>
@@ -352,7 +352,7 @@ export default function ForgotPassword({ onNavigate, onOpenReferral }) {
           </form>
         )}
 
-        <div className="text-center pt-3 border-t border-slate-100 text-xs text-slate-500">
+        <div className="text-center pt-3 border-t border-gray-100 text-xs text-gray-500">
           Remembered it?{' '}
           <button
             onClick={() => onNavigate('login')}

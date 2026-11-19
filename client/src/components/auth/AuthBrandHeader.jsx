@@ -10,10 +10,10 @@ export default function AuthBrandHeader({ className = "p-4" }) {
           className="w-14 h-14"
         />
         <div>
-          <h1 className="text-3xl font-extrabold text-slate-900 tracking-tight">
+          <h1 className="text-3xl font-extrabold text-gray-900 tracking-tight">
             Smilux <span className="text-brand-pink">Dental</span> <span className="text-brand-navy">Software</span><span className="text-brand-pink">.</span>
           </h1>
-          <p className="text-xs font-semibold text-slate-500 mt-0.5">
+          <p className="text-xs font-semibold text-gray-500 mt-0.5">
             Dental Practice Management System
           </p>
         </div>

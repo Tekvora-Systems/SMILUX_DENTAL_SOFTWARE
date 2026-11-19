@@ -151,7 +151,7 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section id="testimonials" className="w-full py-20  bg-[linear-gradient(180deg,#f0f9fb_0%,#d9f0f5_100%)]  border-t border-[#E7E7E7]">
+    <section id="testimonials" className="w-full py-20  bg-[linear-gradient(180deg,#f0f9fb_0%,#d9f0f5_100%)]  ">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
@@ -216,7 +216,7 @@ export default function TestimonialsSection() {
               key={i}
               type="button"
               onClick={() => pick(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${active === i ? 'w-6 bg-[#118bb0]' : 'w-1.5 bg-slate-300 hover:bg-slate-400'}`}
+              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${active === i ? 'w-6 bg-[#118bb0]' : 'w-1.5 bg-gray-300 hover:bg-gray-400'}`}
             />
           ))}
         </div>

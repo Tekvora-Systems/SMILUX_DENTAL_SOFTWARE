@@ -48,20 +48,20 @@ const changelog = [
 
 function WhatsNewWireframeSkeleton() {
   return (
-    <ul className="divide-y divide-slate-100">
+    <ul className="divide-y divide-gray-100">
       {[1, 2, 3, 4].map((idx) => (
         <li key={idx} className="py-3.5 first:pt-2">
           {/* Tag + Date wireframe */}
           <div className="flex items-center justify-between gap-2">
-            <div className="h-4 w-20 rounded bg-slate-200 animate-shimmer" />
-            <div className="h-3.5 w-24 rounded bg-slate-200 animate-shimmer" />
+            <div className="h-4 w-20 rounded bg-gray-200 animate-shimmer" />
+            <div className="h-3.5 w-24 rounded bg-gray-200 animate-shimmer" />
           </div>
           {/* Title wireframe */}
-          <div className="mt-2.5 h-4 w-4/5 rounded bg-slate-200 animate-shimmer" />
+          <div className="mt-2.5 h-4 w-4/5 rounded bg-gray-200 animate-shimmer" />
           {/* Excerpt wireframe */}
           <div className="mt-2 space-y-1.5">
-            <div className="h-3.5 w-full rounded bg-slate-200/60 animate-shimmer" />
-            <div className="h-3.5 w-3/4 rounded bg-slate-200/60 animate-shimmer" />
+            <div className="h-3.5 w-full rounded bg-gray-200/60 animate-shimmer" />
+            <div className="h-3.5 w-3/4 rounded bg-gray-200/60 animate-shimmer" />
           </div>
         </li>
       ))}
@@ -85,10 +85,10 @@ function WhatsNewPanel() {
   };
 
   return (
-    <div className="flex h-[46rem] flex-col overflow-hidden rounded border border-slate-300/90 bg-white/90 backdrop-blur-md  [0_1px_3px_rgba(0,0,0,0.06)]">
+    <div className="flex h-[46rem] flex-col overflow-hidden rounded border border-gray-300/90 bg-white/90 backdrop-blur-md  [0_1px_3px_rgba(0,0,0,0.06)]">
       {/* Header */}
-      <div className="flex shrink-0 items-center justify-between gap-2 border-b border-slate-100 px-4 py-3 sm:px-5">
-        <h2 className="text-base font-semibold text-slate-900 flex items-center gap-2">
+      <div className="flex shrink-0 items-center justify-between gap-2 border-b border-gray-100 px-4 py-3 sm:px-5">
+        <h2 className="text-base font-semibold text-gray-900 flex items-center gap-2">
           What&apos;s New
           {loading && (
             <span className="inline-block h-2 w-2 rounded-full bg-blue-600 animate-ping" />
@@ -97,7 +97,7 @@ function WhatsNewPanel() {
         <button
           type="button"
           onClick={handleRefresh}
-          className="shrink-0 rounded p-1 text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer"
+          className="shrink-0 rounded p-1 text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer"
           title="Refresh updates"
         >
           <HugeiconsIcon icon={ArrowUpRight01Icon} size={16} className={loading ? 'animate-spin' : ''} />
@@ -112,7 +112,7 @@ function WhatsNewPanel() {
         {loading ? (
           <WhatsNewWireframeSkeleton />
         ) : (
-          <ul className="divide-y divide-slate-100">
+          <ul className="divide-y divide-gray-100">
             {changelog.map((item) => (
               <li key={item.title} className="py-3.5 first:pt-2">
                 <div className="flex flex-wrap items-center justify-between gap-1.5">
@@ -121,13 +121,13 @@ function WhatsNewPanel() {
                   >
                     {item.tag}
                   </span>
-                  <span className="flex items-center gap-1 text-xs text-slate-500">
-                    <HugeiconsIcon icon={Calendar01Icon} size={14} className="text-slate-400" />
+                  <span className="flex items-center gap-1 text-xs text-gray-500">
+                    <HugeiconsIcon icon={Calendar01Icon} size={14} className="text-gray-400" />
                     {item.when}
                   </span>
                 </div>
-                <p className="mt-1.5 text-sm font-semibold text-slate-900">{item.title}</p>
-                <p className="mt-0.5 text-sm leading-relaxed text-slate-600">{item.excerpt}</p>
+                <p className="mt-1.5 text-sm font-semibold text-gray-900">{item.title}</p>
+                <p className="mt-0.5 text-sm leading-relaxed text-gray-600">{item.excerpt}</p>
               </li>
             ))}
           </ul>
@@ -135,11 +135,11 @@ function WhatsNewPanel() {
       </div>
 
       {/* Footer */}
-      <div className="shrink-0 border-t border-slate-100 px-4 py-3 sm:px-5">
+      <div className="shrink-0 border-t border-gray-100 px-4 py-3 sm:px-5">
         {loading ? (
-          <div className="h-3.5 w-48 mx-auto rounded bg-slate-200 animate-shimmer" />
+          <div className="h-3.5 w-48 mx-auto rounded bg-gray-200 animate-shimmer" />
         ) : (
-          <p className="text-center text-[11px] text-slate-400">
+          <p className="text-center text-[11px] text-gray-400">
             © {new Date().getFullYear()} {companyName} · Powered by Tekvora Systems
           </p>
         )}
@@ -182,12 +182,12 @@ function ReferralBanner({ onClick }) {
     <button
       onClick={onClick}
       type="button"
-      className="mt-4 w-full text-left block overflow-hidden rounded border border-slate-300/80 bg-[#E8EEF5] p-5 sm:p-6   hover:  transition-all cursor-pointer group"
+      className="mt-4 w-full text-left block overflow-hidden rounded border border-gray-300/80 bg-[#E8EEF5] p-5 sm:p-6   hover:  transition-all cursor-pointer group"
     >
       <div className="flex items-center space-x-4 sm:space-x-6">
         <MoneyBagGraphic />
         <div className="flex-1 space-y-2 min-w-0">
-          <h3 className="text-base sm:text-lg font-bold text-slate-900 leading-snug tracking-tight">
+          <h3 className="text-base sm:text-lg font-bold text-gray-900 leading-snug tracking-tight">
             Refer someone to Smilux and earn up to Ksh 10,000 in rewards
           </h3>
           <div className="flex items-center space-x-1 text-xs sm:text-sm font-bold text-[#006B7B] group-hover:translate-x-1 transition-transform">
@@ -203,14 +203,14 @@ function ReferralBanner({ onClick }) {
 // ─── Main auth layout ──────────────────────────────────────────────────────
 export function LoginLayout({ children, onOpenReferral }) {
   return (
-    <div className="min-h-[100dvh] bg-mesh text-slate-900 antialiased py-6">
+    <div className="min-h-[100dvh] bg-mesh text-gray-900 antialiased py-6">
       <AuthBrandHeader className="p-4" />
 
       <main className="mx-auto max-w-[54rem] px-3 py-4 sm:px-4 sm:py-5 lg:py-6">
         <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2 lg:gap-6">
           {/* Form column */}
           <div className="flex min-w-0 flex-col">
-            <div className="rounded border border-slate-300/90 bg-white/90 backdrop-blur-md px-5 py-6  [0_1px_3px_rgba(0,0,0,0.06)] sm:px-6 sm:py-6">
+            <div className="rounded border border-gray-300/90 bg-white/90 backdrop-blur-md px-5 py-6  [0_1px_3px_rgba(0,0,0,0.06)] sm:px-6 sm:py-6">
               {children}
             </div>
             <ReferralBanner onClick={onOpenReferral} />
@@ -229,7 +229,7 @@ export function LoginLayout({ children, onOpenReferral }) {
 // Wide single-column layout (used by pages that don't need the panel)
 export function WideLayout({ children }) {
   return (
-    <div className="min-h-[100dvh] bg-mesh font-sans text-slate-900 antialiased py-6">
+    <div className="min-h-[100dvh] bg-mesh font-sans text-gray-900 antialiased py-6">
       <AuthBrandHeader className="p-4" />
       <main className="mx-auto max-w-2xl px-3 py-4 sm:px-4 sm:py-5 lg:py-6">
         {children}
@@ -316,8 +316,8 @@ export default function LoginPage({ onLoginSuccess, onOpenReferral, onNavigate, 
       <SEO title="Sign In to Clinic" description="Access your dental practice workspace on Smilux Software SaaS." />
       <div className="space-y-4">
         <div className="text-center">
-          <h2 className="text-xl font-bold text-slate-900">Welcome back to Smilux</h2>
-          <p className="mt-1 text-xs text-slate-500">Sign in to your clinic to access your workspace</p>
+          <h2 className="text-xl font-bold text-gray-900">Welcome back to Smilux</h2>
+          <p className="mt-1 text-xs text-gray-500">Sign in to your clinic to access your workspace</p>
         </div>
 
         <AuthErrorBanner error={error} onDismiss={() => setError('')} />
@@ -359,9 +359,9 @@ export default function LoginPage({ onLoginSuccess, onOpenReferral, onNavigate, 
                 name="remember"
                 checked={formData.remember}
                 onChange={handleChange}
-                className="h-4 w-4 rounded border-slate-300 text-blue-600 focus:ring-blue-600"
+                className="h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-600"
               />
-              <span className="text-sm text-slate-700">Keep me logged in</span>
+              <span className="text-sm text-gray-700">Keep me logged in</span>
             </label>
             <button
               type="button"
@@ -385,9 +385,9 @@ export default function LoginPage({ onLoginSuccess, onOpenReferral, onNavigate, 
         {/* Social login divider */}
         <div className="relative my-3.5">
           <div className="absolute inset-0 flex items-center" aria-hidden="true">
-            <div className="w-full border-t border-slate-200" />
+            <div className="w-full border-t border-gray-200" />
           </div>
-          <div className="relative flex justify-center text-xs font-medium uppercase tracking-wide text-slate-500">
+          <div className="relative flex justify-center text-xs font-medium uppercase tracking-wide text-gray-500">
             <span className="bg-white px-3">Or continue with</span>
           </div>
         </div>
@@ -417,7 +417,7 @@ export default function LoginPage({ onLoginSuccess, onOpenReferral, onNavigate, 
         </div>
 
         {/* Start Trial Footer */}
-        <div className="text-center pt-3 border-t border-slate-100 text-xs text-slate-500">
+        <div className="text-center pt-3 border-t border-gray-100 text-xs text-gray-500">
           Don&apos;t have an account?{' '}
           <button
             type="button"

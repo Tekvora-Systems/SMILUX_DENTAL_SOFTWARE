@@ -123,8 +123,8 @@ export default function RowActionDropdown({
             className={
               triggerClassName ||
               `p-1 rounded transition-colors cursor-pointer focus:outline-none focus-visible:ring-1 focus-visible:ring-emerald-500 ${isOpen
-                ? 'bg-slate-100 text-slate-900 dark:bg-slate-800 dark:text-white'
-                : 'text-slate-500 hover:text-slate-900 hover:bg-slate-100 dark:text-slate-400 dark:hover:text-white dark:hover:bg-slate-800'
+                ? 'bg-gray-100 text-gray-900 dark:bg-gray-800 dark:text-white'
+                : 'text-gray-500 hover:text-gray-900 hover:bg-gray-100 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-800'
               }`
             }
           >
@@ -148,14 +148,14 @@ export default function RowActionDropdown({
               zIndex: 9999,
             }}
             onClick={(e) => e.stopPropagation()}
-            className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded   py-1 text-xs animate-in fade-in-0 zoom-in-95 duration-100 text-left select-none"
+            className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded   py-1 text-xs animate-in fade-in-0 zoom-in-95 duration-100 text-left select-none"
           >
             {resolvedItems.map((item, idx) => {
               if (item.divider) {
                 return (
                   <div
                     key={`divider-${idx}`}
-                    className="my-1 border-t border-slate-100 dark:border-slate-800"
+                    className="my-1 border-t border-gray-100 dark:border-gray-800"
                   />
                 );
               }
@@ -175,14 +175,14 @@ export default function RowActionDropdown({
                   }}
                   className={`w-full flex items-center gap-2.5 px-3.5 py-2 text-left font-normal transition-colors cursor-pointer disabled:opacity-40 disabled:pointer-events-none ${item.danger
                     ? 'text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/30'
-                    : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 hover:text-slate-900 dark:hover:text-white'
+                    : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white'
                     }`}
                 >
                   {IconComponent && (
                     <HugeiconsIcon
                       icon={IconComponent}
                       size={15}
-                      className={`shrink-0 ${item.danger ? 'text-rose-500' : 'text-slate-500 dark:text-slate-400'
+                      className={`shrink-0 ${item.danger ? 'text-rose-500' : 'text-gray-500 dark:text-gray-400'
                         }`}
                     />
                   )}

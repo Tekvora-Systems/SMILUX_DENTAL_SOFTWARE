@@ -317,11 +317,11 @@ export default function Expenses() {
         filterPlaceholder: 'Filter EXP-...',
         render: (val, row) => (
           <div className="flex flex-col py-0.5 leading-tight">
-            <span className="font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-1.5">
+            <span className="font-bold text-gray-900 dark:text-white tracking-tight flex items-center gap-1.5">
               <HugeiconsIcon icon={Invoice01Icon} size={13} className="text-emerald-700 dark:text-emerald-400" />
               {row.id}
             </span>
-            <span className="text-[11px] text-slate-500 dark:text-slate-400 mt-0.5">
+            <span className="text-[11px] text-gray-500 dark:text-gray-400 mt-0.5">
               {row.date}
             </span>
           </div>
@@ -336,10 +336,10 @@ export default function Expenses() {
         filterPlaceholder: 'Filter supplier...',
         render: (val, row) => (
           <div className="flex flex-col py-0.5">
-            <span className="font-semibold text-slate-800 dark:text-slate-100 truncate">
+            <span className="font-semibold text-gray-800 dark:text-gray-100 truncate">
               {val}
             </span>
-            <span className="text-[10px] text-slate-400 font-sans">
+            <span className="text-[10px] text-gray-400 font-sans">
               KRA PIN: {row.vendorPin}
             </span>
           </div>
@@ -353,7 +353,7 @@ export default function Expenses() {
         filterable: true,
         filterPlaceholder: 'Filter items...',
         render: (val) => (
-          <span className="text-xs text-slate-700 dark:text-slate-200 font-medium truncate block">
+          <span className="text-xs text-gray-700 dark:text-gray-200 font-medium truncate block">
             {val}
           </span>
         ),
@@ -379,7 +379,7 @@ export default function Expenses() {
             'Utilities & Rent': 'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300',
             'Equipment Maint.': 'bg-teal-50 text-teal-700 border-teal-200 dark:bg-teal-950/40 dark:text-teal-300',
             'Payroll & Comms': 'bg-indigo-50 text-indigo-700 border-indigo-200 dark:bg-indigo-950/40 dark:text-indigo-300',
-          }[val] || 'bg-slate-100 text-slate-700 border-slate-200';
+          }[val] || 'bg-gray-100 text-gray-700 border-gray-200';
 
           return (
             <span className={`inline-flex items-center px-2 py-0.5 rounded text-[11px] font-semibold border ${style}`}>
@@ -396,8 +396,8 @@ export default function Expenses() {
         filterable: true,
         render: (val, row) => (
           <div className="flex flex-col py-0.5">
-            <span className="text-xs font-medium text-slate-700 dark:text-slate-300">{val}</span>
-            <span className="text-[10px] font-sans text-slate-400">{row.txnRef}</span>
+            <span className="text-xs font-medium text-gray-700 dark:text-gray-300">{val}</span>
+            <span className="text-[10px] font-sans text-gray-400">{row.txnRef}</span>
           </div>
         ),
       },
@@ -408,7 +408,7 @@ export default function Expenses() {
         sortable: true,
         filterable: true,
         render: (val) => (
-          <span className="text-xs font-bold text-slate-900 dark:text-white font-sans">
+          <span className="text-xs font-bold text-gray-900 dark:text-white font-sans">
             KES {val.toLocaleString()}
           </span>
         ),
@@ -420,7 +420,7 @@ export default function Expenses() {
         sortable: true,
         filterable: true,
         render: (val) => (
-          <span className="text-[11px] text-slate-600 dark:text-slate-300 font-medium">
+          <span className="text-[11px] text-gray-600 dark:text-gray-300 font-medium">
             {val}
           </span>
         ),
@@ -438,7 +438,7 @@ export default function Expenses() {
             Paid: 'bg-emerald-50 text-emerald-800 border-emerald-200 dark:bg-emerald-950/40 dark:text-emerald-300',
             'Pending Approval':
               'bg-amber-50 text-amber-800 border-amber-200 dark:bg-amber-950/40 dark:text-amber-300',
-          }[val] || 'bg-slate-100 text-slate-700 border-slate-200';
+          }[val] || 'bg-gray-100 text-gray-700 border-gray-200';
 
           return (
             <span className={`inline-flex items-center gap-1 px-2 py-0.5 rounded text-[11px] font-semibold border ${style}`}>
@@ -465,7 +465,7 @@ export default function Expenses() {
               title={`Voucher ${row.id}`}
               align="right"
               triggerIcon={MoreHorizontalIcon}
-              triggerClassName="h-7 w-7 rounded hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-300 flex items-center justify-center   transition-colors cursor-pointer"
+              triggerClassName="h-7 w-7 rounded hover:bg-gray-100 dark:hover:bg-gray-800 border border-gray-200 dark:border-gray-700 text-gray-600 dark:text-gray-300 flex items-center justify-center   transition-colors cursor-pointer"
               items={[
                 {
                   id: 'view',
@@ -510,7 +510,7 @@ export default function Expenses() {
   );
 
   return (
-    <div className=" bg-slate-50/40 dark:bg-slate-950 font-sans mb-6">
+    <div className=" bg-gray-50/40 dark:bg-gray-950 font-sans mb-6">
       {/* ─── 1. Page Header ─────────────────────────────────────────────────── */}
       <PageHeader
         title="Expenses"
@@ -588,18 +588,18 @@ export default function Expenses() {
 
       {/* ─── 3. Record Expense Modal ────────────────────────────────────────── */}
       {isRecordModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2.5">
                 <div className="p-2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={PlusSignIcon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-base font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-base font-bold text-gray-900 dark:text-white">
                     Record Clinic Expense
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Log supplier purchases, lab fees, or operational outflows
                   </p>
                 </div>
@@ -607,7 +607,7 @@ export default function Expenses() {
               <button
                 type="button"
                 onClick={() => setIsRecordModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100 dark:hover:bg-slate-800"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
@@ -616,7 +616,7 @@ export default function Expenses() {
             <form onSubmit={handleRecordExpense} className="p-6 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Vendor / Supplier Name *
                   </label>
                   <input
@@ -627,12 +627,12 @@ export default function Expenses() {
                     onChange={(e) =>
                       setExpenseForm({ ...expenseForm, vendor: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Supplier KRA PIN
                   </label>
                   <input
@@ -642,13 +642,13 @@ export default function Expenses() {
                     onChange={(e) =>
                       setExpenseForm({ ...expenseForm, vendorPin: e.target.value.toUpperCase() })
                     }
-                    className="w-full text-xs font-sans rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs font-sans rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                   Expense Description *
                 </label>
                 <input
@@ -659,13 +659,13 @@ export default function Expenses() {
                   onChange={(e) =>
                     setExpenseForm({ ...expenseForm, description: e.target.value })
                   }
-                  className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                  className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                 />
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Cost Category
                   </label>
                   <select
@@ -673,7 +673,7 @@ export default function Expenses() {
                     onChange={(e) =>
                       setExpenseForm({ ...expenseForm, category: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="Dental Supplies">Dental Supplies</option>
                     <option value="Dental Lab Fees">Dental Lab Fees</option>
@@ -684,7 +684,7 @@ export default function Expenses() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Amount (KES) *
                   </label>
                   <input
@@ -695,12 +695,12 @@ export default function Expenses() {
                     onChange={(e) =>
                       setExpenseForm({ ...expenseForm, amount: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Payment Method
                   </label>
                   <select
@@ -708,7 +708,7 @@ export default function Expenses() {
                     onChange={(e) =>
                       setExpenseForm({ ...expenseForm, paymentMethod: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="M-Pesa Paybill">M-Pesa Paybill</option>
                     <option value="Bank EFT">Bank EFT</option>
@@ -718,7 +718,7 @@ export default function Expenses() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label className="block text-xs font-semibold text-gray-700 dark:text-gray-300 mb-1">
                     Tax / eTIMS Classification
                   </label>
                   <select
@@ -726,7 +726,7 @@ export default function Expenses() {
                     onChange={(e) =>
                       setExpenseForm({ ...expenseForm, taxStatus: e.target.value })
                     }
-                    className="w-full text-xs rounded border border-slate-200 dark:border-slate-700 px-3 py-2 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
+                    className="w-full text-xs rounded border border-gray-200 dark:border-gray-700 px-3 py-2 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:ring-1 focus:ring-emerald-500"
                   >
                     <option value="eTIMS Verified (16% VAT)">eTIMS Verified (16% VAT)</option>
                     <option value="VAT Exempt (Medical)">VAT Exempt (Medical)</option>
@@ -735,11 +735,11 @@ export default function Expenses() {
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-2.5 pt-4 border-t border-gray-100 dark:border-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsRecordModalOpen(false)}
-                  className="px-4 py-2 text-xs font-semibold rounded text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                  className="px-4 py-2 text-xs font-semibold rounded text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
                 >
                   Cancel
                 </button>
@@ -757,59 +757,59 @@ export default function Expenses() {
 
       {/* ─── 4. View Expense Voucher Modal ──────────────────────────────────── */}
       {viewingExpense && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-md overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-md overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={Invoice01Icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                     Expense Payment Voucher
                   </h3>
-                  <p className="text-xs text-slate-500">{viewingExpense.id}</p>
+                  <p className="text-xs text-gray-500">{viewingExpense.id}</p>
                 </div>
               </div>
               <button
                 type="button"
                 onClick={() => setViewingExpense(null)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
             <div className="p-6 space-y-4 text-xs">
-              <div className="p-3.5 rounded bg-slate-50 dark:bg-slate-850 border border-slate-100 dark:border-slate-800">
-                <span className="text-[10px] text-slate-400 uppercase font-semibold">Paid To Vendor</span>
-                <p className="font-bold text-slate-900 dark:text-white text-sm mt-0.5">{viewingExpense.vendor}</p>
-                <p className="text-[10px] text-slate-500 font-sans">KRA PIN: {viewingExpense.vendorPin}</p>
+              <div className="p-3.5 rounded bg-gray-50 dark:bg-gray-850 border border-gray-100 dark:border-gray-800">
+                <span className="text-[10px] text-gray-400 uppercase font-semibold">Paid To Vendor</span>
+                <p className="font-bold text-gray-900 dark:text-white text-sm mt-0.5">{viewingExpense.vendor}</p>
+                <p className="text-[10px] text-gray-500 font-sans">KRA PIN: {viewingExpense.vendorPin}</p>
               </div>
 
               <div>
-                <span className="text-[10px] text-slate-400 uppercase font-semibold">Line Item Particulars</span>
-                <p className="text-slate-800 dark:text-slate-200 font-medium mt-0.5">{viewingExpense.description}</p>
+                <span className="text-[10px] text-gray-400 uppercase font-semibold">Line Item Particulars</span>
+                <p className="text-gray-800 dark:text-gray-200 font-medium mt-0.5">{viewingExpense.description}</p>
               </div>
 
-              <div className="space-y-1.5 border-t border-slate-100 dark:border-slate-800 pt-3">
+              <div className="space-y-1.5 border-t border-gray-100 dark:border-gray-800 pt-3">
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Cost Category:</span>
+                  <span className="text-gray-500">Cost Category:</span>
                   <span className="font-semibold">{viewingExpense.category}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Payment Channel:</span>
+                  <span className="text-gray-500">Payment Channel:</span>
                   <span className="font-sans">{viewingExpense.paymentMethod} ({viewingExpense.txnRef})</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Tax Compliance:</span>
+                  <span className="text-gray-500">Tax Compliance:</span>
                   <span>{viewingExpense.taxStatus}</span>
                 </div>
                 <div className="flex justify-between">
-                  <span className="text-slate-500">Authorized By:</span>
+                  <span className="text-gray-500">Authorized By:</span>
                   <span>{viewingExpense.approvedBy}</span>
                 </div>
-                <div className="flex justify-between text-sm font-bold text-slate-900 dark:text-white border-t border-slate-200 dark:border-slate-700 pt-2">
+                <div className="flex justify-between text-sm font-bold text-gray-900 dark:text-white border-t border-gray-200 dark:border-gray-700 pt-2">
                   <span>Total Disbursed:</span>
                   <span className="font-sans text-emerald-700 dark:text-emerald-400">
                     KES {viewingExpense.amount.toLocaleString()}
@@ -818,7 +818,7 @@ export default function Expenses() {
               </div>
             </div>
 
-            <div className="flex items-center justify-end gap-2 px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+            <div className="flex items-center justify-end gap-2 px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <button
                 type="button"
                 onClick={() => setViewingExpense(null)}
@@ -833,18 +833,18 @@ export default function Expenses() {
 
       {/* ─── 5. Learn Modal ─────────────────────────────────────────────────── */}
       {isLearnModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded   border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-6 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded   border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-2 rounded bg-amber-100 text-amber-800 dark:bg-amber-950 dark:text-amber-300">
                   <HugeiconsIcon icon={Idea01Icon} size={18} />
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                  <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                     Clinic Expense & Cost Center Guide
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     KRA eTIMS expense deductibility & dental lab cost tracking
                   </p>
                 </div>
@@ -852,13 +852,13 @@ export default function Expenses() {
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 p-1.5 rounded hover:bg-slate-100"
+                className="text-gray-400 hover:text-gray-600 p-1.5 rounded hover:bg-gray-100"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
-            <div className="p-6 space-y-3.5 text-xs text-slate-600 dark:text-slate-300">
+            <div className="p-6 space-y-3.5 text-xs text-gray-600 dark:text-gray-300">
               <div className="p-3 rounded bg-emerald-50/60 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900/40">
                 <h4 className="font-bold text-emerald-900 dark:text-emerald-300 mb-1">
                   KRA eTIMS Purchase Invoice Requirement
@@ -869,7 +869,7 @@ export default function Expenses() {
               </div>
 
               <div className="space-y-1.5">
-                <h4 className="font-bold text-slate-800 dark:text-slate-100">
+                <h4 className="font-bold text-gray-800 dark:text-gray-100">
                   Dental Lab vs. Consumable Cost Centers
                 </h4>
                 <p className="leading-relaxed">
@@ -878,7 +878,7 @@ export default function Expenses() {
               </div>
             </div>
 
-            <div className="flex items-center justify-end px-6 py-3 border-t border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-850">
+            <div className="flex items-center justify-end px-6 py-3 border-t border-gray-100 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-850">
               <button
                 type="button"
                 onClick={() => setIsLearnModalOpen(false)}

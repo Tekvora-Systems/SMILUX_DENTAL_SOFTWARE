@@ -12,7 +12,7 @@ function CardHeaderWireframe({
     <div className="flex items-center justify-between mb-3">
       <div className="flex items-center gap-2">
         <div
-          className={`flex h-4 w-4 shrink-0 items-center justify-center rounded bg-slate-100 ${iconTint}`}
+          className={`flex h-4 w-4 shrink-0 items-center justify-center rounded bg-gray-100 ${iconTint}`}
         >
           {iconSvg}
         </div>
@@ -22,13 +22,13 @@ function CardHeaderWireframe({
       </div>
 
       {/* CardActionToolbar Wireframe (Expand + Divider + Menu Dots) */}
-      <div className="inline-flex h-7 items-center gap-2 rounded border border-slate-200 bg-white px-2.5  [0px_1px_2px_rgba(0,0,0,0.05)]">
+      <div className="inline-flex h-7 items-center gap-2 rounded border border-gray-200 bg-white px-2.5  [0px_1px_2px_rgba(0,0,0,0.05)]">
         <div className="h-3 w-3 rounded animate-shimmer" />
-        <span className="h-3.5 w-px bg-slate-200" />
+        <span className="h-3.5 w-px bg-gray-200" />
         <div className="flex items-center gap-0.5">
-          <span className="h-1 w-1 rounded-full bg-slate-300 animate-pulse" />
-          <span className="h-1 w-1 rounded-full bg-slate-300 animate-pulse" />
-          <span className="h-1 w-1 rounded-full bg-slate-300 animate-pulse" />
+          <span className="h-1 w-1 rounded-full bg-gray-300 animate-pulse" />
+          <span className="h-1 w-1 rounded-full bg-gray-300 animate-pulse" />
+          <span className="h-1 w-1 rounded-full bg-gray-300 animate-pulse" />
         </div>
       </div>
     </div>
@@ -74,13 +74,13 @@ export function DashboardWireframeSkeleton({
 
   return (
     <div
-      className="space-y-2 font-sans text-slate-900 mb-8 select-none"
+      className="space-y-2 font-sans text-gray-900 mb-8 select-none"
       role="status"
       aria-busy="true"
       aria-label="Loading clinic dashboard analytics wireframe"
     >
       {/* ── 0. Workspace Header & Action Bar Wireframe ─────────────────────── */}
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-slate-200 pb-1.5 mb-1">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-gray-200 pb-1.5 mb-1">
         <div>
           <div className="flex items-center gap-2.5">
             <div className="h-6 w-64 sm:w-72 rounded animate-shimmer" />
@@ -90,7 +90,7 @@ export function DashboardWireframeSkeleton({
 
         <div className="flex items-center gap-2 shrink-0 flex-wrap">
           {/* Date Filter Pill Wireframe (4 Timeframe Segments) */}
-          <div className="flex items-center gap-1 rounded border border-slate-200 bg-white p-0.5">
+          <div className="flex items-center gap-1 rounded border border-gray-200 bg-white p-0.5">
             <div className="h-6 w-12 rounded animate-shimmer" />
             <div className="h-6 w-16 rounded animate-shimmer" />
             <div className="h-6 w-20 rounded animate-shimmer-dark" />
@@ -98,13 +98,13 @@ export function DashboardWireframeSkeleton({
           </div>
 
           {/* Refresh Button Wireframe (Black & White Spinner) */}
-          <div className="inline-flex h-8 items-center gap-1.5 rounded border border-slate-200 bg-white px-3 py-1.5">
-            <span className="h-3.5 w-3.5 rounded-full border-2 border-slate-800 border-t-transparent animate-spin" />
+          <div className="inline-flex h-8 items-center gap-1.5 rounded border border-gray-200 bg-white px-3 py-1.5">
+            <span className="h-3.5 w-3.5 rounded-full border-2 border-gray-800 border-t-transparent animate-spin" />
             <div className="h-3.5 w-12 rounded animate-shimmer" />
           </div>
 
           {/* Reports Primary Button Wireframe (Black & White) */}
-          <div className="inline-flex h-8 items-center gap-1.5 rounded bg-slate-900 px-3.5 py-1.5">
+          <div className="inline-flex h-8 items-center gap-1.5 rounded bg-gray-900 px-3.5 py-1.5">
             <div className="h-3.5 w-3.5 rounded bg-white/40 animate-pulse" />
             <div className="h-3.5 w-12 rounded bg-white/60 animate-pulse" />
           </div>
@@ -121,11 +121,11 @@ export function DashboardWireframeSkeleton({
         ].map((kpi) => (
           <div
             key={kpi.id}
-            className="rounded border border-slate-200 bg-white p-3  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]"
+            className="rounded border border-gray-200 bg-white p-3  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]"
           >
             <div className="flex items-center justify-between">
               <div className={`h-3.5 ${kpi.titleW} rounded animate-shimmer`} />
-              <div className="flex h-8 w-8 items-center justify-center rounded border border-slate-200 bg-slate-100">
+              <div className="flex h-8 w-8 items-center justify-center rounded border border-gray-200 bg-gray-100">
                 <div className="h-4 w-4 rounded animate-shimmer" />
               </div>
             </div>
@@ -134,7 +134,7 @@ export function DashboardWireframeSkeleton({
                 <div className={`h-7 ${kpi.valW} rounded animate-shimmer`} />
                 <div className={`mt-1.5 h-3 ${kpi.subW} rounded animate-shimmer`} />
               </div>
-              <div className="flex h-6 w-20 items-center justify-center rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1">
+              <div className="flex h-6 w-20 items-center justify-center rounded-full border border-gray-200 bg-gray-50 px-2.5 py-1">
                 <div className="h-2.5 w-14 rounded-full animate-shimmer" />
               </div>
             </div>
@@ -145,7 +145,7 @@ export function DashboardWireframeSkeleton({
       {/* ── 2. Main Analytics Row: Sales Area Chart + Patient Growth Bar Chart ─ */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
         {/* Column 1: Sales Area & Smooth Cubic Bezier Line Chart Wireframe */}
-        <div className="rounded border border-slate-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-gray-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             <CardHeaderWireframe
               iconTint="animate-shimmer"
@@ -391,7 +391,7 @@ export function DashboardWireframeSkeleton({
         </div>
 
         {/* Column 2: Patient Growth Overview 12-Month Bar Chart Wireframe (Monochrome) */}
-        <div className="rounded border border-slate-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-gray-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             <CardHeaderWireframe
               iconTint="animate-shimmer"
@@ -405,7 +405,7 @@ export function DashboardWireframeSkeleton({
                   <div className="h-3 w-24 rounded animate-shimmer" />
                   <div className="mt-1.5 flex items-center gap-1.5">
                     <div className="h-6 w-14 rounded animate-shimmer" />
-                    <div className="h-4 w-11 rounded-full border border-slate-200 bg-slate-50 animate-shimmer" />
+                    <div className="h-4 w-11 rounded-full border border-gray-200 bg-gray-50 animate-shimmer" />
                   </div>
                 </div>
               ))}
@@ -540,7 +540,7 @@ export function DashboardWireframeSkeleton({
       {/* ── 3. Secondary Row: 3 Analytics Cards (Payment, Income, Balance) ── */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-1">
         {/* Card 1: Payment Distribution Overview (Donut Chart Wireframe - Monochrome) */}
-        <div className="rounded border border-slate-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-gray-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             <CardHeaderWireframe
               iconTint="animate-shimmer"
@@ -549,20 +549,20 @@ export function DashboardWireframeSkeleton({
 
             {/* Top Summaries Row (2 Mini Cards) */}
             <div className="grid grid-cols-2 gap-3 mb-3">
-              <div className="flex flex-col rounded border border-slate-100 bg-slate-50/50 p-3">
+              <div className="flex flex-col rounded border border-gray-100 bg-gray-50/50 p-3">
                 <div className="h-3 w-28 rounded animate-shimmer" />
                 <div className="mt-1.5 flex items-baseline gap-2">
                   <div className="h-6 w-12 rounded animate-shimmer" />
-                  <div className="h-4 w-14 rounded border border-slate-200 bg-white animate-shimmer" />
+                  <div className="h-4 w-14 rounded border border-gray-200 bg-white animate-shimmer" />
                 </div>
-                <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-slate-200 flex gap-0.5">
-                  <div className="h-full bg-slate-900/70 animate-pulse" style={{ width: '60%' }} />
-                  <div className="h-full bg-slate-500/70 animate-pulse" style={{ width: '24%' }} />
-                  <div className="h-full bg-slate-300/80 animate-pulse" style={{ width: '16%' }} />
+                <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-gray-200 flex gap-0.5">
+                  <div className="h-full bg-gray-900/70 animate-pulse" style={{ width: '60%' }} />
+                  <div className="h-full bg-gray-500/70 animate-pulse" style={{ width: '24%' }} />
+                  <div className="h-full bg-gray-300/80 animate-pulse" style={{ width: '16%' }} />
                 </div>
               </div>
 
-              <div className="flex flex-col rounded border border-slate-100 bg-slate-50/50 p-3">
+              <div className="flex flex-col rounded border border-gray-100 bg-gray-50/50 p-3">
                 <div className="h-3 w-24 rounded animate-shimmer" />
                 <div className="mt-1.5 flex items-baseline gap-2">
                   <div className="h-6 w-20 rounded animate-shimmer" />
@@ -645,7 +645,7 @@ export function DashboardWireframeSkeleton({
         </div>
 
         {/* Card 2: Income Summary (Concentric Nested Radial Gauge Rings Wireframe - Monochrome) */}
-        <div className="rounded border border-slate-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-gray-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             <CardHeaderWireframe
               iconTint="animate-shimmer"
@@ -654,20 +654,20 @@ export function DashboardWireframeSkeleton({
 
             {/* Top Summaries Row (2 Mini Cards) */}
             <div className="grid grid-cols-2 gap-3 mb-4">
-              <div className="flex flex-col rounded border border-slate-100 bg-slate-50/50 p-3">
+              <div className="flex flex-col rounded border border-gray-100 bg-gray-50/50 p-3">
                 <div className="h-3 w-28 rounded animate-shimmer" />
                 <div className="mt-1.5 flex items-baseline gap-2">
                   <div className="h-6 w-24 rounded animate-shimmer" />
                   <div className="h-4 w-12 rounded animate-shimmer" />
                 </div>
-                <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-slate-200 flex gap-0.5">
-                  <div className="h-full bg-slate-900/75 animate-pulse" style={{ width: '45%' }} />
-                  <div className="h-full bg-slate-600/70 animate-pulse" style={{ width: '35%' }} />
-                  <div className="h-full bg-slate-300/80 animate-pulse" style={{ width: '20%' }} />
+                <div className="mt-2.5 h-1.5 w-full overflow-hidden rounded-full bg-gray-200 flex gap-0.5">
+                  <div className="h-full bg-gray-900/75 animate-pulse" style={{ width: '45%' }} />
+                  <div className="h-full bg-gray-600/70 animate-pulse" style={{ width: '35%' }} />
+                  <div className="h-full bg-gray-300/80 animate-pulse" style={{ width: '20%' }} />
                 </div>
               </div>
 
-              <div className="flex flex-col rounded border border-slate-100 bg-slate-50/50 p-3">
+              <div className="flex flex-col rounded border border-gray-100 bg-gray-50/50 p-3">
                 <div className="h-3 w-28 rounded animate-shimmer" />
                 <div className="mt-1.5 flex items-baseline gap-2">
                   <div className="h-6 w-16 rounded animate-shimmer" />
@@ -740,16 +740,16 @@ export function DashboardWireframeSkeleton({
           </div>
 
           {/* Breakdown Mini Cards & Footer Wireframe */}
-          <div className="space-y-2 pt-3 border-t border-slate-100">
+          <div className="space-y-2 pt-3 border-t border-gray-100">
             <div className="grid grid-cols-3 gap-2">
               {[
-                { dot: 'bg-slate-900', tint: 'animate-shimmer' },
-                { dot: 'bg-slate-600', tint: 'animate-shimmer' },
-                { dot: 'bg-slate-300', tint: 'animate-shimmer' },
+                { dot: 'bg-gray-900', tint: 'animate-shimmer' },
+                { dot: 'bg-gray-600', tint: 'animate-shimmer' },
+                { dot: 'bg-gray-300', tint: 'animate-shimmer' },
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="flex flex-col rounded border border-slate-100 bg-slate-50/50 p-2.5"
+                  className="flex flex-col rounded border border-gray-100 bg-gray-50/50 p-2.5"
                 >
                   <div className="flex items-center gap-1.5">
                     <span className={`h-2 w-2 rounded-full ${item.dot} opacity-70`} />
@@ -765,7 +765,7 @@ export function DashboardWireframeSkeleton({
         </div>
 
         {/* Card 3: Practice Financial Balance (Horizontal Segmented Bar Chart Wireframe - Monochrome) */}
-        <div className="rounded border border-slate-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-gray-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             <CardHeaderWireframe
               iconTint="animate-shimmer"
@@ -830,7 +830,7 @@ export function DashboardWireframeSkeleton({
       {/* ── 4. Expenses Overview & Income & Expense Comparison (2-Card Row) ── */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
         {/* Card 1: Expenses Overview Wireframe (Monochrome) */}
-        <div className="rounded border border-slate-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-gray-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             <CardHeaderWireframe
               iconTint="animate-shimmer"
@@ -902,7 +902,7 @@ export function DashboardWireframeSkeleton({
                 {expenseRingSegments.map((cat) => (
                   <div
                     key={cat.id}
-                    className="flex items-center justify-between rounded px-2.5 py-1.5 bg-slate-50/50"
+                    className="flex items-center justify-between rounded px-2.5 py-1.5 bg-gray-50/50"
                   >
                     <div className="flex items-center gap-2.5">
                       <span
@@ -919,7 +919,7 @@ export function DashboardWireframeSkeleton({
           </div>
 
           {/* Bottom Section: TOP EXPENSE 2x2 Grid Wireframe (Monochrome) */}
-          <div className="mt-3 pt-3 border-t border-slate-100">
+          <div className="mt-3 pt-3 border-t border-gray-100">
             <div className="h-3 w-24 rounded animate-shimmer mb-2.5" />
             <div className="grid grid-cols-2 gap-2.5">
               {[
@@ -930,7 +930,7 @@ export function DashboardWireframeSkeleton({
               ].map((item, idx) => (
                 <div
                   key={idx}
-                  className="rounded border border-slate-100 bg-[#F8FAFC] p-3"
+                  className="rounded border border-gray-100 bg-[#F8FAFC] p-3"
                 >
                   <div className="flex items-center gap-2">
                     <span
@@ -947,7 +947,7 @@ export function DashboardWireframeSkeleton({
         </div>
 
         {/* Card 2: Income & Expense Comparison Card Wireframe (Monochrome) */}
-        <div className="rounded border border-slate-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-gray-200 bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             <CardHeaderWireframe
               iconTint="animate-shimmer"
@@ -956,9 +956,9 @@ export function DashboardWireframeSkeleton({
 
             {/* Dual KPI Summary Strip (Monochrome) */}
             <div className="grid grid-cols-2 gap-4 mb-4 px-1">
-              <div className="flex flex-col rounded p-2.5 bg-slate-50/50">
+              <div className="flex flex-col rounded p-2.5 bg-gray-50/50">
                 <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-3.5 rounded-full bg-slate-900/70 shrink-0" />
+                  <span className="h-1.5 w-3.5 rounded-full bg-gray-900/70 shrink-0" />
                   <div className="h-3 w-24 rounded animate-shimmer" />
                 </div>
                 <div className="mt-2 pl-5 flex items-baseline gap-2">
@@ -967,9 +967,9 @@ export function DashboardWireframeSkeleton({
                 </div>
               </div>
 
-              <div className="flex flex-col rounded p-2.5 bg-slate-50/50">
+              <div className="flex flex-col rounded p-2.5 bg-gray-50/50">
                 <div className="flex items-center gap-2">
-                  <span className="h-1.5 w-3.5 rounded-full bg-slate-400/70 shrink-0" />
+                  <span className="h-1.5 w-3.5 rounded-full bg-gray-400/70 shrink-0" />
                   <div className="h-3 w-28 rounded animate-shimmer" />
                 </div>
                 <div className="mt-2 pl-5 flex items-baseline gap-2">
@@ -1126,16 +1126,16 @@ export function DashboardWireframeSkeleton({
       {/* ── 5. Operations & Sidebar Modules Quick Integration Wireframe ───── */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
         {/* Left (2 Cols): Today's Clinic Queue & Appointments Table Wireframe */}
-        <div className="lg:col-span-2 rounded border border-slate-200 bg-white p-6  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
+        <div className="lg:col-span-2 rounded border border-gray-200 bg-white p-6  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]">
+          <div className="flex items-center justify-between border-b border-gray-100 pb-3 mb-4">
             <div className="h-4 w-60 rounded animate-shimmer" />
-            <div className="h-6 w-28 rounded-full border border-slate-200 bg-slate-50 animate-shimmer" />
+            <div className="h-6 w-28 rounded-full border border-gray-200 bg-gray-50 animate-shimmer" />
           </div>
 
           <div className="overflow-x-auto">
             <table className="w-full text-left text-xs">
               <thead>
-                <tr className="border-b border-slate-100">
+                <tr className="border-b border-gray-100">
                   <th className="pb-2.5"><div className="h-3 w-12 rounded animate-shimmer" /></th>
                   <th className="pb-2.5"><div className="h-3 w-20 rounded animate-shimmer" /></th>
                   <th className="pb-2.5"><div className="h-3 w-28 rounded animate-shimmer" /></th>
@@ -1143,7 +1143,7 @@ export function DashboardWireframeSkeleton({
                   <th className="pb-2.5"><div className="h-3 w-16 rounded animate-shimmer" /></th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-slate-100">
+              <tbody className="divide-y divide-gray-100">
                 {[
                   { patW: 'w-28', procW: 'w-32', docW: 'w-28' },
                   { patW: 'w-24', procW: 'w-36', docW: 'w-24' },
@@ -1161,7 +1161,7 @@ export function DashboardWireframeSkeleton({
                     </td>
                     <td className="py-3.5"><div className={`h-3.5 ${row.docW} rounded animate-shimmer`} /></td>
                     <td className="py-3.5">
-                      <div className="h-5 w-20 rounded-full border border-slate-200 bg-slate-50 animate-shimmer" />
+                      <div className="h-5 w-20 rounded-full border border-gray-200 bg-gray-50 animate-shimmer" />
                     </td>
                   </tr>
                 ))}
@@ -1173,7 +1173,7 @@ export function DashboardWireframeSkeleton({
         {/* Right (1 Col): Clinic Fast Actions & Low Stock Alert Banner Wireframe */}
         <div className="space-y-2">
           {/* Clinic Fast Actions Card (Monochrome) */}
-          <div className="rounded border border-slate-200 bg-white p-5  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]">
+          <div className="rounded border border-gray-200 bg-white p-5  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]">
             <div className="h-3.5 w-32 rounded animate-shimmer mb-3" />
             <div className="space-y-2">
               {[
@@ -1183,24 +1183,24 @@ export function DashboardWireframeSkeleton({
               ].map((act) => (
                 <div
                   key={act.letter}
-                  className="w-full flex items-center justify-between p-3 rounded border border-slate-200 bg-slate-50/60"
+                  className="w-full flex items-center justify-between p-3 rounded border border-gray-200 bg-gray-50/60"
                 >
                   <div className="flex items-center gap-2">
                     <span
-                      className="flex h-6 w-6 items-center justify-center rounded bg-slate-800 text-white font-black text-[10px]"
+                      className="flex h-6 w-6 items-center justify-center rounded bg-gray-800 text-white font-black text-[10px]"
                     >
                       {act.letter}
                     </span>
                     <div className={`h-3.5 ${act.w} rounded animate-shimmer`} />
                   </div>
-                  <div className="h-4 w-14 rounded-full border border-slate-200 bg-white animate-shimmer" />
+                  <div className="h-4 w-14 rounded-full border border-gray-200 bg-white animate-shimmer" />
                 </div>
               ))}
             </div>
           </div>
 
           {/* Dental Inventory Low Stock Alert Banner Wireframe (Monochrome) */}
-          <div className="rounded border border-slate-200 bg-slate-50/80 p-5">
+          <div className="rounded border border-gray-200 bg-gray-50/80 p-5">
             <div className="flex items-center gap-2 mb-2.5">
               <div className="h-4 w-4 rounded-full animate-shimmer shrink-0" />
               <div className="h-3.5 w-48 rounded animate-shimmer" />
@@ -1209,7 +1209,7 @@ export function DashboardWireframeSkeleton({
               <div className="h-3 w-full rounded animate-shimmer" />
               <div className="h-3 w-4/5 rounded animate-shimmer" />
             </div>
-            <div className="h-7 w-full rounded bg-slate-800 animate-pulse" />
+            <div className="h-7 w-full rounded bg-gray-800 animate-pulse" />
           </div>
         </div>
       </div>

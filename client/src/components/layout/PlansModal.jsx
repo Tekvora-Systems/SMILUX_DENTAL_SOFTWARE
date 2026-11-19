@@ -199,7 +199,7 @@ export default function PlansModal({ isOpen, onClose }) {
     >
       {/* Dimmed backdrop */}
       <div
-        className="fixed inset-0 bg-slate-900/60 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
+        className="fixed inset-0 bg-gray-900/60 backdrop-blur-xs transition-opacity animate-in fade-in duration-200"
         onClick={onClose}
       />
 
@@ -220,7 +220,7 @@ export default function PlansModal({ isOpen, onClose }) {
             type="button"
             onClick={onClose}
             aria-label="Close dialog"
-            className="box-border flex items-center justify-center w-9 h-8 rounded-[4px] text-[#222323] hover:bg-slate-100 transition-colors cursor-pointer"
+            className="box-border flex items-center justify-center w-9 h-8 rounded-[4px] text-[#222323] hover:bg-gray-100 transition-colors cursor-pointer"
           >
             <CloseIcon className="w-[18px] h-[18px]" />
           </button>
@@ -254,7 +254,7 @@ export default function PlansModal({ isOpen, onClose }) {
                   onClick={() => setBillingCycle('monthly')}
                   className={`relative z-10 px-3 py-1 rounded-full text-xs font-semibold transition-colors duration-200 cursor-pointer ${billingCycle === 'monthly'
                     ? 'text-white'
-                    : 'text-slate-600 hover:text-slate-900 bg-transparent'
+                    : 'text-gray-600 hover:text-gray-900 bg-transparent'
                     }`}
                 >
                   Monthly
@@ -265,7 +265,7 @@ export default function PlansModal({ isOpen, onClose }) {
                   onClick={() => setBillingCycle('annual')}
                   className={`relative z-10 flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold transition-colors duration-200 cursor-pointer ${billingCycle === 'annual'
                     ? 'text-white'
-                    : 'text-slate-600 hover:text-slate-900 bg-transparent'
+                    : 'text-gray-600 hover:text-gray-900 bg-transparent'
                     }`}
                 >
                   <span>Annual</span>
@@ -346,7 +346,7 @@ export default function PlansModal({ isOpen, onClose }) {
               </div>
 
               {/* Card Features List */}
-              <div className="flex flex-col gap-3 pt-6 mt-4 border-t border-slate-100">
+              <div className="flex flex-col gap-3 pt-6 mt-4 border-t border-gray-100">
                 <span className="text-[13px] leading-[20px] font-semibold text-[#222323]">
                   Top clinical features:
                 </span>
@@ -411,7 +411,7 @@ export default function PlansModal({ isOpen, onClose }) {
               </div>
 
               {/* Card Features List */}
-              <div className="flex flex-col gap-3 pt-6 mt-4 border-t border-slate-100">
+              <div className="flex flex-col gap-3 pt-6 mt-4 border-t border-gray-100">
                 <span className="text-[13px] leading-[20px] font-semibold text-[#222323]">
                   Everything in Essential, plus:
                 </span>
@@ -484,7 +484,7 @@ export default function PlansModal({ isOpen, onClose }) {
               </div>
 
               {/* Card Features List */}
-              <div className="flex flex-col gap-3 pt-4 mt-2 border-t border-slate-100">
+              <div className="flex flex-col gap-3 pt-4 mt-2 border-t border-gray-100">
                 <span className="text-[13px] leading-[20px] font-semibold text-[#222323]">
                   Everything in Professional, plus:
                 </span>

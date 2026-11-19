@@ -132,7 +132,7 @@ function BillingToggle({ value, onChange }) {
             key={opt}
             type="button"
             onClick={() => onChange(opt)}
-            className={`relative z-10 px-4 py-1.5 rounded-full text-sm font-semibold transition-colors duration-200 cursor-pointer ${active ? 'text-white' : 'text-slate-600 hover:text-slate-900'} ${opt === 'annual' ? 'flex items-center gap-1.5' : ''}`}
+            className={`relative z-10 px-4 py-1.5 rounded-full text-sm font-semibold transition-colors duration-200 cursor-pointer ${active ? 'text-white' : 'text-gray-600 hover:text-gray-900'} ${opt === 'annual' ? 'flex items-center gap-1.5' : ''}`}
           >
             {active && (
               <motion.span
@@ -243,7 +243,7 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
       </div>
 
       {/* Features */}
-      <div className="flex flex-col gap-3 pt-5 mt-5 border-t border-slate-100">
+      <div className="flex flex-col gap-3 pt-5 mt-5 border-t border-gray-100">
         <span className="text-[13px] leading-[20px] font-semibold text-[#222323]">{featuresLabel}</span>
         <ul className="flex flex-col gap-2.5">
           {features.map((f) => (
@@ -297,24 +297,24 @@ function ComparisonTable() {
                 <span className="text-center">Premium</span>
               </div>
               {COMPARISON_ROWS.map((row, i) => (
-                <div key={row.feature} className={`grid grid-cols-4 px-4 py-2.5 text-[12px] border-b border-[#F3F4F6] last:border-b-0 ${i % 2 === 0 ? '' : 'bg-slate-50/40'}`}>
+                <div key={row.feature} className={`grid grid-cols-4 px-4 py-2.5 text-[12px] border-b border-[#F3F4F6] last:border-b-0 ${i % 2 === 0 ? '' : 'bg-gray-50/40'}`}>
                   <span className="text-[#222323] font-medium">{row.feature}</span>
                   <span className="flex justify-center">
                     {row.essential
                       ? <svg className="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                      : <svg className="h-4 w-4 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                      : <svg className="h-4 w-4 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                     }
                   </span>
                   <span className="flex justify-center">
                     {row.professional
                       ? <svg className="h-4 w-4 text-[#118bb0]" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                      : <svg className="h-4 w-4 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                      : <svg className="h-4 w-4 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                     }
                   </span>
                   <span className="flex justify-center">
                     {row.premium
                       ? <svg className="h-4 w-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" /></svg>
-                      : <svg className="h-4 w-4 text-slate-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                      : <svg className="h-4 w-4 text-gray-200" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
                     }
                   </span>
                 </div>
@@ -345,7 +345,7 @@ export default function PricingSection() {
             <Reveal as="h2" delay={0.05} className="text-4xl font-extrabold text-[#222323] tracking-tight leading-tight">
               Select a Dental Clinic Plan
             </Reveal>
-            <Reveal as="p" delay={0.1} className="mt-2 text-[15px] text-slate-600">
+            <Reveal as="p" delay={0.1} className="mt-2 text-[15px] text-gray-600">
               No hidden fees · Cancel anytime · 14-day free trial on all plans
             </Reveal>
           </div>

@@ -1244,16 +1244,16 @@ export default function AppointmentsPage() {
   };
 
   return (
-    <div className="flex flex-col  bg-[#FDFDFD] dark:bg-slate-950 font-sans">
+    <div className="flex flex-col  bg-[#FDFDFD] dark:bg-gray-950 font-sans">
       {/* ─── 1. Top Tabs Row (Matching Screenshot: Calendar | Log History) ───── */}
-      <div className="bg-white dark:bg-slate-900 border-b border-[#EAEAEA] dark:border-slate-800 px-6 pt-3">
+      <div className="bg-white dark:bg-gray-900 border-b border-[#EAEAEA] dark:border-gray-800 px-6 pt-3">
         <div className="flex items-center gap-7 text-sm">
           <button
             type="button"
             onClick={() => setMainTab('Calendar')}
             className={`pb-2.5 font-medium transition-all relative cursor-pointer select-none ${mainTab === 'Calendar'
               ? 'text-[#5051F9] dark:text-[#7072ff] font-semibold'
-              : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
+              : 'text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300'
               }`}
           >
             Calendar
@@ -1267,7 +1267,7 @@ export default function AppointmentsPage() {
             onClick={() => setMainTab('Log History')}
             className={`pb-2.5 font-medium transition-all relative cursor-pointer select-none ${mainTab === 'Log History'
               ? 'text-[#5051F9] dark:text-[#7072ff] font-semibold'
-              : 'text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300'
+              : 'text-gray-400 dark:text-gray-500 hover:text-gray-600 dark:hover:text-gray-300'
               }`}
           >
             Log History
@@ -1279,18 +1279,18 @@ export default function AppointmentsPage() {
       </div>
 
       {/* ─── 2. Top Action Bar (Matching Inspiration Screenshot Exactly) ────── */}
-      <div className="bg-white dark:bg-slate-900 border-b border-[#EAEAEA] dark:border-slate-800 px-6 py-2.5 relative z-40">
+      <div className="bg-white dark:bg-gray-900 border-b border-[#EAEAEA] dark:border-gray-800 px-6 py-2.5 relative z-40">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-3">
           {/* Left: Total Appointments with Badge Icon */}
           <div className="flex items-center gap-2.5 self-start lg:self-center">
-            <div className="w-8 h-8 rounded bg-[#F3F4F6] dark:bg-slate-800 flex items-center justify-center text-slate-500 dark:text-slate-400 shrink-0">
+            <div className="w-8 h-8 rounded bg-[#F3F4F6] dark:bg-gray-800 flex items-center justify-center text-gray-500 dark:text-gray-400 shrink-0">
               <HugeiconsIcon icon={Calendar01Icon} size={16} />
             </div>
             <div className="flex items-baseline gap-1.5">
-              <span className="text-[19px] font-bold text-slate-800 dark:text-white leading-none">
+              <span className="text-[19px] font-bold text-gray-800 dark:text-white leading-none">
                 {filteredAppointments.length}
               </span>
-              <span className="text-[13px] text-slate-400 font-normal">
+              <span className="text-[13px] text-gray-400 font-normal">
                 total appointments
               </span>
             </div>
@@ -1333,23 +1333,23 @@ export default function AppointmentsPage() {
             </div>
 
             {/* Date Display (e.g. "Fri, 16 May 2022") */}
-            <span className="text-sm font-bold text-slate-800 dark:text-slate-100 px-1">
+            <span className="text-sm font-bold text-gray-800 dark:text-gray-100 px-1">
               {formattedDateText}
             </span>
 
             {/* Vertical Separator */}
-            <span className="h-5 w-[1px] bg-slate-200 dark:bg-slate-700 mx-1 hidden sm:inline-block" />
+            <span className="h-5 w-[1px] bg-gray-200 dark:bg-gray-700 mx-1 hidden sm:inline-block" />
 
             {/* Segmented Switcher: [Day] [Week] [Month] (Week default) */}
-            <div className="inline-flex items-center p-0.5 bg-[#F3F4F6] dark:bg-slate-800 rounded text-xs">
+            <div className="inline-flex items-center p-0.5 bg-[#F3F4F6] dark:bg-gray-800 rounded text-xs">
               {['Day', 'Week', 'Month'].map((mode) => (
                 <button
                   key={mode}
                   type="button"
                   onClick={() => setViewMode(mode)}
                   className={`px-3 py-1 rounded text-xs transition-all cursor-pointer ${viewMode === mode
-                    ? 'bg-white dark:bg-slate-700 text-slate-800 dark:text-white font-bold  2xs'
-                    : 'text-slate-500 dark:text-slate-400 font-medium hover:text-slate-800 dark:hover:text-white'
+                    ? 'bg-white dark:bg-gray-700 text-gray-800 dark:text-white font-bold  2xs'
+                    : 'text-gray-500 dark:text-gray-400 font-medium hover:text-gray-800 dark:hover:text-white'
                     }`}
                 >
                   {mode}
@@ -1368,11 +1368,11 @@ export default function AppointmentsPage() {
                 variant="outline"
                 size="sm"
               >
-                <HugeiconsIcon icon={UserCircleIcon} size={15} className="text-slate-500" />
+                <HugeiconsIcon icon={UserCircleIcon} size={15} className="text-gray-500" />
                 <span className="font-medium">
                   {staffFilter === 'All' ? 'All Dentist' : `Dr. ${staffFilter}`}
                 </span>
-                <HugeiconsIcon icon={ArrowDown01Icon} size={13} className="text-slate-400" />
+                <HugeiconsIcon icon={ArrowDown01Icon} size={13} className="text-gray-400" />
               </Button>
 
               {isDentistMenuOpen && (
@@ -1382,7 +1382,7 @@ export default function AppointmentsPage() {
                     className="fixed inset-0 z-40"
                     onClick={() => setIsDentistMenuOpen(false)}
                   />
-                  <div className="absolute right-0 mt-1 w-48 bg-white dark:bg-slate-800 rounded   border border-slate-200 dark:border-slate-700 py-1 z-50 animate-in fade-in-0 zoom-in-95 duration-100">
+                  <div className="absolute right-0 mt-1 w-48 bg-white dark:bg-gray-800 rounded   border border-gray-200 dark:border-gray-700 py-1 z-50 animate-in fade-in-0 zoom-in-95 duration-100">
                     {[
                       { val: 'All', label: 'All Dentist' },
                       { val: 'Steward', label: 'Dr. Darrell Steward' },
@@ -1401,7 +1401,7 @@ export default function AppointmentsPage() {
                         }}
                         className={`w-full text-left px-3 py-1.5 text-xs transition-colors flex items-center justify-between cursor-pointer ${staffFilter === dentist.val
                           ? 'bg-indigo-50 dark:bg-indigo-950/40 text-[#5051F9] dark:text-[#7072ff] font-bold'
-                          : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-700'
+                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700'
                           }`}
                       >
                         <span>{dentist.label}</span>
@@ -1421,7 +1421,7 @@ export default function AppointmentsPage() {
               size="sm"
             >
               <span className="relative flex items-center">
-                <HugeiconsIcon icon={FilterIcon} size={15} className="text-slate-500" />
+                <HugeiconsIcon icon={FilterIcon} size={15} className="text-gray-500" />
                 <span className="absolute -top-0.5 -right-0.5 w-1.5 h-1.5 rounded-full bg-[#0099ff]" />
               </span>
               <span className="font-medium">Filters</span>
@@ -1449,19 +1449,19 @@ export default function AppointmentsPage() {
       {/* ─── 3. Main Content: Calendar Views OR Log History ─────────────────── */}
       {mainTab === 'Calendar' ? (
         <div className="flex-1 p-4 overflow-x-auto">
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded  xs overflow-hidden">
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded  xs overflow-hidden">
             {/* ════════════════════════════════════════════════════════════════
                 VIEW 1: DAY VIEW
                ════════════════════════════════════════════════════════════════ */}
             {viewMode === 'Day' && (
               <div className="flex flex-col min-w-[700px]">
                 {/* Day View Subheader */}
-                <div className="px-4 py-2.5 bg-slate-50/80 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+                <div className="px-4 py-2.5 bg-gray-50/80 dark:bg-gray-800/80 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
                     <span className="w-7 h-7 rounded-full bg-[#5051F9] text-white font-bold flex items-center justify-center text-xs  xs">
                       {currentDate.getDate()}
                     </span>
-                    <span className="text-xs font-bold text-slate-800 dark:text-white">
+                    <span className="text-xs font-bold text-gray-800 dark:text-white">
                       {currentDate.toLocaleDateString('en-US', {
                         weekday: 'long',
                         month: 'long',
@@ -1469,8 +1469,8 @@ export default function AppointmentsPage() {
                         year: 'numeric',
                       })}
                     </span>
-                    <span className="text-slate-400 text-xs">•</span>
-                    <span className="text-xs text-slate-500">
+                    <span className="text-gray-400 text-xs">•</span>
+                    <span className="text-xs text-gray-500">
                       {
                         filteredAppointments.filter((a) => a.dateStr === currentISODate).length
                       }{' '}
@@ -1491,7 +1491,7 @@ export default function AppointmentsPage() {
                 {/* Day Timeline Grid */}
                 <div
                   ref={calendarScrollRef}
-                  className="relative overflow-y-auto max-h-[calc(100vh-210px)] min-h-[600px] bg-white dark:bg-slate-900"
+                  className="relative overflow-y-auto max-h-[calc(100vh-210px)] min-h-[600px] bg-white dark:bg-gray-900"
                   style={{ height: '768px' }}
                 >
                   <div
@@ -1500,16 +1500,16 @@ export default function AppointmentsPage() {
                   >
                     {/* Left Time Slots column */}
                     <div
-                      className="w-16 shrink-0 border-r border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 select-none"
+                      className="w-16 shrink-0 border-r border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 select-none"
                       style={{ height: `${TOTAL_GRID_HEIGHT}px` }}
                     >
                       {TIME_SLOTS.map((time) => (
                         <div
                           key={time}
                           style={{ height: `${ROW_HEIGHT}px` }}
-                          className="relative border-b border-slate-200 dark:border-slate-800/70 text-right pr-2 box-border shrink-0"
+                          className="relative border-b border-gray-200 dark:border-gray-800/70 text-right pr-2 box-border shrink-0"
                         >
-                          <span className="text-[10px] font-semibold text-slate-400 dark:text-slate-500 absolute -top-2.5 right-2">
+                          <span className="text-[10px] font-semibold text-gray-400 dark:text-gray-500 absolute -top-2.5 right-2">
                             {time}
                           </span>
                         </div>
@@ -1532,7 +1532,7 @@ export default function AppointmentsPage() {
 
                     {/* Main Single Day Timeline Column */}
                     <div
-                      className="relative flex-1 bg-white dark:bg-slate-900 box-border"
+                      className="relative flex-1 bg-white dark:bg-gray-900 box-border"
                       style={{ height: `${TOTAL_GRID_HEIGHT}px` }}
                     >
                       {/* Horizontal Hour Lines (Clickable to book at that hour) */}
@@ -1546,7 +1546,7 @@ export default function AppointmentsPage() {
                               handleCalendarEmptySlotClick(currentISODate, `${hourNumber}:00`)
                             }
                             title={`Click to book appointment at ${time}`}
-                            className="border-b border-slate-100 dark:border-slate-800/60 hover:bg-indigo-50/20 dark:hover:bg-indigo-950/20 cursor-pointer transition-colors relative group box-border shrink-0"
+                            className="border-b border-gray-100 dark:border-gray-800/60 hover:bg-indigo-50/20 dark:hover:bg-indigo-950/20 cursor-pointer transition-colors relative group box-border shrink-0"
                           >
                             <span className="absolute right-3 top-2 text-[10px] text-[#5051F9] dark:text-[#7072ff] font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
                               + Book at {time}
@@ -1578,11 +1578,11 @@ export default function AppointmentsPage() {
                                   <span className="font-extrabold">{apt.startTime} – {apt.endTime}</span>
                                   <span>•</span>
                                   <span>{apt.patientName}</span>
-                                  <span className="text-[10px] px-1.5 py-0.2 rounded bg-white/70 dark:bg-slate-900/70 border border-slate-300 dark:border-slate-700">
+                                  <span className="text-[10px] px-1.5 py-0.2 rounded bg-white/70 dark:bg-gray-900/70 border border-gray-300 dark:border-gray-700">
                                     {apt.chair}
                                   </span>
                                 </span>
-                                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-white/80 dark:bg-slate-800/80  2xs">
+                                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-white/80 dark:bg-gray-800/80  2xs">
                                   {apt.status}
                                 </span>
                               </div>
@@ -1610,13 +1610,13 @@ export default function AppointmentsPage() {
             {viewMode === 'Week' && (
               <div
                 ref={calendarScrollRef}
-                className="relative overflow-y-auto overflow-x-auto max-h-[calc(100vh-210px)] min-h-[600px] bg-white dark:bg-slate-900"
+                className="relative overflow-y-auto overflow-x-auto max-h-[calc(100vh-210px)] min-h-[600px] bg-white dark:bg-gray-900"
                 style={{ height: '768px' }}
               >
                 <div className="min-w-[850px] flex flex-col">
                   {/* Day Header Row */}
-                  <div className="sticky top-0 z-30 flex flex-row bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-800  2xs">
-                    <div className="w-16 h-12 shrink-0 flex items-center justify-center text-[10px] font-bold text-slate-400 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 select-none">
+                  <div className="sticky top-0 z-30 flex flex-row bg-gray-50 dark:bg-gray-800 border-b border-gray-200 dark:border-gray-800  2xs">
+                    <div className="w-16 h-12 shrink-0 flex items-center justify-center text-[10px] font-bold text-gray-400 border-r border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-800 select-none">
                       GMT +3
                     </div>
 
@@ -1629,23 +1629,23 @@ export default function AppointmentsPage() {
                             setViewMode('Day');
                           }}
                           title="Click to view this Day"
-                          className={`h-12 px-2.5 py-1 flex items-center justify-between border-r border-slate-200 dark:border-slate-800 cursor-pointer hover:bg-slate-100 dark:hover:bg-slate-700/50 transition-colors ${day.isToday ? 'bg-indigo-50/40 dark:bg-indigo-950/20' : ''
+                          className={`h-12 px-2.5 py-1 flex items-center justify-between border-r border-gray-200 dark:border-gray-800 cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700/50 transition-colors ${day.isToday ? 'bg-indigo-50/40 dark:bg-indigo-950/20' : ''
                             }`}
                         >
                           <div className="flex items-center gap-2">
                             <span
                               className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold ${day.isToday
                                 ? 'bg-[#5051F9] text-white  2xs'
-                                : 'text-slate-900 dark:text-white'
+                                : 'text-gray-900 dark:text-white'
                                 }`}
                             >
                               {day.date}
                             </span>
                             <div className="leading-tight">
-                              <span className="text-[11px] font-bold text-slate-700 dark:text-slate-200 block">
+                              <span className="text-[11px] font-bold text-gray-700 dark:text-gray-200 block">
                                 {day.name}
                               </span>
-                              <span className="text-[10px] text-slate-400">
+                              <span className="text-[10px] text-gray-400">
                                 {day.count} apt{day.count === 1 ? '' : 's'}
                               </span>
                             </div>
@@ -1662,16 +1662,16 @@ export default function AppointmentsPage() {
                   >
                     {/* Left Time Slots column */}
                     <div
-                      className="w-16 shrink-0 border-r border-slate-200 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-900/50 select-none"
+                      className="w-16 shrink-0 border-r border-gray-200 dark:border-gray-800 bg-gray-50/50 dark:bg-gray-900/50 select-none"
                       style={{ height: `${TOTAL_GRID_HEIGHT}px` }}
                     >
                       {TIME_SLOTS.map((time) => (
                         <div
                           key={time}
                           style={{ height: `${ROW_HEIGHT}px` }}
-                          className="relative border-b border-slate-200 dark:border-slate-800/70 text-right pr-2 box-border shrink-0"
+                          className="relative border-b border-gray-200 dark:border-gray-800/70 text-right pr-2 box-border shrink-0"
                         >
-                          <span className="text-[10px] font-semibold text-slate-400 dark:text-slate-500 absolute -top-2.5 right-2">
+                          <span className="text-[10px] font-semibold text-gray-400 dark:text-gray-500 absolute -top-2.5 right-2">
                             {time}
                           </span>
                         </div>
@@ -1694,13 +1694,13 @@ export default function AppointmentsPage() {
 
                     {/* 7-Day Columns Grid */}
                     <div
-                      className="grid grid-cols-7 flex-1 relative bg-white dark:bg-slate-900"
+                      className="grid grid-cols-7 flex-1 relative bg-white dark:bg-gray-900"
                       style={{ height: `${TOTAL_GRID_HEIGHT}px` }}
                     >
                       {weekDays.map((day) => (
                         <div
                           key={day.dateStr}
-                          className="relative border-r border-slate-200 dark:border-slate-800 box-border shrink-0"
+                          className="relative border-r border-gray-200 dark:border-gray-800 box-border shrink-0"
                           style={{ height: `${TOTAL_GRID_HEIGHT}px` }}
                         >
                           {/* Hour Guideline Rows (Clickable to open booking modal) */}
@@ -1714,7 +1714,7 @@ export default function AppointmentsPage() {
                                   handleCalendarEmptySlotClick(day.dateStr, `${hourNumber}:00`)
                                 }
                                 title={`Click to book on ${day.displayTitle} at ${time}`}
-                                className="border-b border-slate-100 dark:border-slate-800/60 hover:bg-indigo-50/30 dark:hover:bg-indigo-950/20 cursor-pointer transition-colors box-border shrink-0"
+                                className="border-b border-gray-100 dark:border-gray-800/60 hover:bg-indigo-50/30 dark:hover:bg-indigo-950/20 cursor-pointer transition-colors box-border shrink-0"
                               />
                             );
                           })}
@@ -1762,7 +1762,7 @@ export default function AppointmentsPage() {
             {viewMode === 'Month' && (
               <div className="flex flex-col min-w-[700px]">
                 {/* Day Headers (Mon - Sun) */}
-                <div className="grid grid-cols-7 bg-slate-50 dark:bg-slate-800/90 border-b border-slate-200 dark:border-slate-800 text-center text-xs font-bold text-slate-600 dark:text-slate-300 py-2.5">
+                <div className="grid grid-cols-7 bg-gray-50 dark:bg-gray-800/90 border-b border-gray-200 dark:border-gray-800 text-center text-xs font-bold text-gray-600 dark:text-gray-300 py-2.5">
                   <span>Mon</span>
                   <span>Tue</span>
                   <span>Wed</span>
@@ -1773,12 +1773,12 @@ export default function AppointmentsPage() {
                 </div>
 
                 {/* Month Grid Cells */}
-                <div className="grid grid-cols-7 auto-rows-fr bg-slate-200 dark:bg-slate-800 gap-[1px]">
+                <div className="grid grid-cols-7 auto-rows-fr bg-gray-200 dark:bg-gray-800 gap-[1px]">
                   {monthCalendarGrid.map((cell) => (
                     <div
                       key={cell.dateISO}
                       onClick={() => handleCalendarEmptySlotClick(cell.dateISO, '10:00')}
-                      className={`min-h-[110px] p-2 bg-white dark:bg-slate-900 transition-colors cursor-pointer group flex flex-col justify-between hover:bg-slate-50 dark:hover:bg-slate-850 ${!cell.isCurrentMonth ? 'opacity-40 bg-slate-50/50 dark:bg-slate-950/50' : ''
+                      className={`min-h-[110px] p-2 bg-white dark:bg-gray-900 transition-colors cursor-pointer group flex flex-col justify-between hover:bg-gray-50 dark:hover:bg-gray-850 ${!cell.isCurrentMonth ? 'opacity-40 bg-gray-50/50 dark:bg-gray-950/50' : ''
                         }`}
                     >
                       {/* Top Row: Date Number + Quick Add Button */}
@@ -1791,7 +1791,7 @@ export default function AppointmentsPage() {
                           }}
                           className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold transition-transform hover:scale-110 ${cell.isToday
                             ? 'bg-[#5051F9] text-white  2xs'
-                            : 'text-slate-700 dark:text-slate-200'
+                            : 'text-gray-700 dark:text-gray-200'
                             }`}
                           title="Click to open Day view"
                         >
@@ -1839,7 +1839,7 @@ export default function AppointmentsPage() {
                               setCurrentDate(new Date(cell.dateISO));
                               setViewMode('Day');
                             }}
-                            className="text-[10px] font-bold text-slate-500 hover:text-[#5051F9] dark:text-slate-400 pl-1 cursor-pointer"
+                            className="text-[10px] font-bold text-gray-500 hover:text-[#5051F9] dark:text-gray-400 pl-1 cursor-pointer"
                           >
                             +{cell.appointments.length - 3} more
                           </div>
@@ -1857,40 +1857,40 @@ export default function AppointmentsPage() {
             LOG HISTORY TAB VIEW
            ════════════════════════════════════════════════════════════════════ */
         <div className="flex-1 p-6">
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded  xs overflow-hidden">
-            <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
+          <div className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded  xs overflow-hidden">
+            <div className="p-4 border-b border-gray-200 dark:border-gray-800 flex items-center justify-between">
               <div>
-                <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                   Appointment Audit &amp; Activity Log
                 </h3>
-                <p className="text-xs text-slate-500">
+                <p className="text-xs text-gray-500">
                   Track appointment creation, check-ins, status updates, and checkout events
                 </p>
               </div>
-              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+              <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
                 {appointments.length} Event Records
               </span>
             </div>
 
-            <div className="divide-y divide-slate-100 dark:divide-slate-800 text-xs">
+            <div className="divide-y divide-gray-100 dark:divide-gray-800 text-xs">
               {appointments.map((apt) => (
                 <div
                   key={apt.id}
                   onClick={() => handleAppointmentClick(apt)}
-                  className="p-4 hover:bg-slate-50/80 dark:hover:bg-slate-800/50 transition-colors flex items-center justify-between cursor-pointer"
+                  className="p-4 hover:bg-gray-50/80 dark:hover:bg-gray-800/50 transition-colors flex items-center justify-between cursor-pointer"
                 >
                   <div className="flex items-center gap-3.5">
-                    <div className="w-9 h-9 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 font-bold text-xs">
+                    <div className="w-9 h-9 rounded-full bg-gray-100 dark:bg-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 font-bold text-xs">
                       {apt.patientName.substring(0, 2).toUpperCase()}
                     </div>
                     <div>
-                      <div className="font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                      <div className="font-bold text-gray-900 dark:text-white flex items-center gap-2">
                         <span>{apt.patientName}</span>
-                        <span className="text-[10px] px-1.5 py-0.2 rounded font-mono bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                        <span className="text-[10px] px-1.5 py-0.2 rounded font-mono bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400">
                           {apt.id}
                         </span>
                       </div>
-                      <div className="text-slate-500 text-[11px] mt-0.5">
+                      <div className="text-gray-500 text-[11px] mt-0.5">
                         {apt.service} • {apt.dentist} • {apt.chair}
                       </div>
                     </div>
@@ -1898,10 +1898,10 @@ export default function AppointmentsPage() {
 
                   <div className="flex items-center gap-4 text-right">
                     <div>
-                      <div className="font-semibold text-slate-700 dark:text-slate-200">
+                      <div className="font-semibold text-gray-700 dark:text-gray-200">
                         {apt.dateStr} at {apt.startTime}
                       </div>
-                      <div className="text-[10px] text-slate-400">
+                      <div className="text-[10px] text-gray-400">
                         KES {apt.total.toLocaleString()} ({apt.paymentStatus})
                       </div>
                     </div>
@@ -1925,24 +1925,24 @@ export default function AppointmentsPage() {
 
       {/* ─── 4. Appointment Details Modal (Opens on Calendar Click) ────────── */}
       {selectedAppointmentForModal && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in-0 duration-200">
-          <div className="bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 w-full max-w-xl  2xl overflow-hidden animate-in zoom-in-95 duration-150 flex flex-col max-h-[90vh]">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/60 backdrop-blur-xs animate-in fade-in-0 duration-200">
+          <div className="bg-white dark:bg-gray-900 rounded border border-gray-200 dark:border-gray-800 w-full max-w-xl  2xl overflow-hidden animate-in zoom-in-95 duration-150 flex flex-col max-h-[90vh]">
             {/* Modal Header */}
-            <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-850">
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-gray-200 dark:border-gray-800 bg-gray-50/70 dark:bg-gray-850">
               <div className="flex items-center gap-2.5">
                 <div className="p-1.5 rounded bg-indigo-100 text-indigo-800 dark:bg-indigo-950 dark:text-indigo-300">
                   <HugeiconsIcon icon={Calendar01Icon} size={18} />
                 </div>
                 <div>
                   <div className="flex items-center gap-2">
-                    <h3 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h3 className="text-sm font-bold text-gray-900 dark:text-white">
                       Appointment Details
                     </h3>
-                    <span className="px-2 py-0.5 rounded text-[11px] font-bold font-mono bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                    <span className="px-2 py-0.5 rounded text-[11px] font-bold font-mono bg-gray-200 dark:bg-gray-800 text-gray-700 dark:text-gray-300">
                       {selectedAppointmentForModal.id}
                     </span>
                   </div>
-                  <p className="text-[11px] text-slate-500">
+                  <p className="text-[11px] text-gray-500">
                     {selectedAppointmentForModal.branch} • {selectedAppointmentForModal.chair}
                   </p>
                 </div>
@@ -1976,9 +1976,9 @@ export default function AppointmentsPage() {
             {/* Modal Body */}
             <div className="p-5 space-y-4 overflow-y-auto text-xs">
               {/* Patient Banner */}
-              <div className="flex items-center justify-between p-3 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800">
+              <div className="flex items-center justify-between p-3 rounded bg-gray-50 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-800">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-sm  xs">
+                  <div className="w-11 h-11 rounded-full bg-gray-900 text-white font-bold flex items-center justify-center text-sm  xs">
                     {selectedAppointmentForModal.patientName
                       .split(' ')
                       .map((n) => n[0])
@@ -1986,10 +1986,10 @@ export default function AppointmentsPage() {
                       .substring(0, 2)}
                   </div>
                   <div>
-                    <h4 className="text-sm font-bold text-slate-900 dark:text-white">
+                    <h4 className="text-sm font-bold text-gray-900 dark:text-white">
                       {selectedAppointmentForModal.patientName}
                     </h4>
-                    <p className="text-slate-500 dark:text-slate-400 text-[11px]">
+                    <p className="text-gray-500 dark:text-gray-400 text-[11px]">
                       {selectedAppointmentForModal.phone} • {selectedAppointmentForModal.email}
                     </p>
                   </div>
@@ -1998,7 +1998,7 @@ export default function AppointmentsPage() {
                 <div className="flex items-center gap-1.5">
                   <a
                     href={`tel:${selectedAppointmentForModal.phone}`}
-                    className="p-2 rounded bg-white dark:bg-slate-700 border border-slate-200 dark:border-slate-600 text-slate-700 dark:text-slate-200 hover:bg-slate-100 transition-colors"
+                    className="p-2 rounded bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-200 hover:bg-gray-100 transition-colors"
                     title="Call Patient"
                   >
                     <HugeiconsIcon icon={CallIcon} size={14} />
@@ -2018,23 +2018,23 @@ export default function AppointmentsPage() {
 
               {/* Timing & Practitioner Grid */}
               <div className="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
-                <div className="p-2.5 rounded border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800">
-                  <span className="text-[10px] text-slate-400 font-bold uppercase">Date & Day</span>
-                  <p className="font-bold text-slate-900 dark:text-white mt-0.5">
+                <div className="p-2.5 rounded border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800">
+                  <span className="text-[10px] text-gray-400 font-bold uppercase">Date & Day</span>
+                  <p className="font-bold text-gray-900 dark:text-white mt-0.5">
                     {selectedAppointmentForModal.dateStr}
                   </p>
                 </div>
 
-                <div className="p-2.5 rounded border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800">
-                  <span className="text-[10px] text-slate-400 font-bold uppercase">Time Window</span>
+                <div className="p-2.5 rounded border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800">
+                  <span className="text-[10px] text-gray-400 font-bold uppercase">Time Window</span>
                   <p className="font-bold text-[#5051F9] dark:text-[#7072ff] mt-0.5">
                     {selectedAppointmentForModal.startTime} → {selectedAppointmentForModal.endTime}
                   </p>
                 </div>
 
-                <div className="p-2.5 rounded border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-800 col-span-2 sm:col-span-1">
-                  <span className="text-[10px] text-slate-400 font-bold uppercase">Practitioner</span>
-                  <p className="font-bold text-slate-900 dark:text-white mt-0.5 truncate">
+                <div className="p-2.5 rounded border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-800 col-span-2 sm:col-span-1">
+                  <span className="text-[10px] text-gray-400 font-bold uppercase">Practitioner</span>
+                  <p className="font-bold text-gray-900 dark:text-white mt-0.5 truncate">
                     {selectedAppointmentForModal.dentist}
                   </p>
                 </div>
@@ -2042,39 +2042,39 @@ export default function AppointmentsPage() {
 
               {/* Clinical Notes */}
               <div>
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
+                <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">
                   Clinical Notes & Symptoms
                 </span>
-                <div className="p-3 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800 text-slate-700 dark:text-slate-300">
+                <div className="p-3 rounded bg-gray-50 dark:bg-gray-800/60 border border-gray-200 dark:border-gray-800 text-gray-700 dark:text-gray-300">
                   {selectedAppointmentForModal.note || 'No clinical notes recorded.'}
                 </div>
               </div>
 
               {/* Services Breakdown */}
               <div>
-                <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider block mb-1">
+                <span className="text-[11px] font-bold text-gray-400 uppercase tracking-wider block mb-1">
                   Procedures & Dental Services
                 </span>
                 <div className="space-y-1.5">
                   {selectedAppointmentForModal.services.map((svc, idx) => (
                     <div
                       key={idx}
-                      className="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 flex items-center justify-between"
+                      className="p-2.5 rounded bg-gray-50 dark:bg-gray-800/40 border border-gray-200 dark:border-gray-800 flex items-center justify-between"
                     >
                       <div className="flex items-center gap-2">
                         <div className="p-1 rounded bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300">
                           <HugeiconsIcon icon={DentalToothIcon} size={14} />
                         </div>
                         <div>
-                          <div className="font-bold text-slate-900 dark:text-white">
+                          <div className="font-bold text-gray-900 dark:text-white">
                             {svc.name}
                           </div>
-                          <div className="text-[10px] text-slate-500">
+                          <div className="text-[10px] text-gray-500">
                             {svc.duration} with {svc.doctor}
                           </div>
                         </div>
                       </div>
-                      <span className="font-bold font-mono text-slate-900 dark:text-white">
+                      <span className="font-bold font-mono text-gray-900 dark:text-white">
                         KES {svc.price.toLocaleString()}
                       </span>
                     </div>
@@ -2083,9 +2083,9 @@ export default function AppointmentsPage() {
               </div>
 
               {/* Payment Summary Box */}
-              <div className="p-3.5 rounded bg-slate-50 dark:bg-slate-850 border border-slate-200 dark:border-slate-800 space-y-1.5">
+              <div className="p-3.5 rounded bg-gray-50 dark:bg-gray-850 border border-gray-200 dark:border-gray-800 space-y-1.5">
                 <div className="flex justify-between items-center text-xs">
-                  <span className="text-slate-500">Payment Status:</span>
+                  <span className="text-gray-500">Payment Status:</span>
                   <span
                     className={`px-2 py-0.5 rounded font-bold text-[10px] ${selectedAppointmentForModal.paymentStatus === 'Paid'
                       ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300'
@@ -2096,8 +2096,8 @@ export default function AppointmentsPage() {
                     {selectedAppointmentForModal.paymentMethod})
                   </span>
                 </div>
-                <div className="flex justify-between items-center text-xs pt-1 border-t border-slate-200 dark:border-slate-700">
-                  <span className="font-bold text-slate-900 dark:text-white">Total Amount:</span>
+                <div className="flex justify-between items-center text-xs pt-1 border-t border-gray-200 dark:border-gray-700">
+                  <span className="font-bold text-gray-900 dark:text-white">Total Amount:</span>
                   <span className="font-extrabold text-sm text-[#00884B] dark:text-emerald-400 font-mono">
                     KES {selectedAppointmentForModal.total.toLocaleString()}
                   </span>
@@ -2106,7 +2106,7 @@ export default function AppointmentsPage() {
 
               {/* Status Updater Buttons */}
               <div className="flex items-center gap-2 pt-1 flex-wrap">
-                <span className="text-slate-400 text-xs font-semibold mr-1">Update Status:</span>
+                <span className="text-gray-400 text-xs font-semibold mr-1">Update Status:</span>
                 <Button
                   type="button"
                   onClick={() =>
@@ -2141,7 +2141,7 @@ export default function AppointmentsPage() {
             </div>
 
             {/* Modal Footer Actions */}
-            <div className="flex items-center justify-between px-5 py-3 border-t border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-850">
+            <div className="flex items-center justify-between px-5 py-3 border-t border-gray-200 dark:border-gray-800 bg-gray-50/70 dark:bg-gray-850">
               <Button
                 type="button"
                 onClick={() =>
@@ -2184,18 +2184,18 @@ export default function AppointmentsPage() {
 
       {/* ─── 5. Book Appointment Modal (Opens from empty calendar slot or button) ── */}
       {isBookingModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in-0 duration-200">
-          <div className="bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 w-full max-w-lg  2xl overflow-hidden animate-in zoom-in-95 duration-150">
-            <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-850">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/60 backdrop-blur-xs animate-in fade-in-0 duration-200">
+          <div className="bg-white dark:bg-gray-900 rounded border border-gray-200 dark:border-gray-800 w-full max-w-lg  2xl overflow-hidden animate-in zoom-in-95 duration-150">
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-gray-200 dark:border-gray-800 bg-gray-50/70 dark:bg-gray-850">
               <div className="flex items-center gap-2">
                 <div className="p-1.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={PlusSignIcon} size={16} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-white text-sm">
+                  <h3 className="font-bold text-gray-900 dark:text-white text-sm">
                     Book New Appointment
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Schedule dental chair, practitioner, and procedure
                   </p>
                 </div>
@@ -2215,7 +2215,7 @@ export default function AppointmentsPage() {
             <form onSubmit={handleBookingSubmit} className="p-5 space-y-3.5 text-xs">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <div className="space-y-1 sm:col-span-2">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Patient Full Name *
                   </label>
                   <input
@@ -2226,12 +2226,12 @@ export default function AppointmentsPage() {
                     onChange={(e) =>
                       setNewBooking({ ...newBooking, patientName: e.target.value })
                     }
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Phone (+254) *
                   </label>
                   <input
@@ -2240,18 +2240,18 @@ export default function AppointmentsPage() {
                     placeholder="+254 7XX XXX XXX"
                     value={newBooking.phone}
                     onChange={(e) => setNewBooking({ ...newBooking, phone: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Dentist / Practitioner
                   </label>
                   <select
                     value={newBooking.dentist}
                     onChange={(e) => setNewBooking({ ...newBooking, dentist: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   >
                     <option value="Dr. Darrell Steward">Dr. Darrell Steward (Surgeon)</option>
                     <option value="Dr. Faith Mutua">Dr. Faith Mutua (Orthodontist)</option>
@@ -2263,7 +2263,7 @@ export default function AppointmentsPage() {
                 </div>
 
                 <div className="space-y-1 sm:col-span-2">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Dental Procedure / Service *
                   </label>
                   <input
@@ -2272,12 +2272,12 @@ export default function AppointmentsPage() {
                     placeholder="e.g. Scaling & Polishing, Root Canal, Crown Prep"
                     value={newBooking.service}
                     onChange={(e) => setNewBooking({ ...newBooking, service: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Appointment Date *
                   </label>
                   <input
@@ -2285,18 +2285,18 @@ export default function AppointmentsPage() {
                     required
                     value={newBooking.date}
                     onChange={(e) => setNewBooking({ ...newBooking, date: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Operatory Chair
                   </label>
                   <select
                     value={newBooking.chair}
                     onChange={(e) => setNewBooking({ ...newBooking, chair: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   >
                     <option value="Operatory Chair 1">Operatory Chair 1</option>
                     <option value="Operatory Chair 2">Operatory Chair 2</option>
@@ -2308,7 +2308,7 @@ export default function AppointmentsPage() {
                 </div>
 
                 <div className="space-y-1 sm:col-span-2">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Time Window (Start to End)
                   </label>
                   <div className="flex items-center gap-2">
@@ -2318,22 +2318,22 @@ export default function AppointmentsPage() {
                       onChange={(e) =>
                         setNewBooking({ ...newBooking, startTime: e.target.value })
                       }
-                      className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none"
+                      className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none"
                     />
-                    <span className="text-slate-400 font-bold">to</span>
+                    <span className="text-gray-400 font-bold">to</span>
                     <input
                       type="time"
                       value={newBooking.endTime}
                       onChange={(e) =>
                         setNewBooking({ ...newBooking, endTime: e.target.value })
                       }
-                      className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none"
+                      className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-1 sm:col-span-2">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Clinical Notes / Symptoms
                   </label>
                   <textarea
@@ -2341,12 +2341,12 @@ export default function AppointmentsPage() {
                     placeholder="Enter relevant patient medical alerts or visit reasons..."
                     value={newBooking.note}
                     onChange={(e) => setNewBooking({ ...newBooking, note: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-slate-200 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-gray-200 dark:border-gray-800">
                 <Button
                   type="button"
                   onClick={() => setIsBookingModalOpen(false)}
@@ -2370,12 +2370,12 @@ export default function AppointmentsPage() {
 
       {/* ─── 6. Filter Drawer ───────────────────────────────────────────────── */}
       {isFilterDrawerOpen && (
-        <div className="fixed inset-y-0 right-0 z-50 w-[300px] bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800  2xl p-4 flex flex-col justify-between animate-in slide-in-from-right duration-200">
+        <div className="fixed inset-y-0 right-0 z-50 w-[300px] bg-white dark:bg-gray-900 border-l border-gray-200 dark:border-gray-800  2xl p-4 flex flex-col justify-between animate-in slide-in-from-right duration-200">
           <div>
-            <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 mb-3">
+            <div className="flex items-center justify-between pb-3 border-b border-gray-200 dark:border-gray-800 mb-3">
               <div className="flex items-center gap-2">
                 <HugeiconsIcon icon={FilterIcon} size={16} />
-                <h3 className="font-bold text-slate-900 dark:text-white text-sm">
+                <h3 className="font-bold text-gray-900 dark:text-white text-sm">
                   Calendar Filters
                 </h3>
               </div>
@@ -2393,14 +2393,14 @@ export default function AppointmentsPage() {
 
             {/* Quick Status Filter */}
             <div className="space-y-2 mb-4">
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">
                 Filter by Status
               </h4>
               <div className="space-y-1.5 text-xs">
                 {['All', 'Confirmed', 'In Progress', 'Completed', 'Scheduled'].map((st) => (
                   <label
                     key={st}
-                    className="flex items-center gap-2 cursor-pointer text-slate-700 dark:text-slate-300"
+                    className="flex items-center gap-2 cursor-pointer text-gray-700 dark:text-gray-300"
                   >
                     <input
                       type="radio"
@@ -2417,7 +2417,7 @@ export default function AppointmentsPage() {
 
             {/* Category Filter */}
             <div className="space-y-2">
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">
+              <h4 className="text-xs font-bold text-gray-400 uppercase tracking-wider">
                 Filter by Category
               </h4>
               <div className="space-y-1.5 text-xs">
@@ -2431,12 +2431,12 @@ export default function AppointmentsPage() {
                 ].map((cat) => (
                   <label
                     key={cat}
-                    className="flex items-center gap-2 cursor-pointer text-slate-700 dark:text-slate-300"
+                    className="flex items-center gap-2 cursor-pointer text-gray-700 dark:text-gray-300"
                   >
                     <input
                       type="checkbox"
                       defaultChecked
-                      className="rounded border-slate-300 text-emerald-600 focus:ring-emerald-500"
+                      className="rounded border-gray-300 text-emerald-600 focus:ring-emerald-500"
                     />
                     <span>{cat}</span>
                   </label>

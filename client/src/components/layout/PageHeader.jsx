@@ -134,7 +134,7 @@ export default function PageHeader({
   };
 
   return (
-    <header className={`w-full bg-white dark:bg-slate-900   ${className}`}>
+    <header className={`w-full bg-white dark:bg-gray-900   ${className}`}>
       {/* Top Header Row */}
       <div className="flex flex-wrap items-center justify-between  py-2 px-2">
         {/* Left Side: Page Name & Learn Badge */}
@@ -152,7 +152,7 @@ export default function PageHeader({
               type="button"
               onClick={onLearn}
               title={learnTooltip}
-              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-slate-800 hover:bg-gray-200/80 dark:hover:bg-slate-700 active:bg-gray-200 transition-colors cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
+              className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium text-gray-600 dark:text-gray-300 bg-gray-100 dark:bg-gray-800 hover:bg-gray-200/80 dark:hover:bg-gray-700 active:bg-gray-200 transition-colors cursor-pointer select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50"
             >
               <HugeiconsIcon
                 icon={Idea01Icon}
@@ -179,8 +179,8 @@ export default function PageHeader({
                 aria-label="More actions"
                 onClick={() => setIsMenuOpen((prev) => !prev)}
                 className={`flex items-center justify-center  rounded border transition-colors cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-emerald-500/50 ${isMenuOpen
-                  ? 'border-gray-300 bg-gray-100 text-gray-900 dark:border-slate-600 dark:bg-slate-800 dark:text-white'
-                  : 'border-gray-200 dark:border-slate-700 bg-white dark:bg-slate-900 text-gray-600 dark:text-slate-300 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-gray-900 dark:hover:text-white  '
+                  ? 'border-gray-300 bg-gray-100 text-gray-900 dark:border-gray-600 dark:bg-gray-800 dark:text-white'
+                  : 'border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-gray-900 dark:hover:text-white  '
                   }`}
               >
                 <HugeiconsIcon icon={MoreHorizontalIcon} size={18} strokeWidth={2.2} />
@@ -192,7 +192,7 @@ export default function PageHeader({
                   ref={menuRef}
                   role="menu"
                   aria-orientation="vertical"
-                  className="absolute right-0 top-full mt-1.5 min-w-[210px] w-max bg-white dark:bg-slate-900 border border-gray-100 dark:border-slate-800 rounded   dark:  py-1.5 z-50 animate-in fade-in-0 zoom-in-95 duration-100"
+                  className="absolute right-0 top-full mt-1.5 min-w-[210px] w-max bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded   dark:  py-1.5 z-50 animate-in fade-in-0 zoom-in-95 duration-100"
                 >
                   {Array.isArray(resolvedMoreActions) ? (
                     resolvedMoreActions.map((action, index) => {
@@ -200,7 +200,7 @@ export default function PageHeader({
                         return (
                           <div
                             key={action.id || `divider-${index}`}
-                            className="my-1 border-t border-gray-100 dark:border-slate-800"
+                            className="my-1 border-t border-gray-100 dark:border-gray-800"
                           />
                         );
                       }
@@ -220,7 +220,7 @@ export default function PageHeader({
                           }}
                           className={`w-full flex items-center justify-between gap-3 px-3.5 py-2 text-sm text-left transition-colors cursor-pointer select-none disabled:opacity-50 disabled:pointer-events-none ${action.danger
                             ? 'text-rose-600 hover:bg-rose-50 dark:hover:bg-rose-950/30'
-                            : 'text-gray-700 dark:text-slate-200 hover:bg-gray-50 dark:hover:bg-slate-800/80 hover:text-gray-900 dark:hover:text-white'
+                            : 'text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-gray-800/80 hover:text-gray-900 dark:hover:text-white'
                             }`}
                         >
                           <span className="flex items-center gap-2">
@@ -228,7 +228,7 @@ export default function PageHeader({
                               <HugeiconsIcon
                                 icon={IconComponent}
                                 size={16}
-                                className="text-gray-500 dark:text-slate-400 shrink-0"
+                                className="text-gray-500 dark:text-gray-400 shrink-0"
                               />
                             )}
                             <span className="font-normal">{action.label}</span>
@@ -238,7 +238,7 @@ export default function PageHeader({
                             <HugeiconsIcon
                               icon={IconComponent}
                               size={16}
-                              className="text-gray-500 dark:text-slate-400 shrink-0"
+                              className="text-gray-500 dark:text-gray-400 shrink-0"
                             />
                           )}
                         </button>
@@ -297,15 +297,15 @@ export default function PageHeader({
                   role="tab"
                   aria-selected={isActive}
                   className={`box-border h-10 flex items-center pl-4 pr-2 rounded-t-[8px] cursor-pointer transition-all duration-150 relative ${isActive
-                    ? 'bg-white dark:bg-slate-900  [0px_8px_12px_rgba(0,0,0,0.15)] dark: [0px_8px_12px_rgba(0,0,0,0.4)] z-10 border-t'
-                    : 'bg-transparent hover:bg-gray-50/70 dark:hover:bg-slate-800/40 text-[#767676] dark:text-slate-400 hover:text-[#222323] dark:hover:text-white'
+                    ? 'bg-white dark:bg-gray-900  [0px_8px_12px_rgba(0,0,0,0.15)] dark: [0px_8px_12px_rgba(0,0,0,0.4)] z-10 border-t'
+                    : 'bg-transparent hover:bg-gray-50/70 dark:hover:bg-gray-800/40 text-[#767676] dark:text-gray-400 hover:text-[#222323] dark:hover:text-white'
                     }`}
                 >
                   {/* Label */}
                   <span
                     className={`font-sans font-medium text-[14px] leading-5 whitespace-nowrap ${isActive
                       ? 'text-[#222323] dark:text-white'
-                      : 'text-[#767676] dark:text-slate-400'
+                      : 'text-[#767676] dark:text-gray-400'
                       }`}
                   >
                     {tab.label}
@@ -315,8 +315,8 @@ export default function PageHeader({
                   {tab.count !== undefined && (
                     <span
                       className={`ml-1.5 px-1.5 py-0.5 rounded-full text-xs font-normal tabular-nums ${isActive
-                        ? 'bg-[#ded0ff] text-[#4b2e8d] dark:bg-slate-800 dark:text-slate-200'
-                        : 'bg-[#f6f3ff] text-[#767676] dark:bg-slate-800 dark:text-slate-400'
+                        ? 'bg-[#ded0ff] text-[#4b2e8d] dark:bg-gray-800 dark:text-gray-200'
+                        : 'bg-[#f6f3ff] text-[#767676] dark:bg-gray-800 dark:text-gray-400'
                         }`}
                     >
                       {tab.count}

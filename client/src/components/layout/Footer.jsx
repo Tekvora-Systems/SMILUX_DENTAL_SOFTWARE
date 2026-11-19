@@ -23,7 +23,7 @@ function MenuIcon({ expanded }) {
   return (
     <HugeiconsIcon
       icon={BaseMenuIcon}
-      className={`${iconCls} text-slate-500 transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}
+      className={`${iconCls} text-gray-500 transition-transform duration-200 ${expanded ? 'rotate-180' : ''}`}
     />
   );
 }
@@ -32,16 +32,16 @@ function FooterLink({ to, icon, children }) {
   return (
     <Link
       to={to}
-      className="inline-flex items-center gap-1.5 text-slate-500 hover:text-brand-blue transition-colors text-xs font-medium"
+      className="inline-flex items-center gap-1.5 text-gray-500 hover:text-brand-blue transition-colors text-xs font-medium"
     >
-      <span className="text-slate-400 group-hover:text-brand-blue transition-colors">{icon}</span>
+      <span className="text-gray-400 group-hover:text-brand-blue transition-colors">{icon}</span>
       <span>{children}</span>
     </Link>
   );
 }
 
 function Dot() {
-  return <span className="text-slate-300 ">·</span>;
+  return <span className="text-gray-300 ">·</span>;
 }
 
 export default function Footer() {
@@ -50,7 +50,7 @@ export default function Footer() {
   const logoUrl = '/favicon.svg';
 
   return (
-    <footer className="shrink-0 border-t border-slate-200 bg-white font-sans">
+    <footer className="shrink-0 border-t border-gray-200 bg-white font-sans">
       <div className="px-3 py-1.5 flex items-center justify-between min-h-[36px]">
         {/* Left: brand mark + name + version */}
         <div className="flex items-center gap-2 shrink-0">
@@ -60,11 +60,11 @@ export default function Footer() {
               alt={companyName}
               className="h-5 w-auto object-contain shrink-0 transition-transform duration-200 group-hover:scale-105 drop- "
             />
-            <span className="text-xs font-extrabold text-slate-900 group-hover:text-brand-blue transition-colors whitespace-nowrap tracking-tight">
+            <span className="text-xs font-extrabold text-gray-900 group-hover:text-brand-blue transition-colors whitespace-nowrap tracking-tight">
               Smilux <span className="text-brand-pink">Dental</span>
             </span>
           </Link>
-          <span className="text-slate-300 hidden md:inline">|</span>
+          <span className="text-gray-300 hidden md:inline">|</span>
           <span className="text-[10px] font-bold text-brand-700 bg-brand-50 border border-brand-200/60 px-1.5 py-0.5 rounded whitespace-nowrap hidden md:inline">
             v{APP_VERSION}
           </span>
@@ -92,7 +92,7 @@ export default function Footer() {
           variant="ghost"
           size="sm"
           onClick={() => setExpanded((v) => !v)}
-          className="lg:hidden p-1.5 h-auto text-slate-500 hover:bg-slate-100"
+          className="lg:hidden p-1.5 h-auto text-gray-500 hover:bg-gray-100"
           aria-label={expanded ? 'Collapse' : 'Expand'}
         >
           <MenuIcon expanded={expanded} />
@@ -100,13 +100,13 @@ export default function Footer() {
 
         {/* Right: copyright */}
         <div className="hidden xl:flex items-center shrink-0 gap-1.5">
-          <span className="text-slate-400 text-[10px] font-medium whitespace-nowrap">
+          <span className="text-gray-400 text-[10px] font-medium whitespace-nowrap">
             Powered by{' '}
             <a
               href="https://tekvora.co.ke/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-slate-700 hover:text-brand-blue font-bold underline decoration-brand-300"
+              className="text-gray-700 hover:text-brand-blue font-bold underline decoration-brand-300"
             >
               Tekvora Systems
             </a>
@@ -116,7 +116,7 @@ export default function Footer() {
 
       {/* Mobile expanded links */}
       {expanded && (
-        <div className="lg:hidden px-4 py-3 border-t border-slate-100 bg-slate-50/70 animate-in fade-in slide-in-from-top-1 duration-150">
+        <div className="lg:hidden px-4 py-3 border-t border-gray-100 bg-gray-50/70 animate-in fade-in slide-in-from-top-1 duration-150">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
             <FooterLink to="/dashboard" icon={<HugeiconsIcon icon={DashIcon} size={14} />}>Dashboard</FooterLink>
             <FooterLink to="/patients" icon={<HugeiconsIcon icon={PatientsIcon} size={14} />}>Patients</FooterLink>

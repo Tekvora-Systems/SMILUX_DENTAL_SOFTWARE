@@ -140,13 +140,13 @@ function CalendarMonthView({
   return (
     <div className="flex flex-col select-none w-full">
       {showHeader && (
-        <h3 className="text-xs font-semibold text-slate-800 dark:text-slate-100 text-center py-1 mb-2">
+        <h3 className="text-xs font-semibold text-gray-800 dark:text-gray-100 text-center py-1 mb-2">
           {formatters.title.format(month)}
         </h3>
       )}
 
       {/* Weekdays Header */}
-      <div className="grid grid-cols-7 text-center text-[10px] font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-1">
+      <div className="grid grid-cols-7 text-center text-[10px] font-semibold text-gray-400 dark:text-gray-500 uppercase tracking-wider mb-1">
         {weeks[0].map((date) => (
           <span key={date.getDay()} className="h-6 flex items-center justify-center">
             {formatters.weekday.format(date).slice(0, 2)}
@@ -197,7 +197,7 @@ function CalendarMonthView({
                         ? 'bg-[#118bb0] text-white font-bold   hover:bg-[#0e7394]'
                         : inRange
                           ? 'text-emerald-900 dark:text-emerald-200 hover:bg-emerald-100/70 dark:hover:bg-emerald-900/50'
-                          : 'text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800'
+                          : 'text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-800'
                         } ${isToday && !isStart && !isEnd ? 'ring-1 ring-emerald-600 font-bold' : ''}`}
                     >
                       <span>{date.getDate()}</span>
@@ -461,18 +461,18 @@ export default function DateRangePicker({
         aria-expanded={isOpen}
         aria-label={`${label}: ${formattedDisplay}`}
         onClick={() => (isOpen ? setIsOpen(false) : handleOpen())}
-        className="inline-flex items-center gap-2 h-9 px-3.5 rounded border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 text-xs font-medium text-slate-800 dark:text-slate-100   hover:border-slate-300 dark:hover:border-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 transition-all cursor-pointer"
+        className="inline-flex items-center gap-2 h-9 px-3.5 rounded border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900 text-xs font-medium text-gray-800 dark:text-gray-100   hover:border-gray-300 dark:hover:border-gray-700 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 transition-all cursor-pointer"
       >
         <HugeiconsIcon
           icon={Calendar01Icon}
           size={15}
-          className="text-slate-400 dark:text-slate-500 shrink-0"
+          className="text-gray-400 dark:text-gray-500 shrink-0"
         />
         <span className="truncate">{formattedDisplay}</span>
         <HugeiconsIcon
           icon={ArrowDown01Icon}
           size={13}
-          className={`text-slate-400 dark:text-slate-500 shrink-0 ml-1 transition-transform ${isOpen ? 'rotate-180' : ''
+          className={`text-gray-400 dark:text-gray-500 shrink-0 ml-1 transition-transform ${isOpen ? 'rotate-180' : ''
             }`}
         />
       </button>
@@ -483,11 +483,11 @@ export default function DateRangePicker({
           ref={panelRef}
           role="dialog"
           aria-label={label}
-          className={`absolute top-full mt-1.5 z-50 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded   overflow-hidden flex flex-col animate-in fade-in-0 zoom-in-95 duration-100 max-w-[calc(100vw-24px)] ${effectiveAlign === 'end' ? 'right-0 left-auto' : 'left-0 right-auto'
+          className={`absolute top-full mt-1.5 z-50 bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-800 rounded   overflow-hidden flex flex-col animate-in fade-in-0 zoom-in-95 duration-100 max-w-[calc(100vw-24px)] ${effectiveAlign === 'end' ? 'right-0 left-auto' : 'left-0 right-auto'
             } ${monthCount === 2 ? 'w-[640px]' : 'w-[330px]'}`}
         >
           {/* ─── 1. Presets Header (Compact horizontal chips row) ─── */}
-          <div className="flex items-center gap-1.5 px-3 py-2 border-b border-slate-100 dark:border-slate-800 overflow-x-auto no-scrollbar bg-slate-50/70 dark:bg-slate-850/60 shrink-0">
+          <div className="flex items-center gap-1.5 px-3 py-2 border-b border-gray-100 dark:border-gray-800 overflow-x-auto no-scrollbar bg-gray-50/70 dark:bg-gray-850/60 shrink-0">
             {presets.map((preset, idx) => {
               const isActive = activePresetIdx === idx;
               return (
@@ -497,7 +497,7 @@ export default function DateRangePicker({
                   onClick={() => handleSelectPreset(preset)}
                   className={`px-2.5 py-1 rounded-full text-[11px] font-medium whitespace-nowrap transition-colors cursor-pointer select-none shrink-0 ${isActive
                     ? 'bg-[#118bb0] text-white  '
-                    : 'bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-750 hover:text-slate-900 dark:hover:text-white'
+                    : 'bg-white dark:bg-gray-800 text-gray-600 dark:text-gray-300 border border-gray-200 dark:border-gray-700 hover:bg-gray-100 dark:hover:bg-gray-750 hover:text-gray-900 dark:hover:text-white'
                     }`}
                 >
                   {preset.label}
@@ -518,13 +518,13 @@ export default function DateRangePicker({
                     aria-label="Previous month"
                     onClick={handlePrevMonth}
                     disabled={Boolean(minDate && monthDiff(viewMonth, minDate) <= 0)}
-                    className="h-7 w-7 rounded border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer disabled:opacity-25"
+                    className="h-7 w-7 rounded border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer disabled:opacity-25"
                   >
                     <HugeiconsIcon icon={ArrowLeft01Icon} size={13} />
                   </button>
 
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-bold text-slate-800 dark:text-slate-100">
+                    <span className="text-xs font-bold text-gray-800 dark:text-gray-100">
                       {formatters.title.format(viewMonth)}
                     </span>
                     {/* View mode toggle */}
@@ -532,7 +532,7 @@ export default function DateRangePicker({
                       type="button"
                       title="Switch to 2-month view"
                       onClick={() => setMonthCount(2)}
-                      className="text-[10px] text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 border border-slate-200 dark:border-slate-700 rounded px-1.5 py-0.5 cursor-pointer font-medium"
+                      className="text-[10px] text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 border border-gray-200 dark:border-gray-700 rounded px-1.5 py-0.5 cursor-pointer font-medium"
                     >
                       2M
                     </button>
@@ -543,7 +543,7 @@ export default function DateRangePicker({
                     aria-label="Next month"
                     onClick={handleNextMonth}
                     disabled={Boolean(maxDate && monthDiff(viewMonth, maxDate) >= 0)}
-                    className="h-7 w-7 rounded border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer disabled:opacity-25"
+                    className="h-7 w-7 rounded border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer disabled:opacity-25"
                   >
                     <HugeiconsIcon icon={ArrowRight01Icon} size={13} />
                   </button>
@@ -572,7 +572,7 @@ export default function DateRangePicker({
                     aria-label="Previous month"
                     onClick={handlePrevMonth}
                     disabled={Boolean(minDate && monthDiff(viewMonth, minDate) <= 0)}
-                    className="h-7 w-7 rounded border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer disabled:opacity-25 z-10"
+                    className="h-7 w-7 rounded border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer disabled:opacity-25 z-10"
                   >
                     <HugeiconsIcon icon={ArrowLeft01Icon} size={13} />
                   </button>
@@ -581,7 +581,7 @@ export default function DateRangePicker({
                     type="button"
                     title="Switch to compact 1-month view"
                     onClick={() => setMonthCount(1)}
-                    className="text-[10px] text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 border border-slate-200 dark:border-slate-700 rounded px-1.5 py-0.5 cursor-pointer font-medium"
+                    className="text-[10px] text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 border border-gray-200 dark:border-gray-700 rounded px-1.5 py-0.5 cursor-pointer font-medium"
                   >
                     1M compact
                   </button>
@@ -593,7 +593,7 @@ export default function DateRangePicker({
                     disabled={Boolean(
                       maxDate && monthDiff(addMonths(viewMonth, 1), maxDate) >= 0
                     )}
-                    className="h-7 w-7 rounded border border-slate-200 dark:border-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors cursor-pointer disabled:opacity-25 z-10"
+                    className="h-7 w-7 rounded border border-gray-200 dark:border-gray-800 flex items-center justify-center text-gray-600 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors cursor-pointer disabled:opacity-25 z-10"
                   >
                     <HugeiconsIcon icon={ArrowRight01Icon} size={13} />
                   </button>
@@ -632,9 +632,9 @@ export default function DateRangePicker({
           </div>
 
           {/* ─── 3. Footer with Range Summary and Apply Actions ─── */}
-          <div className="border-t border-slate-100 dark:border-slate-800 px-3.5 py-2.5 flex items-center justify-between gap-2 bg-slate-50/70 dark:bg-slate-850/60">
+          <div className="border-t border-gray-100 dark:border-gray-800 px-3.5 py-2.5 flex items-center justify-between gap-2 bg-gray-50/70 dark:bg-gray-850/60">
             <div className="flex items-center gap-1.5 min-w-0">
-              <span className="text-xs font-semibold text-slate-900 dark:text-white truncate">
+              <span className="text-xs font-semibold text-gray-900 dark:text-white truncate">
                 {summaryDisplay}
               </span>
               {daysCount > 0 && (
@@ -648,7 +648,7 @@ export default function DateRangePicker({
               <button
                 type="button"
                 onClick={handleCancel}
-                className="px-2.5 py-1 rounded text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors cursor-pointer"
+                className="px-2.5 py-1 rounded text-xs font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors cursor-pointer"
               >
                 Cancel
               </button>

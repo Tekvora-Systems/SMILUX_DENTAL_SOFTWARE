@@ -519,7 +519,7 @@ export default function StaffPage() {
                 {initials}
               </div>
               <div className="truncate min-w-0">
-                <div className="font-semibold text-slate-900 dark:text-white flex items-center gap-1.5 leading-tight">
+                <div className="font-semibold text-gray-900 dark:text-white flex items-center gap-1.5 leading-tight">
                   <span className="truncate">{row.name}</span>
                   {row.licenseNo && row.licenseNo !== 'N/A' && (
                     <span
@@ -530,7 +530,7 @@ export default function StaffPage() {
                     </span>
                   )}
                 </div>
-                <div className="text-slate-500 font-medium leading-none mt-0.5">
+                <div className="text-gray-500 font-medium leading-none mt-0.5">
                   {row.id} • {row.role}
                 </div>
               </div>
@@ -554,15 +554,14 @@ export default function StaffPage() {
         ],
         render: (val, row) => (
           <span
-            className={`inline-block px-1.5 py-0.5 rounded font-medium text-xs truncate max-w-[145px] ${
-              row.department === 'Clinical & Nursing'
+            className={`inline-block px-1.5 py-0.5 rounded font-medium text-xs truncate max-w-[145px] ${row.department === 'Clinical & Nursing'
                 ? 'bg-emerald-50 text-emerald-700 dark:bg-emerald-950/40 dark:text-emerald-300 border border-emerald-200/60'
                 : row.department === 'Administration'
-                ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300 border border-blue-200/60'
-                : row.department === 'Finance & Billing'
-                ? 'bg-purple-50 text-purple-700 dark:bg-purple-950/40 dark:text-purple-300 border border-purple-200/60'
-                : 'bg-amber-50 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300 border border-amber-200/60'
-            }`}
+                  ? 'bg-blue-50 text-blue-700 dark:bg-blue-950/40 dark:text-blue-300 border border-blue-200/60'
+                  : row.department === 'Finance & Billing'
+                    ? 'bg-purple-50 text-purple-700 dark:bg-purple-950/40 dark:text-purple-300 border border-purple-200/60'
+                    : 'bg-amber-50 text-amber-700 dark:bg-amber-950/40 dark:text-amber-300 border border-amber-200/60'
+              }`}
           >
             {row.department}
           </span>
@@ -583,7 +582,7 @@ export default function StaffPage() {
           { value: 'Mombasa Waterfront', label: 'Mombasa Waterfront' },
         ],
         render: (val, row) => (
-          <span className="font-medium text-slate-800 dark:text-slate-200 flex items-center gap-1">
+          <span className="font-medium text-gray-800 dark:text-gray-200 flex items-center gap-1">
             <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 inline-block"></span>
             {row.branch}
           </span>
@@ -596,7 +595,7 @@ export default function StaffPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="font-medium text-slate-700 dark:text-slate-300">
+          <span className="font-medium text-gray-700 dark:text-gray-300">
             {row.phone}
           </span>
         ),
@@ -608,7 +607,7 @@ export default function StaffPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="text-slate-600 dark:text-slate-400 truncate block max-w-[175px]">
+          <span className="text-gray-600 dark:text-gray-400 truncate block max-w-[175px]">
             {row.email}
           </span>
         ),
@@ -620,7 +619,7 @@ export default function StaffPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="text-slate-600 dark:text-slate-300 font-medium truncate block">
+          <span className="text-gray-600 dark:text-gray-300 font-medium truncate block">
             {row.shift}
           </span>
         ),
@@ -639,7 +638,7 @@ export default function StaffPage() {
           { value: 'Contract', label: 'Contract' },
         ],
         render: (val, row) => (
-          <span className="text-slate-700 dark:text-slate-300 font-medium">
+          <span className="text-gray-700 dark:text-gray-300 font-medium">
             {row.employmentType}
           </span>
         ),
@@ -651,7 +650,7 @@ export default function StaffPage() {
         sortable: true,
         filterable: true,
         render: (val, row) => (
-          <span className="text-slate-500 dark:text-slate-400 font-medium">
+          <span className="text-gray-500 dark:text-gray-400 font-medium">
             {row.joinDate}
           </span>
         ),
@@ -670,13 +669,12 @@ export default function StaffPage() {
         ],
         render: (val, row) => (
           <span
-            className={`inline-block px-2 py-0.5 rounded-full font-semibold text-xs ${
-              row.status === 'On Duty'
+            className={`inline-block px-2 py-0.5 rounded-full font-semibold text-xs ${row.status === 'On Duty'
                 ? 'bg-emerald-100 text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300'
                 : row.status === 'Active'
-                ? 'bg-blue-100 text-blue-800 dark:bg-blue-950/50 dark:text-blue-300'
-                : 'bg-amber-100 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300'
-            }`}
+                  ? 'bg-blue-100 text-blue-800 dark:bg-blue-950/50 dark:text-blue-300'
+                  : 'bg-amber-100 text-amber-800 dark:bg-amber-950/50 dark:text-amber-300'
+              }`}
           >
             {row.status}
           </span>
@@ -699,7 +697,7 @@ export default function StaffPage() {
                 e.stopPropagation();
                 alert(`Calling ${row.name} at ${row.phone}`);
               }}
-              className="p-1 rounded hover:bg-slate-100 dark:hover:bg-slate-800 text-emerald-700 dark:text-emerald-400 transition-colors cursor-pointer"
+              className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800 text-emerald-700 dark:text-emerald-400 transition-colors cursor-pointer"
             >
               <HugeiconsIcon icon={CallIcon} size={14} />
             </button>
@@ -816,25 +814,25 @@ export default function StaffPage() {
 
       {/* ─── Add Staff Modal ─── */}
       {isAddModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-5 py-3.5 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <div className="p-1.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
                   <HugeiconsIcon icon={PlusSignIcon} size={16} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-slate-900 dark:text-white text-base">
+                  <h3 className="font-bold text-gray-900 dark:text-white text-base">
                     Register New Staff Member
                   </h3>
-                  <p className="text-xs text-slate-500">
+                  <p className="text-xs text-gray-500">
                     Add employee to clinic roster and assign branch & schedule
                   </p>
                 </div>
               </div>
               <button
                 onClick={() => setIsAddModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-white p-1 rounded"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-white p-1 rounded"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
@@ -843,7 +841,7 @@ export default function StaffPage() {
             <form onSubmit={handleAddStaff} className="p-5 space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5">
                 <div className="space-y-1 sm:col-span-2">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Full Legal Name *
                   </label>
                   <input
@@ -852,18 +850,18 @@ export default function StaffPage() {
                     placeholder="e.g. Esther Nyambura"
                     value={newStaff.name}
                     onChange={(e) => setNewStaff({ ...newStaff, name: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Job Title / Role *
                   </label>
                   <select
                     value={newStaff.role}
                     onChange={(e) => setNewStaff({ ...newStaff, role: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   >
                     <option value="Head Dental Nurse">Head Dental Nurse</option>
                     <option value="Staff Dental Nurse">Staff Dental Nurse</option>
@@ -881,13 +879,13 @@ export default function StaffPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Department
                   </label>
                   <select
                     value={newStaff.department}
                     onChange={(e) => setNewStaff({ ...newStaff, department: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   >
                     <option value="Clinical & Nursing">Clinical & Nursing</option>
                     <option value="Administration">Administration</option>
@@ -898,13 +896,13 @@ export default function StaffPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Primary Branch *
                   </label>
                   <select
                     value={newStaff.branch}
                     onChange={(e) => setNewStaff({ ...newStaff, branch: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   >
                     <option value="Nairobi Main">Nairobi Main Medical Center</option>
                     <option value="Westlands Clinic">Westlands Clinic</option>
@@ -915,13 +913,13 @@ export default function StaffPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Employment Type
                   </label>
                   <select
                     value={newStaff.employmentType}
                     onChange={(e) => setNewStaff({ ...newStaff, employmentType: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   >
                     <option value="Full-time">Full-time</option>
                     <option value="Part-time">Part-time</option>
@@ -931,7 +929,7 @@ export default function StaffPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Phone Number (+254) *
                   </label>
                   <input
@@ -940,12 +938,12 @@ export default function StaffPage() {
                     placeholder="+254 7XX XXX XXX"
                     value={newStaff.phone}
                     onChange={(e) => setNewStaff({ ...newStaff, phone: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Work Email
                   </label>
                   <input
@@ -953,18 +951,18 @@ export default function StaffPage() {
                     placeholder="staff@smilux.co.ke"
                     value={newStaff.email}
                     onChange={(e) => setNewStaff({ ...newStaff, email: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     Shift Pattern
                   </label>
                   <select
                     value={newStaff.shift}
                     onChange={(e) => setNewStaff({ ...newStaff, shift: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   >
                     <option value="Morning (07:30 - 15:30)">Morning (07:30 - 15:30)</option>
                     <option value="Full Day (08:00 - 17:00)">Full Day (08:00 - 17:00)</option>
@@ -974,7 +972,7 @@ export default function StaffPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <label className="text-xs font-semibold text-slate-700 dark:text-slate-300">
+                  <label className="text-xs font-semibold text-gray-700 dark:text-gray-300">
                     License / Council Reg No.
                   </label>
                   <input
@@ -982,16 +980,16 @@ export default function StaffPage() {
                     placeholder="e.g. KCN-68192 or N/A"
                     value={newStaff.licenseNo}
                     onChange={(e) => setNewStaff({ ...newStaff, licenseNo: e.target.value })}
-                    className="w-full px-3 py-2 text-xs rounded border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 text-slate-900 dark:text-white focus:outline-none focus:border-emerald-600"
+                    className="w-full px-3 py-2 text-xs rounded border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 text-gray-900 dark:text-white focus:outline-none focus:border-emerald-600"
                   />
                 </div>
               </div>
 
-              <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-slate-100 dark:border-slate-800">
+              <div className="flex items-center justify-end gap-2.5 pt-3 border-t border-gray-100 dark:border-gray-800">
                 <button
                   type="button"
                   onClick={() => setIsAddModalOpen(false)}
-                  className="px-4 py-2 rounded text-xs font-medium text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors"
+                  className="px-4 py-2 rounded text-xs font-medium text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
                 >
                   Cancel
                 </button>
@@ -1010,24 +1008,24 @@ export default function StaffPage() {
 
       {/* ─── Learn Drawer / Modal ─── */}
       {isLearnModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/50 backdrop-blur-xs">
-          <div className="bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
-            <div className="flex items-center justify-between px-5 py-4 border-b border-slate-100 dark:border-slate-800">
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-gray-900/50 backdrop-blur-xs">
+          <div className="bg-white dark:bg-gray-900 rounded border border-gray-200 dark:border-gray-800 w-full max-w-lg overflow-hidden animate-in fade-in-0 zoom-in-95">
+            <div className="flex items-center justify-between px-5 py-4 border-b border-gray-100 dark:border-gray-800">
               <div className="flex items-center gap-2">
                 <span className="text-xl">💡</span>
-                <h3 className="font-bold text-slate-900 dark:text-white text-base">
+                <h3 className="font-bold text-gray-900 dark:text-white text-base">
                   Staff & Employee Directory: Guide
                 </h3>
               </div>
               <button
                 onClick={() => setIsLearnModalOpen(false)}
-                className="text-slate-400 hover:text-slate-600 dark:hover:text-white p-1 rounded"
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-white p-1 rounded"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
               </button>
             </div>
 
-            <div className="p-5 space-y-4 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+            <div className="p-5 space-y-4 text-xs text-gray-600 dark:text-gray-300 leading-relaxed">
               <div className="p-3 bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-200/60 dark:border-emerald-800/50 rounded">
                 <p className="font-semibold text-emerald-800 dark:text-emerald-300 mb-1">
                   Multi-Branch Staff Coordination & Roster Compliance
@@ -1038,7 +1036,7 @@ export default function StaffPage() {
               </div>
 
               <div className="space-y-2">
-                <h4 className="font-bold text-slate-900 dark:text-white text-sm">Key Staff Features</h4>
+                <h4 className="font-bold text-gray-900 dark:text-white text-sm">Key Staff Features</h4>
                 <ul className="space-y-1.5 list-disc pl-4">
                   <li>
                     <strong>Shift Schedules:</strong> Track morning, full-day, and evening rotas to ensure adequate dental chair assistant coverage for scheduled surgeries.
@@ -1047,7 +1045,7 @@ export default function StaffPage() {
                     <strong>Branch Reassignments:</strong> Seamlessly move staff between Nairobi Main, Westlands, Upper Hill, Karen, and Mombasa locations.
                   </li>
                   <li>
-                    <strong>Spreadsheet Sorting & Filtering:</strong> Hold <kbd className="px-1 py-0.5 rounded bg-slate-200 dark:bg-slate-800 font-medium">Shift</kbd> + click column headers for multi-sort priority, or use column filter inputs.
+                    <strong>Spreadsheet Sorting & Filtering:</strong> Hold <kbd className="px-1 py-0.5 rounded bg-gray-200 dark:bg-gray-800 font-medium">Shift</kbd> + click column headers for multi-sort priority, or use column filter inputs.
                   </li>
                   <li>
                     <strong>Quick Contacts:</strong> Click the phone icon in any row to instantly dial an employee or use the row menu to dispatch internal SMS alerts.

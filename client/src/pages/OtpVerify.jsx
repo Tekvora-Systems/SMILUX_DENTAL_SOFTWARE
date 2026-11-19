@@ -72,11 +72,11 @@ function OtpInput({ value, onChange, disabled }) {
           style={{ width: '48px', height: '56px' }}
           className={[
             'rounded border-2 text-center text-2xl font-bold',
-            'text-slate-900 bg-white outline-none',
+            'text-gray-900 bg-white outline-none',
             'transition-all duration-150',
             digit
               ? 'border-blue-500 bg-blue-50  sm'
-              : 'border-slate-300 hover:border-slate-400',
+              : 'border-gray-300 hover:border-gray-400',
             'focus:border-blue-500 focus:ring-2 focus:ring-blue-200',
             disabled ? 'opacity-50 cursor-not-allowed' : '',
           ].join(' ')}
@@ -175,10 +175,10 @@ export default function OtpVerifyPage({ email, onLoginSuccess, onNavigate, onOpe
               <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
             </svg>
           </div>
-          <h2 className="text-xl font-bold text-slate-900">Check your email</h2>
-          <p className="mt-1 text-sm text-slate-500">
+          <h2 className="text-xl font-bold text-gray-900">Check your email</h2>
+          <p className="mt-1 text-sm text-gray-500">
             We sent a 6-digit code to{' '}
-            <span className="font-semibold text-slate-700">{maskedEmail}</span>
+            <span className="font-semibold text-gray-700">{maskedEmail}</span>
           </p>
         </div>
 
@@ -223,7 +223,7 @@ export default function OtpVerifyPage({ email, onLoginSuccess, onNavigate, onOpe
         </form>
 
         {/* Resend */}
-        <div className="text-center text-sm text-slate-500">
+        <div className="text-center text-sm text-gray-500">
           Didn&apos;t receive it?{' '}
           <button
             type="button"
@@ -232,7 +232,7 @@ export default function OtpVerifyPage({ email, onLoginSuccess, onNavigate, onOpe
             className={[
               'font-semibold transition-colors',
               countdown > 0 || resending
-                ? 'text-slate-400 cursor-not-allowed'
+                ? 'text-gray-400 cursor-not-allowed'
                 : 'text-blue-600 hover:text-blue-700 cursor-pointer',
             ].join(' ')}
           >
@@ -241,11 +241,11 @@ export default function OtpVerifyPage({ email, onLoginSuccess, onNavigate, onOpe
         </div>
 
         {/* Back */}
-        <div className="text-center pt-2 border-t border-slate-100">
+        <div className="text-center pt-2 border-t border-gray-100">
           <button
             type="button"
             onClick={() => onNavigate && onNavigate('login')}
-            className="text-sm text-slate-500 hover:text-slate-700 transition-colors"
+            className="text-sm text-gray-500 hover:text-gray-700 transition-colors"
           >
             ← Back to sign in
           </button>

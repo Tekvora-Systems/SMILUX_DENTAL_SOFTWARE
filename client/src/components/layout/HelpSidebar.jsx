@@ -257,7 +257,7 @@ export default function HelpSidebar({
       <button
         type="button"
         onClick={handleOpen}
-        className="hidden sm:flex h-8 w-8 items-center justify-center rounded  text-slate-500 hover:bg-slate-100 hover:text-slate-800 transition-colors cursor-pointer"
+        className="hidden sm:flex h-8 w-8 items-center justify-center rounded  text-gray-500 hover:bg-gray-100 hover:text-gray-800 transition-colors cursor-pointer"
         title="Help & Support Center"
         aria-label="Help and Support"
       >
@@ -267,20 +267,20 @@ export default function HelpSidebar({
       {isOpen && typeof document !== 'undefined' && createPortal(
         <>
           <div
-            className="fixed inset-0 bg-slate-900/40 backdrop-blur-xs z-[99998] transition-opacity duration-200 ease-out"
+            className="fixed inset-0 bg-gray-900/40 backdrop-blur-xs z-[99998] transition-opacity duration-200 ease-out"
             onClick={handleClose}
           />
-          <aside className="fixed top-0 right-0 h-full w-full max-w-md bg-white border-l border-slate-200   z-[99999] flex flex-col font-sans animate-drawer-right">
+          <aside className="fixed top-0 right-0 h-full w-full max-w-md bg-white border-l border-gray-200   z-[99999] flex flex-col font-sans animate-drawer-right">
             {/* Header */}
-            <div className="px-5 py-4 border-b border-slate-100 flex items-center justify-between shrink-0 bg-white">
+            <div className="px-5 py-4 border-b border-gray-100 flex items-center justify-between shrink-0 bg-white">
               <div>
-                <h2 className="text-base font-bold text-slate-900">Smilux Help Center</h2>
-                <p className="text-xs text-slate-500 mt-0.5">Dental PMS documentation & live assistance</p>
+                <h2 className="text-base font-bold text-gray-900">Smilux Help Center</h2>
+                <p className="text-xs text-gray-500 mt-0.5">Dental PMS documentation & live assistance</p>
               </div>
               <button
                 type="button"
                 onClick={handleClose}
-                className="p-1.5 rounded text-slate-400 hover:text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer"
+                className="p-1.5 rounded text-gray-400 hover:text-gray-600 hover:bg-gray-100 transition-colors cursor-pointer"
                 aria-label="Close"
               >
                 <HugeiconsIcon icon={Cancel01Icon} size={18} />
@@ -288,15 +288,15 @@ export default function HelpSidebar({
             </div>
 
             {/* Tabs */}
-            <div className="px-4 py-2 border-b border-slate-100 flex gap-1.5 overflow-x-auto shrink-0 bg-slate-50/50">
+            <div className="px-4 py-2 border-b border-gray-100 flex gap-1.5 overflow-x-auto shrink-0 bg-gray-50/50">
               {TABS.map((tab) => (
                 <button
                   key={tab.id}
                   type="button"
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-3 py-1.5 rounded text-xs font-bold whitespace-nowrap transition-colors flex items-center gap-1.5 cursor-pointer ${activeTab === tab.id
-                    ? 'bg-slate-900 text-white  '
-                    : 'bg-white border border-slate-200 text-slate-600 hover:bg-slate-100'
+                    ? 'bg-gray-900 text-white  '
+                    : 'bg-white border border-gray-200 text-gray-600 hover:bg-gray-100'
                     }`}
                 >
                   <HugeiconsIcon icon={tab.icon} size={14} />
@@ -316,8 +316,8 @@ export default function HelpSidebar({
                       <div className="flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-wider text-brand-700">
                         Relevant to Current View
                       </div>
-                      <h3 className="text-xs font-bold text-slate-900">{contextualTopic.title}</h3>
-                      <p className="text-xs text-slate-600 leading-relaxed">{contextualTopic.description}</p>
+                      <h3 className="text-xs font-bold text-gray-900">{contextualTopic.title}</h3>
+                      <p className="text-xs text-gray-600 leading-relaxed">{contextualTopic.description}</p>
                       {contextualTopic.action && (
                         <button
                           type="button"
@@ -341,14 +341,14 @@ export default function HelpSidebar({
                       value={helpSearch}
                       onChange={(e) => setHelpSearch(e.target.value)}
                       placeholder="Search dental PMS help topics..."
-                      className="w-full pl-9 pr-4 py-1.5 bg-white border border-slate-200 rounded text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans"
+                      className="w-full pl-9 pr-4 py-1.5 bg-white border border-gray-200 rounded text-xs text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans"
                     />
-                    <HugeiconsIcon icon={Search01Icon} className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-slate-400" />
+                    <HugeiconsIcon icon={Search01Icon} className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                   </div>
 
                   {/* Browse Topics Accordion */}
                   <div className="space-y-2">
-                    <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                    <h3 className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
                       Browse Documentation ({filteredTopics.length})
                     </h3>
                     {filteredTopics.map((topic) => {
@@ -356,34 +356,34 @@ export default function HelpSidebar({
                       return (
                         <div
                           key={topic.id}
-                          className="bg-white border border-slate-200 rounded overflow-hidden transition-all"
+                          className="bg-white border border-gray-200 rounded overflow-hidden transition-all"
                         >
                           <button
                             type="button"
                             onClick={() => setExpandedTopicId(isExpanded ? null : topic.id)}
-                            className="w-full px-3.5 py-2.5 flex items-start gap-3 hover:bg-slate-50 transition-colors text-left cursor-pointer"
+                            className="w-full px-3.5 py-2.5 flex items-start gap-3 hover:bg-gray-50 transition-colors text-left cursor-pointer"
                           >
                             <div className="w-7 h-7 rounded bg-brand-50 text-brand-700 flex items-center justify-center shrink-0 mt-0.5 font-bold">
                               <HugeiconsIcon icon={HelpCircleIcon} size={15} />
                             </div>
                             <div className="flex-1 min-w-0">
                               <div className="flex items-center gap-2">
-                                <h4 className="text-xs font-bold text-slate-900 truncate">{topic.title}</h4>
-                                <span className="text-[9px] px-1.5 py-0.2 rounded bg-slate-100 text-slate-600 font-bold uppercase">
+                                <h4 className="text-xs font-bold text-gray-900 truncate">{topic.title}</h4>
+                                <span className="text-[9px] px-1.5 py-0.2 rounded bg-gray-100 text-gray-600 font-bold uppercase">
                                   {topic.category}
                                 </span>
                               </div>
-                              <p className="text-[11px] text-slate-500 truncate mt-0.5">{topic.description}</p>
+                              <p className="text-[11px] text-gray-500 truncate mt-0.5">{topic.description}</p>
                             </div>
                             <HugeiconsIcon
                               icon={isExpanded ? ChevronDownIcon : ArrowRight01Icon}
                               size={16}
-                              className="text-slate-400 shrink-0 mt-1"
+                              className="text-gray-400 shrink-0 mt-1"
                             />
                           </button>
 
                           {isExpanded && (
-                            <div className="px-3.5 pb-3 pt-2 border-t border-slate-100 bg-slate-50/50 text-xs text-slate-600 space-y-2">
+                            <div className="px-3.5 pb-3 pt-2 border-t border-gray-100 bg-gray-50/50 text-xs text-gray-600 space-y-2">
                               <ul className="space-y-1 list-disc list-inside text-[11px] leading-relaxed">
                                 {topic.details?.map((pt, idx) => (
                                   <li key={idx}>{pt}</li>
@@ -433,9 +433,9 @@ export default function HelpSidebar({
                     {SERVICES.map((svc) => (
                       <div
                         key={svc.name}
-                        className="p-3 bg-white border border-slate-200 rounded flex items-center justify-between"
+                        className="p-3 bg-white border border-gray-200 rounded flex items-center justify-between"
                       >
-                        <span className="text-xs font-bold text-slate-800">{svc.name}</span>
+                        <span className="text-xs font-bold text-gray-800">{svc.name}</span>
                         <span className="inline-flex items-center gap-1.5 px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-100 text-emerald-800">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                           Operational
@@ -449,7 +449,7 @@ export default function HelpSidebar({
               {/* ── Tab: Contact & Support Request ────────────────────────── */}
               {activeTab === 'contact' && (
                 <div className="p-4 space-y-4">
-                  <h3 className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                  <h3 className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
                     Submit Technical Support Request
                   </h3>
                   {submitMsg && (
@@ -464,22 +464,22 @@ export default function HelpSidebar({
                   )}
                   <form onSubmit={handleSubmitIssue} className="space-y-3">
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">Issue Summary *</label>
+                      <label className="block text-xs font-bold text-gray-700 mb-1">Issue Summary *</label>
                       <input
                         value={issueForm.title}
                         onChange={(e) => setIssueForm((p) => ({ ...p, title: e.target.value }))}
-                        className="w-full px-3 py-1.5 border border-slate-200 rounded text-xs text-slate-900 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans"
+                        className="w-full px-3 py-1.5 border border-gray-200 rounded text-xs text-gray-900 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans"
                         placeholder="Brief summary of issue or inquiry"
                         required
                       />
                     </div>
                     <div className="grid grid-cols-2 gap-2">
                       <div>
-                        <label className="block text-xs font-bold text-slate-700 mb-1">Category</label>
+                        <label className="block text-xs font-bold text-gray-700 mb-1">Category</label>
                         <select
                           value={issueForm.category}
                           onChange={(e) => setIssueForm((p) => ({ ...p, category: e.target.value }))}
-                          className="w-full px-2 py-1.5 border border-slate-200 rounded text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans"
+                          className="w-full px-2 py-1.5 border border-gray-200 rounded text-xs text-gray-800 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans"
                         >
                           <option value="general">General</option>
                           <option value="charting">FDI Charting</option>
@@ -489,11 +489,11 @@ export default function HelpSidebar({
                         </select>
                       </div>
                       <div>
-                        <label className="block text-xs font-bold text-slate-700 mb-1">Priority</label>
+                        <label className="block text-xs font-bold text-gray-700 mb-1">Priority</label>
                         <select
                           value={issueForm.priority}
                           onChange={(e) => setIssueForm((p) => ({ ...p, priority: e.target.value }))}
-                          className="w-full px-2 py-1.5 border border-slate-200 rounded text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans"
+                          className="w-full px-2 py-1.5 border border-gray-200 rounded text-xs text-gray-800 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans"
                         >
                           <option value="low">Low</option>
                           <option value="medium">Medium</option>
@@ -503,22 +503,22 @@ export default function HelpSidebar({
                       </div>
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">Contact Email</label>
+                      <label className="block text-xs font-bold text-gray-700 mb-1">Contact Email</label>
                       <input
                         value={issueForm.email}
                         onChange={(e) => setIssueForm((p) => ({ ...p, email: e.target.value }))}
                         type="email"
-                        className="w-full px-3 py-1.5 border border-slate-200 rounded text-xs text-slate-900 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans"
+                        className="w-full px-3 py-1.5 border border-gray-200 rounded text-xs text-gray-900 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans"
                         placeholder="doctor@clinic.co.ke"
                       />
                     </div>
                     <div>
-                      <label className="block text-xs font-bold text-slate-700 mb-1">Description *</label>
+                      <label className="block text-xs font-bold text-gray-700 mb-1">Description *</label>
                       <textarea
                         value={issueForm.description}
                         onChange={(e) => setIssueForm((p) => ({ ...p, description: e.target.value }))}
                         rows={3}
-                        className="w-full px-3 py-1.5 border border-slate-200 rounded text-xs text-slate-900 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans resize-none"
+                        className="w-full px-3 py-1.5 border border-gray-200 rounded text-xs text-gray-900 focus:outline-none focus:ring-1 focus:ring-brand-600 font-sans resize-none"
                         placeholder="Describe what happened or what assistance you need..."
                         required
                       />
@@ -526,19 +526,19 @@ export default function HelpSidebar({
                     <button
                       type="submit"
                       disabled={submitting}
-                      className="w-full px-4 py-2 bg-slate-900 text-white text-xs font-bold rounded hover:bg-slate-800 transition-colors disabled:opacity-50 cursor-pointer"
+                      className="w-full px-4 py-2 bg-gray-900 text-white text-xs font-bold rounded hover:bg-gray-800 transition-colors disabled:opacity-50 cursor-pointer"
                     >
                       {submitting ? 'Submitting…' : 'Submit Support Request'}
                     </button>
                   </form>
 
-                  <div className="border-t border-slate-100 pt-3 space-y-2">
-                    <p className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">
+                  <div className="border-t border-gray-100 pt-3 space-y-2">
+                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-wider">
                       Direct Support Channels
                     </p>
                     <a
                       href="mailto:support@smilux.co.ke"
-                      className="flex items-center gap-2 p-2.5 bg-slate-50 border border-slate-200 hover:bg-slate-100 rounded transition-colors text-xs text-slate-700 font-semibold"
+                      className="flex items-center gap-2 p-2.5 bg-gray-50 border border-gray-200 hover:bg-gray-100 rounded transition-colors text-xs text-gray-700 font-semibold"
                     >
                       <HugeiconsIcon icon={Mail01Icon} size={16} className="text-brand-blue" />
                       <span>support@smilux.co.ke</span>

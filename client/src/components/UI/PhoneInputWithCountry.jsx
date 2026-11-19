@@ -21,7 +21,7 @@ export function ReactFlag({ code, className = "" }) {
       src={`https://flagcdn.com/w40/${codeLower}.png`}
       srcSet={`https://flagcdn.com/w80/${codeLower}.png 2x`}
       alt={code}
-      className={`w-5 h-3.5 object-cover rounded border border-slate-200   shrink-0 ${className}`}
+      className={`w-5 h-3.5 object-cover rounded border border-gray-200   shrink-0 ${className}`}
       loading="lazy"
     />
   );
@@ -453,12 +453,12 @@ function SecondaryCountryPicker({ selectedCode, onSelect }) {
           if (!isOpen) calculatePosition();
           setIsOpen((prev) => !prev);
         }}
-        className="flex items-center gap-0.5 px-1.5 bg-slate-50/90 hover:bg-slate-100 border-r border-slate-200 rounded-l-md text-xs font-semibold text-slate-700 h-full transition-colors cursor-pointer  shrink-0"
+        className="flex items-center gap-0.5 px-1.5 bg-gray-50/90 hover:bg-gray-100 border-r border-gray-200 rounded-l-md text-xs font-semibold text-gray-700 h-full transition-colors cursor-pointer  shrink-0"
         title="Select country code"
       >
         <ReactFlag code={country.code} />
-        <span className="font-sans text-slate-700 text-[11px]">{country.dial}</span>
-        <ChevronDownIcon className="w-3 h-3 text-slate-400 shrink-0" />
+        <span className="font-sans text-gray-700 text-[11px]">{country.dial}</span>
+        <ChevronDownIcon className="w-3 h-3 text-gray-400 shrink-0" />
       </button>
 
       {isOpen &&
@@ -474,31 +474,31 @@ function SecondaryCountryPicker({ selectedCode, onSelect }) {
               opacity: coords.isReady ? 1 : 0,
               visibility: coords.isReady ? 'visible' : 'hidden',
             }}
-            className="bg-white/95 backdrop-blur-md border border-slate-200 rounded   flex flex-col max-h-[240px] overflow-hidden animate-in fade-in zoom-in-95 duration-100 font-sans"
+            className="bg-white/95 backdrop-blur-md border border-gray-200 rounded   flex flex-col max-h-[240px] overflow-hidden animate-in fade-in zoom-in-95 duration-100 font-sans"
           >
-            <div className="p-2 border-b border-slate-100 bg-slate-50/90 sticky top-0 z-10 flex items-center gap-2">
-              <SearchIcon className="w-3.5 h-3.5 text-slate-400 shrink-0 ml-1" />
+            <div className="p-2 border-b border-gray-100 bg-gray-50/90 sticky top-0 z-10 flex items-center gap-2">
+              <SearchIcon className="w-3.5 h-3.5 text-gray-400 shrink-0 ml-1" />
               <input
                 ref={searchInputRef}
                 type="text"
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 placeholder="Search country..."
-                className="w-full text-xs bg-transparent border-none outline-none text-slate-800 placeholder:text-slate-400 font-sans"
+                className="w-full text-xs bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-400 font-sans"
               />
               {search && (
                 <button
                   type="button"
                   onClick={() => setSearch('')}
-                  className="p-0.5 rounded text-slate-400 hover:text-slate-600 hover:bg-slate-200/60"
+                  className="p-0.5 rounded text-gray-400 hover:text-gray-600 hover:bg-gray-200/60"
                 >
                   <XIcon className="w-3 h-3" />
                 </button>
               )}
             </div>
-            <div className="overflow-y-auto flex-1 py-1 no-scrollbar divide-y divide-slate-50">
+            <div className="overflow-y-auto flex-1 py-1 no-scrollbar divide-y divide-gray-50">
               {filteredCountries.length === 0 ? (
-                <div className="px-3 py-3 text-center text-xs text-slate-400">No matching countries</div>
+                <div className="px-3 py-3 text-center text-xs text-gray-400">No matching countries</div>
               ) : (
                 filteredCountries.map((c) => (
                   <button
@@ -508,14 +508,14 @@ function SecondaryCountryPicker({ selectedCode, onSelect }) {
                       onSelect(c);
                       setIsOpen(false);
                     }}
-                    className={`w-full flex items-center justify-between px-3 py-1.5 text-xs transition-colors text-left cursor-pointer ${country.code === c.code ? 'bg-brand-50 font-bold text-brand-700' : 'text-slate-700 hover:bg-slate-100'
+                    className={`w-full flex items-center justify-between px-3 py-1.5 text-xs transition-colors text-left cursor-pointer ${country.code === c.code ? 'bg-brand-50 font-bold text-brand-700' : 'text-gray-700 hover:bg-gray-100'
                       }`}
                   >
                     <div className="flex items-center gap-2">
                       <ReactFlag code={c.code} />
                       <span>{c.name}</span>
                     </div>
-                    <span className="font-sans text-slate-500 text-[11px] shrink-0 ml-2">{c.dial}</span>
+                    <span className="font-sans text-gray-500 text-[11px] shrink-0 ml-2">{c.dial}</span>
                   </button>
                 ))
               )}
@@ -762,24 +762,24 @@ export default function PhoneInputWithCountry({
         opacity: coords.isReady ? 1 : 0,
         visibility: coords.isReady ? 'visible' : 'hidden',
       }}
-      className="bg-white/95 backdrop-blur-md border border-slate-200 rounded     flex flex-col max-h-[280px] overflow-hidden animate-in fade-in zoom-in-95 duration-100 font-sans"
+      className="bg-white/95 backdrop-blur-md border border-gray-200 rounded     flex flex-col max-h-[280px] overflow-hidden animate-in fade-in zoom-in-95 duration-100 font-sans"
     >
       {/* Search Input */}
-      <div className="p-2 border-b border-slate-100 bg-slate-50/90 sticky top-0 z-10 flex items-center gap-2">
-        <SearchIcon className="w-3.5 h-3.5 text-slate-400 shrink-0 ml-1" />
+      <div className="p-2 border-b border-gray-100 bg-gray-50/90 sticky top-0 z-10 flex items-center gap-2">
+        <SearchIcon className="w-3.5 h-3.5 text-gray-400 shrink-0 ml-1" />
         <input
           ref={searchInputRef}
           type="text"
           value={search}
           onChange={(e) => setSearch(e.target.value)}
           placeholder="Search country or dial code..."
-          className="w-full text-xs bg-transparent border-none outline-none text-slate-800 placeholder:text-slate-400 font-sans"
+          className="w-full text-xs bg-transparent border-none outline-none text-gray-800 placeholder:text-gray-400 font-sans"
         />
         {search && (
           <button
             type="button"
             onClick={() => setSearch('')}
-            className="p-0.5 rounded text-slate-400 hover:text-slate-600 hover:bg-slate-200/60"
+            className="p-0.5 rounded text-gray-400 hover:text-gray-600 hover:bg-gray-200/60"
           >
             <XIcon className="w-3 h-3" />
           </button>
@@ -787,9 +787,9 @@ export default function PhoneInputWithCountry({
       </div>
 
       {/* Country List */}
-      <div className="overflow-y-auto flex-1 py-1 no-scrollbar divide-y divide-slate-50">
+      <div className="overflow-y-auto flex-1 py-1 no-scrollbar divide-y divide-gray-50">
         {filteredCountries.length === 0 ? (
-          <div className="px-3 py-4 text-center text-xs text-slate-400 font-sans">No matching countries</div>
+          <div className="px-3 py-4 text-center text-xs text-gray-400 font-sans">No matching countries</div>
         ) : (
           filteredCountries.map((c) => {
             const isSelected = selectedCountry.code === c.code;
@@ -805,14 +805,14 @@ export default function PhoneInputWithCountry({
                 }}
                 className={`
                   w-full flex items-center justify-between px-3 py-2 text-xs transition-colors text-left cursor-pointer  font-sans
-                  ${isSelected ? 'bg-brand-50 font-bold text-brand-700' : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'}
+                  ${isSelected ? 'bg-brand-50 font-bold text-brand-700' : 'text-gray-700 hover:bg-gray-100 hover:text-gray-900'}
                 `.trim()}
               >
                 <div className="flex items-center gap-2.5">
                   <ReactFlag code={c.code} />
                   <span>{c.name}</span>
                 </div>
-                <span className="font-sans text-slate-500 text-[11px] shrink-0 ml-2">{c.dial}</span>
+                <span className="font-sans text-gray-500 text-[11px] shrink-0 ml-2">{c.dial}</span>
               </button>
             );
           })
@@ -824,7 +824,7 @@ export default function PhoneInputWithCountry({
   return (
     <div className={`flex flex-col gap-1.5 w-full font-sans ${className}`}>
       {label && (
-        <label className="text-xs font-semibold text-slate-700 flex items-center justify-between font-sans">
+        <label className="text-xs font-semibold text-gray-700 flex items-center justify-between font-sans">
           <span className="flex items-center gap-1.5">
             <PhoneIcon className="w-3.5 h-3.5 text-brand-600 shrink-0" />
             <span>{label}</span>
@@ -860,14 +860,14 @@ export default function PhoneInputWithCountry({
               }
             }}
             className={`
-              flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-50 border border-r-0 border-slate-300 rounded-l text-xs font-semibold text-slate-800
-              hover:bg-slate-100 focus:outline-none transition-colors cursor-pointer  h-[38px] font-sans
-              ${disabled ? 'opacity-60 cursor-not-allowed bg-slate-100' : ''}
+              flex items-center gap-1.5 px-2.5 py-1.5 bg-gray-50 border border-r-0 border-gray-300 rounded-l text-xs font-semibold text-gray-800
+              hover:bg-gray-100 focus:outline-none transition-colors cursor-pointer  h-[38px] font-sans
+              ${disabled ? 'opacity-60 cursor-not-allowed bg-gray-100' : ''}
             `.trim()}
           >
             <ReactFlag code={selectedCountry.code} />
             <span className="font-sans">{selectedCountry.dial}</span>
-            <ChevronDownIcon className="w-3 h-3 text-slate-400 shrink-0" />
+            <ChevronDownIcon className="w-3 h-3 text-gray-400 shrink-0" />
           </button>
         </div>
 
@@ -879,11 +879,11 @@ export default function PhoneInputWithCountry({
           onChange={handlePrimaryChange}
           placeholder={placeholder || (isKenya ? 'e.g. 0700 000 000' : `e.g. ${formatPlaceholder(selectedCountry.format)}`)}
           className={`
-            w-full px-3 py-1.5 text-xs sm:text-sm border border-slate-300 rounded-r bg-white text-slate-800
+            w-full px-3 py-1.5 text-xs sm:text-sm border border-gray-300 rounded-r bg-white text-gray-800
             focus:border-brand-500 focus:ring-1 focus:ring-brand-500/20 focus:outline-none transition-all
-            placeholder:text-slate-400 h-[38px] font-sans
+            placeholder:text-gray-400 h-[38px] font-sans
             ${error ? 'border-rose-300 bg-rose-50/20 text-rose-900 focus:border-rose-500' : ''}
-            ${disabled ? 'bg-slate-50 text-slate-400 cursor-not-allowed' : ''}
+            ${disabled ? 'bg-gray-50 text-gray-400 cursor-not-allowed' : ''}
           `.trim()}
         />
 
@@ -893,7 +893,7 @@ export default function PhoneInputWithCountry({
 
       {/* Validation Helper Hint */}
       {isKenya && (
-        <p className="text-[11px] text-slate-500 font-sans">
+        <p className="text-[11px] text-gray-500 font-sans">
           Enter a valid Kenyan mobile number (e.g. 0700 000 000 or 0100 000 000) or international format.
         </p>
       )}
@@ -912,7 +912,7 @@ export default function PhoneInputWithCountry({
             return (
               <div
                 key={idx}
-                className="flex items-center gap-2 p-1.5 rounded bg-slate-50/90 border border-slate-200   hover:border-slate-300 transition-colors font-sans"
+                className="flex items-center gap-2 p-1.5 rounded bg-gray-50/90 border border-gray-200   hover:border-gray-300 transition-colors font-sans"
               >
                 {/* Contact Type Dropdown Component */}
                 <div className="w-26 shrink-0">
@@ -928,7 +928,7 @@ export default function PhoneInputWithCountry({
                 </div>
 
                 {/* Unified Country Code + Phone Number Input Box */}
-                <div className="flex-1 min-w-0 flex items-center border border-slate-300 rounded bg-white focus-within:border-brand-500 focus-within:ring-1 focus-within:ring-brand-500/20 transition-all h-8 font-sans">
+                <div className="flex-1 min-w-0 flex items-center border border-gray-300 rounded bg-white focus-within:border-brand-500 focus-within:ring-1 focus-within:ring-brand-500/20 transition-all h-8 font-sans">
                   <SecondaryCountryPicker
                     selectedCode={secCountryCode}
                     onSelect={(c) =>
@@ -940,7 +940,7 @@ export default function PhoneInputWithCountry({
                     value={sec.number || ''}
                     onChange={(e) => handleUpdateSecondary(idx, 'number', e.target.value)}
                     placeholder={secPlaceholder}
-                    className="flex-1 min-w-0 px-1 text-xs bg-transparent text-slate-800 font-sans outline-none border-none focus:outline-none focus:ring-0 placeholder:text-slate-400 h-full"
+                    className="flex-1 min-w-0 px-1 text-xs bg-transparent text-gray-800 font-sans outline-none border-none focus:outline-none focus:ring-0 placeholder:text-gray-400 h-full"
                   />
                 </div>
 
@@ -948,7 +948,7 @@ export default function PhoneInputWithCountry({
                 <button
                   type="button"
                   onClick={() => handleRemoveSecondary(idx)}
-                  className="text-slate-400 hover:text-rose-600 rounded hover:bg-rose-50 transition-colors cursor-pointer shrink-0"
+                  className="text-gray-400 hover:text-rose-600 rounded hover:bg-rose-50 transition-colors cursor-pointer shrink-0"
                   title="Remove number"
                 >
                   <TrashIcon className="w-4 h-4" />
