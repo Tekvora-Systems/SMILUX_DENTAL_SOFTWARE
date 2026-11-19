@@ -73,7 +73,7 @@ function TestimonialCard({ t, isActive, onClick }) {
         t.highlight
           ? 'border-[#118bb0]  [0px_0px_0px_2px_rgba(123,77,255,0.15),0px_4px_16px_rgba(123,77,255,0.08)]'
           : 'border-[#E7E7E7]  [0px_1px_3px_rgba(0,0,0,0.06)]',
-        isActive ? 'ring-2 ring-[#118bb0]/30' : 'hover:border-purple-200 hover: [0px_4px_16px_rgba(123,77,255,0.08)]',
+        isActive ? 'ring-2 ring-[#118bb0]/30' : 'hover:border-[#118bb0] hover: [0px_4px_16px_rgba(123,77,255,0.08)]',
       ].join(' ')}
     >
       {t.highlight && (
@@ -151,7 +151,7 @@ export default function TestimonialsSection() {
   }, []);
 
   return (
-    <section id="testimonials" className="w-full py-20 bg-[linear-gradient(180deg,#F6F3FF_0%,#ffffff_100%)] border-t border-[#E7E7E7]">
+    <section id="testimonials" className="w-full py-20  bg-[linear-gradient(180deg,#f0f9fb_0%,#d9f0f5_100%)]  border-t border-[#E7E7E7]">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}

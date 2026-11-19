@@ -333,7 +333,7 @@ export default function PricingSection() {
   const navigate = useNavigate();
 
   return (
-    <section id="pricing" className="w-full py-24 bg-[linear-gradient(180deg,#F6F3FF_0%,#DED0FF_100%)]">
+    <section id="pricing" className="w-full py-24  bg-[linear-gradient(180deg,#f0f9fb_0%,#d9f0f5_100%)]">
       <div className="w-full mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
 
         {/* Header */}

@@ -25,16 +25,16 @@ export default function WebFooter() {
 
   return (
     /* White outer — gives the rounded card side gaps */
-    <div className="w-full bg-white px-4 sm:px-6 lg:px-8 pt-0">
+    <div className="w-full bg-white px-4 sm:px-6 lg:px-8 pt-0 ">
       <footer
-        className="w-full bg-[linear-gradient(180deg,#F6F3FF_0%,#DED0FF_100%)] rounded-t-[20px] overflow-hidden"
-        style={{ boxShadow: '0 -2px 16px rgba(123,77,255,0.08), 0 1px 3px rgba(0,0,0,0.04)' }}
+        className="w-full bg-[linear-gradient(180deg,#f0f9fb_0%,#d9f0f5_100%)] rounded-t-[20px] overflow-hidden border-t border-[#E7E7E7]"
+        style={{ boxShadow: '0 -2px 16px rgba(17,139,176,0.08), 0 1px 3px rgba(0,0,0,0.04)' }}
       >
         <div className="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-[#118bb0]/8 blur-3xl pointer-events-none" />
         <div className="absolute -bottom-20 -right-20 w-64 h-64 rounded-full bg-[#e8368f]/6 blur-3xl pointer-events-none" />
 
         {/* CTA strip */}
-        <div className="w-full border-b border-purple-200/60 px-6 sm:px-10 py-10">
+        <div className="w-full border-b border-cyan-200/70 px-6 sm:px-10 py-10">
           <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-6">
             <div>
               <h3 className="text-[22px] font-extrabold text-[#222323] leading-snug">
@@ -86,7 +86,7 @@ export default function WebFooter() {
                 {SOCIALS.map((s) => (
                   <a
                     key={s.label} href={s.href} aria-label={s.label}
-                    className="flex h-7 w-7 items-center justify-center rounded border border-purple-200 bg-white/60 text-[#595959] hover:bg-[#118bb0] hover:text-white hover:border-[#118bb0] transition-all"
+                    className="flex h-7 w-7 items-center justify-center rounded border border-cyan-200 bg-white/60 text-[#595959] hover:bg-[#118bb0] hover:text-white hover:border-[#118bb0] transition-all"
                   >
                     {s.icon}
                   </a>
@@ -98,7 +98,7 @@ export default function WebFooter() {
                 {['HIPAA Ready', 'SHA Kenya', 'M-Pesa'].map((b) => (
                   <span
                     key={b}
-                    className="inline-flex items-center gap-1.5 rounded border border-purple-200 bg-white/60 px-2.5 py-0.5 text-[11px] font-semibold text-[#0f5d77]"
+                    className="inline-flex items-center gap-1.5 rounded border border-cyan-200 bg-white/60 px-2.5 py-0.5 text-[11px] font-semibold text-[#0f5d77]"
                   >
                     <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 inline-block" />
                     {b}
@@ -125,7 +125,7 @@ export default function WebFooter() {
             ))}
           </div>
 
-          <div className="mt-10 pt-5 border-t border-purple-200/60 flex flex-col sm:flex-row items-center justify-between gap-3">
+          <div className="mt-10 pt-5 border-t border-cyan-200/70 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-[12px] text-[#595959]">
               © {new Date().getFullYear()} Smilux Dental Software. All rights reserved.
             </p>
@@ -141,7 +141,7 @@ export default function WebFooter() {
                   Tekvora Systems
                 </a>
               </span>
-              <span className="h-3 w-px bg-purple-300" />
+              <span className="h-3 w-px bg-cyan-300" />
               <div className="flex items-center gap-1.5">
                 <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 48 48"><title>broadcast</title><defs><mask id="SVGGzBIqcAm"><g fill="none" stroke="#fff" strokeLinejoin="round" strokeWidth="4"><path fill="#555" d="M24 28.63a4.54 4.54 0 0 0 4.546-4.532A4.54 4.54 0 0 0 24 19.567a4.54 4.54 0 0 0-4.545 4.53A4.54 4.54 0 0 0 24 28.63Z" /><path strokeLinecap="round" d="M16 15c-5.333 4.97-5.333 13.03 0 18m16 0c5.333-4.97 5.333-13.03 0-18M9.858 10c-7.81 7.786-7.81 20.41 0 28.196m28.284 0c7.81-7.786 7.81-20.41 0-28.196" /></g></mask></defs><path fill="#2acd3a" d="M0 0h48v48H0z" mask="url(#SVGGzBIqcAm)" /></svg>
                 All systems operational

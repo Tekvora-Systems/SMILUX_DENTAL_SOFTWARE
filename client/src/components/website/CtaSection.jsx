@@ -16,7 +16,7 @@ export default function CtaSection() {
   return (
     <section id="about" className="w-full bg-white border-t border-[#E7E7E7] px-4 sm:px-6 lg:px-8 py-6">
       <div
-        className="w-full bg-[linear-gradient(180deg,#F6F3FF_0%,#DED0FF_100%)] rounded-[16px] border overflow-hidden relative"
+        className="w-full  bg-[linear-gradient(180deg,#f0f9fb_0%,#d9f0f5_100%)] rounded-[16px] border overflow-hidden relative"
         style={{ boxShadow: '0 2px 16px rgba(123,77,255,0.10), 0 1px 3px rgba(0,0,0,0.06)' }}
       >
         {/* Soft purple blobs */}

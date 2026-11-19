@@ -227,7 +227,7 @@ export default function PlansModal({ isOpen, onClose }) {
         </div>
 
         {/* Modal Main Content Container with Brand Purple Gradient */}
-        <div className="w-full p-4 flex flex-col gap-3 bg-[linear-gradient(180deg,#F6F3FF_0%,#DED0FF_100%)] overflow-y-auto">
+        <div className="w-full p-4 flex flex-col gap-3  bg-[linear-gradient(180deg,#f0f9fb_0%,#d9f0f5_100%)] overflow-y-auto">
           {/* Subheader: Select a Plan, Billing Toggle & Comparison link */}
           <div className="w-full flex flex-row items-center justify-between gap-4 flex-wrap">
             <h3 className="text-[18px] leading-[28px] font-semibold text-[#222323]">
