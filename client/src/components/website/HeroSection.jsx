@@ -18,7 +18,7 @@ export default function HeroSection() {
   return (
     <section className="w-full pt-4 sm:pt-6 pb-6 sm:pb-10 px-3 sm:px-6 lg:px-8">
       {/* ── Hero Card Container (Rectangle with rounded card sides & image overlay) ── */}
-      <div className="relative max-w-8xl mx-auto rounded border border-white/15 shadow-[0_25px_60px_-15px_rgba(11,6,26,0.5),0_4px_12px_rgba(0,0,0,0.15)] overflow-hidden">
+      <div className="relative max-w-8xl mx-auto rounded overflow-hidden">
         {/* Background Image with subtle parallax */}
         <motion.div
           style={{ y: bgY }}
@@ -32,11 +32,7 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Dark Rich Gradient Overlay */}
-        <div className="absolute inset-0 bg-gradient-to-b from-[#090514]/55 via-[#12092c]/80 to-[#090514]/90 backdrop-blur-[1.5px]" />
-
-        {/* Ambient Glows */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[650px] h-[450px] bg-purple-600/25 blur-[120px] rounded-full pointer-events-none" />
-        <div className="absolute -bottom-20 -left-20 w-[350px] h-[350px] bg-pink-500/15 blur-[100px] rounded-full pointer-events-none" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#090514]/50 via-[#12092c]/50 to-[#090514]/50 backdrop-blur-[1.5px]" />
 
         {/* Centered Content */}
         <div className="relative z-10 w-full px-5 sm:px-8 lg:px-12 py-14 sm:py-20 lg:py-24">
@@ -46,14 +42,7 @@ export default function HeroSection() {
             animate="show"
             variants={staggerContainer(0.12, 0.05)}
           >
-            {/* Badge */}
-            <motion.div
-              variants={fadeDown}
-              className="inline-flex items-center gap-2 self-center rounded-full border border-purple-400/30 bg-purple-950/40 px-3.5 py-1 mb-6 backdrop-blur-md shadow-sm"
-            >
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse shrink-0" />
-              <span className="text-[11px] font-bold text-purple-200 uppercase tracking-wider">Kenya&apos;s #1 Dental Practice Platform</span>
-            </motion.div>
+         
 
             {/* Headline */}
             <motion.h1
@@ -90,7 +79,7 @@ export default function HeroSection() {
             {/* Sub-headline */}
             <motion.p
               variants={fadeUp}
-              className="mt-6 text-[15px] sm:text-[17px] text-slate-200/90 leading-[1.7] max-w-2xl mx-auto"
+              className="mt-6 text-[15px] sm:text-[17px] text-white leading-[1.7] max-w-2xl mx-auto"
             >
               Smilux is a complete dental practice management system built specifically for Kenyan clinics.
               From the moment a patient walks in to the moment their M-Pesa receipt lands in their inbox —
