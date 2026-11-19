@@ -31,7 +31,7 @@ const Input = forwardRef(function Input(
         // Typography & Placeholder
         "placeholder:text-slate-400 placeholder:text-sm font-sans font-normal",
         // Focus state
-        "focus:border-[#7B4DFF] focus:outline-none focus:ring-2 focus:ring-[#9C7AFF]/25",
+        "focus:border-[#118bb0] focus:outline-none focus:ring-2 focus:ring-[#9C7AFF]/25",
         // Disabled state
         "disabled:cursor-not-allowed disabled:bg-slate-50 disabled:text-slate-400 disabled:opacity-60",
         // Error state

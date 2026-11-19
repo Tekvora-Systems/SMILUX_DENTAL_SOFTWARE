@@ -261,7 +261,7 @@ export default function SearchBar() {
       <button
         type="button"
         onClick={() => setIsOpen(true)}
-        className="box-border w-full max-w-[550px] h-[39px] px-2 bg-white border border-[#D4D4D4] rounded-full flex flex-row items-center justify-between text-left transition-all hover:border-[#B5B5B5] focus:outline-none focus:ring-2 focus:ring-[#7B4DFF]/20 group cursor-pointer font-inter shrink-0"
+        className="box-border w-full max-w-[550px] h-[39px] px-2 bg-white border border-[#D4D4D4] rounded-full flex flex-row items-center justify-between text-left transition-all hover:border-[#B5B5B5] focus:outline-none focus:ring-2 focus:ring-[#118bb0]/20 group cursor-pointer font-inter shrink-0"
         aria-label="Open Global Search"
       >
         {/* Left: 18px Icon + 15px Input Placeholder Text */}

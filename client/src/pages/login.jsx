@@ -53,11 +53,11 @@ function WhatsNewWireframeSkeleton() {
         <li key={idx} className="py-3.5 first:pt-2">
           {/* Tag + Date wireframe */}
           <div className="flex items-center justify-between gap-2">
-            <div className="h-4 w-20 rounded bg-slate-200/80 animate-shimmer" />
-            <div className="h-3.5 w-24 rounded bg-slate-200/70 animate-shimmer" />
+            <div className="h-4 w-20 rounded bg-slate-200 animate-shimmer" />
+            <div className="h-3.5 w-24 rounded bg-slate-200 animate-shimmer" />
           </div>
           {/* Title wireframe */}
-          <div className="mt-2.5 h-4 w-4/5 rounded bg-slate-200/90 animate-shimmer" />
+          <div className="mt-2.5 h-4 w-4/5 rounded bg-slate-200 animate-shimmer" />
           {/* Excerpt wireframe */}
           <div className="mt-2 space-y-1.5">
             <div className="h-3.5 w-full rounded bg-slate-200/60 animate-shimmer" />
@@ -137,7 +137,7 @@ function WhatsNewPanel() {
       {/* Footer */}
       <div className="shrink-0 border-t border-slate-100 px-4 py-3 sm:px-5">
         {loading ? (
-          <div className="h-3.5 w-48 mx-auto rounded bg-slate-200/70 animate-shimmer" />
+          <div className="h-3.5 w-48 mx-auto rounded bg-slate-200 animate-shimmer" />
         ) : (
           <p className="text-center text-[11px] text-slate-400">
             © {new Date().getFullYear()} {companyName} · Powered by Tekvora Systems
@@ -164,7 +164,7 @@ function MoneyBagGraphic() {
         <path d="M15 85 L15 95 C15 99 85 99 85 95 L85 85 Z" fill="#94a3b8" />
 
         {/* Money Bag Body */}
-        <path d="M50 25 C30 25 22 45 22 65 C22 80 35 84 50 84 C65 84 78 80 78 65 C78 45 70 25 50 25 Z" fill="#5733be" />
+        <path d="M50 25 C30 25 22 45 22 65 C22 80 35 84 50 84 C65 84 78 80 78 65 C78 45 70 25 50 25 Z" fill="#0f5d77" />
         {/* Top ruffle */}
         <path d="M50 25 C42 18 35 20 38 12 C45 15 50 22 50 25 Z" fill="#1D4ED8" />
         {/* Tie */}

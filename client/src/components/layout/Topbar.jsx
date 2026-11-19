@@ -134,7 +134,7 @@ export default function Topbar({
               {/* User Info Header */}
               <div className="px-4 py-3 border-b border-slate-100 bg-slate-50/50">
                 <div className="flex items-center gap-3">
-                  <div className="flex h-10 w-10 items-center justify-center rounded-full overflow-hidden shrink-0   border border-slate-200/80">
+                  <div className="flex h-10 w-10 items-center justify-center rounded-full overflow-hidden shrink-0   border border-slate-200">
                     <UserAvatar user={user} className="h-10 w-10" />
                   </div>
                   <div className="flex-1 min-w-0">

@@ -465,7 +465,7 @@ export default function DataTable({
                 setGlobalSearch(e.target.value);
                 setCurrentPage(1);
               }}
-              className="w-full pl-8 pr-7 py-2 text-xs rounded-full border border-slate-200/80 dark:border-slate-700/80 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:border-emerald-500 "
+              className="w-full pl-8 pr-7 py-2 text-xs rounded-full border border-slate-200 dark:border-slate-700/80 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 placeholder-slate-400 focus:outline-none focus:border-emerald-500 "
             />
             {globalSearch && (
               <button
@@ -488,7 +488,7 @@ export default function DataTable({
             </span>
             <Button
               variant="outline"
-            size="sm"
+              size="sm"
               type="button"
               onClick={clearAllFilters}
               className="text-slate-500 hover:text-rose-600 dark:hover:text-rose-400 hover:underline cursor-pointer text-[11px]"
@@ -501,7 +501,7 @@ export default function DataTable({
       case 'filterToggle':
         return (
           <Button
-              variant="outline"
+            variant="outline"
             size="sm"
             key="filterToggle"
             type="button"
@@ -509,7 +509,7 @@ export default function DataTable({
             onClick={() => setShowColumnFilters((prev) => !prev)}
             className={`inline-flex items-center gap-1 px-2 py-1 rounded text-xs border font-medium transition-colors cursor-pointer  ${showColumnFilters
               ? 'bg-emerald-50 text-emerald-800 border-emerald-200/70 dark:bg-emerald-950/40 dark:text-emerald-300 dark:border-emerald-800/70'
-              : 'bg-white text-slate-700 border-slate-200/70 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700/70'
+              : 'bg-white text-slate-700 border-slate-200 hover:bg-slate-50 dark:bg-slate-900 dark:text-slate-200 dark:border-slate-700/70'
               }`}
           >
             <HugeiconsIcon icon={FilterIcon} size={13} />
@@ -519,10 +519,10 @@ export default function DataTable({
 
       case 'densitySelector':
         return (
-          <div key="densitySelector" className="inline-flex rounded border border-slate-200/70 dark:border-slate-700/70 p-0.5 bg-white dark:bg-slate-900 text-[11px] ">
+          <div key="densitySelector" className="inline-flex rounded border border-slate-200 dark:border-slate-700/70 p-0.5 bg-white dark:bg-slate-900 text-[11px] ">
             <Button
               variant="outline"
-            size="sm"
+              size="sm"
               type="button"
               title="Compact Rows"
               onClick={() => setDensity('compact')}
@@ -535,7 +535,7 @@ export default function DataTable({
             </Button>
             <Button
               variant="outline"
-            size="sm"
+              size="sm"
               type="button"
               title="Normal Default Rows"
               onClick={() => setDensity('normal')}
@@ -548,7 +548,7 @@ export default function DataTable({
             </Button>
             <Button
               variant="outline"
-            size="sm"
+              size="sm"
               type="button"
               title="Cozy Rows"
               onClick={() => setDensity('relaxed')}
@@ -569,15 +569,15 @@ export default function DataTable({
               type="button"
               title="Select columns to show or hide"
               onClick={() => setIsColMenuOpen((prev) => !prev)}
-               variant="outline"
-            size="sm"
+              variant="outline"
+              size="sm"
             >
               <HugeiconsIcon icon={ViewIcon} size={13} />
               <span className="hidden sm:inline">Columns</span>
             </Button>
 
             {isColMenuOpen && (
-              <div className="absolute right-0 top-full mt-1.5 w-56 max-h-72 overflow-y-auto bg-white dark:bg-slate-900 border border-slate-200/80 dark:border-slate-700/80 rounded p-2 z-50 animate-in fade-in-0 zoom-in-95 ">
+              <div className="absolute right-0 top-full mt-1.5 w-56 max-h-72 overflow-y-auto bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700/80 rounded p-2 z-50 animate-in fade-in-0 zoom-in-95 ">
                 <div className="text-[11px] font-bold text-slate-500 uppercase px-2 py-1 border-b border-slate-100 dark:border-slate-800/60 flex justify-between items-center">
                   <span>Toggle Columns</span>
                   <button
@@ -624,7 +624,7 @@ export default function DataTable({
             onClick={handleExportCSV}
             variant="outline"
             size="sm"
-            >
+          >
             <HugeiconsIcon icon={Download01Icon} size={13} />
             <span className="hidden sm:inline">Export</span>
           </Button>
@@ -666,7 +666,7 @@ export default function DataTable({
                 setPageSize(val);
                 setCurrentPage(1);
               }}
-              className="py-0.5 px-2 text-xs font-medium rounded border border-slate-200/70 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:outline-none focus:border-emerald-600 cursor-pointer "
+              className="py-0.5 px-2 text-xs font-medium rounded border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:outline-none focus:border-emerald-600 cursor-pointer "
             >
               {pageSizeOptions.map((opt) => (
                 <option key={opt} value={opt}>
@@ -699,7 +699,7 @@ export default function DataTable({
               placeholder={String(currentPage)}
               value={jumpPageInput}
               onChange={(e) => setJumpPageInput(e.target.value)}
-              className="w-12 py-0.5 px-1.5 text-center text-xs rounded border border-slate-200/70 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:outline-none focus:border-emerald-600 "
+              className="w-12 py-0.5 px-1.5 text-center text-xs rounded border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-800 dark:text-slate-100 focus:outline-none focus:border-emerald-600 "
             />
           </form>
         ) : null;
@@ -712,7 +712,7 @@ export default function DataTable({
               title="First Page"
               disabled={currentPage <= 1}
               onClick={() => setCurrentPage(1)}
-              className="p-1 rounded border border-slate-200/70 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-35 disabled:cursor-not-allowed cursor-pointer "
+              className="p-1 rounded border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-35 disabled:cursor-not-allowed cursor-pointer "
             >
               <HugeiconsIcon icon={ArrowLeftDoubleIcon} size={14} />
             </button>
@@ -721,7 +721,7 @@ export default function DataTable({
               title="Previous Page"
               disabled={currentPage <= 1}
               onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              className="p-1 rounded border border-slate-200/70 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-35 disabled:cursor-not-allowed cursor-pointer "
+              className="p-1 rounded border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-35 disabled:cursor-not-allowed cursor-pointer "
             >
               <HugeiconsIcon icon={ArrowLeft01Icon} size={14} />
             </button>
@@ -735,7 +735,7 @@ export default function DataTable({
               title="Next Page"
               disabled={currentPage >= totalPages}
               onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-              className="p-1 rounded border border-slate-200/70 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-35 disabled:cursor-not-allowed cursor-pointer "
+              className="p-1 rounded border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-35 disabled:cursor-not-allowed cursor-pointer "
             >
               <HugeiconsIcon icon={ArrowRight01Icon} size={14} />
             </button>
@@ -744,7 +744,7 @@ export default function DataTable({
               title="Last Page"
               disabled={currentPage >= totalPages}
               onClick={() => setCurrentPage(totalPages)}
-              className="p-1 rounded border border-slate-200/70 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-35 disabled:cursor-not-allowed cursor-pointer "
+              className="p-1 rounded border border-slate-200 dark:border-slate-700/70 bg-white dark:bg-slate-900 text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-800 disabled:opacity-35 disabled:cursor-not-allowed cursor-pointer "
             >
               <HugeiconsIcon icon={ArrowRightDoubleIcon} size={14} />
             </button>
@@ -959,7 +959,7 @@ export default function DataTable({
                               className={`w-full rounded border font-sans text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-900 focus:outline-none focus:border-emerald-500 cursor-pointer  ${densityStyles.filterInput
                                 } ${isFiltered
                                   ? 'border-emerald-500 bg-emerald-50/30 dark:bg-emerald-950/20'
-                                  : 'border-slate-200/70 dark:border-slate-700/70'
+                                  : 'border-slate-200 dark:border-slate-700/70'
                                 }`}
                             >
                               <option value="all">All</option>
@@ -995,7 +995,7 @@ export default function DataTable({
                               className={`w-full rounded border font-sans text-slate-800 dark:text-slate-100 bg-white dark:bg-slate-900 focus:outline-none focus:border-emerald-500 pr-5  ${densityStyles.filterInput
                                 } ${isFiltered
                                   ? 'border-emerald-500 bg-emerald-50/30 dark:bg-emerald-950/20'
-                                  : 'border-slate-200/70 dark:border-slate-700/70'
+                                  : 'border-slate-200 dark:border-slate-700/70'
                                 }`}
                             />
                             {filterValue && (

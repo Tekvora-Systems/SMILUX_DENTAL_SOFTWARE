@@ -104,7 +104,7 @@ export default function ReferralProgram({ onBackToLogin }) {
           </p>
         </div>
 
-        <div className="rounded border border-slate-200/90 bg-white/90 backdrop-blur-md px-5 py-6 shadow-sm">
+        <div className="rounded border border-slate-200 bg-white/90 backdrop-blur-md px-5 py-6 shadow-sm">
           <h1 className="text-center text-xl font-bold tracking-tight text-slate-900">
             Submit a Referral
           </h1>

@@ -50,7 +50,7 @@ export default function Footer() {
   const logoUrl = '/favicon.svg';
 
   return (
-    <footer className="shrink-0 border-t border-slate-200/80 bg-white font-sans">
+    <footer className="shrink-0 border-t border-slate-200 bg-white font-sans">
       <div className="px-3 py-1.5 flex items-center justify-between min-h-[36px]">
         {/* Left: brand mark + name + version */}
         <div className="flex items-center gap-2 shrink-0">

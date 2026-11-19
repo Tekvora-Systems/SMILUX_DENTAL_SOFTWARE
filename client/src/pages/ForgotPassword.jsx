@@ -19,21 +19,21 @@ function Steps({ current }) {
           <React.Fragment key={label}>
             <div className="flex flex-col items-center">
               <div className={`flex h-6 w-6 items-center justify-center rounded-full text-[11px] font-bold border-2 transition-all duration-200
-                ${done ? 'bg-[#7B4DFF] border-[#7B4DFF] text-white' :
-                  active ? 'bg-white border-[#7B4DFF] text-[#7B4DFF]' :
-                  'bg-white border-slate-200 text-slate-400'}`}>
+                ${done ? 'bg-[#118bb0] border-[#118bb0] text-white' :
+                  active ? 'bg-white border-[#118bb0] text-[#118bb0]' :
+                    'bg-white border-slate-200 text-slate-400'}`}>
                 {done ? (
                   <svg className="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={3}>
                     <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                   </svg>
                 ) : idx}
               </div>
-              <span className={`mt-1 text-[10px] font-semibold ${active ? 'text-[#7B4DFF]' : done ? 'text-[#7B4DFF]' : 'text-slate-400'}`}>
+              <span className={`mt-1 text-[10px] font-semibold ${active ? 'text-[#118bb0]' : done ? 'text-[#118bb0]' : 'text-slate-400'}`}>
                 {label}
               </span>
             </div>
             {i < steps.length - 1 && (
-              <div className={`h-[2px] w-10 mx-1 mb-4 rounded transition-all duration-300 ${done ? 'bg-[#7B4DFF]' : 'bg-slate-200'}`} />
+              <div className={`h-[2px] w-10 mx-1 mb-4 rounded transition-all duration-300 ${done ? 'bg-[#118bb0]' : 'bg-slate-200'}`} />
             )}
           </React.Fragment>
         );
@@ -93,7 +93,7 @@ function OtpInput({ value, onChange, disabled }) {
           onKeyDown={(e) => handleKey(e, i)}
           onPaste={handlePaste}
           onFocus={(e) => e.target.select()}
-          className="h-11 w-10 rounded-lg border-2 border-slate-200 bg-white text-center text-lg font-bold text-slate-900 outline-none transition-all focus:border-[#7B4DFF] focus:ring-2 focus:ring-[#7B4DFF]/20 disabled:opacity-50"
+          className="h-11 w-10 rounded-lg border-2 border-slate-200 bg-white text-center text-lg font-bold text-slate-900 outline-none transition-all focus:border-[#118bb0] focus:ring-2 focus:ring-[#118bb0]/20 disabled:opacity-50"
         />
       ))}
     </div>
@@ -121,7 +121,7 @@ function ResendTimer({ onResend, loading }) {
   if (secs > 0) {
     return (
       <p className="text-center text-xs text-slate-500 mt-1">
-        Resend code in <span className="font-semibold text-[#7B4DFF]">{secs}s</span>
+        Resend code in <span className="font-semibold text-[#118bb0]">{secs}s</span>
       </p>
     );
   }
@@ -130,7 +130,7 @@ function ResendTimer({ onResend, loading }) {
       type="button"
       onClick={handleResend}
       disabled={resending || loading}
-      className="block w-full text-center text-xs font-semibold text-[#7B4DFF] hover:underline mt-1 disabled:opacity-50 cursor-pointer"
+      className="block w-full text-center text-xs font-semibold text-[#118bb0] hover:underline mt-1 disabled:opacity-50 cursor-pointer"
     >
       {resending ? 'Sending…' : 'Resend code'}
     </button>
@@ -356,7 +356,7 @@ export default function ForgotPassword({ onNavigate, onOpenReferral }) {
           Remembered it?{' '}
           <button
             onClick={() => onNavigate('login')}
-            className="font-bold text-[#7B4DFF] hover:underline cursor-pointer"
+            className="font-bold text-[#118bb0] hover:underline cursor-pointer"
           >
             Back to Sign In
           </button>

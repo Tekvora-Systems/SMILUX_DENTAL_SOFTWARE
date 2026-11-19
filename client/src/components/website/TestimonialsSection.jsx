@@ -8,7 +8,7 @@ const TESTIMONIALS = [
     role: 'Clinical Director',
     clinic: 'Westlands Smile Centre, Nairobi',
     avatar: 'https://api.dicebear.com/8.x/avataaars/svg?seed=GraceKamau&backgroundColor=b6e3f4&clothingColor=262e33&hairColor=2c1b18&skinColor=ae5d29',
-    color: '#7B4DFF',
+    color: '#118bb0',
     highlight: true,
     quote: "Smilux completely transformed how we run our clinic. The M-Pesa integration alone saves us 2 hours a day — patients pay instantly and it reconciles automatically. The dental charting is the best I've seen from any Kenyan software.",
   },
@@ -71,14 +71,14 @@ function TestimonialCard({ t, isActive, onClick }) {
       className={[
         'relative flex flex-col justify-between bg-white rounded border p-5 cursor-pointer transition-colors duration-200 select-none',
         t.highlight
-          ? 'border-[#7B4DFF] shadow-[0px_0px_0px_2px_rgba(123,77,255,0.15),0px_4px_16px_rgba(123,77,255,0.08)]'
+          ? 'border-[#118bb0] shadow-[0px_0px_0px_2px_rgba(123,77,255,0.15),0px_4px_16px_rgba(123,77,255,0.08)]'
           : 'border-[#E7E7E7] shadow-[0px_1px_3px_rgba(0,0,0,0.06)]',
-        isActive ? 'ring-2 ring-[#7B4DFF]/30' : 'hover:border-purple-200 hover:shadow-[0px_4px_16px_rgba(123,77,255,0.08)]',
+        isActive ? 'ring-2 ring-[#118bb0]/30' : 'hover:border-purple-200 hover:shadow-[0px_4px_16px_rgba(123,77,255,0.08)]',
       ].join(' ')}
     >
       {t.highlight && (
         <div className="absolute -top-3 left-4">
-          <span className="inline-flex items-center gap-1 bg-[#7B4DFF] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow">
+          <span className="inline-flex items-center gap-1 bg-[#118bb0] text-white text-[10px] font-bold px-2.5 py-0.5 rounded-full shadow">
             <svg className="h-2.5 w-2.5" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
@@ -169,7 +169,7 @@ export default function TestimonialsSection() {
             Real stories from practices across Kenya.
           </Reveal>
 
-          
+
         </div>
 
         {/* Cards — horizontal scroll on mobile, 3-col grid on desktop */}
@@ -216,7 +216,7 @@ export default function TestimonialsSection() {
               key={i}
               type="button"
               onClick={() => pick(i)}
-              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${active === i ? 'w-6 bg-[#7B4DFF]' : 'w-1.5 bg-slate-300 hover:bg-slate-400'}`}
+              className={`h-1.5 rounded-full transition-all duration-300 cursor-pointer ${active === i ? 'w-6 bg-[#118bb0]' : 'w-1.5 bg-slate-300 hover:bg-slate-400'}`}
             />
           ))}
         </div>

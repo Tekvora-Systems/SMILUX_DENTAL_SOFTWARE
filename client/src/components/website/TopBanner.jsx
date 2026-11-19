@@ -9,7 +9,7 @@ export default function TopBanner() {
       <div
         className="relative overflow-hidden w-full"
         style={{
-          background: '#7B4DFF',
+          background: '#118bb0',
           color: 'white',
           height: dismissed ? '0px' : '36px',
           transition: 'height 380ms cubic-bezier(.22,1.4,.36,1)',
@@ -90,7 +90,7 @@ export default function TopBanner() {
         onClick={() => setDismissed(false)}
         className="absolute top-0 right-6 z-20 flex h-[18px] w-8 origin-top items-center justify-center rounded-b-md shadow-[0_2px_1px_rgba(0,0,0,0.06),0_4px_8px_rgba(0,0,0,0.16)] transition-[transform,opacity] duration-300 ease-[cubic-bezier(.34,1.5,.4,1)] cursor-pointer"
         style={{
-          background: '#7B4DFF',
+          background: '#118bb0',
           color: 'white',
           transform: dismissed ? 'scaleY(1)' : 'scaleY(0)',
           opacity: dismissed ? 1 : 0,

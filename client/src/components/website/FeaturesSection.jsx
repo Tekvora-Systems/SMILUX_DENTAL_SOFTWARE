@@ -5,7 +5,7 @@ import { Reveal, RevealGroup, RevealItem, fadeUp } from './motion.jsx';
 const FEATURES = [
   {
     icon: <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.8}><path strokeLinecap="round" strokeLinejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" /></svg>,
-    iconBg: 'bg-purple-100 text-[#7B4DFF]',
+    iconBg: 'bg-purple-100 text-[#118bb0]',
     title: 'Smart Appointment Scheduling',
     desc: 'Calendar-based booking with dentist availability, auto SMS/WhatsApp reminders, and real-time slot management.',
     tags: ['Multi-dentist', 'Reminders', 'Walk-ins'],
@@ -55,14 +55,14 @@ export default function FeaturesSection() {
         {/* Header */}
         <div className="mb-10">
           <Reveal className="inline-flex items-center gap-2 rounded border border-purple-200 bg-purple-50 px-3 py-1 mb-3">
-            <span className="text-[11px] font-bold text-[#7B4DFF] uppercase tracking-wide">Everything you need</span>
+            <span className="text-[11px] font-bold text-[#118bb0] uppercase tracking-wide">Everything you need</span>
           </Reveal>
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4">
             <div>
               <Reveal as="h2" delay={0.05} className="text-[28px] font-extrabold text-[#222323] tracking-tight leading-tight">One platform, your entire practice</Reveal>
               <Reveal as="p" delay={0.1} className="mt-1.5 text-[14px] text-[#595959] max-w-lg">Purpose-built for Kenyan dental clinics — not a generic SaaS with bolt-on features.</Reveal>
             </div>
-            <Reveal delay={0.15} as="span" className="shrink-0 text-[13px] font-semibold text-[#7B4DFF]">6 core modules →</Reveal>
+            <Reveal delay={0.15} as="span" className="shrink-0 text-[13px] font-semibold text-[#118bb0]">6 core modules →</Reveal>
           </div>
         </div>
 

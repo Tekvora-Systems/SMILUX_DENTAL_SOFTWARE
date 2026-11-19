@@ -51,7 +51,7 @@ function IntegrationCard({ item }) {
           className="shrink-0 flex items-center justify-center   overflow-hidden transition-transform duration-300 group-hover:scale-105"
           style={{
             width: '64px',
-            height: '64px', 
+            height: '64px',
           }}
         >
           {failed ? (
@@ -60,7 +60,7 @@ function IntegrationCard({ item }) {
             <img
               src={item.iconUrl}
               alt={item.name}
-              style={{  height: '48px', objectFit: 'contain' }}
+              style={{ height: '48px', objectFit: 'contain' }}
               onError={() => setFailed(true)}
             />
           )}
@@ -86,7 +86,7 @@ export default function IntegrationsSection() {
 
       {/* Header */}
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
-        <Reveal as="p" variant={fadeUp} className="text-[11px] font-bold text-[#7B4DFF] uppercase tracking-widest mb-3">Integrations</Reveal>
+        <Reveal as="p" variant={fadeUp} className="text-[11px] font-bold text-[#118bb0] uppercase tracking-widest mb-3">Integrations</Reveal>
         <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-4">
           <div>
             <Reveal as="h2" variant={fadeUp} delay={0.05} className="text-[32px] sm:text-[40px] font-extrabold text-[#222323] tracking-tight leading-tight">
@@ -100,8 +100,8 @@ export default function IntegrationsSection() {
             </Reveal>
           </div>
           <Reveal variant={fadeUp} delay={0.18} className="shrink-0 flex items-center gap-2 bg-purple-50 border border-purple-200 rounded px-4 py-2.5">
-            <span className="h-2 w-2 rounded-full bg-[#7B4DFF] animate-pulse shrink-0" />
-            <span className="text-[12px] font-bold text-[#7B4DFF]">5 integrations · all native</span>
+            <span className="h-2 w-2 rounded-full bg-[#118bb0] animate-pulse shrink-0" />
+            <span className="text-[12px] font-bold text-[#118bb0]">5 integrations · all native</span>
           </Reveal>
         </div>
       </div>

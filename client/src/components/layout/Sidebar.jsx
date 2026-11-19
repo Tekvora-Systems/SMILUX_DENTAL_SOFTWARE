@@ -331,7 +331,7 @@ export default function Sidebar({
               navigate('/getting_started');
               if (isMobileOpen && onCloseMobile) onCloseMobile();
             }}
-            className="group flex items-center justify-between h-[34px] px-3.5 mb-2 rounded-full border border-slate-200/90 bg-slate-50/80 hover:bg-slate-100 hover:border-slate-300 text-slate-800   transition-all cursor-pointer select-none"
+            className="group flex items-center justify-between h-[34px] px-3.5 mb-2 rounded-full border border-slate-200 bg-slate-50/80 hover:bg-slate-100 hover:border-slate-300 text-slate-800   transition-all cursor-pointer select-none"
           >
             <span className="text-[13px] font-semibold text-slate-800 group-hover:text-slate-900 tracking-tight">
               Get Started

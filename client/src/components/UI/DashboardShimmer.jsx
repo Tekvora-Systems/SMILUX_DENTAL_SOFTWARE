@@ -80,7 +80,7 @@ export function DashboardWireframeSkeleton({
       aria-label="Loading clinic dashboard analytics wireframe"
     >
       {/* ── 0. Workspace Header & Action Bar Wireframe ─────────────────────── */}
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-slate-200/80 pb-1.5 mb-1">
+      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-slate-200 pb-1.5 mb-1">
         <div>
           <div className="flex items-center gap-2.5">
             <div className="h-6 w-64 sm:w-72 rounded animate-shimmer" />

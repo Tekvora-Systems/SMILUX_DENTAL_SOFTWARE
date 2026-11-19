@@ -80,7 +80,7 @@ function MiniPieChart() {
             cy="18"
             r="15.915"
             fill="transparent"
-            stroke="#7B4DFF"
+            stroke="#118bb0"
             strokeWidth="31.8"
             strokeDasharray="30 70"
             strokeDashoffset="-60"
@@ -275,24 +275,22 @@ export default function GettingStarted() {
                     key={task.id}
                     type="button"
                     onClick={() => setActiveTaskId(task.id)}
-                    className={`w-full h-[44px] flex flex-row items-center justify-between px-4 py-3 text-left transition-colors cursor-pointer select-none shrink-0 ${
-                      isSelected
-                        ? 'shadow-[inset_3px_0_0_#28A466] bg-slate-50/60'
-                        : 'hover:bg-slate-50/70'
-                    }`}
+                    className={`w-full h-[44px] flex flex-row items-center justify-between px-4 py-3 text-left transition-colors cursor-pointer select-none shrink-0 ${isSelected
+                      ? 'shadow-[inset_3px_0_0_#28A466] bg-slate-50/60'
+                      : 'hover:bg-slate-50/70'
+                      }`}
                   >
                     <div className="flex items-center gap-3 min-w-0">
                       <span className={`shrink-0 ${isSelected ? 'text-[#067748]' : 'text-[#595959]'}`}>
                         <HugeiconsIcon icon={IconComp} size={18} />
                       </span>
                       <span
-                        className={`text-[13px] leading-[20px] truncate ${
-                          isDone
-                            ? 'line-through text-[#595959] font-normal'
-                            : isSelected
+                        className={`text-[13px] leading-[20px] truncate ${isDone
+                          ? 'line-through text-[#595959] font-normal'
+                          : isSelected
                             ? 'text-[#222323] font-medium'
                             : 'text-[#222323] font-normal'
-                        }`}
+                          }`}
                       >
                         {task.title}
                       </span>
@@ -386,7 +384,7 @@ export default function GettingStarted() {
         </div>
 
         {/* ── RIGHT SIDE: Active Task Content Pane (Brand Green Theme) ─────────── */}
-        <div className="flex-1 min-w-0 bg-white rounded border border-slate-200/90 p-6 sm:p-8 space-y-6">
+        <div className="flex-1 min-w-0 bg-white rounded border border-slate-200 p-6 sm:p-8 space-y-6">
 
           {/* 1. OVERVIEW VIEW */}
           {activeTaskId === 'overview' && (

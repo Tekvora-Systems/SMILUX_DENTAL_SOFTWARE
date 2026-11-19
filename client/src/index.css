@@ -8,7 +8,7 @@
     --font-better-grade: 'Better Grade', cursive;
 
     /* Brand Colors */
-    --brand-blue: #7B4DFF;
+    --brand-blue: #118bb0;
     --brand-sky: #38bdf8;
     --brand-navy: #1c2536;
     --brand-pink: #e8368f;
@@ -54,10 +54,10 @@
     font-family: var(--font-sans);
     background-color: #f6f7fc;
     color: var(--brand-navy);
-    -webkit-font-smoothing: antialiased; 
+    -webkit-font-smoothing: antialiased;
   }
 
-  html { 
+  html {
     scrollbar-gutter: stable;
   }
 }
@@ -72,7 +72,7 @@
   }
 
   .text-brand-blue {
-    color: #7B4DFF !important;
+    color: #118bb0 !important;
   }
 
   .text-brand-sky {
@@ -96,7 +96,7 @@
   }
 
   .bg-brand-blue {
-    background-color: #7B4DFF !important;
+    background-color: #118bb0 !important;
   }
 
   .bg-brand-green {
@@ -122,7 +122,7 @@
 
   .bg-gradient-primary-vertical {
     background-image: linear-gradient(180deg, #9C7AFF 0%, #6C44E0 100%) !important;
-    border-color: #7B4DFF !important;
+    border-color: #118bb0 !important;
     box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
   }
 

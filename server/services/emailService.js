@@ -13,7 +13,7 @@ const nodemailer = require('nodemailer');
  */
 
 const OTP_EXPIRY_MINUTES = parseInt(process.env.OTP_EXPIRY_MINUTES || '10', 10);
-const BRAND = '#7B4DFF';
+const BRAND = '#118bb0';
 const FROM = process.env.SMTP_FROM || '"Smilux" <noreply@smilux.co.ke>';
 
 let _transporter = null;
@@ -100,7 +100,7 @@ function wrapHtml({ preheader, body }) {
 function codeBox(code) {
   return `
     <div style="background:#f6f3ff;border:1px solid #e9e4f7;border-radius:10px;padding:22px 16px;text-align:center;margin:20px 0">
-      <span style="font-size:34px;font-weight:800;letter-spacing:10px;color:#5733be">${code}</span>
+      <span style="font-size:34px;font-weight:800;letter-spacing:10px;color:#0f5d77">${code}</span>
     </div>`;
 }
 
@@ -128,7 +128,7 @@ async function sendWelcomeEmail(email, name, clinicName) {
     const body = `
       <h2 style="margin:0 0 6px;font-size:20px;color:#222323">Welcome to Smilux 🎉</h2>
       <p style="margin:0 0 8px;color:#595959;line-height:1.6">Hi ${name}, your clinic <strong>${clinicName}</strong> is all set. You can now manage appointments, patients, dental charting, M-Pesa payments, and more — all from one place.</p>
-      <p style="margin:16px 0 0"><a href="${process.env.APP_URL || 'http://localhost:4200'}/login" style="display:inline-block;background:#7B4DFF;color:#fff;text-decoration:none;font-weight:600;font-size:13px;padding:11px 20px;border-radius:8px">Go to my dashboard</a></p>
+      <p style="margin:16px 0 0"><a href="${process.env.APP_URL || 'http://localhost:4200'}/login" style="display:inline-block;background:#118bb0;color:#fff;text-decoration:none;font-weight:600;font-size:13px;padding:11px 20px;border-radius:8px">Go to my dashboard</a></p>
       <p style="margin:18px 0 0;color:#94a3b8;font-size:12px">Need help getting started? Reply to this email and our team will reach out.</p>`;
     await sendEmail({
       to: email,

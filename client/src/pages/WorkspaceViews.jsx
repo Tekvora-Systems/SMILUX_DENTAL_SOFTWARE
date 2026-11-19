@@ -258,7 +258,7 @@ export function CardActionToolbar({
 // ─── Shared Section Header ──────────────────────────────────────────────────
 export function ViewHeader({ title, subtitle, actions }) {
   return (
-    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-slate-200/80  mb-1">
+    <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between border-b border-slate-200  mb-1">
       <div>
         <h1 className="text-xl font-bold text-slate-900 tracking-tight">{title}</h1>
         {subtitle && <p className="text-xs text-slate-500 mt-0.5">{subtitle}</p>}
@@ -3586,7 +3586,7 @@ export function DentalChartingView() {
 
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* Odontogram Grid */}
-        <div className="lg:col-span-2 rounded border border-slate-200/90 bg-white p-5   space-y-6">
+        <div className="lg:col-span-2 rounded border border-slate-200 bg-white p-5   space-y-6">
           <div>
             <span className="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-2 text-center">
               MAXILLARY ARCH (UPPER TEETH)
@@ -3633,7 +3633,7 @@ export function DentalChartingView() {
         </div>
 
         {/* Selected Tooth Inspector */}
-        <div className="rounded border border-slate-200/90 bg-white p-5   space-y-4">
+        <div className="rounded border border-slate-200 bg-white p-5   space-y-4">
           <h3 className="text-sm font-bold text-slate-900 border-b border-slate-100 pb-2">
             Selected Tooth #{selectedTooth} Details
           </h3>
@@ -3738,7 +3738,7 @@ export function GenericFeatureView({ title, description, badge = 'Active Module'
         }
       />
 
-      <div className="rounded border border-slate-200/90 bg-white p-6   space-y-4">
+      <div className="rounded border border-slate-200 bg-white p-6   space-y-4">
         <div className="flex items-center justify-between border-b border-slate-100 pb-3">
           <div className="flex items-center gap-2">
             <span className="text-xs font-bold text-slate-900">{title} Workspace Data</span>

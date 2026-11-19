@@ -21,7 +21,7 @@ export function ReactFlag({ code, className = "" }) {
       src={`https://flagcdn.com/w40/${codeLower}.png`}
       srcSet={`https://flagcdn.com/w80/${codeLower}.png 2x`}
       alt={code}
-      className={`w-5 h-3.5 object-cover rounded border border-slate-200/90   shrink-0 ${className}`}
+      className={`w-5 h-3.5 object-cover rounded border border-slate-200   shrink-0 ${className}`}
       loading="lazy"
     />
   );
@@ -912,7 +912,7 @@ export default function PhoneInputWithCountry({
             return (
               <div
                 key={idx}
-                className="flex items-center gap-2 p-1.5 rounded bg-slate-50/90 border border-slate-200/90   hover:border-slate-300 transition-colors font-sans"
+                className="flex items-center gap-2 p-1.5 rounded bg-slate-50/90 border border-slate-200   hover:border-slate-300 transition-colors font-sans"
               >
                 {/* Contact Type Dropdown Component */}
                 <div className="w-26 shrink-0">

@@ -27,7 +27,7 @@ import {
   Idea01Icon,
   PrinterIcon,
   EyeIcon,
-} from '@hugeicons/core-free-icons'; 
+} from '@hugeicons/core-free-icons';
 
 // ─── Initial Appointments Dataset (Anchored on Nov 2026) ─────────────────────
 const INITIAL_APPOINTMENTS = [
@@ -1436,9 +1436,9 @@ export default function AppointmentsPage() {
                   date: todayISODate,
                 }));
                 setIsBookingModalOpen(true);
-              }}variant="primary"
+              }} variant="primary"
               size="sm"
-              >
+            >
               <HugeiconsIcon icon={PlusSignIcon} size={14} />
               <span>Book</span>
             </Button>
@@ -1507,7 +1507,7 @@ export default function AppointmentsPage() {
                         <div
                           key={time}
                           style={{ height: `${ROW_HEIGHT}px` }}
-                          className="relative border-b border-slate-200/70 dark:border-slate-800/70 text-right pr-2 box-border shrink-0"
+                          className="relative border-b border-slate-200 dark:border-slate-800/70 text-right pr-2 box-border shrink-0"
                         >
                           <span className="text-[10px] font-semibold text-slate-400 dark:text-slate-500 absolute -top-2.5 right-2">
                             {time}
@@ -1669,7 +1669,7 @@ export default function AppointmentsPage() {
                         <div
                           key={time}
                           style={{ height: `${ROW_HEIGHT}px` }}
-                          className="relative border-b border-slate-200/70 dark:border-slate-800/70 text-right pr-2 box-border shrink-0"
+                          className="relative border-b border-slate-200 dark:border-slate-800/70 text-right pr-2 box-border shrink-0"
                         >
                           <span className="text-[10px] font-semibold text-slate-400 dark:text-slate-500 absolute -top-2.5 right-2">
                             {time}
@@ -1938,7 +1938,7 @@ export default function AppointmentsPage() {
                     <h3 className="text-sm font-bold text-slate-900 dark:text-white">
                       Appointment Details
                     </h3>
-                    <span className="px-2 py-0.5 rounded text-[11px] font-bold font-mono bg-slate-200/70 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
+                    <span className="px-2 py-0.5 rounded text-[11px] font-bold font-mono bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-slate-300">
                       {selectedAppointmentForModal.id}
                     </span>
                   </div>
@@ -1976,7 +1976,7 @@ export default function AppointmentsPage() {
             {/* Modal Body */}
             <div className="p-5 space-y-4 overflow-y-auto text-xs">
               {/* Patient Banner */}
-              <div className="flex items-center justify-between p-3 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-200/80 dark:border-slate-800">
+              <div className="flex items-center justify-between p-3 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800">
                 <div className="flex items-center gap-3">
                   <div className="w-11 h-11 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-sm shadow-xs">
                     {selectedAppointmentForModal.patientName
@@ -2059,7 +2059,7 @@ export default function AppointmentsPage() {
                   {selectedAppointmentForModal.services.map((svc, idx) => (
                     <div
                       key={idx}
-                      className="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40 border border-slate-200/80 dark:border-slate-800 flex items-center justify-between"
+                      className="p-2.5 rounded bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-800 flex items-center justify-between"
                     >
                       <div className="flex items-center gap-2">
                         <div className="p-1 rounded bg-sky-100 text-sky-800 dark:bg-sky-950 dark:text-sky-300">
@@ -2350,15 +2350,15 @@ export default function AppointmentsPage() {
                 <Button
                   type="button"
                   onClick={() => setIsBookingModalOpen(false)}
-               variant="outline"
-               size='sm'
+                  variant="outline"
+                  size='sm'
                 >
                   Cancel
                 </Button>
                 <Button
                   type="submit"
-                variant="primary"
-               size='sm' >
+                  variant="primary"
+                  size='sm' >
                   <HugeiconsIcon icon={PlusSignIcon} size={15} />
                   <span>Confirm Booking</span>
                 </Button>
@@ -2447,9 +2447,9 @@ export default function AppointmentsPage() {
 
           <Button
             type="button"
-            variant="primary"  onClick={() => setIsFilterDrawerOpen(false)}
-             size="sm"
-                >
+            variant="primary" onClick={() => setIsFilterDrawerOpen(false)}
+            size="sm"
+          >
             Apply Filters
           </Button>
         </div>

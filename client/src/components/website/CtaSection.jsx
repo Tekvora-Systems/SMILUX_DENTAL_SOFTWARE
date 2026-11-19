@@ -23,7 +23,7 @@ export default function CtaSection() {
         <motion.div
           animate={{ x: [0, 18, 0], y: [0, -12, 0] }}
           transition={{ duration: 9, repeat: Infinity, ease: 'easeInOut' }}
-          className="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-[#7B4DFF]/8 blur-3xl pointer-events-none"
+          className="absolute -top-20 -left-20 w-64 h-64 rounded-full bg-[#118bb0]/8 blur-3xl pointer-events-none"
         />
         <motion.div
           animate={{ x: [0, -18, 0], y: [0, 12, 0] }}
@@ -39,12 +39,12 @@ export default function CtaSection() {
               {/* Badge */}
               <Reveal className="inline-flex items-center gap-2 rounded border border-purple-200 bg-white/60 px-3 py-1 mb-5">
                 <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[11px] font-bold text-[#7B4DFF] uppercase tracking-wide">Start today · Free for 14 days</span>
+                <span className="text-[11px] font-bold text-[#118bb0] uppercase tracking-wide">Start today · Free for 14 days</span>
               </Reveal>
 
               <Reveal as="h2" delay={0.05} className="text-[32px] sm:text-[40px] font-extrabold text-[#222323] tracking-tight leading-tight">
                 Your clinic deserves<br />
-                <span className="text-[#7B4DFF]">modern software.</span>
+                <span className="text-[#118bb0]">modern software.</span>
               </Reveal>
 
               <Reveal as="p" delay={0.1} className="mt-4 text-[14px] text-[#595959] leading-relaxed max-w-md">
@@ -57,7 +57,7 @@ export default function CtaSection() {
                   whileTap={{ scale: 0.97 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                   onClick={() => navigate('/register')}
-                  className="h-10 px-5 text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#7B4DFF] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.10)] hover:brightness-110 transition-all cursor-pointer flex items-center gap-2"
+                  className="h-10 px-5 text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#118bb0] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.10)] hover:brightness-110 transition-all cursor-pointer flex items-center gap-2"
                 >
                   Create Your Free Clinic
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -69,7 +69,7 @@ export default function CtaSection() {
                   whileTap={{ scale: 0.97 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                   onClick={() => navigate('/login')}
-                  className="h-10 px-5 text-[13.5px] font-semibold text-[#5733be] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.05)] hover:bg-[#F2F5F7] transition-all cursor-pointer"
+                  className="h-10 px-5 text-[13.5px] font-semibold text-[#0f5d77] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.05)] hover:bg-[#F2F5F7] transition-all cursor-pointer"
                 >
                   I already have an account
                 </motion.button>
@@ -94,7 +94,7 @@ export default function CtaSection() {
                 {PERKS.map((p) => (
                   <RevealItem as="li" key={p} className="flex items-center gap-3 text-[13px] text-[#222323]">
                     <span className="shrink-0 flex h-5 w-5 items-center justify-center rounded bg-purple-100 border border-purple-200">
-                      <svg className="h-3 w-3 text-[#7B4DFF]" fill="none" viewBox="0 0 18 18">
+                      <svg className="h-3 w-3 text-[#118bb0]" fill="none" viewBox="0 0 18 18">
                         <path d="M3.75 9L7.5 12.75L14.25 5.25" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
                       </svg>
                     </span>
@@ -106,7 +106,7 @@ export default function CtaSection() {
               <div className="mt-6 pt-5 border-t border-purple-100 grid grid-cols-3 gap-3 text-center">
                 {[['500+', 'Clinics'], ['120K+', 'Patients'], ['99.9%', 'Uptime']].map(([v, l]) => (
                   <div key={l}>
-                    <div className="text-[20px] font-extrabold text-[#7B4DFF]">{v}</div>
+                    <div className="text-[20px] font-extrabold text-[#118bb0]">{v}</div>
                     <div className="text-[11px] text-[#595959] font-medium mt-0.5">{l}</div>
                   </div>
                 ))}

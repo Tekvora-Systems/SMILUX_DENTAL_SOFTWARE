@@ -5,9 +5,13 @@
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#5733be",
+  "theme_color": "#0f5d77",
   "orientation": "portrait-primary",
-  "categories": ["medical", "business", "productivity"],
+  "categories": [
+    "medical",
+    "business",
+    "productivity"
+  ],
   "icons": [
     {
       "src": "/favicon.svg",

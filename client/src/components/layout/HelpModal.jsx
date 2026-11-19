@@ -221,7 +221,7 @@ export default function HelpModal({ isOpen, onClose, user }) {
                   type="button"
                   onClick={handleLiveSupport}
                   disabled={chatActive}
-                  className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded bg-slate-100 hover:bg-slate-200/80 text-xs font-semibold text-slate-600 transition-colors cursor-pointer disabled:opacity-60"
+                  className="w-full inline-flex items-center justify-center gap-2 px-3 py-2 rounded bg-slate-100 hover:bg-slate-200 text-xs font-semibold text-slate-600 transition-colors cursor-pointer disabled:opacity-60"
                 >
                   <ChatPillIcon className="w-3.5 h-3.5 text-slate-500 shrink-0" />
                   <span>{chatActive ? 'Connecting...' : 'Chat Now'}</span>

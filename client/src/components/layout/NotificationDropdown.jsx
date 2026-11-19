@@ -193,7 +193,7 @@ function NotificationModal({ notification, onClose, onDelete, onMarkRead }) {
               {Object.entries(notification.metadata)
                 .filter(([, v]) => v && typeof v === 'string' && !v.match(/^[0-9a-f]{24}$/i))
                 .map(([k, v]) => (
-                  <span key={k} className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-medium border border-slate-200/80">
+                  <span key={k} className="inline-flex items-center gap-1 px-2.5 py-1 rounded bg-slate-100 text-slate-700 text-xs font-medium border border-slate-200">
                     <span className="text-slate-400 capitalize">{k.replace(/_/g, ' ')}:</span>
                     <span className="font-bold">{v}</span>
                   </span>
