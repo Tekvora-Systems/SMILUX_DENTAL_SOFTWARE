@@ -230,7 +230,7 @@ export default function GettingStarted() {
             {/* Header row: 284px × 72px */}
             <div className="w-full h-[72px] flex flex-row justify-between items-center px-4 py-3 border-b border-slate-100">
               {/* 48px × 48px Image */}
-              <div className="w-12 h-12 shrink-0 rounded-[2px] bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white shadow-xs">
+              <div className="w-12 h-12 shrink-0 rounded-[2px] bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white  xs">
                 <HugeiconsIcon icon={StethoscopeIcon} size={24} />
               </div>
 
@@ -276,7 +276,7 @@ export default function GettingStarted() {
                     type="button"
                     onClick={() => setActiveTaskId(task.id)}
                     className={`w-full h-[44px] flex flex-row items-center justify-between px-4 py-3 text-left transition-colors cursor-pointer select-none shrink-0 ${isSelected
-                      ? 'shadow-[inset_3px_0_0_#28A466] bg-slate-50/60'
+                      ? ' [inset_3px_0_0_#28A466] bg-slate-50/60'
                       : 'hover:bg-slate-50/70'
                       }`}
                   >
@@ -339,7 +339,7 @@ export default function GettingStarted() {
               </button>
 
               {helpDropdownOpen && (
-                <div className="absolute left-0 bottom-full mb-1 z-30 w-56 rounded border border-slate-200 bg-white p-1.5 shadow-lg text-xs">
+                <div className="absolute left-0 bottom-full mb-1 z-30 w-56 rounded border border-slate-200 bg-white p-1.5   text-xs">
                   <a
                     href="mailto:support@smilux.co.ke"
                     className="block rounded px-2.5 py-1.5 text-slate-700 hover:bg-slate-50 hover:text-slate-900 font-medium"
@@ -425,7 +425,7 @@ export default function GettingStarted() {
                 />
 
                 {/* Dashboard Mock Card */}
-                <div className="relative rounded border border-slate-200 bg-white p-4 shadow-sm space-y-3">
+                <div className="relative rounded border border-slate-200 bg-white p-4  sm space-y-3">
                   <div className="flex items-center justify-between border-b border-slate-100 pb-2">
                     <span className="text-xs font-bold text-slate-800">
                       Utilization Summary &amp; Practice Health
@@ -469,7 +469,7 @@ export default function GettingStarted() {
                     <button
                       type="button"
                       onClick={() => setVideoModalOpen(true)}
-                      className="group flex h-14 w-18 items-center justify-center rounded bg-brand-green hover:bg-[#25b5a7] text-white shadow-brand-green/30 transition-all hover:scale-105 cursor-pointer"
+                      className="group flex h-14 w-18 items-center justify-center rounded bg-brand-green hover:bg-[#25b5a7] text-white  brand-green/30 transition-all hover:scale-105 cursor-pointer"
                       title="Play Walkthrough Tour"
                     >
                       <HugeiconsIcon icon={PlayIcon} size={28} className="fill-white translate-x-0.5" />

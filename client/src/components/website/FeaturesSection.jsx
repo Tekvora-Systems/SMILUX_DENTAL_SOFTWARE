@@ -73,7 +73,7 @@ export default function FeaturesSection() {
               <motion.div
                 whileHover={{ y: -6, scale: 1.015 }}
                 transition={{ type: 'spring', stiffness: 300, damping: 20 }}
-                className="group h-full bg-white border border-[#E7E7E7] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.06),0px_1px_3px_rgba(0,0,0,0.04)] p-5 hover:border-purple-300 hover:shadow-[0px_2px_8px_rgba(123,77,255,0.10)] transition-colors duration-200 cursor-default">
+                className="group h-full bg-white border border-[#E7E7E7] rounded  [0px_1px_2px_rgba(0,0,0,0.06),0px_1px_3px_rgba(0,0,0,0.04)] p-5 hover:border-purple-300 hover: [0px_2px_8px_rgba(123,77,255,0.10)] transition-colors duration-200 cursor-default">
 
                 {/* Icon */}
                 <motion.div

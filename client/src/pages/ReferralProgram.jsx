@@ -94,7 +94,7 @@ export default function ReferralProgram({ onBackToLogin }) {
         </button>
 
         {/* Banner */}
-        <div className="mb-4 overflow-hidden rounded bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white shadow-sm border border-blue-500/20">
+        <div className="mb-4 overflow-hidden rounded bg-gradient-to-r from-blue-600 to-indigo-700 p-6 text-white  sm border border-blue-500/20">
           <span className="text-[10px] font-extrabold uppercase tracking-wider bg-white/20 px-2.5 py-1 rounded text-white">
             Referral Program
           </span>
@@ -104,7 +104,7 @@ export default function ReferralProgram({ onBackToLogin }) {
           </p>
         </div>
 
-        <div className="rounded border border-slate-200 bg-white/90 backdrop-blur-md px-5 py-6 shadow-sm">
+        <div className="rounded border border-slate-200 bg-white/90 backdrop-blur-md px-5 py-6  sm">
           <h1 className="text-center text-xl font-bold tracking-tight text-slate-900">
             Submit a Referral
           </h1>

@@ -274,7 +274,7 @@ export default function Dropdown({
           onClick={handleToggleSelectAll}
           className={`
             ${itemHeightClass} border-b border-slate-100 font-semibold text-slate-800 flex items-center justify-between
-            cursor-pointer hover:bg-slate-100/80 transition-colors  bg-slate-50/50 font-sans
+            cursor-pointer hover:bg-slate-100 transition-colors  bg-slate-50/50 font-sans
           `.trim()}
         >
           <div className="flex items-center gap-2.5">
@@ -325,7 +325,7 @@ export default function Dropdown({
                   ${itemHeightClass} font-medium flex items-center justify-between gap-2 cursor-pointer transition-colors  font-sans
                   ${isSelected
                     ? "bg-brand-50 text-brand-700 font-semibold"
-                    : "text-slate-700 hover:bg-slate-100/80 hover:text-slate-900"
+                    : "text-slate-700 hover:bg-slate-100 hover:text-slate-900"
                   }
                 `.trim()}
               >

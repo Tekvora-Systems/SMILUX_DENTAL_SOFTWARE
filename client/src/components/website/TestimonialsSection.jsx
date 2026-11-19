@@ -71,9 +71,9 @@ function TestimonialCard({ t, isActive, onClick }) {
       className={[
         'relative flex flex-col justify-between bg-white rounded border p-5 cursor-pointer transition-colors duration-200 select-none',
         t.highlight
-          ? 'border-[#118bb0] shadow-[0px_0px_0px_2px_rgba(123,77,255,0.15),0px_4px_16px_rgba(123,77,255,0.08)]'
-          : 'border-[#E7E7E7] shadow-[0px_1px_3px_rgba(0,0,0,0.06)]',
-        isActive ? 'ring-2 ring-[#118bb0]/30' : 'hover:border-purple-200 hover:shadow-[0px_4px_16px_rgba(123,77,255,0.08)]',
+          ? 'border-[#118bb0]  [0px_0px_0px_2px_rgba(123,77,255,0.15),0px_4px_16px_rgba(123,77,255,0.08)]'
+          : 'border-[#E7E7E7]  [0px_1px_3px_rgba(0,0,0,0.06)]',
+        isActive ? 'ring-2 ring-[#118bb0]/30' : 'hover:border-purple-200 hover: [0px_4px_16px_rgba(123,77,255,0.08)]',
       ].join(' ')}
     >
       {t.highlight && (

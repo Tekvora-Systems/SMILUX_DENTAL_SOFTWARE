@@ -205,7 +205,7 @@ export default function PlansModal({ isOpen, onClose }) {
 
       {/* Dialog - Plans */}
       <div
-        className="relative w-full border-2 border-white max-w-[1152px] bg-white rounded-[4px] shadow-[0px_25px_50px_-12px_rgba(0,0,0,0.25)] flex flex-col items-start overflow-hidden z-10 animate-in zoom-in-95 fade-in duration-150 font-['Inter',sans-serif] select-text max-h-[96vh]"
+        className="relative w-full border-2 border-white max-w-[1152px] bg-white rounded-[4px]  [0px_25px_50px_-12px_rgba(0,0,0,0.25)] flex flex-col items-start overflow-hidden z-10 animate-in zoom-in-95 fade-in duration-150 font-['Inter',sans-serif] select-text max-h-[96vh]"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Top Header Bar */}
@@ -236,7 +236,7 @@ export default function PlansModal({ isOpen, onClose }) {
 
             <div className="flex items-center gap-4">
               {/* Annual / Monthly Billing Toggle with smooth sliding motion */}
-              <div className="relative inline-flex items-center p-0.5 rounded-full bg-white/90 border border-purple-200/90 shadow-[0px_1px_2px_rgba(0,0,0,0.05)] select-none">
+              <div className="relative inline-flex items-center p-0.5 rounded-full bg-white/90 border border-purple-200/90  [0px_1px_2px_rgba(0,0,0,0.05)] select-none">
                 {/* Gliding active pill indicator */}
                 <span
                   aria-hidden="true"
@@ -244,7 +244,7 @@ export default function PlansModal({ isOpen, onClose }) {
                     transform: `translateX(${indicatorStyle.left}px)`,
                     width: `${indicatorStyle.width}px`,
                   }}
-                  className={`absolute top-0.5 bottom-0.5 left-0 rounded-full bg-[#118bb0] shadow-xs pointer-events-none ${indicatorStyle.ready ? 'transition-all duration-300 ease-out' : 'opacity-0'
+                  className={`absolute top-0.5 bottom-0.5 left-0 rounded-full bg-[#118bb0]  xs pointer-events-none ${indicatorStyle.ready ? 'transition-all duration-300 ease-out' : 'opacity-0'
                     }`}
                 />
 
@@ -293,7 +293,7 @@ export default function PlansModal({ isOpen, onClose }) {
           {/* 3 Pricing Cards Grid */}
           <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4 items-stretch">
             {/* ── CARD 1: Essential ── */}
-            <div className="w-full bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.1),0px_1px_2px_rgba(0,0,0,0.06),0px_2px_4px_rgba(0,0,0,0.03)] p-4 flex flex-col justify-between min-h-[640px]">
+            <div className="w-full bg-white rounded-[4px]  [0px_1px_2px_rgba(0,0,0,0.1),0px_1px_2px_rgba(0,0,0,0.06),0px_2px_4px_rgba(0,0,0,0.03)] p-4 flex flex-col justify-between min-h-[640px]">
               {/* Card Upper Info */}
               <div className="flex flex-col gap-4">
                 {/* Badge */}
@@ -364,12 +364,12 @@ export default function PlansModal({ isOpen, onClose }) {
             </div>
 
             {/* ── CARD 2: Professional (Most Popular) ── */}
-            <div className="w-full bg-white rounded-[4px] shadow-[0px_1px_2px_rgba(0,0,0,0.1),0px_1px_2px_rgba(0,0,0,0.06),0px_2px_4px_rgba(0,0,0,0.03)] p-4 flex flex-col justify-between min-h-[640px]">
+            <div className="w-full bg-white rounded-[4px]  [0px_1px_2px_rgba(0,0,0,0.1),0px_1px_2px_rgba(0,0,0,0.06),0px_2px_4px_rgba(0,0,0,0.03)] p-4 flex flex-col justify-between min-h-[640px]">
               {/* Card Upper Info */}
               <div className="flex flex-col gap-4">
                 {/* Badge */}
                 <div className="flex items-center">
-                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#118bb0] text-white text-[12px] leading-[16px] font-medium shadow-sm">
+                  <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#118bb0] text-white text-[12px] leading-[16px] font-medium  sm">
                     Most Popular
                   </span>
                 </div>
@@ -429,7 +429,7 @@ export default function PlansModal({ isOpen, onClose }) {
             </div>
 
             {/* ── CARD 3: Premium (Selected Highlight) ── */}
-            <div className="w-full bg-white rounded-[4px] shadow-[0px_0px_0px_2px_#118bb0,0px_1px_2px_rgba(0,0,0,0.1),0px_1px_2px_rgba(0,0,0,0.06),0px_2px_4px_rgba(0,0,0,0.03)] p-4 flex flex-col justify-between min-h-[640px]">
+            <div className="w-full bg-white rounded-[4px]  [0px_0px_0px_2px_#118bb0,0px_1px_2px_rgba(0,0,0,0.1),0px_1px_2px_rgba(0,0,0,0.06),0px_2px_4px_rgba(0,0,0,0.03)] p-4 flex flex-col justify-between min-h-[640px]">
               {/* Card Upper Info */}
               <div className="flex flex-col gap-4">
                 {/* Badge */}

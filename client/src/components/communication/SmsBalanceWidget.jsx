@@ -42,7 +42,7 @@ export default function SmsBalanceWidget() {
       <button
         type="button"
         onClick={() => setModalOpen(true)}
-        className="hidden md:flex items-center gap-2 px-1 py-1 rounded border border-slate-200 bg-slate-50/90 hover:bg-slate-100/90 hover:border-slate-300 transition-all cursor-pointer font-sans"
+        className="hidden md:flex items-center gap-2 px-1 py-1 rounded border border-slate-200 bg-slate-50/90 hover:bg-slate-100 hover:border-slate-300 transition-all cursor-pointer font-sans"
         title="Patient SMS Reminders Balance · Click to Top Up"
       >
         <div className="flex h-5 w-5 items-center justify-center rounded bg-brand-green text-emerald-700">

@@ -47,13 +47,13 @@ export default function WebFooter() {
             <div className="flex flex-wrap gap-3 shrink-0">
               <button
                 onClick={() => navigate('/register')}
-                className="h-9 px-5 text-[13px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#118bb0] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.10)] hover:brightness-110 active:scale-[0.998] transition-all cursor-pointer"
+                className="h-9 px-5 text-[13px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#118bb0] rounded  [0px_1px_2px_rgba(0,0,0,0.10)] hover:brightness-110 active:scale-[0.998] transition-all cursor-pointer"
               >
                 Start 14-Day Free Trial
               </button>
               <button
                 onClick={() => navigate('/login')}
-                className="h-9 px-5 text-[13px] font-semibold text-[#0f5d77] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.05)] hover:bg-[#F2F5F7] active:scale-[0.998] transition-all cursor-pointer"
+                className="h-9 px-5 text-[13px] font-semibold text-[#0f5d77] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded  [0px_1px_2px_rgba(0,0,0,0.05)] hover:bg-[#F2F5F7] active:scale-[0.998] transition-all cursor-pointer"
               >
                 Sign In
               </button>

@@ -36,18 +36,18 @@ export default function Button({
 
   const variantClasses = {
     primary:
-      'bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#118bb0] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13.5px] leading-[20px] not-italic text-white [font-variation-settings:\'slnt\'_0] hover:brightness-105 hover:opacity-95 active:scale-[0.995] focus-visible:ring-[#9C7AFF]/50 focus-visible:border-[#118bb0]',
+      'bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)] border border-[#0f5d77]  [0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13.5px] leading-[20px] not-italic text-white [font-variation-settings:\'slnt\'_0] hover:brightness-105 hover:opacity-95 active:scale-[0.995] focus-visible:ring-[#118bb0]/50 focus-visible:border-[#118bb0]',
     upgrade:
-      'bg-[linear-gradient(180deg,#FFC42E_0%,#E09F00_100%)] border border-[#ffb703] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13.5px] leading-[20px] not-italic text-white [font-variation-settings:\'slnt\'_0] hover:brightness-105 hover:opacity-95 active:scale-[0.995] focus-visible:ring-[#ffb703]/50 focus-visible:border-[#ffb703]',
+      'bg-[linear-gradient(180deg,#FFC42E_0%,#E09F00_100%)] border border-[#ffb703]  [0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13.5px] leading-[20px] not-italic text-white [font-variation-settings:\'slnt\'_0] hover:brightness-105 hover:opacity-95 active:scale-[0.995] focus-visible:ring-[#ffb703]/50 focus-visible:border-[#ffb703]',
     outline:
-      'bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13px] leading-[20px] not-italic text-[#0f5d77] [font-variation-settings:\'slnt\'_0] hover:bg-[#F2F5F7] hover:border-[#D8D8DF] hover:text-[#180F1F] active:scale-[0.995] focus-visible:ring-slate-300 focus-visible:border-[#D8D8DF]',
+      'bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8]  [0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13px] leading-[20px] not-italic text-[#118bb0] [font-variation-settings:\'slnt\'_0] hover:bg-[#F2F5F7] hover:border-[#bee2ec] hover:text-[#0e7394] active:scale-[0.995] focus-visible:ring-[#118bb0]/30 focus-visible:border-[#118bb0]',
     secondary:
       'bg-slate-100 text-slate-900 hover:bg-slate-200 border border-slate-200',
     ghost:
       'bg-transparent hover:bg-slate-100 text-slate-700 border-transparent',
     destructive:
       'bg-rose-600 text-white hover:bg-rose-700 border border-rose-600',
-  }[variant] || 'bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#118bb0] shadow-[0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13.5px] leading-[20px] not-italic text-white [font-variation-settings:\'slnt\'_0]';
+  }[variant] || 'bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)] border border-[#0f5d77]  [0px_1px_2px_rgba(0,0,0,0.05)] rounded-[4px] font-inter font-medium text-[13.5px] leading-[20px] not-italic text-white [font-variation-settings:\'slnt\'_0]';
 
   const spinnerSize = size === 'lg' ? 'md' : 'sm';
 

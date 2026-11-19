@@ -805,7 +805,7 @@ export default function PhoneInputWithCountry({
                 }}
                 className={`
                   w-full flex items-center justify-between px-3 py-2 text-xs transition-colors text-left cursor-pointer  font-sans
-                  ${isSelected ? 'bg-brand-50 font-bold text-brand-700' : 'text-slate-700 hover:bg-slate-100/80 hover:text-slate-900'}
+                  ${isSelected ? 'bg-brand-50 font-bold text-brand-700' : 'text-slate-700 hover:bg-slate-100 hover:text-slate-900'}
                 `.trim()}
               >
                 <div className="flex items-center gap-2.5">
@@ -861,7 +861,7 @@ export default function PhoneInputWithCountry({
             }}
             className={`
               flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-50 border border-r-0 border-slate-300 rounded-l text-xs font-semibold text-slate-800
-              hover:bg-slate-100/90 focus:outline-none transition-colors cursor-pointer  h-[38px] font-sans
+              hover:bg-slate-100 focus:outline-none transition-colors cursor-pointer  h-[38px] font-sans
               ${disabled ? 'opacity-60 cursor-not-allowed bg-slate-100' : ''}
             `.trim()}
           >

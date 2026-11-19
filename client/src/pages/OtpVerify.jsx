@@ -75,7 +75,7 @@ function OtpInput({ value, onChange, disabled }) {
             'text-slate-900 bg-white outline-none',
             'transition-all duration-150',
             digit
-              ? 'border-blue-500 bg-blue-50 shadow-sm'
+              ? 'border-blue-500 bg-blue-50  sm'
               : 'border-slate-300 hover:border-slate-400',
             'focus:border-blue-500 focus:ring-2 focus:ring-blue-200',
             disabled ? 'opacity-50 cursor-not-allowed' : '',
@@ -100,7 +100,7 @@ export default function OtpVerifyPage({ email, onLoginSuccess, onNavigate, onOpe
     if (import.meta.env.DEV && email) {
       api.get(`/auth/dev-otp?email=${encodeURIComponent(email)}`)
         .then((r) => { if (r.data?.otp) setDevCode(r.data.otp); })
-        .catch(() => {}); // silently ignore in production
+        .catch(() => { }); // silently ignore in production
     }
   }, [email]);
 
@@ -153,7 +153,7 @@ export default function OtpVerifyPage({ email, onLoginSuccess, onNavigate, onOpe
         setTimeout(() => {
           api.get(`/auth/dev-otp?email=${encodeURIComponent(email)}`)
             .then((r) => { if (r.data?.otp) setDevCode(r.data.otp); })
-            .catch(() => {});
+            .catch(() => { });
         }, 800);
       }
     } catch (err) {

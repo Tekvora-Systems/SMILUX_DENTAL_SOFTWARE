@@ -38,7 +38,7 @@ export default function CtaSection() {
             <div>
               {/* Badge */}
               <Reveal className="inline-flex items-center gap-2 rounded border border-purple-200 bg-white/60 px-3 py-1 mb-5">
-                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
+
                 <span className="text-[11px] font-bold text-[#118bb0] uppercase tracking-wide">Start today · Free for 14 days</span>
               </Reveal>
 
@@ -57,7 +57,7 @@ export default function CtaSection() {
                   whileTap={{ scale: 0.97 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                   onClick={() => navigate('/register')}
-                  className="h-10 px-5 text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#118bb0] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.10)] hover:brightness-110 transition-all cursor-pointer flex items-center gap-2"
+                  className="h-10 px-5 text-[13.5px] font-bold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#118bb0] rounded  [0px_1px_2px_rgba(0,0,0,0.10)] hover:brightness-110 transition-all cursor-pointer flex items-center gap-2"
                 >
                   Create Your Free Clinic
                   <svg className="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -69,7 +69,7 @@ export default function CtaSection() {
                   whileTap={{ scale: 0.97 }}
                   transition={{ type: 'spring', stiffness: 400, damping: 17 }}
                   onClick={() => navigate('/login')}
-                  className="h-10 px-5 text-[13.5px] font-semibold text-[#0f5d77] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded shadow-[0px_1px_2px_rgba(0,0,0,0.05)] hover:bg-[#F2F5F7] transition-all cursor-pointer"
+                  className="h-10 px-5 text-[13.5px] font-semibold text-[#0f5d77] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] rounded  [0px_1px_2px_rgba(0,0,0,0.05)] hover:bg-[#F2F5F7] transition-all cursor-pointer"
                 >
                   I already have an account
                 </motion.button>
@@ -87,7 +87,7 @@ export default function CtaSection() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.6, ease: EASE }}
-              className="bg-white border border-purple-200/60 rounded shadow-[0px_1px_2px_rgba(0,0,0,0.06),0px_1px_3px_rgba(0,0,0,0.04)] p-6"
+              className="bg-white border border-purple-200/60 rounded  [0px_1px_2px_rgba(0,0,0,0.06),0px_1px_3px_rgba(0,0,0,0.04)] p-6"
             >
               <p className="text-[11px] font-bold text-[#595959] uppercase tracking-widest mb-4">What&apos;s included</p>
               <RevealGroup as="ul" className="space-y-3">

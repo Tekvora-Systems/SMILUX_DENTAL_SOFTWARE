@@ -93,7 +93,7 @@ export function InfoBadgeIcon({
       </button>
 
       {isOpen && (
-        <div className="absolute left-0 top-6 z-50 w-80 sm:w-96 rounded border border-[#E0E0E0] bg-white p-4 shadow-[0px_16px_36px_rgba(0,0,0,0.14)] animate-in fade-in zoom-in-95 duration-150">
+        <div className="absolute left-0 top-6 z-50 w-80 sm:w-96 rounded border border-[#E0E0E0] bg-white p-4  [0px_16px_36px_rgba(0,0,0,0.14)] animate-in fade-in zoom-in-95 duration-150">
           <div className="flex items-start justify-between gap-2 border-b border-slate-100 pb-2.5 mb-3">
             <div>
               <h4 className="text-xs font-bold text-[#080808]">{title}</h4>
@@ -187,7 +187,7 @@ export function CardActionToolbar({
   return (
     <div
       ref={menuRef}
-      className="relative inline-flex h-7 items-center gap-2 rounded border border-[#E0E0E0] bg-white px-2.5 shadow-[0px_1px_2px_rgba(0,0,0,0.05)]"
+      className="relative inline-flex h-7 items-center gap-2 rounded border border-[#E0E0E0] bg-white px-2.5  [0px_1px_2px_rgba(0,0,0,0.05)]"
     >
       <button
         type="button"
@@ -225,7 +225,7 @@ export function CardActionToolbar({
       </button>
 
       {isMenuOpen && (
-        <div className="absolute right-0 top-8 z-50 w-36 rounded border border-[#E0E0E0] bg-white p-1.5 shadow-[0px_12px_28px_rgba(0,0,0,0.12)]">
+        <div className="absolute right-0 top-8 z-50 w-36 rounded border border-[#E0E0E0] bg-white p-1.5  [0px_12px_28px_rgba(0,0,0,0.12)]">
           <div className="px-2 py-1 text-[10px] font-bold uppercase tracking-wider text-[#888888]">
             Select Year
           </div>
@@ -299,7 +299,7 @@ export function KpiCard({
 
   return (
     <div
-      className="rounded border border-[#EFEFEF] bg-white p-3 shadow-[0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] transition-all hover:-translate-y-0.5 cursor-pointer group select-text"
+      className="rounded border border-[#EFEFEF] bg-white p-3  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] transition-all hover:-translate-y-0.5 cursor-pointer group select-text"
       onClick={() => onCopy && onCopy(value, `${title}`)}
       title="Click to copy metric value"
     >
@@ -592,7 +592,7 @@ export function DashboardView({ user }) {
       {/* Main Analytics Row: Sales (Smooth Line & Area Chart) + Web Analytics (Bar Chart) in 2 Columns */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
         {/* Column 1: Sales Area & Smooth Line Chart Card (Exact Figma Spec) */}
-        <div className="rounded border border-[#EFEFEF] bg-white p-4 shadow-[0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-[#EFEFEF] bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             {/* Card Header */}
             <div className="flex items-center justify-between mb-3">
@@ -851,7 +851,7 @@ export function DashboardView({ user }) {
         </div>
 
         {/* Column 2: Patient Growth Overview Card */}
-        <div className="rounded border border-[#EFEFEF] bg-white p-4 shadow-[0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-[#EFEFEF] bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             {/* Card Header */}
             <div className="flex items-center justify-between mb-3">
@@ -1248,7 +1248,7 @@ export function DashboardView({ user }) {
                 {/* Sales KPI Summary Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy(currentSalesData.totalProfit, 'Total Net Profit')}
                     title="Click to copy net profit"
                   >
@@ -1256,7 +1256,7 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{currentSalesData.totalProfit}</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalAnnualSales), '12-Month Gross Sales')}
                     title="Click to copy gross sales"
                   >
@@ -1264,7 +1264,7 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{formatCurrency(totalAnnualSales)}</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(avgMonthlySales), 'Monthly Average Sales')}
                     title="Click to copy monthly average"
                   >
@@ -1411,7 +1411,7 @@ export function DashboardView({ user }) {
                   {currentPatientData.metrics.map((metric) => (
                     <div
                       key={metric.id}
-                      className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                      className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                       onClick={() => handleCopy(metric.value, metric.label)}
                       title="Click to copy metric value"
                     >
@@ -1560,7 +1560,7 @@ export function DashboardView({ user }) {
                 {/* Payment Distribution KPI Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy(`${formatNumber(totalTransactions)} sales`, 'Total Transactions')}
                     title="Click to copy total transactions"
                   >
@@ -1568,7 +1568,7 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{formatNumber(totalTransactions)} sales</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy('+14% vs last mo', 'Monthly Growth')}
                     title="Click to copy growth"
                   >
@@ -1578,7 +1578,7 @@ export function DashboardView({ user }) {
                     </div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy('Cash & Private Pay (60%)', 'Dominant Channel')}
                     title="Click to copy dominant channel"
                   >
@@ -1696,7 +1696,7 @@ export function DashboardView({ user }) {
                 {/* Income Summary KPI Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalIncomeVal), 'Total Income')}
                     title="Click to copy total income"
                   >
@@ -1704,7 +1704,7 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{formatCurrency(totalIncomeVal)}</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy('+32.1%', 'Growth Pace')}
                     title="Click to copy growth pace"
                   >
@@ -1714,7 +1714,7 @@ export function DashboardView({ user }) {
                     </div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy('94% Optimal', 'Yield Score')}
                     title="Click to copy yield score"
                   >
@@ -1780,7 +1780,7 @@ export function DashboardView({ user }) {
                   <div className="space-y-3 w-full max-w-sm">
                     <h4 className="text-xs font-bold uppercase tracking-wider text-[#888888] select-text">Settlement Routes</h4>
                     <div
-                      className="rounded border border-slate-100 bg-slate-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                      className="rounded border border-slate-100 bg-slate-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-slate-100 transition-all select-text"
                       onClick={() => handleCopy(formatCurrency(mpesaIncomeVal), 'M-Pesa STK Income')}
                       title="Click to copy M-Pesa STK income"
                     >
@@ -1791,7 +1791,7 @@ export function DashboardView({ user }) {
                       <span className="text-xs font-bold text-[#080808] select-text">{formatCurrency(mpesaIncomeVal)}</span>
                     </div>
                     <div
-                      className="rounded border border-slate-100 bg-slate-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                      className="rounded border border-slate-100 bg-slate-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-slate-100 transition-all select-text"
                       onClick={() => handleCopy(formatCurrency(privateIncomeVal), 'Private Payers Income')}
                       title="Click to copy Private Payers income"
                     >
@@ -1802,7 +1802,7 @@ export function DashboardView({ user }) {
                       <span className="text-xs font-bold text-[#080808] select-text">{formatCurrency(privateIncomeVal)}</span>
                     </div>
                     <div
-                      className="rounded border border-slate-100 bg-slate-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                      className="rounded border border-slate-100 bg-slate-50/70 p-3 flex items-center justify-between cursor-pointer hover:bg-slate-100 transition-all select-text"
                       onClick={() => handleCopy(formatCurrency(claimsIncomeVal), 'Insurance Claims Income')}
                       title="Click to copy Insurance Claims income"
                     >
@@ -1820,7 +1820,7 @@ export function DashboardView({ user }) {
                 {/* Expenses KPI Summary Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalExpenseVal), 'Total Practice Expense')}
                     title="Click to copy total expense"
                   >
@@ -1828,7 +1828,7 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{formatCurrency(totalExpenseVal)}</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy(`${formatCurrency(expenseCategories[0].amount)} (45%)`, 'Top Expense (Internet)')}
                     title="Click to copy top expense"
                   >
@@ -1899,7 +1899,7 @@ export function DashboardView({ user }) {
                 {/* Income & Expense KPI Summary Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalIncomeCompVal), 'Total Income')}
                   >
                     <div className="flex items-center gap-1.5">
@@ -1912,7 +1912,7 @@ export function DashboardView({ user }) {
                     </div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalExpenseCompVal), 'Total Expenses')}
                   >
                     <div className="flex items-center gap-1.5">
@@ -1925,7 +1925,7 @@ export function DashboardView({ user }) {
                     </div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(cashSettlementVal), 'Net Surplus')}
                   >
                     <span className="text-[11px] font-medium text-[#888888] select-text">Net Surplus</span>
@@ -2030,7 +2030,7 @@ export function DashboardView({ user }) {
                 {/* Balance KPI Summary Strip */}
                 <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy(formatCurrency(totalBalanceVal), 'Settled Balance')}
                     title="Click to copy settled balance"
                   >
@@ -2038,7 +2038,7 @@ export function DashboardView({ user }) {
                     <div className="mt-1 text-lg font-bold text-[#080808] select-text">{formatCurrency(totalBalanceVal)}</div>
                   </div>
                   <div
-                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100/70 transition-all select-text"
+                    className="rounded border border-slate-100 bg-slate-50/70 p-3 cursor-pointer hover:bg-slate-100 transition-all select-text"
                     onClick={() => handleCopy('+12% vs last yrs', 'Fiscal Pace')}
                     title="Click to copy fiscal pace"
                   >
@@ -2142,7 +2142,7 @@ export function DashboardView({ user }) {
       {/* Secondary Row: 3 Analytics Cards (Payment Distribution Overview, Asset Distribution, Practice Financial Balance) */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-1">
         {/* Card 1: Payment Distribution Overview (Donut Chart) */}
-        <div className="rounded border border-[#EFEFEF] bg-white p-4 shadow-[0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-[#EFEFEF] bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             {/* Header */}
             <div className="flex items-center justify-between mb-3">
@@ -2482,7 +2482,7 @@ export function DashboardView({ user }) {
         </div>
 
         {/* Card 2: Asset Distribution (Income Summary Radial Chart) */}
-        <div className="rounded border border-[#EFEFEF] bg-white p-4 shadow-[0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-[#EFEFEF] bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             {/* Header */}
             <div className="flex items-center justify-between mb-3">
@@ -2640,7 +2640,7 @@ export function DashboardView({ user }) {
               <div
                 className={`flex flex-col rounded border p-2.5 cursor-pointer transition-all select-text ${focusedIncomeRoute === 'mpesa'
                   ? 'border-emerald-400 bg-emerald-50/70  '
-                  : 'border-slate-100 bg-slate-50/50 hover:bg-slate-100/70 hover:border-slate-300'
+                  : 'border-slate-100 bg-slate-50/50 hover:bg-slate-100 hover:border-slate-300'
                   }`}
                 onClick={() => {
                   setFocusedIncomeRoute((p) => (p === 'mpesa' ? null : 'mpesa'));
@@ -2659,7 +2659,7 @@ export function DashboardView({ user }) {
               <div
                 className={`flex flex-col rounded border p-2.5 cursor-pointer transition-all select-text ${focusedIncomeRoute === 'private'
                   ? 'border-orange-400 bg-orange-50/70  '
-                  : 'border-slate-100 bg-slate-50/50 hover:bg-slate-100/70 hover:border-slate-300'
+                  : 'border-slate-100 bg-slate-50/50 hover:bg-slate-100 hover:border-slate-300'
                   }`}
                 onClick={() => {
                   setFocusedIncomeRoute((p) => (p === 'private' ? null : 'private'));
@@ -2678,7 +2678,7 @@ export function DashboardView({ user }) {
               <div
                 className={`flex flex-col rounded border p-2.5 cursor-pointer transition-all select-text ${focusedIncomeRoute === 'claims'
                   ? 'border-amber-400 bg-amber-50/70  '
-                  : 'border-slate-100 bg-slate-50/50 hover:bg-slate-100/70 hover:border-slate-300'
+                  : 'border-slate-100 bg-slate-50/50 hover:bg-slate-100 hover:border-slate-300'
                   }`}
                 onClick={() => {
                   setFocusedIncomeRoute((p) => (p === 'claims' ? null : 'claims'));
@@ -2702,7 +2702,7 @@ export function DashboardView({ user }) {
         </div>
 
         {/* Card 3: Practice Financial Balance (Horizontal Segmented Bar Chart) */}
-        <div className="rounded border border-[#EFEFEF] bg-white p-4 shadow-[0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-[#EFEFEF] bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             {/* Header */}
             <div className="flex items-center justify-between mb-3">
@@ -2919,7 +2919,7 @@ export function DashboardView({ user }) {
       {/* Main Section 3.5: Expenses Overview & Payment Growth Overview (2-Card Row Matching Sales & Patient Growth UI) */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-1">
         {/* Card 1: Expenses Overview (Exact Reference UI + Dashboard Card Chrome) */}
-        <div className="rounded border border-[#EFEFEF] bg-white p-4 shadow-[0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-[#EFEFEF] bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             {/* Card Header */}
             <div className="flex items-center justify-between mb-3">
@@ -3075,7 +3075,7 @@ export function DashboardView({ user }) {
                         handleCopy(`${formatCurrency(cat.amount)} (${cat.pct})`, `${cat.label} Expense`);
                       }}
                       title={`Click to copy ${cat.label}: ${formatCurrency(cat.amount)}`}
-                      className={`flex items-center justify-between rounded px-2.5 py-1.5 cursor-pointer transition-all select-text ${isFocused ? 'bg-slate-100/90  ' : 'hover:bg-slate-50'
+                      className={`flex items-center justify-between rounded px-2.5 py-1.5 cursor-pointer transition-all select-text ${isFocused ? 'bg-slate-100  ' : 'hover:bg-slate-50'
                         }`}
                     >
                       <div className="flex items-center gap-2.5">
@@ -3138,7 +3138,7 @@ export function DashboardView({ user }) {
         </div>
 
         {/* Card 2: Income & Expense Comparison Card (Exact Reference UI + Dashboard Card Chrome) */}
-        <div className="rounded border border-[#EFEFEF] bg-white p-4 shadow-[0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
+        <div className="rounded border border-[#EFEFEF] bg-white p-4  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)] flex flex-col justify-between">
           <div>
             {/* Card Header */}
             <div className="flex items-center justify-between mb-4">
@@ -3383,7 +3383,7 @@ export function DashboardView({ user }) {
       {/* Main Section 4: Operations & Sidebar Modules Quick Integration */}
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-2">
         {/* Appointments Queue Table */}
-        <div className="lg:col-span-2 rounded border border-[#EFEFEF] bg-white p-6 shadow-[0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]">
+        <div className="lg:col-span-2 rounded border border-[#EFEFEF] bg-white p-6  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]">
           <div className="flex items-center justify-between border-b border-slate-100 pb-3 mb-4">
             <div className="flex items-center gap-2">
               <h3 className="text-sm font-bold text-slate-900">Today&apos;s Clinic Queue &amp; Appointments</h3>
@@ -3456,7 +3456,7 @@ export function DashboardView({ user }) {
         {/* Sidebar Operations & Shortcuts */}
         <div className="space-y-2">
           {/* Quick Action Operations */}
-          <div className="rounded border border-[#EFEFEF] bg-white p-5 shadow-[0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]">
+          <div className="rounded border border-[#EFEFEF] bg-white p-5  [0px_6px_10px_rgba(177,177,177,0.08),0px_1px_3px_rgba(0,0,0,0.02)]">
             <h3 className="text-xs font-bold text-slate-900 uppercase tracking-wider mb-3">Clinic Fast Actions</h3>
             <div className="space-y-2">
               <button

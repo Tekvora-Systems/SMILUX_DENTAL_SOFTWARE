@@ -88,7 +88,7 @@ export default function TopBanner() {
         aria-label="Show announcement"
         title="Show announcement"
         onClick={() => setDismissed(false)}
-        className="absolute top-0 right-6 z-20 flex h-[18px] w-8 origin-top items-center justify-center rounded-b-md shadow-[0_2px_1px_rgba(0,0,0,0.06),0_4px_8px_rgba(0,0,0,0.16)] transition-[transform,opacity] duration-300 ease-[cubic-bezier(.34,1.5,.4,1)] cursor-pointer"
+        className="absolute top-0 right-6 z-20 flex h-[18px] w-8 origin-top items-center justify-center rounded-b-md  [0_2px_1px_rgba(0,0,0,0.06),0_4px_8px_rgba(0,0,0,0.16)] transition-[transform,opacity] duration-300 ease-[cubic-bezier(.34,1.5,.4,1)] cursor-pointer"
         style={{
           background: '#118bb0',
           color: 'white',

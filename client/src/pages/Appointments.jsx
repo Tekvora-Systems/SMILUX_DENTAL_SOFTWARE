@@ -1154,7 +1154,7 @@ export default function AppointmentsPage() {
   // Color styles mapping
   const getColorStyles = (color, isSelected) => {
     if (isSelected) {
-      return 'bg-[#5051F9] text-white shadow-md ring-2 ring-[#5051F9] ring-offset-1 border border-[#4041e8]';
+      return 'bg-[#5051F9] text-white   ring-2 ring-[#5051F9] ring-offset-1 border border-[#4041e8]';
     }
     switch (color) {
       case 'emerald':
@@ -1348,7 +1348,7 @@ export default function AppointmentsPage() {
                   type="button"
                   onClick={() => setViewMode(mode)}
                   className={`px-3 py-1 rounded text-xs transition-all cursor-pointer ${viewMode === mode
-                    ? 'bg-white dark:bg-slate-700 text-slate-800 dark:text-white font-bold shadow-2xs'
+                    ? 'bg-white dark:bg-slate-700 text-slate-800 dark:text-white font-bold  2xs'
                     : 'text-slate-500 dark:text-slate-400 font-medium hover:text-slate-800 dark:hover:text-white'
                     }`}
                 >
@@ -1382,7 +1382,7 @@ export default function AppointmentsPage() {
                     className="fixed inset-0 z-40"
                     onClick={() => setIsDentistMenuOpen(false)}
                   />
-                  <div className="absolute right-0 mt-1 w-48 bg-white dark:bg-slate-800 rounded shadow-xl border border-slate-200 dark:border-slate-700 py-1 z-50 animate-in fade-in-0 zoom-in-95 duration-100">
+                  <div className="absolute right-0 mt-1 w-48 bg-white dark:bg-slate-800 rounded   border border-slate-200 dark:border-slate-700 py-1 z-50 animate-in fade-in-0 zoom-in-95 duration-100">
                     {[
                       { val: 'All', label: 'All Dentist' },
                       { val: 'Steward', label: 'Dr. Darrell Steward' },
@@ -1449,7 +1449,7 @@ export default function AppointmentsPage() {
       {/* ─── 3. Main Content: Calendar Views OR Log History ─────────────────── */}
       {mainTab === 'Calendar' ? (
         <div className="flex-1 p-4 overflow-x-auto">
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded shadow-xs overflow-hidden">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded  xs overflow-hidden">
             {/* ════════════════════════════════════════════════════════════════
                 VIEW 1: DAY VIEW
                ════════════════════════════════════════════════════════════════ */}
@@ -1458,7 +1458,7 @@ export default function AppointmentsPage() {
                 {/* Day View Subheader */}
                 <div className="px-4 py-2.5 bg-slate-50/80 dark:bg-slate-800/80 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
                   <div className="flex items-center gap-2.5">
-                    <span className="w-7 h-7 rounded-full bg-[#5051F9] text-white font-bold flex items-center justify-center text-xs shadow-xs">
+                    <span className="w-7 h-7 rounded-full bg-[#5051F9] text-white font-bold flex items-center justify-center text-xs  xs">
                       {currentDate.getDate()}
                     </span>
                     <span className="text-xs font-bold text-slate-800 dark:text-white">
@@ -1522,9 +1522,9 @@ export default function AppointmentsPage() {
                         className="absolute left-16 right-0 z-20 pointer-events-none flex items-center transition-all duration-300"
                         style={{ top: currentTimeIndicator.topPx }}
                       >
-                        <div className="w-2.5 h-2.5 rounded-full bg-rose-500 -ml-1.5 shadow-sm"></div>
-                        <div className="flex-1 border-t-2 border-rose-500 shadow-sm"></div>
-                        <span className="bg-rose-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded mr-3 shadow-sm">
+                        <div className="w-2.5 h-2.5 rounded-full bg-rose-500 -ml-1.5  sm"></div>
+                        <div className="flex-1 border-t-2 border-rose-500  sm"></div>
+                        <span className="bg-rose-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded mr-3  sm">
                           {currentTimeIndicator.formattedTime} (Now)
                         </span>
                       </div>
@@ -1568,10 +1568,10 @@ export default function AppointmentsPage() {
                                 handleAppointmentClick(apt);
                               }}
                               style={{ top: pos.top, height: pos.height }}
-                              className={`absolute left-3 right-3 rounded p-3 text-xs transition-all cursor-pointer overflow-hidden z-10 shadow-xs border ${getColorStyles(
+                              className={`absolute left-3 right-3 rounded p-3 text-xs transition-all cursor-pointer overflow-hidden z-10  xs border ${getColorStyles(
                                 apt.color,
                                 false
-                              )} hover:shadow-md hover:scale-[1.005]`}
+                              )} hover:  hover:scale-[1.005]`}
                             >
                               <div className="flex items-center justify-between font-bold text-xs">
                                 <span className="flex items-center gap-2">
@@ -1582,7 +1582,7 @@ export default function AppointmentsPage() {
                                     {apt.chair}
                                   </span>
                                 </span>
-                                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-white/80 dark:bg-slate-800/80 shadow-2xs">
+                                <span className="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase bg-white/80 dark:bg-slate-800/80  2xs">
                                   {apt.status}
                                 </span>
                               </div>
@@ -1615,7 +1615,7 @@ export default function AppointmentsPage() {
               >
                 <div className="min-w-[850px] flex flex-col">
                   {/* Day Header Row */}
-                  <div className="sticky top-0 z-30 flex flex-row bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-800 shadow-2xs">
+                  <div className="sticky top-0 z-30 flex flex-row bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-800  2xs">
                     <div className="w-16 h-12 shrink-0 flex items-center justify-center text-[10px] font-bold text-slate-400 border-r border-slate-200 dark:border-slate-800 bg-slate-50 dark:bg-slate-800 select-none">
                       GMT +3
                     </div>
@@ -1635,7 +1635,7 @@ export default function AppointmentsPage() {
                           <div className="flex items-center gap-2">
                             <span
                               className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold ${day.isToday
-                                ? 'bg-[#5051F9] text-white shadow-2xs'
+                                ? 'bg-[#5051F9] text-white  2xs'
                                 : 'text-slate-900 dark:text-white'
                                 }`}
                             >
@@ -1684,9 +1684,9 @@ export default function AppointmentsPage() {
                         className="absolute left-16 right-0 z-20 pointer-events-none flex items-center transition-all duration-300"
                         style={{ top: currentTimeIndicator.topPx }}
                       >
-                        <div className="w-2.5 h-2.5 rounded-full bg-rose-500 -ml-1.5 shadow-sm"></div>
-                        <div className="flex-1 border-t-2 border-rose-500 shadow-sm"></div>
-                        <span className="bg-rose-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded mr-2 shadow-sm">
+                        <div className="w-2.5 h-2.5 rounded-full bg-rose-500 -ml-1.5  sm"></div>
+                        <div className="flex-1 border-t-2 border-rose-500  sm"></div>
+                        <span className="bg-rose-500 text-white text-[10px] font-bold px-1.5 py-0.5 rounded mr-2  sm">
                           {currentTimeIndicator.formattedTime} (Now)
                         </span>
                       </div>
@@ -1732,10 +1732,10 @@ export default function AppointmentsPage() {
                                     handleAppointmentClick(apt);
                                   }}
                                   style={{ top: pos.top, height: pos.height }}
-                                  className={`absolute left-1 right-1 rounded p-1.5 text-xs transition-all cursor-pointer overflow-hidden z-10 shadow-2xs border ${getColorStyles(
+                                  className={`absolute left-1 right-1 rounded p-1.5 text-xs transition-all cursor-pointer overflow-hidden z-10  2xs border ${getColorStyles(
                                     apt.color,
                                     false
-                                  )} hover:shadow-md hover:scale-[1.01]`}
+                                  )} hover:  hover:scale-[1.01]`}
                                 >
                                   <div className="flex items-center justify-between font-bold leading-tight text-[11px] truncate">
                                     <span className="truncate">
@@ -1790,7 +1790,7 @@ export default function AppointmentsPage() {
                             setViewMode('Day');
                           }}
                           className={`inline-flex items-center justify-center w-6 h-6 rounded-full text-xs font-bold transition-transform hover:scale-110 ${cell.isToday
-                            ? 'bg-[#5051F9] text-white shadow-2xs'
+                            ? 'bg-[#5051F9] text-white  2xs'
                             : 'text-slate-700 dark:text-slate-200'
                             }`}
                           title="Click to open Day view"
@@ -1857,7 +1857,7 @@ export default function AppointmentsPage() {
             LOG HISTORY TAB VIEW
            ════════════════════════════════════════════════════════════════════ */
         <div className="flex-1 p-6">
-          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded shadow-xs overflow-hidden">
+          <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded  xs overflow-hidden">
             <div className="p-4 border-b border-slate-200 dark:border-slate-800 flex items-center justify-between">
               <div>
                 <h3 className="text-sm font-bold text-slate-900 dark:text-white">
@@ -1926,7 +1926,7 @@ export default function AppointmentsPage() {
       {/* ─── 4. Appointment Details Modal (Opens on Calendar Click) ────────── */}
       {selectedAppointmentForModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in-0 duration-200">
-          <div className="bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 w-full max-w-xl shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150 flex flex-col max-h-[90vh]">
+          <div className="bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 w-full max-w-xl  2xl overflow-hidden animate-in zoom-in-95 duration-150 flex flex-col max-h-[90vh]">
             {/* Modal Header */}
             <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-850">
               <div className="flex items-center gap-2.5">
@@ -1978,7 +1978,7 @@ export default function AppointmentsPage() {
               {/* Patient Banner */}
               <div className="flex items-center justify-between p-3 rounded bg-slate-50 dark:bg-slate-800/60 border border-slate-200 dark:border-slate-800">
                 <div className="flex items-center gap-3">
-                  <div className="w-11 h-11 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-sm shadow-xs">
+                  <div className="w-11 h-11 rounded-full bg-slate-900 text-white font-bold flex items-center justify-center text-sm  xs">
                     {selectedAppointmentForModal.patientName
                       .split(' ')
                       .map((n) => n[0])
@@ -2185,7 +2185,7 @@ export default function AppointmentsPage() {
       {/* ─── 5. Book Appointment Modal (Opens from empty calendar slot or button) ── */}
       {isBookingModalOpen && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-xs animate-in fade-in-0 duration-200">
-          <div className="bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 w-full max-w-lg shadow-2xl overflow-hidden animate-in zoom-in-95 duration-150">
+          <div className="bg-white dark:bg-slate-900 rounded border border-slate-200 dark:border-slate-800 w-full max-w-lg  2xl overflow-hidden animate-in zoom-in-95 duration-150">
             <div className="flex items-center justify-between px-5 py-3.5 border-b border-slate-200 dark:border-slate-800 bg-slate-50/70 dark:bg-slate-850">
               <div className="flex items-center gap-2">
                 <div className="p-1.5 rounded bg-emerald-100 text-emerald-800 dark:bg-emerald-950 dark:text-emerald-300">
@@ -2370,7 +2370,7 @@ export default function AppointmentsPage() {
 
       {/* ─── 6. Filter Drawer ───────────────────────────────────────────────── */}
       {isFilterDrawerOpen && (
-        <div className="fixed inset-y-0 right-0 z-50 w-[300px] bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800 shadow-2xl p-4 flex flex-col justify-between animate-in slide-in-from-right duration-200">
+        <div className="fixed inset-y-0 right-0 z-50 w-[300px] bg-white dark:bg-slate-900 border-l border-slate-200 dark:border-slate-800  2xl p-4 flex flex-col justify-between animate-in slide-in-from-right duration-200">
           <div>
             <div className="flex items-center justify-between pb-3 border-b border-slate-200 dark:border-slate-800 mb-3">
               <div className="flex items-center gap-2">

@@ -85,7 +85,7 @@ function WhatsNewPanel() {
   };
 
   return (
-    <div className="flex h-[46rem] flex-col overflow-hidden rounded border border-slate-300/90 bg-white/90 backdrop-blur-md shadow-[0_1px_3px_rgba(0,0,0,0.06)]">
+    <div className="flex h-[46rem] flex-col overflow-hidden rounded border border-slate-300/90 bg-white/90 backdrop-blur-md  [0_1px_3px_rgba(0,0,0,0.06)]">
       {/* Header */}
       <div className="flex shrink-0 items-center justify-between gap-2 border-b border-slate-100 px-4 py-3 sm:px-5">
         <h2 className="text-base font-semibold text-slate-900 flex items-center gap-2">
@@ -210,7 +210,7 @@ export function LoginLayout({ children, onOpenReferral }) {
         <div className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2 lg:gap-6">
           {/* Form column */}
           <div className="flex min-w-0 flex-col">
-            <div className="rounded border border-slate-300/90 bg-white/90 backdrop-blur-md px-5 py-6 shadow-[0_1px_3px_rgba(0,0,0,0.06)] sm:px-6 sm:py-6">
+            <div className="rounded border border-slate-300/90 bg-white/90 backdrop-blur-md px-5 py-6  [0_1px_3px_rgba(0,0,0,0.06)] sm:px-6 sm:py-6">
               {children}
             </div>
             <ReferralBanner onClick={onOpenReferral} />

@@ -43,7 +43,7 @@ export default function HeroSection() {
             animate="show"
             variants={staggerContainer(0.12, 0.05)}
           >
-         
+
 
             {/* Headline */}
             <motion.h1
@@ -94,7 +94,7 @@ export default function HeroSection() {
                 variant="primary"
                 size="md"
                 onClick={() => navigate('/register')}
-                className="h-10 px-6 text-[13.5px] font-bold shadow-[0_4px_14px_rgba(123,77,255,0.35)]"
+                className="h-10 px-6 text-[13.5px] font-bold  [0_4px_14px_rgba(123,77,255,0.35)]"
               >
                 Start 14-Day Free Trial
                 <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
@@ -107,7 +107,7 @@ export default function HeroSection() {
                 onClick={() => scrollTo('#features')}
                 className="h-10 px-6 text-[13.5px] font-semibold"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><title>sprint-demo</title><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"><path d="M6 3h12a3.5 3.5 0 0 1 3.5 3.5V13a3.5 3.5 0 0 1-3.5 3.5H6A3.5 3.5 0 0 1 2.5 13V6.5A3.5 3.5 0 0 1 6 3"/><path d="m12.319 7.513l1.504.981a1.5 1.5 0 0 1 0 2.512l-1.504.981A1.5 1.5 0 0 1 10 10.731V8.769a1.5 1.5 0 0 1 2.319-1.256M10 16.5L9 21m5-4.5l1 4.5m-7.5 0h9"/></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24"><title>sprint-demo</title><g fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5"><path d="M6 3h12a3.5 3.5 0 0 1 3.5 3.5V13a3.5 3.5 0 0 1-3.5 3.5H6A3.5 3.5 0 0 1 2.5 13V6.5A3.5 3.5 0 0 1 6 3" /><path d="m12.319 7.513l1.504.981a1.5 1.5 0 0 1 0 2.512l-1.504.981A1.5 1.5 0 0 1 10 10.731V8.769a1.5 1.5 0 0 1 2.319-1.256M10 16.5L9 21m5-4.5l1 4.5m-7.5 0h9" /></g></svg>
                 Book a Demo
               </Button>
             </motion.div>

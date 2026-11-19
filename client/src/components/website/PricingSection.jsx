@@ -124,7 +124,7 @@ const COMPARISON_ROWS = [
 
 function BillingToggle({ value, onChange }) {
   return (
-    <div className="relative inline-flex items-center p-0.5 rounded-full bg-white/90 border border-purple-200/90 shadow-sm select-none">
+    <div className="relative inline-flex items-center p-0.5 rounded-full bg-white/90 border border-purple-200/90  sm select-none">
       {(['monthly', 'annual']).map((opt) => {
         const active = value === opt;
         return (
@@ -164,13 +164,13 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
   const isPremium = variant === 'premium';
 
   const cardClass = isPopular
-    ? 'bg-white rounded flex flex-col justify-between min-h-[640px] p-5 relative shadow-[0px_0px_0px_2px_#118bb0,0px_8px_32px_rgba(123,77,255,0.18)]'
+    ? 'bg-white rounded flex flex-col justify-between min-h-[640px] p-5 relative  [0px_0px_0px_2px_#118bb0,0px_8px_32px_rgba(123,77,255,0.18)]'
     : isPremium
-      ? 'bg-white rounded flex flex-col justify-between min-h-[640px] p-5 relative shadow-[0px_1px_2px_rgba(0,0,0,0.08),0px_2px_4px_rgba(0,0,0,0.04)] border border-[#E7E7E7]'
-      : 'bg-white rounded flex flex-col justify-between min-h-[640px] p-5 relative shadow-[0px_1px_2px_rgba(0,0,0,0.08),0px_2px_4px_rgba(0,0,0,0.04)] border border-[#E7E7E7]';
+      ? 'bg-white rounded flex flex-col justify-between min-h-[640px] p-5 relative  [0px_1px_2px_rgba(0,0,0,0.08),0px_2px_4px_rgba(0,0,0,0.04)] border border-[#E7E7E7]'
+      : 'bg-white rounded flex flex-col justify-between min-h-[640px] p-5 relative  [0px_1px_2px_rgba(0,0,0,0.08),0px_2px_4px_rgba(0,0,0,0.04)] border border-[#E7E7E7]';
 
   const btnClass = isPopular
-    ? 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-white bg-[linear-gradient(180deg,#9C7AFF_0%,#6C44E0_100%)] border border-[#118bb0] hover:brightness-105 active:scale-[0.998] transition-all cursor-pointer shadow'
+    ? 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-white bg-[linear-gradient(180deg,#1ba7ce_0%,#0e7394_100%)] border border-[#0f5d77] hover:brightness-105 active:scale-[0.998] transition-all cursor-pointer shadow'
     : 'w-full py-2 px-4 rounded text-[13.5px] font-semibold text-[#0f5d77] bg-[linear-gradient(180deg,#FDFDFD_0%,#F2F5F7_100%)] border border-[#E4E4E8] hover:bg-[#F2F5F7] active:scale-[0.998] transition-all cursor-pointer';
 
   return (
@@ -182,7 +182,7 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
       {/* Most Popular floating badge */}
       {isPopular && (
         <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 z-10">
-          <span className="inline-flex items-center gap-1.5 bg-[linear-gradient(90deg,#9C7AFF,#6C44E0)] text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-[0px_2px_8px_rgba(123,77,255,0.35)]">
+          <span className="inline-flex items-center gap-1.5 bg-[linear-gradient(90deg,#1ba7ce,#0e7394)] text-white text-[11px] font-bold px-3 py-1 rounded-full shadow-[0px_2px_8px_rgba(17,139,176,0.35)]">
             <svg className="h-3 w-3" fill="currentColor" viewBox="0 0 20 20">
               <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
             </svg>
@@ -234,7 +234,7 @@ function PlanCard({ badge, badgeSolid, icon, title, subtitle, annualPrice, month
           </motion.button>
           {trialBadge && (
             <div className="flex justify-center">
-              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-purple-100 text-[#6C44E0] text-[12px] font-medium">
+              <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-cyan-50 text-[#0e7394] border border-cyan-200 text-[12px] font-medium">
                 14 days left in trial
               </span>
             </div>
@@ -289,7 +289,7 @@ function ComparisonTable() {
             transition={{ duration: 0.4, ease: EASE }}
             className="overflow-hidden"
           >
-            <div className="mt-5 bg-white/80 border border-purple-200/60 rounded overflow-hidden shadow-[0px_1px_3px_rgba(0,0,0,0.06)] backdrop-blur-sm">
+            <div className="mt-5 bg-white/80 border border-purple-200/60 rounded overflow-hidden  [0px_1px_3px_rgba(0,0,0,0.06)] backdrop-blur-sm">
               <div className="grid grid-cols-4 bg-purple-50/60 border-b border-purple-100 px-4 py-2.5 text-[12px] font-bold text-[#595959]">
                 <span>Feature</span>
                 <span className="text-center">Essential</span>
